@@ -10,17 +10,17 @@
 \makeatletter
 \@ifpackageloaded{hyperref}{%
 \hypersetup{%
-pdftitle = {Studying B to K pi decays with LHCb},
-pdfsubject = {Andy Buckley's PhD thesis},
-pdfkeywords = {LHCb, B, physics, LHC, heavy flavour},
-pdfauthor = {\textcopyright\ Andy Buckley}
+pdftitle = {Properties of the Higgs-like state around 125 GeV in its decay to two photons at the CMS experiment at the LHC},
+pdfsubject = {Matthew Kenzie's PhD thesis},
+pdfkeywords = {Higgs,CMS,photons,gamma gamma,decay,spin,properties},
+pdfauthor = {\textcopyright\ Matthew Kenzie}
 }
 }{}
 \makeatother
 
 %% Define the thesis title and author
-\title{A study of \BToKPi decays with\\ the \LHCb experiment}
-\author{Andrew Gordon Buckley}
+\title{Properties of the Higgs-like state around 125 GeV in its decay to two photons at the CMS experiment at the LHC}
+\author{Matthew Kenzie}
 
 %% Start the document
 \begin{document}
@@ -32,13 +32,13 @@ pdfauthor = {\textcopyright\ Andy Buckley}
 
 %% Start the content body of the thesis
 \begin{mainmatter}
-  %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
-  \input{chap1}
-  \input{chap2}
-  \input{chap3}
-  %% To ignore a specific chapter while working on another,
-  %% making the build faster, comment it out like this:
-  %\input{chap4}
+  \input{ch1_intro_theory/ch1_intro_theory}
+  \input{ch2_cms_exp/ch2_cms_exp}
+  \input{ch3_comm_anal_comps/ch3_comm_anal_comps}
+  \input{ch4_selec_and_cats/ch4_selec_and_cats}
+  \input{ch5_anal_and_results/ch5_anal_and_results}
+  \input{ch6_spin_anal/ch6_spin_anal}
+  \input{ch7_concs/ch7_concs}
 \end{mainmatter}
 
 %% Produce the appendices
