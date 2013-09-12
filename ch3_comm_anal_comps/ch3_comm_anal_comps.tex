@@ -11,7 +11,7 @@ A description of the analysis components and pre-requisites for a Higgs to two p
 
 \section{Bulk}
 
-This thesis describes three complementary analysis regimes in the Higgs to two photons search at CMS. These differ in their photon selection, event selection, event classification (or categorisation) and statistical methods for extracting results. They are described in the following chapter~\ref{chap:selection_and_categorisation}. However, there are many components which they share. These are detailed below.
+This thesis describes three complementary analysis regimes in the Higgs to two photons search at CMS. These differ in their photon selection, event selection, event classification (or categorisation) and statistical methods for extracting results. They are described in the following chapter (Chapter~\ref{chap:selection_and_categorisation}). However, there are many components which they share. These are detailed below.
 
 As we have seen in Eq.~\ref{eq:invmass} the diphoton invariant mass is constructed from the two photon energies and the angle between them so clearly important considerations are good photon energy resolution, good position resolution (location they hit the detector) and good vertex resolution (the location of the primary interaction).
 
@@ -25,7 +25,7 @@ As we have seen in Eq.~\ref{eq:invmass} the diphoton invariant mass is construct
 \section{Photon reconstruction}
 \label{sec:photon_reco}
 
-Photons deposit their energy by showering in the ECAL. For an unconverted photon this shower is fairly localised however if the photon converts, usually this occurs through interaction with material in the tracker, then the shower will spread out in $\phi$ due to the presence of the magnetic field. A photon shower which spreads across several crystals is known as a cluster and there are two algorithms which reconstruct photon \emph{superclusters}. In the barrel region the photon supercluster is a window 5 crystals wide in \eta, centred around the most energetic crystal, extending up to 35 crystals long in \phi. In the endcap the photon supercluster is made of multiple overlapping 5x5 regions, each centred on the most locally energetic crystal, which are merged if contiguous. A photon which deposits more than 94\% of the supercluster energy in a 3x3 crystal area around the most energetic crystal is considered unconverted. This provides us with a definition for the conversion variable, \rnine, such that,
+Photons deposit their energy by showering in the ECAL. For an unconverted photon this shower is fairly localised however if the photon converts, usually this occurs through interaction with material in the tracker, then the shower will spread out in \phi due to the presence of the magnetic field. A photon shower which spreads across several crystals is known as a cluster and there are two algorithms which reconstruct photon \emph{superclusters}. In the barrel region the photon supercluster is a window 5 crystals wide in \eta, centred around the most energetic crystal, extending up to 35 crystals long in \phi. In the endcap the photon supercluster is made of multiple overlapping 5x5 regions, each centred on the most locally energetic crystal, which are merged if contiguous. A photon which deposits more than 94\% of the supercluster energy in a 3x3 crystal area around the most energetic crystal is considered unconverted. This provides us with a definition for the conversion variable, \rnine, such that,
 
 \begin{equation}
 	R_{9} = \frac{E_{3\times3}}{E_{SC}} 
@@ -35,7 +35,7 @@ Photons deposit their energy by showering in the ECAL. For an unconverted photon
 	\end{cases}
 \end{equation}
 
-The position of a supercluster is taken as the energy weighted mean of each crystal in the supercluster. As such the position resolution is smaller than an individual crystal width, typically of the order \red{X!}. The photon's energy is corrected using a regression correction function (described in Sec.~\ref{sec:photon_energy}) and the vertex is reconstructed using a boosted decision tree (described in Sec.~\ref{sec:vtx_reco}), thus the photon 4-vectors can be reconstructed and the diphoton invariant mass calculated.
+The position of a supercluster is taken as the energy weighted mean of each crystal in the supercluster. As such the position resolution is smaller than an individual crystal width, typically of the order \comm{X!}. The photon's energy is corrected using a regression correction function (described in Sec.~\ref{sec:photon_energy}) and the vertex is reconstructed using a boosted decision tree (described in Sec.~\ref{sec:vtx_reco}), thus the photon 4-vectors can be reconstructed and the diphoton invariant mass calculated.
 
 \section{Energy measurement of photons}
 \label{sec:photon_energy}
