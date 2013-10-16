@@ -1,7 +1,7 @@
 \ProvidesClass{thesis}
 %% For normal draft builds
-\LoadClass[hyperpdf,nobind,draft,sftitles,oneside]{hepthesis}
-%\LoadClass[hyperpdf,nobind,draft,twoside]{hepthesis}
+%\LoadClass[hyperpdf,nobind,draft,sftitles,oneside]{hepthesis}
+\LoadClass[hyperpdf,nobind,draft,twoside]{hepthesis}
 %% For short draft builds (breaks citations by necessity)
 %\LoadClass[hyperpdf,nobind,draft,hidefrontback]{hepthesis}
 %% For Cambridge soft-bound version

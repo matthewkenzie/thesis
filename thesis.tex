@@ -4,6 +4,11 @@
 % my packages
 \usepackage{color}
 \usepackage[printonlyused]{acronym}
+\usepackage{hyperref}
+\usepackage{draftwatermark}
+\SetWatermarkScale{8.}
+\SetWatermarkLightness{0.9}
+\SetWatermarkFontSize{60cm}
 
 % my commands
 \newcommand{\rnine}{\ensuremath{R_{9}}\xspace}
@@ -12,10 +17,22 @@
 \newcommand{\mH}{\ensuremath{m_{H}}\xspace}
 \newcommand{\fb}{\ensuremath{fb^{-1}}\xspace}
 \newcommand{\mgg}{\ensuremath{m_{\gamma\gamma}}\xspace}
-%\newcommand{\Hgg}{\ensuremath{H\rightarrow\gamma\gamma}}
 \newcommand{\HZZ}{\ensuremath{H\rightarrow ZZ* \rightarrow l^{+}l^{-}l^{+}l^{-}}\xspace}
-%\newcommand{\pT}{\ensuremath{p_{T}}}
+\newcommand{\Zee}{\ensuremath{Z\rightarrow e^{+}e^{-}}\xspace}
+\newcommand{\ET}{\ensuremath{E_{T}}\xspace}
+%\renewcommand{\pT}{\ensuremath{p_{T}}\xpsace}
 \newcommand{\red}[1]{\textcolor{red}{#1}\xspace}
+\mathchardef\mhyphen="2D
+\newcommand{\pp}{\ensuremath{p \mhyphen p}\xspace}
+\newcommand{\pizero}{\ensuremath{\pi^{0}\xspace}}
+\newcommand{\refrqd}{\red{[REF!]}}
+% --- acros ---
+\renewcommand{\LHC}{\ac{LHC}\xspace}
+\renewcommand{\CMS}{\ac{CMS}\xspace}
+\newcommand{\ECAL}{\ac{ECAL}\xspace}
+\newcommand{\PbWO}{\ac{PbWO}\xspace}
+\newcommand{\APDs}{\ac{APDs}\xspace}
+\renewcommand{\APD}{\ac{APD}\xspace}
 
 %% You can set the line spacing this way
 %\setallspacing{double}
@@ -29,9 +46,13 @@
 pdftitle = {Properties of the Higgs-like state around 125 GeV in its decay to two photons at the CMS experiment at the LHC},
 pdfsubject = {Matthew Kenzie's PhD thesis},
 pdfkeywords = {Higgs,CMS,photons,gamma gamma,decay,spin,properties},
-pdfauthor = {\textcopyright\ Matthew Kenzie}
+pdfauthor = {\textcopyright\ Matthew Kenzie},
+%colorlinks = false,
+linkcolor = blue,
+citecolor = blue
 }
 }{}
+\input{preamble}
 \makeatother
 
 %% Define the thesis title and author
@@ -40,6 +61,9 @@ pdfauthor = {\textcopyright\ Matthew Kenzie}
 
 %% Start the document
 \begin{document}
+
+% Line numbers
+\runninglinenumbers
 
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
 \begin{frontmatter}
