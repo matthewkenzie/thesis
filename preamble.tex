@@ -1,0 +1,50 @@
+% --- for acronym package -----
+\def\uplabel#1{{\normalfont{\textsf{#1}}\hfill}-}
+\renewenvironment{acronym}[1][1]{%
+   \providecommand*{\acro}{\AC@acro}%
+   \providecommand*{\acroplural}{\AC@acroplural}%
+   \long\def\acroextra##1{##1}%
+   \def\@tempa{1}\def\@tempb{#1}%
+   \ifx\@tempa\@tempb%
+      \global\expandafter\let\csname ac@des@mark\endcsname\AC@used%
+      \ifAC@nolist%
+      \else%
+         \begin{list}{}%
+                {\settowidth{\labelwidth}{\normalfont{\textsf{#1}}\hspace*{1em}}% change according to your needs
+                \setlength{\leftmargin}{\labelwidth}%
+                \addtolength{\leftmargin}{\labelsep}%
+                \renewcommand{\makelabel}{\uplabel}}
+      \fi%
+   \else%
+      \begin{AC@deflist}{#1}%
+   \fi%
+  }%
+  {%
+   \ifx\AC@populated\AC@used\else%
+      \ifAC@nolist%
+      \else%
+          \item[]\relax%
+      \fi%
+   \fi%
+   \expandafter\ifx\csname ac@des@mark\endcsname\AC@used%
+      \ifAC@nolist%
+      \else%
+        \end{list}%
+      \fi%
+   \else%
+      \end{AC@deflist}%
+   \fi}%
+\renewenvironment{AC@deflist}[1]%
+        {\ifAC@nolist%
+         \else%
+            \raggedright\begin{list}{}%
+                {\settowidth{\labelwidth}{\normalfont{\textsf{#1}}\hspace*{1em}}% change according to your needs
+                \setlength{\leftmargin}{\labelwidth}%
+                \addtolength{\leftmargin}{\labelsep}%
+                \addtolength{\leftmargin}{1cm}
+                \renewcommand{\makelabel}{\uplabel}}%
+          \fi}%
+        {\ifAC@nolist%
+         \else%
+            \end{list}%
+         \fi}%
