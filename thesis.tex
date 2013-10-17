@@ -5,6 +5,7 @@
 \usepackage{color}
 \usepackage[printonlyused]{acronym}
 \usepackage{hyperref}
+\usepackage{slashed}
 \usepackage{draftwatermark}
 \SetWatermarkScale{8.}
 \SetWatermarkLightness{0.9}
@@ -24,15 +25,21 @@
 \newcommand{\red}[1]{\textcolor{red}{#1}\xspace}
 \mathchardef\mhyphen="2D
 \newcommand{\pp}{\ensuremath{p \mhyphen p}\xspace}
-\newcommand{\pizero}{\ensuremath{\pi^{0}\xspace}}
+\newcommand{\pizero}{\ensuremath{\pi^{0}}\xspace}
+\newcommand{\MET}{\ensuremath{\slashed{E}_{T}}\xspace}
 \newcommand{\refrqd}{\red{[REF!]}}
 % --- acros ---
 \renewcommand{\LHC}{\ac{LHC}\xspace}
 \renewcommand{\CMS}{\ac{CMS}\xspace}
 \newcommand{\ECAL}{\ac{ECAL}\xspace}
+\newcommand{\HCAL}{\ac{HCAL}\xspace}
 \newcommand{\PbWO}{\ac{PbWO}\xspace}
 \newcommand{\APDs}{\ac{APDs}\xspace}
 \renewcommand{\APD}{\ac{APD}\xspace}
+\newcommand{\VPTs}{\ac{VPTs}\xspace}
+\newcommand{\PF}{\ac{PF}\xspace}
+\newcommand{\MC}{\ac{MC}\xspace}
+\newcommand{\GED}{\ac{GED}\xspace}
 
 %% You can set the line spacing this way
 %\setallspacing{double}
@@ -83,7 +90,7 @@ citecolor = blue
 
 %% Produce the appendices
 \begin{appendices}
-  \input{appendices}
+  %\input{appendices}
 \end{appendices}
 
 %% Produce the un-numbered back matter (e.g. colophon,
