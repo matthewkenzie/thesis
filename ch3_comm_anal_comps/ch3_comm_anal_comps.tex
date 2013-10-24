@@ -22,21 +22,6 @@ As we have seen in Eq.~\ref{eq:invmass} the diphoton invariant mass is construct
 \subsection{Pileup}
 \subsection{Beamspot}
 
-\section{Photon reconstruction}
-\label{sec:photon_reco}
-
-Photons deposit their energy by showering in the ECAL. For an unconverted photon this shower is fairly localised however if the photon converts, usually this occurs through interaction with material in the tracker, then the shower will spread out in \phi due to the presence of the magnetic field. A photon shower which spreads across several crystals is known as a cluster and there are two algorithms which reconstruct photon \emph{superclusters}. In the barrel region the photon supercluster is a window 5 crystals wide in \eta, centred around the most energetic crystal, extending up to 35 crystals long in \phi. In the endcap the photon supercluster is made of multiple overlapping 5x5 regions, each centred on the most locally energetic crystal, which are merged if contiguous. A photon which deposits more than 94\% of the supercluster energy in a 3x3 crystal area around the most energetic crystal is considered unconverted. This provides us with a definition for the conversion variable, \rnine, such that,
-
-\begin{equation}
-	R_{9} = \frac{E_{3\times3}}{E_{SC}} 
-	\begin{cases}
-		\text{unconverted if } R_9\geq0.94 \\
-		\text{converted otherwise}.
-	\end{cases}
-\end{equation}
-
-The position of a supercluster is taken as the energy weighted mean of each crystal in the supercluster. As such the position resolution is smaller than an individual crystal width, typically of the order \comm{X!}. The photon's energy is corrected using a regression correction function (described in Sec.~\ref{sec:photon_energy}) and the vertex is reconstructed using a boosted decision tree (described in Sec.~\ref{sec:vtx_reco}), thus the photon 4-vectors can be reconstructed and the diphoton invariant mass calculated.
-
 \section{Energy measurement of photons}
 \label{sec:photon_energy}
 
@@ -46,12 +31,11 @@ The position of a supercluster is taken as the energy weighted mean of each crys
 \section{Vertex reconstruction}
 \label{sec:vtx_reco}
 
-
-\section{Particle Flow}
-
-\section{Associated object}
+\section{Associated objects}
 \subsection{Jets}
 \subsection{Electrons}
 \subsection{Muons}
 \subsection{MET}
+
+\section{Using \Zee decays for validation and effiency measurements}
 
