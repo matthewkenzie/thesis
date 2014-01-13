@@ -61,6 +61,7 @@ The data consists of two indepedent samples of proton-proton collisions collecte
 Events are selected for the analysis by requiring they pass an asymmetric diphoton trigger with \ET thresholds of 26 (18) and 36 (22) GeV for the leading (trailing) photon in the 2011 and 2012 runs respectively. The triggering has further requirements on photon selection. The candidates are required to have either a high value of \rnine or to pass a loose calorimetric identifaction and isolation requirement. High trigger efficiency is achieved by selecting photon candidates which pass either requirement. The effiency of the trigger for the analysis preselection is 99.5\%.
 
 \subsection{Monte Carlo}
+\label{sec:mc}
 
 Accurate simulation of detector effects and efficiency is highly important. Knowledge of the expected Higgs signal shape is clearly essential and although the size and shape of the \mgg background is entirely data driven when extracting results, simultaing the kinematics, shower shape and resolution properties of the background is essential when training the selection and optimising the binning. 
 
@@ -160,6 +161,7 @@ In this way the regression predicts the full probability density of $E_{true}/E_
 \end{figure}
 
 \subsection{Correcting for residual discrepancies between data and Monte Carlo}
+\label{sec:scale_smearing}
 
 After application of the energy regression correction there are some remaining discrepancies between data and \MC. These residual effects are accounted for using \Zee events in data and simulation to correct the energy scale in the data and to apply an additional smearing term to the \MC with systematic uncertainties propagated through the analysis to account for the uncertainties on these corrections.
 
@@ -300,6 +302,47 @@ There is a linear relation between the response of this \BDT and the correct ver
 \section{Event preselection}
 \label{sec:photon_presel}
 
-\section{Using \Zee decays for validation and efficiency measurements}
+A simple and loose preselection is applied to all photons before entering the analysis. The preselection requirements are identical for all analysis approaches and are designed to remove some \emph{fake} photons whilst mainting near 100\% trigger efficiency. The variables used for preselection are defined below and the preselection cuts are described in Table~\ref{table:preselection}.
+
+\begin{itemize}
+  \item $HoE$ - \textbf{The ratio of hadronic energy in the \HCAL tower behind the supercluster to the electromagnetic energy in the supercluster}. Neutral jets which fake photons typically leave a fraction of their energy in the \HCAL so there is a requirement that the value of this variable is small.
+  \item $\sigma^{2}_{i\eta i\eta}$ - \textbf{The RMS spread of the shower in the eta direction}. Multiple showers of a \pizero, or more than one \pizero, result in a wider shower in \eta (as the \pizero decay product photons are separated in space). This cannot be exploited in the \phi direction because conversion electrons get separated by the magentic field, however in \eta single photons, even when converted, occupy a narrow region. The separation of the two photons from a \pizero is minimal when they share the energy eqaully and given that typically $p_{T}>>m_{\pi}$ the separation is close to minimal for most. Taking the transverse plane in the barrel, the separation $d=2Rm_{\pi}/p_{T}$ (where $R$ is the radius of the barrel), which for $p_{T}=40$GeV gives a value of $d=$8mm$\sim0.006\eta$.
+  \item $ECALiso$ - \textbf{The total \rho corrected electromagnetic energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
+  \item $HCALiso$ - \textbf{The total \rho corrected hadronic energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
+  \item $Trkiso$ - \textbf{The total \rho corrected track energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
+  \item $ChargedPFiso$ - \textbf{The total \rho corrected particle flow charged hadron energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
+\end{itemize}
+
+In addition to the above an electron veto is applied to prevent contamination of the photon sample with electrons which originate from Drell Yan decays. This is acheived by removing photon candidates whose supercluster is matched to an electron track which has no missing hits in the innermost tracking region.
+
+\begin{table}
+\noindent
+  \begin{center}
+  \caption{Preselection cut values.}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+                & \multicolumn{2}{c|}{Barrel} & \multicolumn{2}{c|}{Endcap} \\ \hline
+      R9        & $HoE$ & $\sigma^{2}_{i\eta i\eta}$ & $HoE$ & $\sigma^{2}_{i\eta i\eta}$  \\ \hline
+      $\le$ 0.9 & $<$ 0.075 & $<$ 0.014 & $<$ 0.075 & $<$ 0.034 \\ \hline
+      $>$ 0.9   & $<$ 0.082 & $<$ 0.014 & $<$ 0.075 & $<$ 0.034  \\ \hline    
+                & \multicolumn{4}{c|}{Both Barrel and Endcap}\\ \hline
+      R9        & $ECALIso$ & $HCALIso$ &  $TrkIso$ & $ChargedPFIso$ \\ \hline
+      $\le$ 0.9 &$<$ 4 GeV & $<$ 4 GeV & $<$ 4 GeV & $<$ 4 GeV\\ \hline
+      $>$ 0.9   &$<$ 50 GeV & $<$ 50 GeV & $<$ 50 GeV & $<$ 4 GeV\\ 
+    \end{tabular}
+  \label{table:preselection}
+  \end{center}
+\end{table}
+
+\section{Using $Z$ decays for validation and efficiency measurements}
 \label{sec:zee}
 
+Whilst no known ``standard candles" with high statistics exist for high \pT photons in the \LHC environment a powerful control source for the \Hgg decay in both data and \MC is the \Zee decay. From a detector view point electrons are very similar to photons and the $Z$ is relatively near the relevant Higgs search range in mass. The differences between the $Z$ and the Higgs, in both their mass and \pT distribution, and also the differences between electrons originating from a $Z$ and photons originating from a Higgs are important systematic uncertainties on the Higgs mass scale and resolution. By inverting the electron veto usually applied in the preselection the Higgs to two photon analysis can be identically replicated but the very pure diphoton sample replaced with a pure dielectron sample. One additional process which can be used as a direct control for photons is the \Zmumugamma decay although the statistics, even with the LHC luminosity, are very low. Many of the input variables used in training the \BDTs and cuts are validated with both \Zee and \Zmumugamma data/\MC comparison plots. An example is shown in Figure~\ref{fig:dielectronmass} for the reconstructed di-electron mass for events passing the preselection described in Table~\ref{table:preselection}.
+
+As previously shown (in Sec.~\ref{sec:scale_smearing}) data/\MC comparison of the \Zee decay are used to derive scale corrections for the data and smearing of the \MC. Discrepancies between data and \MC in \Zee decays of important analysis variables are accounted for by introducing systematic uncertainties to cover them. In addition the ``tag and probe" method ~\cite{tag_and_probe} is used on \Zee decays to evaluate the signal efficiency for the preselection and analysis cuts. Several stages of the analysis are validated in this way and where appropriate systematic uncertainties are included to account for any data/\MC differences. Although the numbers and uncertainties themselves are derived from \Zee samples (because of the much higher statistics), they are always cross check with the \Zmumugamma sample.
+
+\begin{figure}
+  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/zee_mass.pdf}
+  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/zee_mass_ratio.pdf}
+  \caption{The di-electron mass distribution after applying the preselection (described in Sec.~\ref{sec:photon_presel}) and the scale and smearing corrections (described in Sec.~\ref{sec:scale_smearing}) whilst inverting the electron veto. The left plot shows the data at 8TeV as the black points with the Drell Yan \MC sample as the blue histogram. The Data/\MC ratio is shown in the right hand plot. \red{Plot needs updating}}
+  \label{fig:dielectronmass}
+\end{figure}
