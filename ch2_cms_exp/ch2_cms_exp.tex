@@ -190,7 +190,7 @@ Surrounding the \ECAL, but still inside the magnet, is a sampling \HCAL which ha
 Outside of the magnet lie the \CMS muon chambers. These consist of alternating layers of drift tube chambers (cathode strip chambers) in the barrel (endcap) and resistive plate chambers which also act as a return for the magentic flux. The muon detector has coverage up to $|\eta|<2.4$ and given the particularly conspicuous signature of muons (several hits in the tracker and hits in each muon station layer) the reconstruction efficiency and momentum resolution of muons is very good even down to low \pT. The muon resolution as a function of \pT is shown in the left hand plot of Fig.~\ref{fig:muon_jet_res} for simulated data at $\sqrt{s}=7$~TeV.
 
 % -------- PFLOW ---------
-\subsection{Particle flow and jets}
+\section{Particle flow and jets}
 \label{sec:pflow_jets}
 A traditional approach to detector based particle physics is to consider the objects we measure as opposed to the underlying physics objects. These are often known as calorimeter objects, for example, a track, an electromagnetic shower or a calorimeter jet. A more modern approach is to couple information in all of the subdetector systems together to reconstruct more physical objects. For example, a charged hadron will leave a track, deposit some energy in the \ECAL and deposit the rest of its energy in the \HCAL. This technique of reconstruction is known as \PF\footnote{The offcial name inside \CMS is \GED although this is rarely used} and is particularly useful when considering jets. Whilst an electron, photon or muon are fairly unique looking signatures hadrons are often not. The abundant number of gluons and quarks produced in \LHC collisions hadronise via the strong interaction as they travel away from the interaction. As they have typically high momentum the hadronistation occurs in a collimated fashion leaving a signature of several tracks and a hadronic cluster. The \PF reconstruction algorithm can be simplistically viewed as the follwing procedure (more details given in Ref.~\cite{cms_pf_algo}):
 
@@ -221,7 +221,7 @@ Particle flow jets are constructed using the anti-$k_{T}$ algorithm~\cite{anti_k
   \label{fig:muon_jet_res}
 \end{figure}
 
-\subsection{Isolation}
+\section{Isolation}
 \label{sec:iso}
 
 One way of differentiating between real (prompt) photons and fakes is the use of isolation. One would expect that in the absence of pileup a real photon would be isolated, which is to say there are no other particles (detector activity) in its vicinity. For a jet faking a photon (which is nearly always a \pizero) this is not the case and one would expect the \pizero to be surrounded by additional hadronised particles (detector activity in the tracker, \ECAL and \HCAL). In the \CMS \Hgg analysis isolation sums are used to distinguish prompt photons from fakes. Three variables are used which consider each photons isolation relative to activity in the surrounding environment. The procedure is to create a hollow cone around the photon candidate (of outer radius $\Delta R_{O}$ and inner radius $\Delta R_{I}$, where $\Delta R = \sqrt{\Delta\eta^{2}+\Delta\phi^{2}}$) and sum the energy contained in that cone of \PF candidates; charged hadrons, neutral hadrons and electrons/photons. These three variables are defined in the following way:
@@ -232,7 +232,7 @@ One way of differentiating between real (prompt) photons and fakes is the use of
   \item{\textbf{$e/\gamma$ isolation:} Sum of $e/\gamma$ \PF candidates \ET in cone of $\Delta R_{O}=0.3$ with a central \eta strip of 0.070 (0.015) removed for barrel (endcap) photons.}
 \end{itemize}
 
-\subsection{Pileup}
+\section{Pileup}
 \label{sec:pileup}
 
 There can be up to $1.1\times10^{11}$ protons in each bunch at the \LHC which results in multiple interactions (can be as many as 50 primary vertices) per bunch crossing. This effect is known as pileup and can present a challenge in finding the primary vertex and also produces additional energy in each event which originates from somewhere other than the primary vertex. To combat the latter of these two effects a technique called $\rho$ subtraction is used to corrected the energy of jets and isolation sums for pileup. $\rho$ is defined as a per event quantity and is computed by summing the energy in all the calorimeters and dividing by the calorimeter area and thus represents the average energy density in the detector per event.

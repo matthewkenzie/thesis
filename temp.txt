@@ -1,0 +1,19 @@
+The hybrid clustering algorithm described below, results in clusters of energy roughly 5 crystals wide in $\eta$ and up to 35 crystals wide in $\phi$:
+
+\begin{enumerate}
+\item The crystal with the highest \et which is not a part of any other cluster becomes the seed to a new cluster.  The \et must be above a minimum threshold of 1 \gev.
+\item Two crystals on each side of the seed crystal along $\eta$ join the cluster (5 crystals wide in $\eta$, 1 crystal wide in $\phi$), this is the original ``domino'' of this cluster.
+\item Staying at the same $\eta$, begin stepping along $\phi$ and add these $5\times1$ dominos as long as energy within the domino is above a minimum threshold of 350 \mev.
+\item Stop adding dominos once you have reached $\pm 17$ crystals from original seed crystal.
+\item Repeat starting from step 1.
+\end{enumerate}
+
+In the endcap of CMS, due to the different geometry as described in section \ref{sec:ExperimentECAL}, the ``Multi$5\times5$'' algorithm is used:
+\begin{enumerate}
+\item The crystal with the highest \et which is not a part of any other cluster becomes the seed to a new cluster.  The \et must be above a minimum threshold of 180 \mev.
+\item The array of crystals $5\times5$ centered on the seed crystal join the cluster.
+\item Crystals along the edge of this $5\times5$ array are allowed to be the seeds of new $5\times5$ clusters if they are a local maximum when compared to neighboring crystals.
+\item Overlapping arrays of $5\times5$ crystals are joined together into one supercluster.
+\item Repeat starting from step 1.
+\end{enumerate}
+
