@@ -11,6 +11,10 @@
 \SetWatermarkLightness{0.9}
 \SetWatermarkFontSize{60cm}
 \usepackage{multirow}
+\usepackage{tabulary}
+\usepackage{rotating}
+\usepackage{cleveref}
+\usepackage{graphicx}
 
 % my commands
 \newcommand{\rnine}{\ensuremath{R_{9}}\xspace}
@@ -45,7 +49,11 @@
 \renewcommand{\GeV}{GeV\xspace}
 \renewcommand{\TeV}{TeV\xspace}
 \renewcommand{\j}{\ensuremath{\mathrm{j}}\xspace}
-%\newcommand{\fb}{fb\ensuremath{^{-1}}\xpsace}
+\newcommand{\ea}{\ensuremath{\epsilon\times\alpha}\xspace}
+\newcommand{\sigeff}{\ensuremath{\sigma_{\mathrm{eff}}}\xspace}
+\newcommand{\sigFW}{\ensuremath{\sigma_{\mathrm{FW}}}\xspace}
+\newcommand{\fbinv}{fb\ensuremath{^{-1}}\xpsace}
+\newcommand{\NLL}{\ensuremath{-2\Delta\mathrm{LL}}\xspace}
 \newcommand{\refrqd}{\red{[REF!]}}
 % --- acros ---
 \renewcommand{\LHC}{\ac{LHC}\xspace}
@@ -72,8 +80,11 @@
 \newcommand{\ggH}{\ac{ggH}\xspace}
 \newcommand{\VBF}{\ac{VBF}\xspace}
 \newcommand{\VH}{\ac{VH}\xspace}
+\newcommand{\WH}{\ac{WH}\xspace}
+\newcommand{\ZH}{\ac{ZH}\xspace}
 \newcommand{\ttH}{\ac{ttH}\xspace}
-
+\newcommand{\FWHM}{\ac{FWHM}\xspace}
+\newcommand{\POI}{\ac{POI}\xspace}
 
 %% You can set the line spacing this way
 %\setallspacing{double}
@@ -113,13 +124,13 @@ citecolor = blue
 
 %% Start the content body of the thesis
 \begin{mainmatter}
-  \input{ch1_intro_theory/ch1_intro_theory}
-  \input{ch2_cms_exp/ch2_cms_exp}
-  \input{ch3_comm_anal_comps/ch3_comm_anal_comps}
-  \input{ch4_selec_and_cats/ch4_selec_and_cats}
+  %\input{ch1_intro_theory/ch1_intro_theory}
+  %\input{ch2_cms_exp/ch2_cms_exp}
+  %\input{ch3_comm_anal_comps/ch3_comm_anal_comps}
+  %\input{ch4_selec_and_cats/ch4_selec_and_cats}
   \input{ch5_anal_and_results/ch5_anal_and_results}
-  \input{ch6_spin_anal/ch6_spin_anal}
-  \input{ch7_concs/ch7_concs}
+  %\input{ch6_spin_anal/ch6_spin_anal}
+  %\input{ch7_concs/ch7_concs}
 \end{mainmatter}
 
 %% Produce the appendices

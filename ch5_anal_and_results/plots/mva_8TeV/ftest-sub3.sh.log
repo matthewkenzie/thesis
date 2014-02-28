@@ -1,0 +1,183 @@
+Sender: LSF System <lsfadmin@lxbsp1542>
+Subject: Job 505916413: </afs/cern.ch/work/n/nckw/hgg/hgg_final/CMSSW_6_1_2/src/h2gglobe/BackgroundProfileFitting/mva_8TeV/ftest-sub3.sh> in cluster batch Done
+
+Job </afs/cern.ch/work/n/nckw/hgg/hgg_final/CMSSW_6_1_2/src/h2gglobe/BackgroundProfileFitting/mva_8TeV/ftest-sub3.sh> was submitted from host <lxplus431> by user <nckw> in cluster <batch>.
+Job was executed on host(s) <lxbsp1542>, in queue <8nh>, as user <nckw> in cluster <batch>.
+</afs/cern.ch/user/n/nckw> was used as the home directory.
+</afs/cern.ch/work/n/nckw/hgg/hgg_final/CMSSW_6_1_2/src/h2gglobe/BackgroundProfileFitting> was used as the working directory.
+Started at Wed Feb 26 18:01:56 2014
+Results reported at Wed Feb 26 18:03:17 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/afs/cern.ch/work/n/nckw/hgg/hgg_final/CMSSW_6_1_2/src/h2gglobe/BackgroundProfileFitting/mva_8TeV/ftest-sub3.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :     15.86 sec.
+    Max Memory :      1116 MB
+    Max Swap   :      1513 MB
+
+    Max Processes  :         6
+    Max Threads    :         7
+
+The output (if any) follows:
+
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/nckw/505916413> on <lxbsp1542.cern.ch>
+
+Warning in <TClassTable::Add>: class RooExponentialSum already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLawSum already in TClassTable
+Warning in <TClassTable::Add>: class PdfModelBuilder already in TClassTable
+Warning in <TClassTable::Add>: class ProfileMultiplePdfs already in TClassTable
+SaveMultiPdf? 1
+Warning in <TClass::TClass>: no dictionary for class pair<string,string> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SMatrix<double,6,6,ROOT::Math::MatRepStd<double,6,6> > is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::MatRepStd<double,6,6> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SVector<double,6> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SMatrix<double,7,7,ROOT::Math::MatRepStd<double,7,7> > is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::MatRepStd<double,7,7> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SVector<double,7> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SMatrix<double,4,4,ROOT::Math::MatRepStd<double,4,4> > is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::MatRepStd<double,4,4> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SVector<double,4> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SMatrix<double,5,5,ROOT::Math::MatRepStd<double,5,5> > is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::MatRepStd<double,5,5> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SVector<double,5> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SMatrix<double,3,3,ROOT::Math::MatRepStd<double,3,3> > is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::MatRepStd<double,3,3> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SVector<double,3> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SMatrix<double,2,2,ROOT::Math::MatRepStd<double,2,2> > is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::MatRepStd<double,2,2> is available
+Warning in <TClass::TClass>: no dictionary for class ROOT::Math::SVector<double,2> is available
+	 Bernstein 1 0 246846 -493693 0
+ F-test Prob(chi2>chi2(data) == 0
+	 Bernstein 2 246846 244581 4531 0
+ F-test Prob(chi2>chi2(data) == 8.20714e-103
+	 Bernstein 3 244581 244349 463.528 8.20714e-103
+ F-test Prob(chi2>chi2(data) == 1.37762e-11
+	 Bernstein 4 244349 244326 45.7009 1.37762e-11
+ F-test Prob(chi2>chi2(data) == 0.013906
+	 Bernstein 5 244326 244323 6.05004 0.013906
+ F-test Prob(chi2>chi2(data) == 0.300221
+	 Bernstein 6 244323 244323 1.07321 0.300221
+Determining Envelope Functions for Family Bernstein, cat 3
+Upper end Threshold for highest order function 0.1
+	 Bernstein 1 0 246846 -493693 0
+Calculating GOF for pdf ext, using 2 fitted parameters
+Chi2 in Observed =  5002.66
+p-value  =  0
+	 Bernstein 2 246846 244581 4531 0
+Calculating GOF for pdf ext, using 3 fitted parameters
+Chi2 in Observed =  824.806
+p-value  =  7.05458e-47
+	 Bernstein 3 244581 244349 463.528 8.20714e-103
+Calculating GOF for pdf ext, using 4 fitted parameters
+Chi2 in Observed =  375.431
+p-value  =  0.0120243
+Adding to Envelope env_pdf_3_8TeV_bern3 0.0120243 2xNLL + c is 488702
+	 Bernstein 4 244349 244326 45.7009 1.37762e-11
+Calculating GOF for pdf ext, using 5 fitted parameters
+Chi2 in Observed =  329.621
+p-value  =  0.274184
+Adding to Envelope env_pdf_3_8TeV_bern4 0.274184 2xNLL + c is 488657
+	 Bernstein 5 244326 244323 6.05004 0.013906
+Calculating GOF for pdf ext, using 6 fitted parameters
+Chi2 in Observed =  324.181
+p-value  =  0.33414
+Adding to Envelope env_pdf_3_8TeV_bern5 0.33414 2xNLL + c is 488652
+	 Bernstein 6 244323 244323 1.07321 0.300221
+Calculating GOF for pdf ext, using 7 fitted parameters
+Chi2 in Observed =  323.278
+p-value  =  0.332523
+--------------------------
+	 Exponential 1 0 244430 -488860 0
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+ F-test Prob(chi2>chi2(data) == 4.98911e-47
+	 Exponential 3 244430 244323 213.228 4.98911e-47
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+ F-test Prob(chi2>chi2(data) == 1
+	 Exponential 5 244323 244334 0 1
+Determining Envelope Functions for Family Exponential, cat 3
+Upper end Threshold for highest order function 0.1
+--------------------------
+	 Exponential 1 0 244430 -488860 0
+Calculating GOF for pdf ext, using 2 fitted parameters
+Chi2 in Observed =  528.55
+p-value  =  1.08052e-12
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+	 Exponential 3 244430 244323 213.228 4.98911e-47
+Calculating GOF for pdf ext, using 4 fitted parameters
+Chi2 in Observed =  324.38
+p-value  =  0.360588
+Adding to Envelope env_pdf_3_8TeV_exp3 0.360588 2xNLL + c is 488651
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+	 Exponential 5 244323 244334 0 1
+Calculating GOF for pdf ext, using 6 fitted parameters
+Chi2 in Observed =  345.403
+p-value  =  0.107486
+	 PowerLaw 1 0 244325 -488650 0
+ERROR -- addPowerLaw -- only odd number of params allowed
+Warning -- Fit status for ftest_pdf_3_8TeV_pow3 at 1
+ F-test Prob(chi2>chi2(data) == 0.214238
+	 PowerLaw 3 244325 244324 3.08134 0.214238
+Determining Envelope Functions for Family PowerLaw, cat 3
+Upper end Threshold for highest order function 0.1
+	 PowerLaw 1 0 244325 -488650 0
+Calculating GOF for pdf ext, using 2 fitted parameters
+Chi2 in Observed =  328.467
+p-value  =  0.331079
+Adding to Envelope env_pdf_3_8TeV_pow1 0.331079 2xNLL + c is 488652
+ERROR -- addPowerLaw -- only odd number of params allowed
+	 PowerLaw 3 244325 244323 3.75913 0.152657
+Calculating GOF for pdf ext, using 4 fitted parameters
+Chi2 in Observed =  324.243
+p-value  =  0.362587
+	 Laurent 1 0 244324 -488648 0
+ F-test Prob(chi2>chi2(data) == 0.33049
+	 Laurent 2 244324 244324 0.946979 0.33049
+Determining Envelope Functions for Family Laurent, cat 3
+Upper end Threshold for highest order function 0.1
+	 Laurent 1 0 244324 -488648 0
+Calculating GOF for pdf ext, using 2 fitted parameters
+Chi2 in Observed =  326.339
+p-value  =  0.361596
+Adding to Envelope env_pdf_3_8TeV_lau1 0.361596 2xNLL + c is 488650
+	 Laurent 2 244324 244324 0.946446 0.330626
+Calculating GOF for pdf ext, using 3 fitted parameters
+Chi2 in Observed =  325.119
+p-value  =  0.364607
+// ------------------------------------------------------------------------- //
+Created MultiPdf CMS_hgg_cat3_8TeV_bkgshape, in Category 3 with a total of 6 pdfs
+RooArgList::store = (env_pdf_3_8TeV_bern3,env_pdf_3_8TeV_bern4,env_pdf_3_8TeV_bern5,env_pdf_3_8TeV_exp3,env_pdf_3_8TeV_pow1,env_pdf_3_8TeV_lau1)
+Best Fit Pdf = 5, env_pdf_3_8TeV_lau1
+// ------------------------------------------------------------------------- //
+ Simple check of index 5
+[#0] ERROR:ObjectHandling -- RooWorkSpace::import(multipdf) ERROR importing object named pdfindex_3_8TeV: another instance with same name already in the workspace and no conflict resolution protocol specified
+[#0] ERROR:ObjectHandling -- RooWorkspace::import(multipdf) ERROR dataset with name roohist_data_mass_cat3 already exists in workspace, import aborted
+Recommended options
+Cat 3
+	Bernstein - 5
+	Exponential - 3
+	Laurent - 1
+	PowerLaw - 1
+
+Job finished at Wed Feb 26 18:02:37 CET 2014 on node 
+ under linux version Scientific Linux CERN SLC release 5.10 (Boron)
+
+
+CERN statistics: This job used 0:00:29 NCU hours (29 NCU seconds)
+
+CERN statistics: This job used 0:00:29 KSI2K hours (29 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU
