@@ -1,23 +1,27 @@
 \chapter{Analysis and Results}
 \label{chap:results}
-\chapterquote{I'm a bus}
-{Darren Burton 1987--2013}
+\chapterquote{Data, data, data. I cannot make bricks without clay}
+{The Adventures of Sherlock Holmes.}
 
-\section{Description}
+The analysis culminates in the search for a \SM like Higgs boson decaying into two photons in the mass range $110\leq\mH\leq 150$~\GeV. This is done by making use of two variables which have very different shapes in signal and background. The first is the invariant mass of the two photons, \mgg, relative to the expected signal position, \mH, for which the signal is peaking and the background is smoothly falling. The second is the output of the diphoton \BDT discussed in Sec.~\ref{sec:diphoton_bdt} in which the signal peaks towards positive values and the background peaks towards negative values. In the \SMVA analysis these two variables are combined and used to extract a number of analysis bins (see Sec.~\ref{sec:inclusive_cats_sideband}) in which events are counted. In the \MFM events are coarsely categorised according the diphoton \BDT output and then parametrically fitted as a function of the invariant mass \mgg. The methods used for extracting the background and signal expectations for both analyses are described in the following chapter. The important characteristics which define the signal are its yield relative to the \SM expectation, $\mu=\musm$, and its position, \mH.
 
-This would include a detailed description of the signal and background models used and the systematics included. I would describe the statistical tools used such as hypothesis testing with a test statistic and show the results which would include exclusion limits, $p$-values and SM best fit parameters (mass, signal strength, couplings etc.). One of the important considerations of the Hgg analysis is the estimation of the background. This second part of this section will concentrate on presenting an alternate analysis which takes a completely different approach to modeling the background and cross-checks the result above.
-
-The inclusive search range for the analysis is [110,150]. The important characteristics which define the signal are its yield relative to the SM, $\mu$, and its position, \mH.
 % ---- SECTION ----
 \section{Signal modelling}
 \label{sec:signal_model}
 
-  The signal \MC samples (described in Sec.~\ref{sec:mc}) are propagated through the full analysis separately for each production mechanism (\ggH,\VBF,\WH,\ZH,\ttH). Events in the samples are weighted by the relevant \SM cross section, branching ratio, the integrated luminosity and the ``detector" weight which compensates for mismodelling in the \MC such as pileup, the beamspot width and discrepancies between the efficiency in data and \MC as measured in \Zee and \Zmumugamma decays. In this way the efficiency and acceptance of the detector, selection and categorisation is mapped by the \MC samples and the total number of expected \SM signal events is given by the sum of weights of the sample. The \MC is generated separately for hypothesised Higgs' masses, \mH, in the search range of $110 \leq m_{H} \leq 150$~\GeV in steps of 5~\GeV. For any intermediate points the signal model is interpolated.
+The signal \MC samples (described in Sec.~\ref{sec:mc}) are propagated through the full analysis separately for each production mechanism (\ggH,\VBF,\WH,\ZH,\ttH). Events in the samples are weighted by the relevant \SM cross section, branching ratio, the integrated luminosity and the ``detector" weight which compensates for mismodelling in the \MC such as pileup, the beamspot width and discrepancies between the efficiency in data and \MC as measured in \Zee and \Zmumugamma decays. In this way the efficiency and acceptance of the detector, selection and categorisation is mapped by the \MC samples and the total number of expected \SM signal events is given by the sum of weights of the sample. The \MC is generated separately for hypothesised Higgs masses, \mH, in the search range of $110 \leq m_{H} \leq 150$~\GeV in steps of 5~\GeV. For any intermediate points the signal model is interpolated. The efficiency times acceptance of the analysis selection for a \SM Higgs boson is shown in Fig.~\ref{fig:effacc} as a function of the Higgs boson mass, \mH. For a Higgs at \mH=125~\GeV the $\ea=48.63\%$ (49.30\%) for the 7 (8)~\TeV datasets.
+
+\begin{figure}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/effAcc7TeV.pdf}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/effAcc8TeV.pdf}
+  \caption{The efficiency$\times$acceptance of the analysis selection for a \SM Higgs signal as a function of Higgs mass for the 7~\TeV (left) and 8~\TeV datasets.}
+  \label{fig:effacc}
+\end{figure}
 
 \subsection{Mass factorised analysis}
 \label{sec:signal_mfm}
 
-The diphoton invariant mass signal shape is modelled in a fully parametric way for the \MFM. A separate model, consisting of a sum of Gaussians, is constructed for each production mechanism and each event class where the two cases of right vertex and wrong (misidentified) vertex are fitted separately. The number of Gaussians used in the sum varies and can be as many as five although usually two or three provides an accurate description of the signal shape. A Gaussian sum is used because it has been found that this most accurately represents the shape of the invariant mass in signal. Many of the event classes contain a mixture of events from the resolution phase space (i.e.~there are mixtures of barrel/endcap and converted/unconverted photons) so by fitting with a sum of Gaussians these different components, which are in themselves Gaussian or close to Gaussian distributed, are accounted for. Some of the event classes for particular production mechanism contain rather low \MC statistics (for example the lepton tagged category for signal produced by gluon fusion) and so fewer Gaussians are used in these cases. Clearly one expects a low signal yield for these particular cases and so a very accurate description of the shape is unneccessary. By allowing all the parameters in the Gaussian sums to float, including the means of the different Gaussian components, one obtains a parametrisation that models both the peak and tails of the signal distribution accurately. These fits are carried out at each, \mH, where signal \MC is available and then the individual fit parameters are linearly interpolated such that the shape is defined for any \mH in the range $[110,150]$~\GeV and the model now includes a floating parameter for the mass of the Higgs which can be fit to data. The right and wrong vertex shapes are then summed, with the relative fraction of right/wrong vertex events, to give a unique signal shape model in each event class for each production process. The signal normalisation, i.e.~the expected number of \SM signal events, is obtained by linearly interpolating the efficiency $\times$ acceptance, \ea, for each event class and production process as calcualted at the \mH points for which there is \MC. The total signal shape, summed over event classes and production mechanisms, is shown in Fig.~\ref{fig:sig_shape}. The total number of expected signal events, as well as the \sigeff (minimum interval containing 68.3\% of the distribution) and the \sigFW (full with at half the maximum divided by 2.35), for each event class are shown in Table~\ref{tab:sig_shape}. This information is additonally represented diagramatically in Fig.~\ref{fig:signal_composition}.
+The diphoton invariant mass signal shape is modelled in a fully parametric way for the \MFM. A separate model, consisting of a sum of Gaussians, is constructed for each production mechanism and each event class where the two cases of right vertex and wrong (misidentified) vertex are fitted separately. The number of Gaussians used in the sum varies and can be as many as five although usually two or three provides an accurate description of the signal shape. A Gaussian sum is used because it has been found that this most accurately represents the shape of the invariant mass in signal. Many of the event classes contain a mixture of events from the resolution phase space (i.e.~there are mixtures of barrel/endcap and converted/unconverted photons) so by fitting with a sum of Gaussians these different components, which are in themselves Gaussian or close to Gaussian distributed, are accounted for. Some of the event classes for particular production mechanisms contain rather low \MC statistics (for example the lepton tagged category for signal produced by gluon fusion) and so fewer Gaussians are used in these cases. Clearly one expects a low signal yield for these particular cases and so a very accurate description of the shape is unneccessary. By allowing all the parameters in the Gaussian sums to float, including the means of the different Gaussian components, one obtains a parametrisation that models both the peak and tails of the signal distribution accurately. These fits are carried out at each value of \mH where signal \MC is available and then the individual fit parameters are linearly interpolated such that the shape is defined for any \mH in the range $[110,150]$~\GeV and the model now includes a floating parameter for the mass of the Higgs which can be fit to data. The right and wrong vertex shapes are then summed, with the relative fraction of right/wrong vertex events, to give a unique signal shape model in each event class for each production process. The signal normalisation, i.e.~the expected number of \SM signal events, is obtained by linearly interpolating the efficiency $\times$ acceptance, \ea, for each event class and production process as calcualted at the \mH points for which there is \MC. The total signal shape, summed over event classes and production mechanisms, is shown in Fig.~\ref{fig:sig_shape}. The total number of expected signal events, as well as the \sigeff (minimum interval containing 68.3\% of the distribution) and the \sigFW (full with at half the maximum divided by 2.35), for each event class are shown in Table~\ref{tab:sig_shape}. This information is additonally represented diagramatically in Fig.~\ref{fig:signal_composition}.
 
 \begin{figure}
   \begin{center}
@@ -32,8 +36,8 @@ The diphoton invariant mass signal shape is modelled in a fully parametric way f
   
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.99\textwidth]{ch5_anal_and_results/plots/thesis_signal_7TeV/signalComposition.pdf} \\
-    \includegraphics[width=0.99\textwidth]{ch5_anal_and_results/plots/thesis_signal_8TeV/signalComposition.pdf}
+    \includegraphics[width=0.9\textwidth]{ch5_anal_and_results/plots/thesis_signal_7TeV/signalComposition.pdf} \\
+    \includegraphics[width=0.9\textwidth]{ch5_anal_and_results/plots/thesis_signal_8TeV/signalComposition.pdf}
     \caption{The expected composition and resolution of the signal for a \SM Higgs at 125~\GeV in the 7~\TeV dataset (top) and 8~\TeV dataset (bottom). The left diagram shows the break down of the signal in each event class by category: \ggH (green), \VBF (red), \WH (turqoise), \ZH (blue), \ttH (orange). The middle shows the expected resolution in each event class in terms of \sigeff and \sigFW. The right diagram shows the expected signal over signal plus background ratio in a window of $\pm\sigeff$ around \mH=125~\GeV.}
     \label{fig:signal_composition}
   \end{center}
@@ -48,14 +52,14 @@ The signal model shape is mapped by the categorisation scheme described in Sec.~
 \section{Background modelling}
 \label{sec:background_model}
 
-The background is the most significant unknown in this analysis. The size of the background relative to the signal is large and the invariant mass shape of the backgroud is poorly modelled in \MC. It is known to be a smoothly varying and falling spectrum, however various detector effects such as reconstructions, energy resolution and triggering which are imperfectly modelled in the \MC can distort the shape. Furthermore the contribution of fake photons to the background varies as a function of \mgg and this is not well modelled in the theory or detector simulation. One of the main motivations for having the two analyses described here is that they have completely different ways of measuring the background and consequently serve to cross check each other. Both analyses use entirely data driven methods for extracting the background.  
+The background is the most significant unknown in this analysis. The size of the background relative to the signal is large and the invariant mass shape of the backgroud is poorly modelled in \MC. It is known to be a smoothly varying and falling spectrum, however various detector effects such as reconstruction, energy resolution and triggering which are imperfectly modelled in the \MC can distort the shape. Furthermore the contribution of fake photons to the background varies as a function of \mgg and this is not well modelled in the theory or detector simulation. One of the main motivations for having the two analyses described here is that they have completely different ways of measuring the background and consequently serve to cross check each other. Both analyses use entirely data driven methods for extracting the background.  
 
 \subsection{Mass factorised analysis}
 \label{sec:envelope}
 
-A fairly unique and novel way of estimating the background, given we have no \emph{a priori} of its shape, has been developed specifically for this analysis. The method, laterly referred to as the ``envelope" method, attempts to parametrise our ignorance of the background shape in a similar way to what is done for normal nuisance parameters when using the negative log likelihood to obtain the best fit value of a quantity and its error using frequentist statistical methods~\cite{FredJames}. To explain better the method let us first consider the simplified case of fitting a probability distribution to a dataset where the probability distribution contains one physical parameter of interest, $x$, (which could for example represent the signal mass) and one nuisance parameter, $\theta$, (which could represent the energy scale uncertainty). In this case we can calculate twice the negative log likelihood, \NLL, at different values of $x$ whilst at each point minmising the likelihood with respect to \theta. 
+A fairly unique and novel way of estimating the background, given we have no \emph{a priori} of its shape, has been developed specifically for this analysis. The method, laterly referred to as the ``envelope" method, attempts to parametrise our ignorance of the background shape in a similar way to what is done for normal nuisance parameters when using the negative log likelihood to obtain the best fit value of a quantity and its error using frequentist statistical methods~\cite{FredJames}. To explain better the method let us first consider the simplified case of fitting a probability distribution to a dataset where the probability distribution contains one physical \POI, $x$, (which could for example represent the signal mass) and one nuisance parameter, $\theta$, (which could represent the energy scale uncertainty). In this case we can calculate twice the negative log likelihood, \NLL, at different values of $x$ whilst at each point minmising the likelihood with respect to \theta. 
 This would give us the best fit value of $x$ and its error given the variation allowed by \theta. This is represented in Fig.~\ref{fig:envelope_explain1} by the solid black line. The best fit value of $x$ is given at the minimum of the likelihood and the 1$\sigma$ error interval defined as the range where \NLL$\leq1$. This is known as the ``profile likelihood method" as the nuisance parameter, $\theta$, is ``profiled" in the fit. In other words, for a given value of $x$ the value of $\theta$ which minimizes the likelihood is chosen. One can redo the likelihood scan fixing $\theta$ to its value at the best fit and this gives a narrower likelihood curve, demonstrated by the solid blue line in Fig.~\ref{fig:envelope_explain1}. In this case the error, the range for which \NLL$\leq1$, is smaller as one would expect given the nuisance parameter is now frozen. This is equivalent to the statistical error only, as the systematic component parametrised by $\theta$ is ignored. One can now also build up a multitude of curves by setting the nuisance parameter $\theta$ to arbitary values and rescanning the likelihood, these are shown in Fig.~\ref{fig:envelope_explain1} as the red dashed lines. It should be clear that by taking the ``envelope" around the potentially infinite set of red curves one can reproduce the black line representing the full profile fit providing the full $\theta$ phase space is sampled enough times. 
-This is shown in the figure by the magenta line which becomes smoother as more sets of $\theta$ values are chosen. It is worth noting that not all of the red curves (of which there are infinitely many) necessarily have to touch the black line: a very extreme value of $\theta$ will give a bad fit and the corresponding red dashed curve would be off the plot. In this way one could in principal ``reverse-engineer" the profile likelihood method such that the profiling of the nuisance parameter $\theta$ is not done as a continuous minimisation but as a series of discrete minimisations, where the minimum \NLL for a given value of $x$ is taken as the minimum \NLL for this $x$ and all discrete choices of $\theta$ that have been chosen. Clearly, for a case in which the nuisance parameter $\theta$ is continous this is inefficient and unnecessary but it is effective if the nuisance parameter can only take discrete values.
+This is shown in the figure by the magenta line which becomes smoother as more sets of $\theta$ values are chosen. It is worth noting that not all of the red curves (of which there are infinitely many) necessarily have to touch the black line: a very extreme value of $\theta$ will give a bad fit and the corresponding red dashed curve would be off the plot. In this way one could in principal ``reverse-engineer" the profile likelihood method such that the profiling of the nuisance parameter $\theta$ is not done as a continuous minimisation but as a series of discrete minimisations, where the minimum \NLL for a given value of $x$ is taken as the minimum \NLL over all discrete choices of $\theta$ at this value of $x$. Clearly, for a case in which the nuisance parameter $\theta$ is continous this is inefficient and unnecessary but it is effective if the nuisance parameter can only take discrete values.
 
 \begin{figure}
 \begin{center}
@@ -65,8 +69,8 @@ This is shown in the figure by the magenta line which becomes smoother as more s
 \end{center}
 \end{figure}
 
-In this analysis the background parametrisation is entirely unknown. So in principle if we could sample the infinite phase space of possible function choices we could use the method just described to profile the choice. In this way we find the function that minimises the likelihood for any given value of the parameter of interest $x$. This will then pick the function which fits the data best (minimises the likelihood) and can enlarge the error.
-Lets now consider a simplified case of the real situation. Imagine we have a large steeply falling background which can be parametrised by two possible choices: a single term power law, $x^{-p}$, and a single term exponential, $e^{-px}$. We have a small Gaussian like signal component and our \POI is the size of this single, $\mu$. The best fit distributions are shown for a generated pseduo-dataset in the left hand plot of Fig.~\ref{fig:envelope_explain2}. The right hand plot of Fig.~\ref{fig:envelope_explain2} shows the likelihood scan across the parameter $\mu$, which represents the size of the signal, for the two chosen functions, the envelope is shown as the green dashed line. One can see that the global best fit is at a value of $\mu=2.83$ with the power law function. The $1\sigma$ error (the point where the \NLL crosses 1) is unchanged with respect to the result using the power law function alone. The $2\sigma$ error (the point where the \NLL crosses 4) however is increase with respect to the result using the power law funciton alone. This is the principal behind the ``envelope" background method. One can see that it is analagous to using a normal nuisance parameter which can only take discrete values. In this case the discrete values index which function is chosen. It means that a specific function choice never has to be made and the error on a given value will increase to account for situations where two or more functions give a similarly good fit. However, there is one more important feature of the method which must be discussed before it can be applied to the data.
+In this analysis the background parametrisation is entirely unknown. So in principle if we could sample the infinite phase space of possible function choices we could use the method just described to profile the choice. In this way we find the function that minimises the negative likelihood for any given value of the parameter of interest $x$. This will then pick the function which fits the data best (minimises the neagtive likelihood) but can enlarge the error given that many different functions are tried.
+Lets now consider a simplified case of the real situation. Imagine we have a large steeply falling background which can be parametrised by two possible choices: a single term power law, $x^{-p}$, and a single term exponential, $e^{-px}$. We have a small Gaussian like signal component and our \POI is the size of this single, $\mu$. The best fit distributions are shown for a generated pseduo-dataset in the left hand plot of Fig.~\ref{fig:envelope_explain2}. The right hand plot of Fig.~\ref{fig:envelope_explain2} shows the likelihood scan across the parameter $\mu$, which represents the size of the signal, for the two chosen functions (blue and redlines). The envelope (the minimum of the negative likelihood across both function choices) is shown as the green dashed line. One can see that the global best fit is at a value of $\mu=2.83$ with the power law function. The $1\sigma$ error (the point where the \NLL crosses 1) is unchanged with respect to the result using the power law function alone. The $2\sigma$ error (the point where the \NLL crosses 4) however is increase with respect to the result using the power law funciton alone. This is the principal behind the ``envelope" background method. One can see that it is analagous to using a normal nuisance parameter which can only take discrete values. In this case the discrete values index which function is chosen. It means that a specific function choice never has to be made and the error on a given value will increase to account for situations where two or more functions give a similarly good fit. However, there is one more important feature of the method which must be discussed before it can be applied to the data.
 
 \begin{figure}
   \begin{center}
@@ -271,30 +275,268 @@ The distribution for the data, background (along with the $pm1\sigma$ and $\pm2\
 \section{Systematic Uncertainties}
 \label{sec:systematics}
 
-There are several sources of systematic uncertainty in the analysis and these are described in the following section. These come in three borad categories; those associated to individual photons, those associated to events individual events, those associated to specific tagged event classes. The first type, those associated to individual photons, are implemented as Gaussian nuisance parameters which affect the position, shape and normalisation of the signal. The latter two types are implemented as log normal nuisance parameters which affect the normalisation of the signal and the relative signal yield in each event class. Log normal constraints are chosen for the latter so that the nuisance term cannot go negative.
+There are several sources of systematic uncertainty in the analysis and these are described in the following section. These come in three borad categories; those associated to individual photons, those associated to individual events and those associated to specific tagged event classes. The systematics get applied to the model in different ways depending on the level of correlation required between them. The \MFM analysis has a more precise correlation model between photon energy uncertainties and the mass shape, predominately because this is used for the main result and is required to provide a measurement of the observed Bosons' mass. For the \SMVA this is somewhat simplified as the analysis only serves as cross check of the categorisation and background estimation for which the important systematics are on the overall signal yield and not so much its shape or position. The way the systematics are implemented in the two analyses is explained below afterwhich there is a description of the individual uncertainties used. Their is a summary of the main groups of systematic uncertainty and their expected contribution to the uncertainty on the signal strength, $\sigma/\sigma_{\mathrm{SM}}$, at the end of the section in Table~\ref{tab:systematics}.
 
-\subsection{Systematic uncertainties related to individual photon errors}
+\subsection{Implementation of the systematic uncertainties}
 
-These uncertainties are applied to individual photons and their affect is propagated through to the invariant mass shape and normalization of the signal for each production process and event class. The methodology for this is as follows,
+\subsubsection{Mass Factorised Analysis}
+
+In the \MFM uncertainties are implemented in two different ways. The first type are generally associated to the photon energy scale and resolution and the diffrences between photons and electrons. These are implemented as Gaussian nuisance parameters which affect the position, shape and normalisation of the signal probability distribution function. The second type are uncertainties which result in events being misclassified or cut out of the analysis. These are implemented as log normal nuisance parameters which affect the normalisation of the signal and the relative signal yield in each event class. Log normal constraints are chosen for the latter so that the nuisance term cannot go negative. These unceratinties are somewhat easier to understand as they simply dictate that events can migrate between categories and that the overall normalisation of the signal can vary due to the theoretical cross section, luminosity measurement etc. The former type is perhaps slightly harder to understand as these uncertainties are applied to individual photons and their affect is propagated through to the invariant mass shape and normalization of the signal for each production process and event class. The methodology for this is as follows,
 
 \begin{itemize}
-  \item Each uncertainty is designed to address a specific class of photons with similar properties. For example one uncertainty might be the energy scale uncertainty for unconverted photons in the barrel. We can label this class $c$ and the uncertainty for this class $\theta_{c}$ which is the nuisance parameter that gets implemented in the signal model.
+  \item Each uncertainty is designed to address a specific class of photons with similar properties. For example one uncertainty might be the energy scale uncertainty for unconverted photons in the barrel. We can label this class $c$ and the uncertainty for this class $\theta_{c}$ which is the nuisance parameter that enters the signal model.
   \item Within the class $c$ there may be several sub groups of photons which have different uncertainties. For example photons in the central barrel and outer barrel. We will label this uncertainty as $\sigma_{s}$.
-  \item The full analysis is run through with each photon in class $c$ given a random shift by its individual uncertainty $\sigma_{s}$ and all other photons left alone 
-  \item 
+  \item The full analysis is run through with each photon in class $c$ given a random shift by its individual uncertainty $\sigma_{s}$ and all other photons left alone. 
+  \item The distribution of the diphoton invariant mass shape for the signal is compared when the random shift above is applied and when it is not. The relative difference between the mean, effective width and overall rate of these two shapes is calculated, labelled $k_{\mu}$, $k_{\sigma}$ and $k_{r}$ respectively, for each signal process and analysis event class separately. This then provides a measure of the $1\sigma$ systematic effect on the signal mass shape of the uncertainty $\theta_{c}$.
+  \item Given there are several nuisance parameters $\theta$ for which this is done, the signal model Gaussian parameters then get reparametrised as follows;
+    \begin{flalign}
+      & \mbox{Gaussian mean:} \;\;\;\;\; \mu(\mH) = \hat{\mu}(\mH)\Biggl(1+\displaystyle\sum_{c}k_{\mu c}\theta_{c}\Biggr) & \\
+      & \mbox{Gaussian sigma:} \;\;\;\; \sigma(\mH) = \hat{\sigma}(\mH)\Biggl(1+\sqrt{\displaystyle\sum_{c}k_{\sigma c}^{2}\theta_{c}^{2}}\Biggr) & \\
+      & \mbox{Signal rate:} \;\;\;\;\;\;\;\;\;\;\; r(\mH) = \sigma_{\mathrm{xs}}\cdot BR \cdot \epsilon\cdot\alpha \cdot L\Biggl(1+\displaystyle\sum_{c}k_{r}\theta_{c}\Biggr) &
+    \end{flalign}
 \end{itemize}
 
+The final event classes contain mixtures of photons from several different regions (in \eta and \rnine) which all have different associated uncertainties. Using this method the full correlation between the individual photon uncertainties is completey mapped onto the final invariant mass signal shape of each analysis category.
 
-Because the final event classes contain mixtures of photons from several different regions (in \eta and \rnine) the full correlation between the individual photon uncertainties is mapped onto the final invariant mass signal shape of each analysis category.  
+\subsubsection{Sideband Analysis}
 
-\textit{Photon energy scale}
-In Section~\ref{sec:photon_energy} a method for correcting the photon energy using \Zee decays was described. Although the statistical uncertainties on these corrections is small, there are some data/\MC discrepancies that gives rise to a systematic uncertainty. This uncertainty is individually calculated for the 8 categories (4 in \eta and 2 in \rnine) for which the energy scale correction is applied. The uncertainty is then propagated   
+As the sideband analysis is simply a cut and count experiment across 15 (19) bins in the 7 (8)~\TeV datasets the uncertainties are just implemented as normalisation errors effecting the yield in each bin. These can arise from the energy scale, resolution, reconstruction efficiency etc.~and result in event migrations between bins or arise from the theoretical cross section, luminosity measurement etc.~and effect the overall signal normalisation.
 
-\textit{Photon energy resolution}
+\subsection{Systematic uncertainties related to individual photons}
 
-\section{Statistics}
-\subsection{Use of the Likelihood function as a test statistic}
+\subsubsection{Photon energy scale}
+In Section~\ref{sec:photon_energy} a method for correcting the photon energy using \Zee decays was described. Although the statistical uncertainties on these corrections is small, there are some data/\MC discrepancies that gives rise to a systematic uncertainty. This uncertainty is individually calculated for the 8 categories (4 in \eta and 2 in \rnine) for which the energy scale correction is applied. There are four nuisance parameters for each of the 7 and 8~\TeV datasets propagated to the signal model representing the energy scale uncertainty for barrel/endcap, converted/unconverted photons.
 
-\section{Results of the mass factorised analysis}
+\subsubsection{Photon energy resolution}
+Section~\ref{sec:photon_energy} also describes the method used to smear the \MC such that the energy resolution matches that observed in data using the \Zee control sample. As above there are four nuisance parameters representing the stocastic smearing uncertainty for each of the 7 and 8~\TeV datasets for barrel/endcap, converted/uncoverted photons. Additionally for converted/unconverted photons in the barrel there is an additional pair of uncertainties for the constant smearing term.
 
-\section{Results of the sideband analysis}
+\subsubsection{Energy scale uncertainty due to differences between electron and photon reconstruction}
+As the uncertainties, and the corresponding corrections, to the energy scale and resolution described above are derived from the \Zee decay an important source of systematic uncertainty arises from differences between electrons and photons which are not well modelled by the \MC. The effect which is most significant is due to an imperfect description of the tracker and servicing material between the beampipe and the \ECAL in the simulation. Studies of photon conversions, electron bremstraulung and pion scattering suggest a material defecit in the simulation of up to 10\% in some areas of the \ECAL. The uncertainty on the energy scale is assessed by using specialised \MC samples in which the tracking material budget is increased by 10\% and 20\% in 8 categories (4 in \eta and 2 in \rnine). Two nuisance parameters, which get correlated across the 7 and 8~\TeV datasets, are implemented representing the energy scale uncertainty due to the material mismodelling in the central barrel, $|\eta|<1$, and the rest of the barrel.
+
+A futher difference between electron and photons which is not modelled in the simulation is the variation in the amount of scintillation light which reaches the photodetector given the longitudinal position in the crystal at which the light is emitted. Typically the peak position of the amount of scintillation light for electron showers is earlier in the crystal than photon showers and this is assumed as uniform in the simulation. A single correlated nuisance parameter is applied to account for this effect.
+
+Finally one further systematic is applied to account for improvements made in more recent versions of the simulation which more accurately model electron bremstraulung at low \pT and photon conversion at high \pT. An additional correlated nuisance parameter is applied to account for this effect.
+
+\subsubsection{Photon preselection efficiency}
+
+The efficiency of the preselection described in Sec.~\ref{sec:photon_presel} is measured using \Zee decays in data and \MC. The \MC efficiency is then corrected such that is matches the data and this incurs a systematic uncertainty which gets applied as an overall normalization on the expected signal event yield in each analysis category. 
+
+\subsubsection{Photon identification BDT}
+
+The photon identification BDT output (described in Sec.~\ref{sec:pho_id_mva}) is an important input to the diphoton BDT which is used to classify events. A shift in the photon ID BDT output, due to inaccurate simulation in the training samples, can have a direct effect on the ouput of the diphoton event BDT which in turn will lead to an event being misclassified; either it will fail the lower edge cut or it will go into a different analysis category. By examining the variation in the photon ID output for \Zee electron \Zmumugamma photons and diphoton events in data with \mgg>160~\GeV it is found that applying a systematic shift of 0.01 to the output covers any discrepancies between data and \MC. This shift is applied and then propagated through to the diphoton \BDT which in turn results in an uncertainty implemented as relative yield change across event class (in other words a category migration).
+
+\subsubsection{Photon resolution estimate}
+
+The most imporant input to the diphoton BDT, the variable with the most discriminating power, is the photon energy resolution estimate. As for the photon ID systematic above the differences between data and \MC are studied for \Zee decay \Zmumugamma decays and high \pT photons and a systematic variation of $\pm10$\% of the nominal value adequately covers any discrepancy. This variation is applied to photons and then propagated through to the diphoton \BDT and as above is implemented as an event migration uncertainty.
+
+\subsection{Systematic uncertainties related to diphoton events}
+
+\subsubsection{Vertex efficiency}
+
+The vertex efficiency in \MC is corrected by a scale factor obtained from the vertex efficiency ratio between data and \MC as measured in \Zmumu events where the muon tracks are ignored (to replicate the situation with photons). The uncertainty associated to this is implemented by changing the relative fraction of the right/wrong vertex signal shape. 
+
+\subsubsection{Trigger efficiency}
+
+The trigger efficiency in \MC is corrected to match the data using \Zee events with a tag and probe technique~\cite{tag_and_probe}. The uncertainty associated to this is implemented as an overall normalisation change in each category.
+
+\subsubsection{Mass scale non-linearity}
+
+Another important consideration when using the \Zee decay as a calibration and control tool in the analysis is not only the differences between electrons and photons but also the difference in the mass scale between the $Z$ ($m_{Z}=91.2$~\GeV~\cite{pdf}) and a Higgs boson at \mH=125~\GeV. Although the absolute difference is not imporant, the respective differences between data and \MC are. This effect is measured by comparing the energy measured from the eleromagnetic shower alone and the \pT from the tracker of electrons as a function of the scalar \ET sum of the two electrons in \Zee decays. This uncertainty is applied as global mass shift, independently in the 7 and 8~\TeV datasets, which has a correlated effect on the signal position in each category.
+
+\subsubsection{Luminosity measurement}
+
+The luminosity measurement and its uncertainty is a \CMS universal value and described in Refs.~\cite{lumi1,lumi2}.
+
+\subsubsection{Theoretical cross section and branching ratio}
+
+The uncertainties on the theoretically predicted \SM Higgs cross section and its branching fraction to two photons are implemented following the recommendations of the LHC Higgs Cross Section Working Group~\cite{LHCHiggsCrossSectionWorkingGroup3}. 
+
+\subsection{Systematic uncertainties related to production mode tagged classes}
+
+\subsubsection{Jet tagging efficiency}
+
+One of the largest uncertainties for measurement of the respective couplings to fermions and bosons of the Higgs boson originates from the complexity in isolating events produced by gluon fusion and those produced by vector boson fusion. As described in Sec.~\ref{sec:exclusive_tags} this is done by tagging jets characteristc of \VBF Higgs decays however there is a large uncertainty involved when additional jets are produced by gluon fusion induced Higgs decays. Using the Stewart-Tackmann procedure~\cite{vbf_syst} the uncertainty on the yield of gluon fusion events in the \VBF tagged event classes is calculated and implemented as a category migration systematic. There are futher effects from the jet energy scale, jet id efficiency and the efficiency of rejecting pile up jets from geniune particles which are taken from Refs.~\cite{jet_energy_corrections,jet_energy_corrs2}. These effect the relative yields of the signal expectation between the \VBF categories and also from the \VBF categories as a whole to the inclusive categories.  
+
+\subsubsection{Lepton, \MET and $b$-tagging efficiency}
+Additional normalisation uncertainties are applied to the exclusive mode categories which account for the efficiency of reconstructing and tagging leptons, \MET and $b$-jets.
+
+\subsection{Summary}
+
+\begin{table}[htbp]
+\caption{Magnitude of the uncertainty on the signal strength, $\musm$, induced by the systematic uncertainties on the signal. These are not final numbers. Would also be nice to have plot of asimov likelihood curve of expected signal strength when adding different components in.}
+\begin{center}
+\begin{tabular}{ l c }
+\hline
+\multirow{2}{*}{\textbf{Systematic uncertainty}} & \textbf{Uncertainty} \\
+ &  \textbf{on $\musm$} \\
+\hline
+\hline
+%%%%%% per photon ----------------
+Energy resolution, scale and resolution estimation & 0.04\\
+\hline
+Trigger, photon preselection, and vertex finding efficiencies& 0.02\\
+\hline
+Uncertainties specific to tagged classes & 0.02\\
+\hline
+Production cross sections, branching fractions, and integrated luminosity & 0.12\\
+\hline
+\hline
+All systematic uncertainties on signal model & 0.15 \\
+\hline
+\end{tabular}
+\end{center}
+\label{tab:sys3}
+\end{table}
+
+\section{Statistical interpretation of the data}
+
+To aid with statistical interpretation of the data it is useful to define two hypotheses to which the data can be compared. These are the background only model and the signal plus background model known as the null hypothesis, $H_{0}$, and the alternate hypothesis, $H_{1}$, respectively. The background model is obtained from the data by profiling the different parametrisation choices, as per the ``envelope" method described in Sec.~\ref{sec:envelope}. The benchmark used for the signal model is the \SM Higgs expectation as described in Sec.~\ref{sec:signal_model} which can be expressed in terms of the two physical parameters of interest; the signal strength relative to the \SM expectation, $\mu=\musm$, and the signal position or Higgs mass, \mH. The likelihood function for statiscal interpretation can be written as,
+
+\begin{equation}
+  \mathcal{L}(\mu,\mH;\theta,\theta_{d}|\mgg) = \mu\cdot\mathbf{S}(\mgg|\mu,\mH;\theta) + \mathbf{B}(\mgg|\theta_{d}),
+  \label{eq:likelihood}
+\end{equation}
+
+where \mgg is the diphoton invariant mass, $\theta$ are continuous nuisance parameters effecting the signal model, $\theta_{d}$ are discrete nuisance parameters effecting the background model and $\mathbf{S}$ and $\mathbf{B}$ are the probability distribution functions for the signal and background repsectively. In the case of the \SMVA there is no dependence on \mgg as events are simply counted in the analysis bins. It can be seen that $\mu$ is continuous parameter which represents the size of the fitted signal. The null hypothesis, or background only model, is a simple case of the full model where $\mu=0$.
+
+When determining the best fit values of parameters in our model and their errors the full likelihood function, as expressed in Eq.~\ref{eq:likelihood}, is fit to the data and the \NLL is scanned as a function of the parameter(s) of interest. This is a standard statistical procedure for measuring the value and error of a model parameter~\cite{FredJames}. An important measurement to make of the Higgs boson is its relative coupling to fermions and bosons respectively. Given that the signal model is expressed as a sum over the different production processes one can redefine the likelihood in this case so that the signal strength is split into two coupling strength parameters, $\mu_{\mathrm{fermions}}$ and $\mu_{\mathrm{bosons}}$.
+
+\begin{align}
+  \mu\cdot\mathbf{S}(\mgg|\mu,\mH;\theta) & = &  \mu_{\mathrm{fermions}}\cdot\biggl(\mathbf{S_{ggH}}(\mgg|\mu,\mH;\theta)+\mathbf{S_{ttH}}(\mgg|\mu,\mH;\theta) \biggr) \nonumber \\
+ & & + \mu_{\mathrm{bosons}}\cdot\biggl(\mathbf{S_{qqH}}(\mgg|\mu,\mH;\theta)+\mathbf{S_{VH}}(\mgg|\mu,\mH;\theta)\biggr)
+ \label{eq:rvrf}
+\end{align}
+
+where $\mathbf{S_{proc}}$ represents the signal model for the process ``proc" only.
+
+There are two important statistical tests that get performed aside from ascertaining the best fit values of parameters in the model. The first is an exclusion test designed to reject the alternate hypothesis in data. The second is a probability, or $p$-value, test designed to ascertain the likelihood of the null hypothesis fluctuating to give a signal. This requires definition of a test statistic,
+
+\begin{equation}  
+  q_{\mu} = 
+  \begin{cases}
+    -2\ln\frac{\mathcal{L}(\mathrm{data}|\mu,\mH,\hat{\theta}_{\mu})}{\mathcal{L}(\mathrm{data}|\hat{\mu},\mH,\hat{\theta}_{\hat{\mu}})} & 0\leq\hat{\mu}\leq\mu \\
+    0 & \hat{\mu}<0
+  \end{cases}
+  \label{eq:teststat}
+\end{equation}
+
+where $\hat{\theta}_{\mu}$ and $\hat{\theta}_{\hat{\mu}}$ represent the nuisance parameters at their best fit values given a particular value of \mu and given \mu is freely floating and at its global best fit value $\hat{\mu}$. The statistical tests which require $q_{\mu}$ are carried out at a specific hypothesised Higgs mass and so \mH is set to a particular value when defining the test statistic. It can be shown that $q_{\mu}$ is the most powerful test of hypothesis $H_{0}$ against hypothesis $H_{1}$ and this is known as the \textit{Neymann-Pearson Lemma}~\cite{FredJames}.
+
+For exclusion limits the $CL_{s}$ method is used, which is desgined to give less stringent limits in situations where there is little discriminatory power between the null and alternate hypotheses~\cite{cls}. The $CL_{s}$ exclusion requires caluclation of two p-values given the test statistic distribution of the two hypotheses is known, as shown in~\cref{eq:cls1,eq:cls2,eq:cls3}. A common way of obtaining this distribution is by generating pseudo-data under each hypothesis however at \CMS asymptotic approximations are used to avoid the computational overhead of generating toys~\cite{asymptotic_form}. A one sided upper limit is determined on $\mu$ by enforcing the constraint that $\hat{\mu}\leq\mu$ and the exclusion power of the limit is given by 1-$CL_{s}$. 
+
+\begin{align}
+  & CL_{s} = \frac{CL_{s+b}}{CL_{b}} \label{eq:cls1}, \\
+  & CL_{s+b} = \int_{q_{\mu}^{obs}}^{\infty}f(q_{\mu}|\mu=\hat{\mu})dq_{\mu} \label{eq:cls2}, \\
+  & CL_{b} = \int_{q_{\mu}^{obs}}^{\infty}f(q_{\mu}|\mu=0)dq_{\mu} \label{eq:cls3}, 
+\end{align}
+
+where $q_{\mu}^{obs}$ is the observed value of the test statistic in data and $f(q_{\mu}|\mu)$ is the distribution of the test statistic for the hypothesis with value $\mu$. The $CL_{s}$ exclusion method is demonstrated by an example in Fig.~\ref{fig:cls}. In this case a \SM Higgs boson with values of signal strength $\mu>0.8$ is excluded at 92.48\%. In reality the desired exclusion level is 95\% and consequently the value of $\mu$ is adjusted until the $CL_{s}$ reaches 0.05 and then all values of $\mu$ greater than or equal to this value are considered as excluded. When referring to the ``expected" exclusion (as opposed to the ``observed" exclusion just explained) the observation value is considered as being at the mean of the null hypothesis test statistic distribution.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{ch5_anal_and_results/plots/testStatDrawing.pdf}
+    \caption{A demonstration of the test statistic distribution for the background only model (red) and the signal plus background model (blue) and the observed value in data (black line). The exclusion power is given by 1-$CL_{S}$, in this case values of $\mu>0.8$ are excluded at 92.48\% confidence.}
+    \label{fig:cls}
+  \end{center}
+\end{figure}
+
+When quantifying the significance of an observed excess the test statistic $q_{0}$ is used which is obtained by setting $\mu=0$ in Eq.~\ref{eq:teststat}. The requirement that $\hat{\mu}\geq0$ ensures that only positive excesses are considered significant. The probability that the background only hypothesis is rejected in favour of the signal plus background hypothesis is given in terms of the $p$-value, $p_{0}$, defined as,
+
+\begin{equation}
+  p_{0} = \int_{q_{0}^{obs}}^{\infty}f(q_{0}|\mu=0)dq_{0}.
+  \label{eq:pvalue}
+\end{equation}
+
+Typically a value of $p_{0}\leq1.3\times10^{-3}=3\sigma$ is enough to claim observation of new physics while $p_{0}\leq2.87\times10^{-7}=5\sigma$ is enough to claim a discovery of new physics.
+
+
+\section{Results}
+
+Where appropriate the results of the \MFM and \SMVA are shown next to each other. As the \SMVA is a cross check to the background model and categorisation scheme, only results on exclusion power, observation significance and signal strength measurement are provided for the \SMVA. The results of couplings measurements and compatbility across channels and production mechanisms are shown only for the \MFM.
+
+The results of the statistical hypothesis tests, which show an independent discovery of a Higgs like resonance near 125~\GeV, are shown first, after which measurements on the properties of the signal are discussed.
+
+\subsection{Exclusion limits and $p$-value}
+
+The exclusion limit for a \SM Higgs Boson is shown in Figure ~\ref{fig:res_exclusion} for the \MFM analysis (left) and the \SMVA analysis (right) for the combined 7 and 8~\TeV dataset. One can see that a \SM Higgs boson is largely disfavoured everywhere in the search range of $[110,150]$ apart from around 125~\GeV where a large excess is apparent. The $y$-axis is the amount of \SM signal excluded at 95\% confidence as a function of the hypothesised Higgs mass, \mH, on the $x$-axis. The black dashed line with the green and yellow bands respresents the expected exclusion, and the associated $\pm1\sigma$ and $\pm2\sigma$ error, if the exactly the mean of the null hypothesis is observed. The solid black line represents the actual observation in data. It can be seen that the both the nominal \MFM analysis and the cross check \SMVA have similar exclusion power and the same observation.
+
+\begin{figure}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obslimit.pdf}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obslimit_sideband.pdf}
+  \caption{The expected and observed exclusion limits for a \SM Higgs boson at 95\% confidence level. The dashed line shows the expectated exclusion if exactly the mean of the null hypothesis is observed with its error at $1\sigma$ (green) and $2\sigma$ (yellow). The solid black line shows the observed exclusion. The results are shown for the nominal \MFM analysis (left) and the cross check \SMVA (right) when combining both the 7 and 8~\TeV datasets. A \SM Higgs boson is disfavoured at 95\% everywhere apart from where there is a large excess around 125~\GeV. \plotupdate}
+  \label{fig:res_exclusion}
+\end{figure}
+
+In order to quantify the significance of this excess the observed local $p$-value is shown as a function of the hypothesised Higgs mass, \mH, in Fig.~\ref{fig:res_pvalue} for both the 7~\TeV (blue line) and 8~\TeV (red line) datasets seperately and the combination (black line). It is clear there is a significant excess in both subsets of data at approximately the same mass and the location and quanity of these excess is apparent in both the \MFM and \SMVA analyses. The local $p$-value for the \MFM using the combined 7 and 8~\TeV datasets at \mH=124.7~\GeV (the mass with the most significant excess) is 5.7$\sigma$ where 5.2$\sigma$ is the expectation for a \SM Higgs boson. This constitutes a standalone discovery of a Higgs like resonance around 125~\GeV.
+
+\begin{figure}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obspvalue.pdf}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obspvalue_sideband.pdf}
+  \caption{The expected (dashed lines) and observed (solid lines) local $p$-value to reject the background only hypothesis as a function of the hypothesised Higgs mass, \mH. The 7~\TeV (blue lines) and 8~\TeV (red lines) results are show separately along with the combination (black lines). The results are shown for the nominal \MFM analysis (left) and the cross check \SMVA (right). The observed $p$-value in the \MFM at the most significant point is 5.7$\sigma$ (\mH=124.7~\GeV) given a \SM expectation of $5.2\sigma$. \plotupdate}
+  \label{fig:res_pvalue}
+\end{figure}
+
+\subsection{Measurement of physicsal parameters}
+
+The best fit value of the signal strength modifier, $\mu=\musm$, is shown as a function of the hypothesis Higgs mass, \mH, in Fig.~\ref{fig:res_mumh} for the combined 7 and 8~\TeV dataset. As expected this follows very similarly the shape of the observed exclusion in Fig.~\ref{fig:res_exclusion} and shows that the observed boson is very compatible with a \SM Higgs, i.e.~the observed value of $\mu$ is within $1\sigma$ of the \SM expectation, $\mu=1$. 
+
+\begin{figure}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmumh.pdf}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmumh_sideband.pdf}
+  \caption{The observed best fit value of the signal strength modifier, $\mu=\musm$, as a function of the hypothesised Higgs mass \mH when using the combined 7 and 8~\TeV datasets. The $\pm1\sigma$ and $\pm2\sigma$ error bands are shown as the dark and light green bands respectively. Results are shown for the nominal \MFM analysis (left) and the cross check \SMVA analysis (right). \plotupdate.}
+  \label{fig:res_mumh}
+\end{figure}
+
+Figure~\ref{fig:res_muscan} shows the one dimensional \NLL scan of $\mu$ when the Higgs mass \mH is profiled. The hypothesis mass, \mH, is left floating in the fit as there is no \textit{a priori} knowledge of its value. The likelihood curves are shown for the 7 and 8~\TeV datasets separately, blue and red lines respectively, as well as for the combination, black line. The \SM expectation is shown as the dashed lines. One can see that the results are very consistent between the \MFM (left) and the \SMVA (right). There is some distance between the measurement made using the 7~\TeV dataset (blue line) and the 8~\TeV dataset (red line) but they are consistent at $<2\sigma$ level and it is quite reasonbale to imagine an upward fluctutation in the data at 7~\TeV and a downward fluctutaion at 8~\TeV. When combining the two datasets the best fit value comes out very close to the \SM expectation of $\mu=1$ so certainly an interesting area for future measurements with more data in the \Hgg channel is where this value goes. The best fit values of $\musm$ with their errors (and the mass at which the best fit is found) are summarised for each of the datasets using the \MFM analysis in Table~\ref{tab:res_mu}.
+
+\begin{figure}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmu.pdf}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmu_sideband.pdf}\\
+  \caption{The one dimensional \NLL scan of the signal strength modifier, $\mu=\musm$, when the hypothesis Higgs mass, \mH, is profiled in the fit. The \SM expectation and the observation in data are shown as the dashed and solid lines respectively. The results are shown for the 7~\TeV (blue), the 8~\TeV (red) and combined (black) datasets using the \MFM analysis (left) and the \SMVA analysis (right). The observed best fit value for the nominal \MFM analysis is $\musm=1.14^{+0.26}_{-0.23}$.}
+  \label{fig:res_muscan}
+\end{figure}
+
+\begin{table}
+    \caption{\label{tab:res_mu} The values of the best fit signal
+      strength, $\musm$, when \mH is profiled, for the 7\TeV, 8\TeV, and combined datasets. 
+      The value of \mH\ at which the best fit occurs is also given.
+      }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      & $\musm$  & $\mH$ (GeV)       \\  \hline
+      7 TeV  & $2.22^{+0.62}_{-0.55}$ & 124.2  \\ 
+      8 TeV  & $0.91^{+0.26}_{-0.23}$ & 124.9  \\ \hline
+      7 + 8 TeV & $1.14^{+0.27}_{-0.23}$ & 124.7  \\ 
+    \end{tabular}
+    \end{center}
+\end{table}
+
+The following measurements focus on the properties of the observed signal and are consequently only shown for the \MFM analysis. The two most important physical parameters to measure in the signal are the overall rate, $\mu$, and the mass, \mH. We have seen the 1D \NLL scan of the signal strength, $\mu$, when \mH is profiled. The result of doing a two dimensional \NLL scan in both the parameters simultaneously is shown on the left hand side of Fig.~\ref{fig:res_mumh2} for the combined 7+8~\TeV dataset. The overall best fit (see Table~\ref{tab:res_mu}) is represented by the black cross where the solid and dashed lines correspond to the $1\sigma$ and $2\sigma$ error contours. For a standalone measurement of the mass of the observed particle it is undesirable to constrain the signal resonance to have exactly \SM like couplings and production rates. Consequently, when measuring the mass, the overall signal rate is allowed to scale in terms of the production from fermion couplings, \RF, and from boson couplings, \RV (see Eq.~\ref{eq:rvrf}). The one dimensional \NLL scan of the observed mass is shown on the right hand side of Fig.~\ref{fig:res_mumh2} for the combined 7+8~\TeV dataset when profiling the \RV and \RF signal strenghts. This is shown when including all uncertainties (black) and when considering just the statistical uncertainties in the data (blue). The observed best fit Higgs mass is found to be $\mH=124.73\pm0.34$(stat)$\pm0.15$(syst)~\GeV. 
+
+\begin{figure}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmumh2D.pdf}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmh.pdf}
+  \caption{The two dimensional \NLL scan of $\mu$ and \mH when fitting to the combined 7+8~\TeV dataset is shown on the left. The best fit value is shown by the black cross and the $1\sigma$ and $2\sigma$ error contours shown by the solid and dashed lines respectively. The one dimensional \NLL scan of the best fit mass \mH is shown on the right, when profiling over the relative signal production from fermionic and bosonic modes, \RF and \RV. The statistical only component is shown as the blue line and the statistical plus systematic as the black line.}
+  \label{fig:res_mumh2}
+\end{figure}
+
+Aside from the mass and signal strength of the observed particle it is relevant to study its couplings and whether the relative fraction produced by the different production modes is also compatible with the \SM prediction. Figure~\ref{fig:res_rvrf} (bottom left) shows the 2D \NLL scan of the relative couplings to fermions ($x$-axis) and bosons ($y$-axis) and their 1D projections (top left and top right). The \SM expectation is at (1,1) and represented by the dimond on the figure. It can be seen that the observation of $\mu_{ggH+tth}=X\pm\sigma$, $\mu_{qqH+VH}=X\pm\sigma$ is very compatible with the \SM expectation. Furthermore the signal strength can be divided by production mode as shown on the bottom right of Fig.~\ref{fig:res_rvrf}. It can be seen that the signal strength for all four production mechanism is consistent with the \SM expectation at 1. The Higgs mass, \mH, is profiled in all of these scans but constrained to be the same across each production mode.
+
+\begin{figure}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsrv.pdf}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsrf.pdf} \\
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsrvrf.pdf}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsprocscan.pdf}
+  \caption{The top row shows the 1D \NLL scan as a function of the \SM relative coupling to bosons, $\mu_{qqH+VH}$ (top left), and to fermions, $\mu_{ggH+tth}$ (top right) for \SM expectation (dashed lines) and the observation in data (solid lines) for the 7~\TeV (red), 8~\TeV (blue) and combined (black) datasets. The bottom left plot is the 2D \NLL scan of $\mu_{qqH+VH}$ ($y$-axis) vs.~$\mu_{ggH+ttH}$ ($x$-axis) for the combined dataset observation. The best fit point is shown by the black cross whilst the $1\sigma$ and $2\sigma$ error intervals are shown by the solid and dashed lines respectively. The \SM expectation is the yellow diamond. It can be seen that the observation is very compatible with the \SM prediction.}
+  \label{fig:res_rvrf}
+\end{figure}
+
+Figure ~\ref{fig:res_chcomp} shows the breakdown of the extracted signal strength when separately fitted for each of the analysis categories (left) and when grouping the categories by their topology (right) into those untagged, those which are dijet (or \VBF) tagged, \VH tagged or \ttH tagged.
+
+\begin{figure}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obschcomp.pdf}
+  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obstoposcan.pdf}
+  \caption{The left plot shows the signal strength breakdown when fitting the signal strength, $\mu$, in each analysis category seperately. The right plot shows the signal strength breakdown when fitting categories split by their topology, the 7~\TeV dataset is shown in red, the 8~\TeV in blue and the combined dataset in black.}
+  \label{fig:res_chcomp}
+\end{figure}
+
