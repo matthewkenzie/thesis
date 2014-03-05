@@ -143,16 +143,16 @@
     powLL->SetPoint(p,muV,(2.*powNLLVal)-globalMinNLL);
     env->SetPoint(p,muV,2.*TMath::Min(powNLLVal,expNLLVal)-globalMinNLL);
   }
-  expLL->SetLineWidth(3);
+  expLL->SetLineWidth(4);
   expLL->SetLineColor(kBlue);
   expLL->GetXaxis()->SetTitle("#mu");
   expLL->GetYaxis()->SetTitle("-2#DeltaLL");
   expLL->GetXaxis()->SetRangeUser(muMin,muMax);
-  powLL->SetLineWidth(3);
+  powLL->SetLineWidth(4);
   powLL->SetLineColor(kRed);
-  env->SetLineWidth(3);
+  env->SetLineWidth(4);
   env->SetLineStyle(7);
-  env->SetLineColor(kGreen+2);
+  env->SetLineColor(kYellow);
   
   TLegend *leg3 = new TLegend(0.35,0.7,0.65,0.89);
   leg3->SetFillColor(0);

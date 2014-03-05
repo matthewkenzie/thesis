@@ -3,44 +3,54 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: h-physrev.bst
 Database file #1: mythesis.bib
-You've used 6 entries,
+Warning--I didn't find a database entry for "pdf"
+Warning--empty author in CMS_JINST
+Warning--empty author in cms-tracker-performance-2010
+Warning--empty author in cms-ecal-performance-2012
+Warning--empty author in jet_e_corrs
+Warning--empty author in cms_pf_performance
+Warning--empty author in tag_and_probe
+Warning--empty author in lumi1
+Warning--empty author in lumi2
+You've used 50 entries,
             1946 wiz_defined-function locations,
-            637 strings with 5439 characters,
-and the built_in function-call counts, 1033 in all, are:
-= -- 68
-> -- 40
+            885 strings with 10689 characters,
+and the built_in function-call counts, 8875 in all, are:
+= -- 592
+> -- 408
 < -- 0
-+ -- 13
-- -- 7
-* -- 87
-:= -- 135
-add.period$ -- 6
-call.type$ -- 6
++ -- 142
+- -- 83
+* -- 736
+:= -- 1141
+add.period$ -- 50
+call.type$ -- 50
 change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 58
-empty$ -- 116
-format.name$ -- 13
-if$ -- 237
+cite$ -- 58
+duplicate$ -- 529
+empty$ -- 941
+format.name$ -- 125
+if$ -- 2044
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 8
-newline$ -- 27
-num.names$ -- 6
-pop$ -- 33
+int.to.str$ -- 50
+missing$ -- 52
+newline$ -- 206
+num.names$ -- 42
+pop$ -- 221
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 37
+skip$ -- 368
 stack$ -- 0
-substring$ -- 43
-swap$ -- 17
+substring$ -- 383
+swap$ -- 140
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 10
-width$ -- 7
-write$ -- 44
+warning$ -- 8
+while$ -- 77
+width$ -- 52
+write$ -- 374
+(There were 9 warnings)

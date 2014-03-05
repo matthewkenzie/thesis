@@ -1,4 +1,131 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Phys.Rev.Lett.19.1264}
+S.~Weinberg,
+\newblock Phys. Rev. Lett. {\bf 19}, 1264 (1967).
+
+\bibitem{Phys.Rev.D2.1285}
+S.~L. Glashow, J.~Iliopoulos, and L.~Maiani,
+\newblock Phys. Rev. {\bf D2}, 1285 (1970).
+
+\bibitem{hep-ph/0410370}
+S.~Willenbrock,
+\newblock (2004), hep-ph/0410370.
+
+\bibitem{CMS_JINST}
+The CMS Collaboration,
+\newblock JINST {\bf 3}, S08004 (2008).
+
+\bibitem{cms-tracker-performance-2010}
+The CMS Collaboration,
+\newblock Eur. Phys. J. C {\bf 70}, 1165 (2010), hep-ex/1007.1988.
+
+\bibitem{cms-ecal-performance-2012}
+The CMS Collaboration,
+\newblock (2012),
+\newblock CMS-DP-2013-007.
+
+\bibitem{ecal_electron_reco}
+E.~Meschi, T.~Monteiro, C.~Seez, and P.~Vikas,
+\newblock (2001),
+\newblock CMS-AN-2001-034.
+
+\bibitem{tracker_electron_reco}
+W.~Adam, R.~Fr{\"u}wirth, A.~Strandlie, and T.~Todorov,
+\newblock J. Phys. G: Nucl. Part. Phys. {\bf 31}, N9 (2005).
+
+\bibitem{cms_pf_algo}
+J.~Weng,
+\newblock (2008), hep-ex/0810.3686v1.
+
+\bibitem{anti_kt_algo}
+M.~Cacciari, G.~P. Salam, and G.~Soyez,
+\newblock J. High Energy Phys. {\bf 04}, 063 (2008).
+
+\bibitem{b_tag}
+C.~Ferro,
+\newblock (2012), hep-ex/1201.5292.
+
+\bibitem{jet_e_corrs}
+The CMS Collaboration,
+\newblock J. Phys. Conf. Ser. {\bf 404}, 012014 (2012).
+
+\bibitem{cms_pf_performance}
+The CMS Collaboration,
+\newblock (2009),
+\newblock CMS-PFT-09-001.
+
+\bibitem{TMVA}
+A.~Hoecker {\em et~al.},
+\newblock (2007), physics/0703039.
+
+\bibitem{kol_smir}
+F.~J. Massey,
+\newblock JSTOR {\bf 46}, 68 (1951).
+
+\bibitem{powheg1}
+S.~Alioli, P.~Nason, C.~Oleari, and E.~Re,
+\newblock JHEP {\bf 04}, 002 (2009).
+
+\bibitem{powheg2}
+P.~Nason and C.~Oleari,
+\newblock JHEP {\bf 02}, 037 (2010).
+
+\bibitem{pythia}
+T.~Sj{\"o}strand, S.~Mrenna, and P.~Z. Skands,
+\newblock JHEP {\bf 0605}, 026 (2006).
+
+\bibitem{LHCHiggsCrossSectionWorkingGroup3}
+LHC Higgs Cross Section Working Group, S.~Heinemeyer {\em et~al.},
+\newblock (2013), 1307.1347.
+
+\bibitem{jhu}
+Y.~Gao {\em et~al.},
+\newblock Phys. Rev. D {\bf 81}, 242 (2010).
+
+\bibitem{sherpa}
+T.~Gleisberg {\em et~al.},
+\newblock JHEP {\bf 0902}, 007 (2009), 0811.4622.
+
+\bibitem{madgraph}
+J.~Alwall, M.~Herquet, F.~Maltoni, O.~Mattelaer, and T.~Stelzer,
+\newblock JHEP {\bf 1106}, 128 (2011), 1106.0522.
+
+\bibitem{geant}
+GEANT4, S.~Agostinelli {\em et~al.},
+\newblock Nucl. Instrum. Meth. A {\bf 506}, 250 (2003).
+
+\bibitem{pdg}
+J.~Beringer {\em et~al.},
+\newblock Phys. Rev. D {\bf 86}, 010001 (2012).
+
+\bibitem{tag_and_probe}
+The CMS Collaboration,
+\newblock JHEP {\bf 2011}, 1 (2011).
+
+\bibitem{Zeppenfeld}
+R.~Szalapski and D.~Zeppenfeld,
+\newblock Phys. Rev. D {\bf 54}, 6680 (1996), arXiv:hep-ph/9605444.
+
+\bibitem{jet_energy_corrections}
+CMS, S.~Chatrchyan {\em et~al.},
+\newblock JINST {\bf 06}, P11002 (2011).
+
+\bibitem{pu_jets1}
+M.~Cacciari and G.~P. Salam,
+\newblock Phys. Lett. {\bf B659}, 119 (2008).
+
+\bibitem{pu_jets2}
+M.~Cacciari, G.~P. Salam, and G.~Soyez,
+\newblock JHEP {\bf 04}, 005 (2008).
+
+\bibitem{pu_jets3}
+M.~Cacciari, G.~P. Salam, and G.~Soyez,
+\newblock (2011), 1111.6097.
+
+\bibitem{met_corrs}
+T.~C. Collaboration,
+\newblock CMS PAS {\bf CMS-PAS-JME-12-002} (2012).
 
 \bibitem{FredJames}
 F.~James,
@@ -23,8 +150,61 @@ R.~G. Lomax,
 \newblock {\em Statistical Concepts: A Second Course}, 3rd ed. (Lawrence
   Erlbaum Associates, 2007).
 
+\bibitem{regression_spline}
+J.~H. Friedman,
+\newblock The Annals of Statistics {\bf 19}, 1 (1991).
+
 \bibitem{kde}
 G.~R. Terrell and D.~W. Scott,
 \newblock The Annals of Statistics {\bf 20}, 1236 (1992).
+
+\bibitem{lumi1}
+CMS,
+\newblock CMS PAS {\bf CMS-PAS-SMP-12-008} (2012).
+
+\bibitem{lumi2}
+CMS,
+\newblock CMS PAS {\bf CMS-PAS-LUM-13-001} (2013).
+
+\bibitem{vbf_syst}
+I.~W. Stewart and F.~J. Tackmann,
+\newblock Phys. Rev. D {\bf 85}, 034011 (2012), 1107.2117.
+
+\bibitem{jet_energy_corrs2}
+R.~Eusebi,
+\newblock Journal of Physics: Conference Series {\bf 404} (2012).
+
+\bibitem{cls}
+A.~L. Read,
+\newblock Journal of Physics G: Nuclear and Particle Physics {\bf 28}, 2693
+  (2002).
+
+\bibitem{asymptotic_form}
+G.~Cowan, K.~Cranmer, E.~Gross, and O.~Vitells,
+\newblock The European Physicsal Journal C {\bf 71}, 1 (2011).
+
+\bibitem{CMSDiscovery}
+CMS, C.~Collaboration,
+\newblock Phys. Lett. B {\bf 716}, 30 (2012).
+
+\bibitem{ATLASDiscovery}
+ATLAS, G.~Aad {\em et~al.},
+\newblock Phys.Lett. {\bf B716}, 1 (2012).
+
+\bibitem{Landau1948}
+L.~D. Landau,
+\newblock {Dokl. Akad. Nauk. Ser. Fiz.} {\bf 60}, 207 (1948).
+
+\bibitem{Yang1950}
+C.~N. Yang,
+\newblock {Phys. Rev.} {\bf 77}, 242 (1950).
+
+\bibitem{Gao2010}
+Y.~Gao {\em et~al.},
+\newblock Phys. Rev. D {\bf 81}, 242 (2010).
+
+\bibitem{CollinsSoper1977}
+J.~C. Collins and D.~E. Soper,
+\newblock Phys. Rev. D. {\bf 16}, 2219 (1977).
 
 \end{thebibliography}
