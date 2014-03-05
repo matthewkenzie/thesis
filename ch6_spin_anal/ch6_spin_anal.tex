@@ -5,12 +5,11 @@
 The Landau-Yang theorem forbids the direct decay of a spin-1 particle into a pair of photons~\cite{Landau1948,Yang1950}. 
 Consequently the spin analysis compares the expectation of the spin-0 SM Higgs, \zerop, and the spin-2 \emph{graviton-like} 
 model with minimal couplings, \twomp,~\cite{Gao2010}. The \twomp graviton resonance is produced in one of two ways, gluon-fusion ($gg$) 
-or quark-antiquark annihilation (\qqbar). We present hypothesis tests between the \zerop and the \twomp varying the the amount of 
+or quark-antiquark annihilation (\qqbar). This chapter presents hypothesis tests between the \zerop and the \twomp varying the the amount of 
 \twomp production from \qqbar. For the \zerop SM 
-resonance all production modes have been considered; gluon-fusion, vector-boson-fusion, W and Z boson associated production and top-antitop 
-associated production. 
+resonance all production modes have been considered; \ggH, \VBF, \WH, \ZH, \ttH. 
 
-As the \twomp is just one of many spin-2 models we have attempted to make the analysis as model independent as possible. As a means of 
+As the \twomp is just one of many spin-2 models it is desirable to make the analysis as model independent as possible. As a means of 
 discriminating the two hypotheses we use the scattering angle in the Collins-Sopper frame, \costhetastar ~\cite{CollinsSoper1977}, which is defined as the angle, in the diphoton rest frame, between the collinear diphotons 
 and the line which bisects one incoming beam with the negative of the other beam, 
 
@@ -30,7 +29,7 @@ Two statistical tests are carried out in the spin analysis:
 
 \begin{enumerate}
   \item The signal strength, $\mu$, is extracted differentially in bins of \abscostheta. This is a relatively model independent test and in principal allows any spin model to be compared to the data.
-  \item The statistical separation between different spin hypotheses is calculated using a test statistic similar to the one described in Sec.~\ref{sec:stats} and the $CL_{s}$ exclusion method. This is a highly model dependent but can allow the exclusion of specific spin models.
+  \item The statistical separation between different spin hypotheses is calculated using a test statistic similar to the one described in Sec.~\ref{sec:stats} and the $CL_{s}$ exclusion method is used to quantify the separation power. This is a highly model dependent test but allows for the exclusion of specific spin models.
 \end{enumerate}
 
 \section{Event categorisation}
@@ -128,7 +127,7 @@ The signal models are obtained from \MC simulation as described in Sec.~\ref{sec
 where $x$ is the amount of signal originating from spin-2, \fqqbar is the amount of spin-2 signal originating from $q\bar{q}$ production, \mH is the signal position and $\theta$ are the nuisance parameters.
 
 The background model for the spin analysis comes in two forms. For the differntial measurement of the signal strength in bins of \abscostheta the envelope background method is used as per the description in Sec.~\ref{sec:envelope}. However, when calculating the statistical separation between various spin hypotheses a single parametrisation of the background is used in each category, namely a polynomial in the Bernstein basis~\cite{bernsteins1,bernsteins2} as per the description in eq.~\ref{eq:bernsteins}. The reason for this is that there is no asymptotic approximation for the test statistic distribution when the null hypothesis is not embedded in the alternative hypothesis. Consequently, in order to obtain the test statistic distributions (like the ones shown in Fig.~\ref{fig:cls}) one has to generate lots of pseudo-data and then refit this data to obtain the likelihood ratio and hence test statistic value. Given the complexity of the spin signal model and the combinatorics involved when using the envelope method with 40 analysis categories this becomes CPU impractical. It has been trialled using the GRID computing network but was found to take the order of hundreds of CPU years.
-Given this complication and the fact that small losses in sensitivity to the background normalisation have a small impact on the spin hypothesis separation power a single parametrisation in each category was chosen for ease and simplicity. The choice is to use 4th order Bernstein polynomials in all categories apart from the highest \abscostheta star categories in which a 3rd order was chosen. The motivation behind this choice is that these order of polynomials show a similar level of bias as the envelope method when tested against ``truth" models for the spin categories analogous to the description in Sec.~\ref{sec:envelope}.
+Given this complication, and the fact that small losses in sensitivity to the background normalisation have a small impact on the spin hypothesis separation power, a single parametrisation in each category was chosen for ease and simplicity. The choice is to use 4th order Bernstein polynomials in all categories apart from the highest \abscostheta categories in which a 3rd order was chosen. The motivation behind this choice is that these order of polynomials show a similarly small level of bias as the envelope method when tested against ``truth" models for the spin categories analogous to the description in Sec.~\ref{sec:envelope}.
 
 \section{Results}
 \label{sec:spin_results}
