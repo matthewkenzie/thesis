@@ -34,7 +34,7 @@ The \LHC is capable of producing 40M bunch collisions per second although many o
 and the corresponding transverse energy, $E_{T} = E\sin(\theta)$.
 
 \begin{figure}
-  \includegraphics[width=0.8\textwidth]{ch2_cms_exp/plots/cms_diagram.png}
+  \includegraphics[width=0.8\textwidth]{cms_experiment/plots/cms_diagram.png}
   \caption[CMS diagram]{This is a schematic representation of \CMS showing the layered structure of subdetectors; tracking system, calorimeters, magnet and muon system.}
   \label{fig:cms_diagram}
 \end{figure}
@@ -48,14 +48,14 @@ During nominal \LHC running conditions in 2012 there on average over 1000 partic
 By making multiple precise measurements of tracks as they pass through the pixel and silicon layers (hits) the track trajectory can be reconstrcuted and their momentum calculated using their curvature in the \phi plane due to the axial magentic field. Tracks are grouped together (requiring that their separtion is less than 1cm in the $z$ coordinate at the point of closest approach to the beamline) and assigned to a common point or origin (the primary vertex). The vertex resolution is driven both by the number of tracks originating from a particular vertex and how large their average \pT is. This is shown in Fig.~\ref{fig:tracker_vertex_resolution} for preliminary data taken in 2010 at $\sqrt{s}=7$~TeV.
 
 \begin{figure}
-  \includegraphics[width=0.9\textwidth]{ch2_cms_exp/plots/fig_cmstracker.png}
+  \includegraphics[width=0.9\textwidth]{cms_experiment/plots/fig_cmstracker.png}
   \caption[CMS tracker]{A diagram of the \CMS tracking system showing the PIXEL detector and outer silicon strip layers~\cite{CMS_JINST}.}
   \label{fig:cms_tracker}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch2_cms_exp/plots/ResZ_byPt.png}
-  \includegraphics[width=0.48\textwidth]{ch2_cms_exp/plots/PullZ_byPt.png}
+  \includegraphics[width=0.48\textwidth]{cms_experiment/plots/ResZ_byPt.png}
+  \includegraphics[width=0.48\textwidth]{cms_experiment/plots/PullZ_byPt.png}
   \caption[Vertex resolution]{A demonstration of the vertex position resolution in Z as a function of the number of tracks originating from that vertex. The different colors respresent three different bins in the average track \pT where data is shown as solid points and simulation as open points~\cite{cms-tracker-performance-2010} }
   \label{fig:tracker_vertex_resolution}
 \end{figure}
@@ -63,8 +63,8 @@ By making multiple precise measurements of tracks as they pass through the pixel
 The material budget for the tracker is shown in Fig.~\ref{fig:tracker_material} which demonstrates as a function of \eta which subsystems of the tracker, beam pipe and servicing contrubute to material inbetween the interaction point and the calorimeters in radiation lengths (X$_{0}$) and nuclear interaction lengths ($\lambda_{I}$). As shown in Fig.~\ref{fig:cms_tracker} the tracker has full coverage in \phi and up to $|\eta|\leq2.5$. As we will see later the tracking system is very important for the \Hgg search at \CMS as without it locating the primary vertex would be practically impossible.
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch2_cms_exp/plots/tracker_material.png}
-  \includegraphics[width=0.48\textwidth]{ch2_cms_exp/plots/tracker_material_lambda.png}
+  \includegraphics[width=0.48\textwidth]{cms_experiment/plots/tracker_material.png}
+  \includegraphics[width=0.48\textwidth]{cms_experiment/plots/tracker_material_lambda.png}
   \caption[CMS tracker material budget]{The amount of \CMS tracker material in radiation lengths (X$_{0}$) on the left and in nuclear interaction lengths ($\lambda_{I}$) on the right as a function of $\eta$ for the different tracking subsytems.}
   \label{fig:tracker_material}
 \end{figure}
@@ -76,7 +76,7 @@ The material budget for the tracker is shown in Fig.~\ref{fig:tracker_material} 
 The \ECAL is used to reconstruct the energy of electrons and photons which deposit their energy via electromagnetic showers inside the calorimeter material. The shower inside the crystal produces photons whose total energy is proportional to the energy of the incoming particle, hence the light output from the shower can be measured by photodiodes at the back of each crystal which in turn provides a measurement for the energy of the original particle. The \ECAL has full hermetic coverage of the interaction point and consists of a single layer of \PbWO crystals. The crystals are laid out in a quasi-projective geometry such that they point towards the interaction point with an offset of 3$\degree$ making it much less likely that a photon, or electron, will pass straight through a gap between crystals. The \ECAL consists of a barrel section and two endcap disks which are preceded by a preshower (to aid with \pizero rejection), a schematic is shown in Fig.~\ref{fig:cms_ecal}. There is a fiducial region between the barrel and endcap (to prevent reconstruction of showers which overlap both subsystems) yielding an \ECAL coverage of $|\eta|<2.5$ but not in the range $1.444<|\eta|<1.556$ and full coveraege in \phi. The crystals in both sections have a depth of 23cm (which amounts to 25.8~X$_{0}$) implying that practically the whole depth of the shower is contained within this single layer. 
 
 \begin{figure}
-  \includegraphics[width=0.7\textwidth]{ch2_cms_exp/plots/cmsecal.pdf}
+  \includegraphics[width=0.7\textwidth]{cms_experiment/plots/cmsecal.pdf}
   \caption[CMS ECAL schematic]{A schematic drawing of the \CMS \ECAL layout showing the ``modules" of crystals in the \ECAL barrel and the "Dees" of crystals in the \ECAL endcap~\cite{CMS_JINST}.}
   \label{fig:cms_ecal}
 \end{figure}
@@ -109,7 +109,7 @@ where $\sigma$ denotes the resolution and $\oplus$ the quadratic sum. It is ther
 where $a$ is the stochastic term, $b$ the noise term and $c$ a constant term. In order to acheive the best possible resolution all three of these terms need to be of a similar order and as small as possible. The size of these terms has been determined from test beam data in Ref.~\cite{CMS_JINST}. The stochastic term is driven by the material choice and detector type so cannot be improved once the machine is built. The main contributions to this term are lateral shower containment fluctuations, photostatistics and fluctuations in the energy deposited in the preshower absorber. For a fully active calorimeter (the \CMS \ECAL is not a sampling calorimeter) made of \PbWO the size of this term is good ($a=2.8\pm0.3\% $GeV$^{\frac{1}{2}}$). The constant term, which depends on non-uniformity of longitudal light, intercalibration errors and energy leakage from the back of the crystal, can be minimzed by use of \emph{in situ} calibration of individual crystals and amounts to $c=0.26\pm0.05\%$. However the \Hgg analysis at \CMS dispenses with the intercalibration constants by using a regression technique to estimate the photon energy which is discussed in Section~\ref{sec:photon_energy}. The noise term which has contributions from electronics noise (including signal digitisation) and event pile-up (additional particles causing overlapping signals) is measured as $b=126$MeV. The ECAL energy resolution, $\sigma_{E}/E$, as a function of electron energy is shown in Fig.~\ref{fig:sigma_e_test_beam} as measured from a beam test. 
 
 \begin{figure}
-  \includegraphics[width=0.6\textwidth]{ch2_cms_exp/plots/ecal_sigma_e_test_beam.pdf}
+  \includegraphics[width=0.6\textwidth]{cms_experiment/plots/ecal_sigma_e_test_beam.pdf}
   \caption[ECAL energy resolution]{The \ECAL energy resolution, $\sigma_{E}/E$, as a function of electron energy measured from test beam data. The energy is measured in a 3$\times$3 array of crystals centered on crystal of electron impact~\cite{CMS_JINST}.}
   \label{fig:sigma_e_test_beam}
 \end{figure}
@@ -119,8 +119,8 @@ where $a$ is the stochastic term, $b$ the noise term and $c$ a constant term. In
 Due to the high particle flux present at \CMS the \ECAL crystals and electronics have to be radiation hard, especially in the endcap. This is another motivating factor for using \PbWO as the crystal material. The crystals are additionally doped with Nb to improve the induced absorbtion coefficient. Over time and long exposure to radiation the crystals loose their transparency, although there is considerable natural recovery during down periods. An important part of the \ECAL monitoring and calibration comes in the form of transparency corrections to compensate for these losses. At regular intervals during \LHC running laser pulses are injected into the crystals to measure the crystal response. Two different wavelengths of laser are used, one blue ($\lambda=440$nm) which is very similar to the scintillation emission peak and therefore expected to be affected by transparency changes in a similar way to typical scinitillation light, and one red ($\lambda=796$nm) which is far from the scinitillation emission peak and affected very little by the changes in transparency. Hence, by comparing the red and blue laser light response, time and $\eta$ dependent corrections for crystal transparency loss can be calculated. A closure test for these corrections, in 2012 data, is shown in Fig.~\ref{fig:ecal_laser_corrs} which shows the ratio of electron energy (calculated from the \ECAL) to electron momentum (calculated from the tracker) before and after transparency (or laser) corrections. 
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{ch2_cms_exp/plots/ecal_EB_lasercorrs.pdf} \\
-  \includegraphics[width=\textwidth]{ch2_cms_exp/plots/ecal_EE_lasercorrs.pdf} 
+  \includegraphics[width=\textwidth]{cms_experiment/plots/ecal_EB_lasercorrs.pdf} \\
+  \includegraphics[width=\textwidth]{cms_experiment/plots/ecal_EE_lasercorrs.pdf} 
   \caption[ECAL laser corrections]{Ratio of the electron energy, $E$, to the electron momentum, $p$, measured in the \CMS barrel (top) and endcap (bottom) for 2012 data. The red (green) points show the performance before (after) the laser monitoring derived corrections ~\cite{cms-ecal-performance-2012}.}
   \label{fig:ecal_laser_corrs}
 \end{figure}
@@ -154,7 +154,7 @@ In this way a collection of dominoes are clusted in \phi creating a ``superclust
 \end{enumerate}
 
 \begin{figure}
-  \includegraphics[width=0.8\textwidth]{ch2_cms_exp/plots/hybrid_clustering.pdf}
+  \includegraphics[width=0.8\textwidth]{cms_experiment/plots/hybrid_clustering.pdf}
   \caption{The domino construction setup of the hybrid clustering algorithm~\cite{ecal_electron_reco}.}
   \label{fig:hybrid_algo}
 \end{figure}
@@ -215,8 +215,8 @@ Particle flow jets are constructed using the anti-$k_{T}$ algorithm~\cite{anti_k
 \red{Should possibly include a note here stating that a \PF photon is very different to the photons used in the analysis. \PF is useful for tagging physics objects like tau's or b's and for isolation sums but is not necessarily the best for reconstructing well measured objects like photons, electrons and muons.}
 
 \begin{figure}
-  \includegraphics[height=0.4\textwidth]{ch2_cms_exp/plots/MuonResolution.pdf}
-  \includegraphics[height=0.4\textwidth]{ch2_cms_exp/plots/BarrelResolutionPFAndCalo.pdf}
+  \includegraphics[height=0.4\textwidth]{cms_experiment/plots/MuonResolution.pdf}
+  \includegraphics[height=0.4\textwidth]{cms_experiment/plots/BarrelResolutionPFAndCalo.pdf}
   \caption[Particle flow jet resolution]{\textbf{Left:} The muon \pT resolution as a function of \pT for muons in the range $0<|\eta|<0.8$ when using only the muon system (black), only the tracking system (blue) and using both (red)~\cite{CMS_JINST}. \\ \textbf{Right:} The jet energy resolution as a function of jet \pT when using \PF jets as compared to calo jets~\cite{cms_pf_performance}.}
   \label{fig:muon_jet_res}
 \end{figure}

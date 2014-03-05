@@ -52,8 +52,8 @@ A regression \BDT is used to estimate the true value of some variable given the 
 The data consists of two indepedent samples of proton-proton collisions collected by the CMS experiment at the \LHC in 2011 and 2012 with a centre-of-mass energy ($\sqrt{s}$) of 7 and 8 TeV respecivtely. The total integrated luminosity of the two samples is 5.1\fb and 19.7\fb in 2011 and 2012 respectively and collectively referred to as \LHC Run 1. The response of the detector has changed considerably over this period and much of the variation is modelled by the \MC simulation. Figure~\ref{fig:intlumi} shows the integrated luminosity delivered and recorded by \CMS during \LHC Run 1.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch3_comm_anal_comps/plots/int_lumi_2011.pdf}
-  \includegraphics[width=0.49\textwidth]{ch3_comm_anal_comps/plots/int_lumi_2012.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/int_lumi_2011.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/int_lumi_2012.pdf}
   \caption{The total integrated luminosity delived and recorded by CMS during the 2011 (left) and 2012 (right) run periods.}
   \label{fig:intlumi}
 \end{figure}
@@ -81,8 +81,8 @@ An important difference between the simulated samples and the data which can hav
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=0.49\textwidth]{ch3_comm_anal_comps/plots/nvtx_zmumu_2011.pdf}
-  \includegraphics[width=0.49\textwidth]{ch3_comm_anal_comps/plots/nvtx_zmumu_2012.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/nvtx_zmumu_2011.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/nvtx_zmumu_2012.pdf}
   \caption{Distribution of the number of reconstructed vertices in the 2011 (left) and 2012 (right) run periods. Calculated using the Deterministic Annealing alogirithm in \refrqd for \Zmumu events in data (black dots) and MC (red histogram) after reweighting.}
   \label{fig:pileup}
   \end{center}
@@ -92,7 +92,7 @@ When the chosen vertex is incorrect the mass resolution is dominated by the spre
 
 \begin{figure}
   \begin{center}
-  \includegraphics[width=0.55\textwidth]{ch3_comm_anal_comps/plots/beamspot.pdf}
+  \includegraphics[width=0.55\textwidth]{analysis_comps/plots/beamspot.pdf}
   \caption{Distribution of $\Delta z$ (the distance between the chosen vertex and the true vertex in the $z$ direction) for data (black), the \MC (red) and the \MC after beam spot reweighting (green) for \Zmumu events.}
   \label{fig:beamspot}
   \end{center}
@@ -145,17 +145,17 @@ and the per-photon energy resolution is given by,
 In this way the regression predicts the full probability density of $E_{true}/E_{raw}$ and provides an estimate of the optimal energy correction and the energy resolution per photon. A comparison of this distribution with a statistically independent \MC sample is shown for the 8~\TeV training in Figure~\ref{fig:regression_training}. The performance of the regression compared to the default photon reconstruction is shown in Figure~\ref{fig:regression_performance}.
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/regression_barrel.pdf}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/regression_endcap.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/regression_barrel.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/regression_endcap.pdf}
   \caption{A comparison of the predicted probability density of $E_{true}/E_{raw}$ from the regression training (blue line) to the distribution in a statiscally independent \MC sample (black points) for barrel photons (left) and endcap photons (right). \red{PLOTS NEED TIDYING}}
   \label{fig:regression_training}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.24\textwidth]{ch3_comm_anal_comps/plots/regression_masscat0.pdf}
-  \includegraphics[width=0.24\textwidth]{ch3_comm_anal_comps/plots/regression_masscat1.pdf}
-  \includegraphics[width=0.24\textwidth]{ch3_comm_anal_comps/plots/regression_masscat2.pdf}
-  \includegraphics[width=0.24\textwidth]{ch3_comm_anal_comps/plots/regression_masscat3.pdf}
+  \includegraphics[width=0.24\textwidth]{analysis_comps/plots/regression_masscat0.pdf}
+  \includegraphics[width=0.24\textwidth]{analysis_comps/plots/regression_masscat1.pdf}
+  \includegraphics[width=0.24\textwidth]{analysis_comps/plots/regression_masscat2.pdf}
+  \includegraphics[width=0.24\textwidth]{analysis_comps/plots/regression_masscat3.pdf}
   \caption{A comparison of the regression performance compared to the photon default for the diphoton invariant mass on a \MC source of Higgs decays to two photons. This is shown when both photons are in the barrel (left two plots) when both photons have $\rnine>0.94$ (far left) and when at least one photon has $\rnine<0.94$ (middle left). When at least one photon is in the endcap (right two plots) when both photons have $\rnine>0.94$ (middle right) and when at least one photon has $\rnine<0.94$ (far right). The value shown in the legend of each is the effective width, $\sigma_{eff}$, which is defined as half of the narrowest interval which contains 68.3\% of the distribution. \red{PLOTS NEED TIDYING}.}
   \label{fig:regression_performance}
 \end{figure}
@@ -186,20 +186,20 @@ A similar method is used to extract a smearing factor that can be applied to the
 The effect of the scale and smearing corrections is shown for the \Zee data and \MC samples in Figure~\ref{fig:scale_smearing_Zee} and for the analysis dataset after preselection with the electron veto inverted in Figures ~\ref{fig:scale_smearing_analysis_7TeV} and~\ref{fig:scale_smearing_analysis_8TeV}. Each of these corrections has an associated uncertainty and these uncertainties are propagated per photon through the analaysis. There are also additional uncertainties included which account for differences between electrons and photons and the difference between the $Z$ mass scale (around 90~\GeV) and the Higgs mass scale (around 125~\GeV). Systematic uncertainties are described in more detail in Section.~\ref{sec:systematics}.
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/smearing_EB_highEta_lowR9.pdf}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/smearing_EB_lowEta_highR9.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/smearing_EB_highEta_lowR9.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/smearing_EB_lowEta_highR9.pdf}
   \caption{The \Zee invariant mass shape comparison before and after the scale and smearing corrections are applied. Shown for 8~TeV for photons with $1.<|\eta|<1.444$ and $\rnine<0.94$ on the left and for photons with $|eta|<1.$ and $\rnine>0.4$ on the right.}
   \label{fig:scale_smearing_Zee}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.9\textwidth]{ch3_comm_anal_comps/plots/smearing_mass_Zee_7TeV.pdf}
+  \includegraphics[width=0.9\textwidth]{analysis_comps/plots/smearing_mass_Zee_7TeV.pdf}
   \caption{The \Zee invariant mass distribution at 7TeV in data (black points) and \MC (blue histogram) for events which pass the analysis preselection in which the electron veto is inverted.}
   \label{fig:scale_smearing_analysis_7TeV}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.9\textwidth]{ch3_comm_anal_comps/plots/smearing_mass_Zee_8TeV.pdf}
+  \includegraphics[width=0.9\textwidth]{analysis_comps/plots/smearing_mass_Zee_8TeV.pdf}
   \caption{The \Zee invariant mass distribution at 8TeV in data (black points) and \MC (blue histogram) for events which pass the analysis preselection in which the electron veto is inverted.}
   \label{fig:scale_smearing_analysis_8TeV}
 \end{figure}
@@ -221,8 +221,8 @@ The vertex \BDT uses the following input variables:
 For events which contain at least one photon conversion, the conversion tracks and/or the conversion momentum can be used to point back to the beam line and estimate the vertex position. This can be acheived in one of two ways. In cases where the conversion occurs early, i.e.\ in one of the first layers of the tracking system, then the two electron legs of the conversion will leave two clean and distinct tracks. This means that the momentum of the conversion pair can be accurately reconstructed and used to point from the conversion vertex position back to the beam line and thus the nearest primary vertex. In cases where the conversion occurs late in the tracking system there are not enough track hits to accurately reconstruct the momentum of the conversion pair, however the incident position of the photon at the \ECAL face is well known in this case, so the line which connects the \ECAL position with the conversion vertex can be used to point back to the beam line. This is diagramtically represented in Figure~\ref{fig:conv_diags} for both cases.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch3_comm_anal_comps/plots/ConversionDiagCase1.pdf}
-  \includegraphics[width=0.49\textwidth]{ch3_comm_anal_comps/plots/ConversionDiagCase2.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/ConversionDiagCase1.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/ConversionDiagCase2.pdf}
   \caption{A representation of the two methods for locating the primary vertex using photon conversion information. The left plot is for cases where the conversion occurs early enough in the tracker that the two electron tracks can be used to construct the converted pair momentum which is combined with the conversion vertex position to point back to the beam line. The right plot is for cases where the conversion occurs late in the tracker and the energy weighted supercluster position and the conversion vertex position are used to point back to the beam line.}
   \label{fig:conv_diags}
 \end{figure}
@@ -247,26 +247,26 @@ conversion information is included in the \BDT, otherwise the Case 2 conversion 
 The \BDT is trained on a sample of \Hgg \MC events. It is tested with a statistically independent sample and further validated using \Zmumu decays in data and \MC. The efficiency is measured in data using the \Zmumu channel where the muon tracks are removed from the \BDT variables to simulate a diphoton like situation in data. The distributions of the input variables are shown for the \Hgg training sample in Figure~\ref{fig:vertex_bdt_inputs} (\red{probably unnecessary}). The \BDT response is shown for \Zmumu data and \MC for both the signal (right vertex) and background (wrong vertex) in Figure~\ref{fig:vertex_bdt_response}. The chosen primary vertex is the one which gives the highest score \BDT output. The efficiency of the vertex selection as a function of the $Z$ \pT and the number of reconstructed vertices as measured in \Zmumu data and \MC samples is shown in Figure~\ref{fig:vertex_bdt_efficiency}. 
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_input0.pdf}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_input1.pdf} \\
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_input2.pdf}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_input3.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input0.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input1.pdf} \\
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input2.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input3.pdf}
   \caption{Distributions of the input variables for the vertex \BDT in the \MC \Hgg training (points) and test (filled) samples at 8TeV. Shown for the target primary vertex (blue histograms) and the background pileup vertices (red histograms). \red{Plots need updating, tidying and labelling correctly.}}
   \label{fig:vertex_bdt_inputs}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_output_7TeV.pdf}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_output_8TeV.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_output_7TeV.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_output_8TeV.pdf}
   \caption{The vertex \BDT response for \Zmumu events in data (points) and MC (filled) for the primary vertex (green) and the background pileup vertices (red).}
   \label{fig:vertex_bdt_response}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_efficiency_pt_7TeV.pdf}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_efficiency_nvtx_7TeV.pdf} \\
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_efficiency_pt_8TeV.pdf}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_efficiency_nvtx_8TeV.pdf} 
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_pt_7TeV.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_nvtx_7TeV.pdf} \\
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_pt_8TeV.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_nvtx_8TeV.pdf} 
   \caption{The chosen vertex efficiency as measured in \Zmumu data and \MC as a function of $Z$ \pT (left) and number of reconstructed vertices (right) for the 7~TeV (top row) and 8~TeV (bottom row) data samples.}
   \label{fig:vertex_bdt_efficiency}
 \end{figure}
@@ -287,14 +287,14 @@ The total efficiency of assigning the correct vertex using the method described 
 There is a linear relation between the response of this \BDT and the correct vertex efficiency (or probability). This relationship is demonstrated in Figure~\ref{fig:vertex_bdt_prob} and is fitted with a single parameter straight line in order to analytically obtain the per-event correct vertex probability for a given event. Figure~\ref{fig:vertex_bdt_prob_efficiency} shows that this estimation reproduces the required vertex efficiency as a function of Higgs \pT and number of reconstructed vertices.
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_prob.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_prob.pdf}
   \caption{A demonstration of the linearity relation between the per-event vertex probability \BDT output distribution and the correct vertex probability}
   \label{fig:vertex_bdt_prob}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_prob_efficiency_pt.pdf}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/vertex_bdt_prob_efficiency_nvtx.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_prob_efficiency_pt.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_prob_efficiency_nvtx.pdf}
   \caption{A comparison of the true vertex efficiency (black points) and the average vertex probability (blue band) a statistically independent \MC Higgs sample simulated with 2012 running conditions.}
   \label{fig:vertex_bdt_prob_efficiency}
 \end{figure}
@@ -344,8 +344,8 @@ Whilst no known ``standard candles" with high statistics exist for high \pT phot
 As previously shown (in Sec.~\ref{sec:scale_smearing}) data/\MC comparison of the \Zee decay are used to derive scale corrections for the data and smearing of the \MC. Discrepancies between data and \MC in \Zee decays of important analysis variables are accounted for by introducing systematic uncertainties to cover them. In addition the ``tag and probe" method ~\cite{tag_and_probe} is used on \Zee decays to evaluate the signal efficiency for the preselection and analysis cuts. Several stages of the analysis are validated in this way and where appropriate systematic uncertainties are included to account for any data/\MC differences. Although the numbers and uncertainties themselves are derived from \Zee samples (because of the much higher statistics), they are always cross checked with the \Zmumugamma sample.
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/zee_mass.pdf}
-  \includegraphics[width=0.48\textwidth]{ch3_comm_anal_comps/plots/zee_mass_ratio.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/zee_mass.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/zee_mass_ratio.pdf}
   \caption{The di-electron mass distribution after applying the preselection (described in Sec.~\ref{sec:photon_presel}) and the scale and smearing corrections (described in Sec.~\ref{sec:scale_smearing}) whilst inverting the electron veto. The left plot shows the data at 8TeV as the black points with the Drell Yan \MC sample as the blue histogram. The Data/\MC ratio is shown in the right hand plot. \red{Plot needs updating}}
   \label{fig:dielectronmass}
 \end{figure}

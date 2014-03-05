@@ -1,5 +1,5 @@
 \chapter{Analysis and Results}
-\label{chap:results}
+\label{chap:analysis}
 \chapterquote{Data, data, data. I cannot make bricks without clay}
 {The Adventures of Sherlock Holmes.}
 
@@ -12,8 +12,8 @@ The analysis culminates in the search for a \SM like Higgs boson decaying into t
 The signal \MC samples (described in Sec.~\ref{sec:mc}) are propagated through the full analysis separately for each production mechanism (\ggH,\VBF,\WH,\ZH,\ttH). Events in the samples are weighted by the relevant \SM cross section, branching ratio, the integrated luminosity and the ``detector" weight which compensates for mismodelling in the \MC such as pileup, the beamspot width and discrepancies between the efficiency in data and \MC as measured in \Zee and \Zmumugamma decays. In this way the efficiency and acceptance of the detector, selection and categorisation is mapped by the \MC samples and the total number of expected \SM signal events is given by the sum of weights of the sample. The \MC is generated separately for hypothesised Higgs masses, \mH, in the search range of $110 \leq m_{H} \leq 150$~\GeV in steps of 5~\GeV. For any intermediate points the signal model is interpolated. The efficiency times acceptance of the analysis selection for a \SM Higgs boson is shown in Fig.~\ref{fig:effacc} as a function of the Higgs boson mass, \mH. For a Higgs at \mH=125~\GeV the $\ea=48.63\%$ (49.30\%) for the 7 (8)~\TeV datasets.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/effAcc7TeV.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/effAcc8TeV.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/effAcc7TeV.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/effAcc8TeV.pdf}
   \caption{The efficiency$\times$acceptance of the analysis selection for a \SM Higgs signal as a function of Higgs mass for the 7~\TeV (left) and 8~\TeV datasets.}
   \label{fig:effacc}
 \end{figure}
@@ -25,19 +25,19 @@ The diphoton invariant mass signal shape is modelled in a fully parametric way f
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/thesis_signal_7TeV/all.pdf}
-    \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/thesis_signal_8TeV/all.pdf}
+    \includegraphics[width=0.49\textwidth]{analysis/plots/thesis_signal_7TeV/all.pdf}
+    \includegraphics[width=0.49\textwidth]{analysis/plots/thesis_signal_8TeV/all.pdf}
     \caption{The diphoton invariant mass shape of the \SM signal for the 7~\TeV dataset (left) and 8~\TeV dataset (right). The black square points show the distribution in \MC, where the sum of weights represents the expected number of signal events from a \SM Higgs Boson at 125~\GeV. The blue line shows the shape of the parametric model used to represent the signal.}
     \label{fig:sig_shape}
   \end{center}
 \end{figure}
 
-\input{ch5_anal_and_results/plots/EventClassFractions}
+\input{analysis/plots/EventClassFractions}
   
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{ch5_anal_and_results/plots/thesis_signal_7TeV/signalComposition.pdf} \\
-    \includegraphics[width=0.9\textwidth]{ch5_anal_and_results/plots/thesis_signal_8TeV/signalComposition.pdf}
+    \includegraphics[width=0.9\textwidth]{analysis/plots/thesis_signal_7TeV/signalComposition.pdf} \\
+    \includegraphics[width=0.9\textwidth]{analysis/plots/thesis_signal_8TeV/signalComposition.pdf}
     \caption{The expected composition and resolution of the signal for a \SM Higgs at 125~\GeV in the 7~\TeV dataset (top) and 8~\TeV dataset (bottom). The left diagram shows the break down of the signal in each event class by category: \ggH (green), \VBF (red), \WH (turqoise), \ZH (blue), \ttH (orange). The middle shows the expected resolution in each event class in terms of \sigeff and \sigFW. The right diagram shows the expected signal over signal plus background ratio in a window of $\pm\sigeff$ around \mH=125~\GeV.}
     \label{fig:signal_composition}
   \end{center}
@@ -63,7 +63,7 @@ This is shown in the figure by the magenta line which becomes smoother as more s
 
 \begin{figure}
 \begin{center}
-  \includegraphics[width=0.8\textwidth]{ch5_anal_and_results/plots/envelope_explain.pdf}
+  \includegraphics[width=0.8\textwidth]{analysis/plots/envelope_explain.pdf}
   \caption{A demonstration of the method of ``profiling the likelihood". Here the \NLL is scanned as a function of a physical parameter of interest $x$ with a nuisance parameter $\theta$ in three cases: 1) where $\theta$ is freely floating (black line), 2) where $\theta$ is set to its value at the \NLL minimum (blue line), 3) for several arbitary choices of $\theta$ (red line).}
   \label{fig:envelope_explain1}
 \end{center}
@@ -74,8 +74,8 @@ Lets now consider a simplified case of the real situation. Imagine we have a lar
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/envelope_explain2.pdf}
-    \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/envelope_explain3.pdf}
+    \includegraphics[width=0.49\textwidth]{analysis/plots/envelope_explain2.pdf}
+    \includegraphics[width=0.49\textwidth]{analysis/plots/envelope_explain3.pdf}
     \caption{An example of using the envelope in a realistic situation. The plot on the left shows a signal plus background fit to some pseudo-data using two different background function choices; a single term power law (red) and a single term exponential (blue). The plot on the right shows the profile likelihood curve for the signal size, $\mu$, for the two different function choices, where the global minimum is where $\mu=2.83$ and the power law is used as the background choice. The envelope likelihood curve, profiling over the function choices is shows as the yellow dashed line.}
     \label{fig:envelope_explain2}
   \end{center}
@@ -111,8 +111,8 @@ The correction term, $\chi^{\prime 2} -\chi^{2}$, depends on the number of bins,
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/ChisqConv1.png}
-    \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/ChisqConv2.png}
+    \includegraphics[width=0.49\textwidth]{analysis/plots/ChisqConv1.png}
+    \includegraphics[width=0.49\textwidth]{analysis/plots/ChisqConv2.png}
     \caption{The value of the correction, $\chi^{\prime 2} - \chi^{2}$, as a function of the fit $p$-value for a fit with 320 bins is shown on the left. The projection of the correction integrated uniformaly over $p$-values is shown on the right. The five different coloured lines represented fit function with different numbers of free parameters, ranging from one free parameter (pink) up to five free parameters (black).}
     \label{fig:envelope_chi2_correction}
   \end{center}
@@ -174,56 +174,56 @@ When using a correction factor of $c=2$ the systemastic bias is larger than this
 The invariant mass distributions with the different envelope functions, after having been fit to the data, for each of the analysis categories are shown in Figures~\cref{fig:multipdf1,fig:multipdf2,fig:multipdf3,fig:multipdf4,fig:multipdf5,fig:multipdf6}.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_7TeV/multipdf_cat0.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_7TeV/multipdf_cat1.pdf}\\
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_7TeV/multipdf_cat2.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_7TeV/multipdf_cat3.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_7TeV/multipdf_cat0.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_7TeV/multipdf_cat1.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_7TeV/multipdf_cat2.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_7TeV/multipdf_cat3.pdf}\\
   \caption{The diphoton invariant mass distribution and the function choices for the background envelope for the inclusive categories in the 7~\TeV dataset. \red{Category labels not numbers?}}
   \label{fig:multipdf1}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_7TeV/multipdf_cat4.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_7TeV/multipdf_cat5.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_7TeV/multipdf_cat4.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_7TeV/multipdf_cat5.pdf}\\
   \caption{The diphoton invariant mass distribution and the function choices for the background envelope for the dijet categories in the 7~\TeV dataset. \red{Category labels not numbers?}}
   \label{fig:multipdf2}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat6.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat7.pdf}\\
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat8.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat9.pdf}\\
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat10.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat6.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat7.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat8.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat9.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat10.pdf}
   \caption{The diphoton invariant mass distribution and the function choices for the background envelope for the \VH and \ttH categories in the 7~\TeV dataset. \red{Category labels not numbers?}}
   \label{fig:multipdf3}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat0.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat1.pdf}\\
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat2.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat3.pdf}\\
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat4.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat0.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat1.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat2.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat3.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat4.pdf}
   \caption{The diphoton invariant mass distribution and the function choices for the background envelope for the inclusive categories in the 8~\TeV dataset. \red{Category labels not numbers?}}
   \label{fig:multipdf4}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat5.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat6.pdf}\\
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat7.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat5.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat6.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat7.pdf}
   \caption{The diphoton invariant mass distribution and the function choices for the background envelope for the dijet categories in the 8~\TeV dataset. \red{Category labels not numbers?}}
   \label{fig:multipdf5}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat8.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat9.pdf}\\
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat10.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat11.pdf}\\
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat12.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/mva_8TeV/multipdf_cat13.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat8.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat9.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat10.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat11.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat12.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/mva_8TeV/multipdf_cat13.pdf}\\
   \caption{The diphoton invariant mass distribution and the function choices for the background envelope for the \VH and \ttH categories in the 8~\TeV dataset. \red{Category labels not numbers?}}
   \label{fig:multipdf6}
 \end{figure}
@@ -236,7 +236,7 @@ In order to avoid Drell-Yan contamination in the region of low invariant mass an
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.85\textwidth]{ch5_anal_and_results/plots/sideband/invmass.pdf}
+    \includegraphics[width=0.85\textwidth]{analysis/plots/sideband/invmass.pdf}
     \caption{The inclusive invariant mass distribution for the 8TeV dataset in data (black points). An illustration of the signal region (red) and the sidebands (blue) used for the mass hypothesis \mH=125~\GeV is shown. The parametric function used to obtain the normalisation in the signal region is shown as the blue line.}
     \label{fig:sideband_norm}
   \end{center}
@@ -254,7 +254,7 @@ where $p_{0b}$ and $p_{1b}$ are the Taylor expansion coefficients for bin $b$. S
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.85\textwidth]{ch5_anal_and_results/plots/sideband/sideband_fit.pdf}
+    \includegraphics[width=0.85\textwidth]{analysis/plots/sideband/sideband_fit.pdf}
     \caption{The number of data events is shown for a single analysis bin in each of the sidebands surrounding the signal window at \mH=125~\GeV (black points). The blue line show the straight line fit for this bin. In the 8~\TeV dataset there are 10 inclusive analysis bins and 9 exclusive analysis bins. Consequently there are 19 of these straight line fits at each \mH but only 18 of them are independent as the fractions must sum to unity.}
     \label{fig:sideband_shape}
   \end{center}
@@ -263,10 +263,10 @@ where $p_{0b}$ and $p_{1b}$ are the Taylor expansion coefficients for bin $b$. S
 The distribution for the data, background (along with the $\pm1\sigma$ and $\pm2\sigma$ errors) and signal for each of the sideband analysis bins are shown in Fig.~\ref{fig:sideband_output} for the mass hypothesis, \mH=124.7~\GeV.
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{{ch5_anal_and_results/plots/sideband/model_7TeV_m124.7}.pdf}
-  \includegraphics[width=0.48\textwidth]{{ch5_anal_and_results/plots/sideband/model_8TeV_m124.7}.pdf}\\
-  \includegraphics[width=0.48\textwidth]{{ch5_anal_and_results/plots/sideband/diff_model_7TeV_m124.7}.pdf}
-  \includegraphics[width=0.48\textwidth]{{ch5_anal_and_results/plots/sideband/diff_model_8TeV_m124.7}.pdf}
+  \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/model_7TeV_m124.7}.pdf}
+  \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/model_8TeV_m124.7}.pdf}\\
+  \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/diff_model_7TeV_m124.7}.pdf}
+  \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/diff_model_8TeV_m124.7}.pdf}
   \caption{The distribution in sideband analysis bins for the data (black points), the background (blue line), the error on the background (green and yellow bands) and the signal (red line) for the mass hypothesis at \mH=124.7~\GeV. The top row shows the expected number of events of each type for the 7~\TeV (left) and 8~\TeV (right) datasets. The bottom row shows the background subtracted plot for data (black points) and signal (red line).}
   \label{fig:sideband_output}
 \end{figure}
@@ -460,7 +460,7 @@ where $q_{\mu}^{obs}$ is the observed value of the test statistic in data and $f
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.8\textwidth]{ch5_anal_and_results/plots/testStatDrawing.pdf}
+    \includegraphics[width=0.8\textwidth]{analysis/plots/testStatDrawing.pdf}
     \caption{A demonstration of the test statistic distribution for the background only model (red) and the signal plus background model (blue) and the observed value in data (black line). The exclusion power is given by 1-$CL_{S}$, in this case values of $\mu>0.8$ are excluded at 92.48\% confidence.}
     \label{fig:cls}
   \end{center}
@@ -487,8 +487,8 @@ The results of the statistical hypothesis tests, which show an independent disco
 The exclusion limit for a \SM Higgs Boson is shown in Figure ~\ref{fig:res_exclusion} for the \MFM analysis (left) and the \SMVA analysis (right) for the combined 7 and 8~\TeV dataset. One can see that a \SM Higgs boson is largely disfavoured everywhere in the search range of $[110,150]$ apart from around 125~\GeV where a large excess is apparent. The $y$-axis is the amount of \SM signal excluded at 95\% confidence as a function of the hypothesised Higgs mass, \mH, on the $x$-axis. The black dashed line with the green and yellow bands respresents the expected exclusion, and the associated $\pm1\sigma$ and $\pm2\sigma$ error, if exactly the mean of the null hypothesis is observed. The solid black line represents the actual observation in data. It can be seen that the both the nominal \MFM analysis and the cross check \SMVA have similar exclusion power and the same observation.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obslimit.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obslimit_sideband.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obslimit.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obslimit_sideband.pdf}
   \caption{The expected and observed exclusion limits for a \SM Higgs boson at 95\% confidence level. The dashed line shows the expectated exclusion if exactly the mean of the null hypothesis is observed with its error at $1\sigma$ (green) and $2\sigma$ (yellow). The solid black line shows the observed exclusion. The results are shown for the nominal \MFM analysis (left) and the cross check \SMVA (right) when combining both the 7 and 8~\TeV datasets. A \SM Higgs boson is disfavoured at 95\% everywhere apart from where there is a large excess around 125~\GeV. \plotupdate}
   \label{fig:res_exclusion}
 \end{figure}
@@ -496,8 +496,8 @@ The exclusion limit for a \SM Higgs Boson is shown in Figure ~\ref{fig:res_exclu
 In order to quantify the significance of this excess the observed local $p$-value is shown as a function of the hypothesised Higgs mass, \mH, in Fig.~\ref{fig:res_pvalue} for both the 7~\TeV (blue line) and 8~\TeV (red line) datasets seperately and the combination (black line). It is clear there is a significant excess in both subsets of data at approximately the same mass and the quantity of the excess is apparent in both the \MFM and \SMVA analyses. The local $p$-value for the \MFM using the combined 7 and 8~\TeV datasets at \mH=124.7~\GeV (the mass with the most significant excess) is 5.7$\sigma$ where 5.2$\sigma$ is the expectation for a \SM Higgs boson. This constitutes a standalone discovery of a Higgs like resonance around 125~\GeV.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obspvalue.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obspvalue_sideband.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obspvalue.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obspvalue_sideband.pdf}
   \caption{The expected (dashed lines) and observed (solid lines) local $p$-value to reject the background only hypothesis as a function of the hypothesised Higgs mass, \mH. The 7~\TeV (blue lines) and 8~\TeV (red lines) results are show separately along with the combination (black lines). The results are shown for the nominal \MFM analysis (left) and the cross check \SMVA (right). The observed $p$-value in the \MFM at the most significant point is 5.7$\sigma$ (\mH=124.7~\GeV) given a \SM expectation of $5.2\sigma$. \plotupdate}
   \label{fig:res_pvalue}
 \end{figure}
@@ -507,8 +507,8 @@ In order to quantify the significance of this excess the observed local $p$-valu
 The best fit value of the signal strength modifier, $\mu=\musm$, is shown as a function of the hypothesis Higgs mass, \mH, in Fig.~\ref{fig:res_mumh} for the combined 7 and 8~\TeV dataset. As expected this follows very similarly the shape of the observed exclusion in Fig.~\ref{fig:res_exclusion} and shows that the observed boson is very compatible with a \SM Higgs, i.e.~the observed value of $\mu$ is within $1\sigma$ of the \SM expectation, $\mu=1$. 
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmumh.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmumh_sideband.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmumh.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmumh_sideband.pdf}
   \caption{The observed best fit value of the signal strength modifier, $\mu=\musm$, as a function of the hypothesised Higgs mass \mH when using the combined 7 and 8~\TeV datasets. The $\pm1\sigma$ and $\pm2\sigma$ error bands are shown as the dark and light green bands respectively. Results are shown for the nominal \MFM analysis (left) and the cross check \SMVA analysis (right). \plotupdate.}
   \label{fig:res_mumh}
 \end{figure}
@@ -516,8 +516,8 @@ The best fit value of the signal strength modifier, $\mu=\musm$, is shown as a f
 Figure~\ref{fig:res_muscan} shows the one dimensional \NLL scan of $\mu$ when the Higgs mass \mH is profiled. The hypothesis mass, \mH, is left floating in the fit as there is no \textit{a priori} knowledge of its value. The likelihood curves are shown for the 7 and 8~\TeV datasets separately, blue and red lines respectively, as well as for the combination, black line. The \SM expectation is shown as the dashed lines. One can see that the results are very consistent between the \MFM (left) and the \SMVA (right). There is some distance between the measurement made using the 7~\TeV dataset (blue line) and the 8~\TeV dataset (red line) but they are consistent at $<2\sigma$ level and it is quite reasonbale to imagine an upward fluctutation in the data at 7~\TeV and a downward fluctutaion at 8~\TeV. When combining the two datasets the best fit value comes out very close to the \SM expectation of $\mu=1$ so certainly an interesting area for future measurements with more data in the \Hgg channel is where this value goes. The best fit values of $\musm$ with their errors (and the mass at which the best fit is found) are summarised for each of the datasets using the \MFM analysis in Table~\ref{tab:res_mu}.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmu.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmu_sideband.pdf}\\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmu.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmu_sideband.pdf}\\
   \caption{The one dimensional \NLL scan of the signal strength modifier, $\mu=\musm$, when the hypothesis Higgs mass, \mH, is profiled in the fit. The \SM expectation and the observation in data are shown as the dashed and solid lines respectively. The results are shown for the 7~\TeV (blue), the 8~\TeV (red) and combined (black) datasets using the \MFM analysis (left) and the \SMVA analysis (right). The observed best fit value for the nominal \MFM analysis is $\musm=1.14^{+0.26}_{-0.23}$.}
   \label{fig:res_muscan}
 \end{figure}
@@ -540,8 +540,8 @@ Figure~\ref{fig:res_muscan} shows the one dimensional \NLL scan of $\mu$ when th
 The following measurements focus on the properties of the observed signal and are consequently only shown for the \MFM analysis. The two most important physical parameters to measure in the signal are the overall rate, $\mu$, and the mass, \mH. We have seen the 1D \NLL scan of the signal strength, $\mu$, when \mH is profiled. The result of doing a two dimensional \NLL scan in both the parameters simultaneously is shown on the left hand side of Fig.~\ref{fig:res_mumh2} for the combined 7+8~\TeV dataset. The overall best fit (see Table~\ref{tab:res_mu}) is represented by the black cross where the solid and dashed lines correspond to the $1\sigma$ and $2\sigma$ error contours. For a standalone measurement of the mass of the observed particle it is undesirable to constrain the signal resonance to have exactly \SM like couplings and production rates. Consequently, when measuring the mass, the overall signal rate is allowed to scale in terms of the production from fermion couplings, \RF, and from boson couplings, \RV (see Eq.~\ref{eq:rvrf}). The one dimensional \NLL scan of the observed mass is shown on the right hand side of Fig.~\ref{fig:res_mumh2} for the combined 7+8~\TeV dataset when profiling the \RV and \RF signal strengths. This is shown when including all uncertainties (black) and when considering just the statistical uncertainties in the data (blue). It should be noted that in principal the best fit mass when scanning the two dimensions of $\mu$ and \mH (Fig.~\ref{fig:res_mumh2} left) does not necessarily have to be the same as the mass when scanning one dimension \mH but floating two other parameters, \RV and \RF (Fig.~\ref{fig:res_mumh2} right). However, in practise they come out almost identical because, as is shown below, the coupling strength parameters \RV and \RF come out very close to the \SM expectation. The observed best fit mass of the boson is found to be $\mH=124.73\pm0.34$(stat)$\pm0.15$(syst)~\GeV. 
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmumh2D.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsmh.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmumh2D.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmh.pdf}
   \caption{The two dimensional \NLL scan of $\mu$ and \mH when fitting to the combined 7+8~\TeV dataset is shown on the left. The best fit value is shown by the black cross and the $1\sigma$ and $2\sigma$ error contours shown by the solid and dashed lines respectively. The one dimensional \NLL scan of the best fit mass \mH is shown on the right, when profiling over the relative signal production from fermionic and bosonic modes, \RF and \RV. The statistical only component is shown as the blue line and the statistical plus systematic as the black line.}
   \label{fig:res_mumh2}
 \end{figure}
@@ -549,10 +549,10 @@ The following measurements focus on the properties of the observed signal and ar
 Aside from the mass and signal strength of the observed particle it is relevant to study its couplings and whether the relative fraction produced by the different production modes is also compatible with the \SM prediction. Figure~\ref{fig:res_rvrf} (bottom left) shows the 2D \NLL scan of the relative couplings to fermions ($x$-axis) and bosons ($y$-axis) and their 1D projections (top left and top right). The \SM expectation is at (1,1) and represented by the dimond on the figure. It can be seen that the observation of $\mu_{ggH+tth}=X\pm\sigma$, $\mu_{qqH+VH}=X\pm\sigma$ is very compatible with the \SM expectation. Furthermore the signal strength can be divided by production mode as shown on the bottom right of Fig.~\ref{fig:res_rvrf}. It can be seen that the signal strength for all four production mechanism is consistent with the \SM expectation at 1. The Higgs mass, \mH, is profiled in all of these scans but constrained to be the same across each production mode.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsrv.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsrf.pdf} \\
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsrvrf.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obsprocscan.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsrv.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsrf.pdf} \\
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsrvrf.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsprocscan.pdf}
   \caption{The top row shows the 1D \NLL scan as a function of the \SM relative coupling to bosons, $\mu_{qqH+VH}$ (top left), and to fermions, $\mu_{ggH+tth}$ (top right) for \SM expectation (dashed lines) and the observation in data (solid lines) for the 7~\TeV (red), 8~\TeV (blue) and combined (black) datasets. The bottom left plot is the 2D \NLL scan of $\mu_{qqH+VH}$ ($y$-axis) vs.~$\mu_{ggH+ttH}$ ($x$-axis) for the combined dataset observation. The best fit point is shown by the black cross whilst the $1\sigma$ and $2\sigma$ error intervals are shown by the solid and dashed lines respectively. The \SM expectation is the yellow diamond. It can be seen that the observation is very compatible with the \SM prediction.}
   \label{fig:res_rvrf}
 \end{figure}
@@ -560,8 +560,8 @@ Aside from the mass and signal strength of the observed particle it is relevant 
 Figure ~\ref{fig:res_chcomp} shows the breakdown of the extracted signal strength when separately fitted for each of the analysis categories (left) and when grouping the categories by their topology (right) into those untagged, those which are dijet (or \VBF) tagged, \VH tagged or \ttH tagged. It is noticeable that the categories with the most sensitivty are the untagged categories especially the "Untagged 1" and "Untagged 2" at 8~\TeV, whilst the dijet categories also have considerable sensitivity given that the signal to background ratio is high. The \VH and \ttH tagged categories have the least sensitivty and whilst they do not contribute much to the error on the total signal yield they are important when measuring the couplings of the observed boson.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obschcomp.pdf}
-  \includegraphics[width=0.49\textwidth]{ch5_anal_and_results/plots/results/obstoposcan.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obschcomp.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obstoposcan.pdf}
   \caption{The left plot shows the signal strength breakdown when fitting the signal strength, $\mu$, in each analysis category seperately. The right plot shows the signal strength breakdown when fitting categories split by their topology, the 7~\TeV dataset is shown in red, the 8~\TeV in blue and the combined dataset in black.}
   \label{fig:res_chcomp}
 \end{figure}
