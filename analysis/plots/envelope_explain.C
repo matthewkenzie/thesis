@@ -1,17 +1,73 @@
-{
+#include <iostream>
+#include <string>
+#include <vector>
 
+#include "TH1F.h"
+#include "TGraph.h"
+#include "TLegend.h"
+#include "TLine.h"
+#include "TCanvas.h"
+#include "TObject.h"
+#include "TF1.h"
+#include "TMath.h"
+
+#include "RooRandom.h"
+#include "RooRealVar.h"
+#include "RooExponential.h"
+#include "RooGaussian.h"
+#include "RooPlot.h"
+#include "RooGenericPdf.h"
+#include "RooAddPdf.h"
+#include "RooArgList.h"
+#include "RooConstVar.h"
+#include "RooFormulaVar.h"  
+#include "RooDataSet.h"
+#include "RooFitResult.h"
+#include "RooAbsPdf.h"
+
+using namespace std;
+using namespace RooFit;
+
+vector<double> ret_errors(TGraph *graph, double bestFitVal, int nSigma){
+  TGraph *low = new TGraph();
+  TGraph *up = new TGraph();
+  double x,y;
+  int lP=0;
+  int uP=0;
+  for (int p=0;p<graph->GetN(); p++){
+    graph->GetPoint(p,x,y);
+    if (x<bestFitVal){
+      low->SetPoint(lP,y,x);
+      lP++;
+    }
+    else {
+      up->SetPoint(uP,y,x);
+      uP++;
+    }
+  }
+  vector<double> result;
+  result.push_back(bestFitVal);
+  for (int s=1; s<=nSigma; s++){
+    result.push_back(low->Eval(nSigma*nSigma));
+    result.push_back(up->Eval(nSigma*nSigma));
+  }
+  return result;
+
+}
+
+void envelope_explain(){
   // PLOT 1
   TH1F dummy("d","",1,120,130);
-  dummy.GetYaxis().SetRangeUser(0.,5.5);
+  dummy.GetYaxis()->SetRangeUser(0.,5.5);
   dummy.SetStats(0);
-  dummy.GetXaxis().SetTitle("x");
-  dummy.GetYaxis().SetTitle("-2#DeltaLL");
+  dummy.GetXaxis()->SetTitle("x");
+  dummy.GetYaxis()->SetTitle("-2#DeltaLL");
 
   TCanvas c("c","c",800,600);
   c.SetGrid();
 
   TLegend *leg = new TLegend(0.2,0.65,0.8,0.89);
-  leg.SetFillColor(0);
+  leg->SetFillColor(0);
 
   dummy.Draw("G");
 
@@ -66,10 +122,10 @@
   
   }
   leg->AddEntry(envelope,"Envelope","L");
-  envelope.Draw("Csame");
+  envelope->Draw("Csame");
   f2.Draw("Lsame");
   f.Draw("Lsame");
-  leg.Draw("same");
+  leg->Draw("same");
   c.Update();
   c.Modified();
   c.Print("envelope_explain.pdf");
@@ -103,6 +159,9 @@
   RooFitResult *pFR = powS->fitTo(*data,Save(true));
   double bestFitMuPow = mu->getVal();
   double globalMinNLL = 2.*TMath::Min(eFR->minNll(),pFR->minNll());
+  double globalBestFitMu=0.;
+  if (eFR->minNll()<pFR->minNll()) globalBestFitMu = bestFitMuExp;
+  else globalBestFitMu = bestFitMuPow;
   delete eFR;
   delete pFR;
 
@@ -153,7 +212,8 @@
   env->SetLineWidth(4);
   env->SetLineStyle(7);
   env->SetLineColor(kYellow);
-  
+
+
   TLegend *leg3 = new TLegend(0.35,0.7,0.65,0.89);
   leg3->SetFillColor(0);
   leg3->AddEntry(expLL,"Exponential Likelihood","L");
@@ -164,8 +224,27 @@
   powLL->Draw("Lsame");
   env->Draw("Lsame");
   leg3->Draw("same");
+  
+  // ERROR LINES
+  vector<double> errsPow = ret_errors(powLL,bestFitMuPow,2);
+  vector<double> errs = ret_errors(env,globalBestFitMu,2);
+  TLine l;
+  l.SetLineWidth(3);
+  l.SetLineStyle(kDashed);
+  l.SetLineColor(kRed);
+  l.DrawLine(muMin,4,muMax,4);
+  l.DrawLine(errsPow[3],0,errsPow[3],4);
+  l.DrawLine(errsPow[4],0,errsPow[4],4);
+  l.SetLineColor(kBlue);
+  l.DrawLine(errs[3],0,errs[3],4);
+
   c3->Print("envelope_explain3.pdf");
 
+  for (unsigned int i=0; i<errs.size(); i++){
+    cout << i << " : " << errs[i] << endl;
+  }
+
+  cout << "Global:      " << globalBestFitMu << endl; 
   cout << "BestFit exp: " << bestFitMuExp << endl;
   cout << "BestFit pow: " << bestFitMuPow << endl;
 

@@ -3,87 +3,78 @@
 \chapterquote{I don't have a quote}
 {Matthew Kenzie, 1785--1854}
 
-This thesis describes three complementary analysis regimes in the Higgs to two photons search at CMS. These differ in their photon selection, event selection, event classification (or categorisation) and statistical methods for extracting results. They are described in the following chapter (Chapter~\ref{chap:selection_and_categorisation}). However, there are many components which they share. These are detailed below.
+This thesis describes three complementary analyses in the Higgs to two photons search at CMS. These differ in their photon selection, event selection, event classification (or categorisation) and statistical methods for extracting results. They are described in the following chapter (Chapter~\ref{chap:selection_and_categorisation}). However, there are many components which they share. These are detailed below.
 
-As we have seen in Eq.~\ref{eq:invmass}, repeated below in Eq.~\ref{eq:invmass2} for convenience, the diphoton invariant mass is constructed from the two photon energies and the angle between them. Consequently, important considerations for this analysis are photon energy resolution and good opening angle resolution which is completely dominated by the vertex resolution, as the position resolution of the photons (location they hit the \ECAL) is neglible in comparison. Details of how this is exploited in the analyses are given at the end of this chapter in Sections~\ref{sec:photon_energy} and~\ref{sec:vtx_reco}. The selection of events is described in the chapter after this (Chapter~\ref{chap:selection_and_categorisation}) alongside the categorisation, or binning, scheme into different classes of event which take advantage of areas of phase space which share similar signal to background ratios.
-
+As we have seen in Eq.~\ref{eq:invmass}, repeated below in Eq.~\ref{eq:invmass2} for convenience, the diphoton invariant mass is constructed from the two photon energies and the angle between them. Consequently, important considerations for this analysis are photon energy resolution and good opening angle resolution which is completely dominated by the vertex resolution, as the position resolution of the photons (the location at which they hit the \ECAL) is neglible in comparison. Details of how this is exploited in the analyses are given at the end of this chapter in Sections~\ref{sec:photon_energy} and~\ref{sec:vtx_reco}. The selection of events is described in the chapter after this (Chapter~\ref{chap:selection_and_categorisation}) alongside the categorisation, or binning, scheme into different classes of event which take advantage of areas of phase space which share similar signal to background ratios.
 \begin{equation}
-  m_{\gamma\gamma} = \sqrt{E_{1}E_{2}(1-\cos(\alpha))}
+  m_{\gamma\gamma} = \sqrt{2E_{1}E_{2}(1-\cos(\alpha))}
   \label{eq:invmass2}
 \end{equation}
-
 After a preliminary discussion of multivariate analysis techniques, the datasets, the triggering and the \MC are discussed.
 
 \section{Boosted Decision Trees}
 \label{sec:bdts}
+\acf{MVAs} are commonly used in High Energy Physics analyses to extract the maximum possible signal sensitivity in cases where the background rates are high. The advantage of \MVAs is that given a set of input variables a network of sequential cuts can be built, to classify or correct events, in a multidimensional phase space to exploit differences between the signal and background in these variables and importantly in the correlations between these variables. A particular type of \MVA which is used widely in this analysis is the \BDT. \BDTs are prefered because they are more robust to the inclusion of variables which have little or no discriminating power. There are two broad types of \BDT used, one is known as a regression \BDT and the other as a classification \BDT. 
 
-\MVAs are commonly used in High Energy Physics analyses to extract the maximum possible signal sensitivity in cases where the background rates are high. The advantage of \MVAs is that given a set of input variables a network of sequential cuts can be built, to classify or correct events, in a multidimensional phase space to exploit differences between the signal and background in these variables and importantly in the correlations between these variables. A particular type of \MVA which is used widely in this analysis is the \BDT. \BDTs are prefered because they are more robust to the inclusion of variables which have little or no discriminating power. There are two broad types of \BDT used, one is known as a regression \BDT and the other as a classification \BDT. 
-
-A classification \BDT will, given a set of input variables, assign a value (typically between -1 and 1) to each event based on how signal like that event is. This serves to collapse all the event information into one discrimanting variable which can be used to classify differences between the signal and background. The input is provided as the probability distributions (which can be supplied as binned or unbinned data samples or as a functional form) of the background and signal for a set of ``input variables". The process involves construction of a series of \DTs complemented by a ``boosting" step which serves to mitigate against ``overtraining" on fluctuations within the training samples. This analysis chooses a particular type of decision tree boosting known as ``gradient" boosting because it is more robust against outliers or mislabled data points~\cite{TMVA}.
+A classification \BDT will, given a set of input variables, assign a value (typically between -1 and 1) to each event based on how signal-like that event is. This serves to collapse all the event information into one discrimanting variable which can be used to classify differences between the signal and background. The input is provided as the probability distributions (which can be supplied as binned or unbinned data samples or as a functional form) of the background and signal for a set of ``input variables". The process involves construction of a series of \DTs complemented by a ``boosting" step which serves to mitigate against ``overtraining" on fluctuations within the training samples. This analysis chooses a particular type of decision tree boosting known as ``gradient" boosting because it is more robust against outliers or mislabelled data points~\cite{TMVA}.
 
 The \DT is built by applying sequential cuts to the input variables and assessing the relative signal purity, $p$, in the sub-sample remaining after each cut.
-
 \begin{equation}
   p = \frac{N_{s}}{N_{s}+N_{b}},
 \end{equation}
-
-where $N_{s}$ and $N_{b}$ are the sum of weights of the signal and background remaining in each sub-sample. A threshold criterion, known as the Gini index~\cite{TMVA} $p(1-p)$, is applied to decide whether to split the sample further. The process continues and the splitting is curtailed when either the threshold or the user defined maximum tree depth (number of subsamples allowed) is reached. The value of each cut is varied such that the signal purity, $p$, in each sub-sample is maximised. An event is assigned a value of -1 or +1 depending on whether it falls into a sub-sample with $p>$0.5 or not. Clearly some fraction of events will be misclassifed where the actual number which get misclassified will depend on the discrimnatory power available from the chosen input variables. In order to reduce this effect a series of \DTs are trained and each assigned a weight derived by the ``boosting" process. 
-If we assign each \DT as a member of a family of $M$ functions, $f(\vec{x};\vec{a}_{m})$, which depend on the input variables, $\vec{x}$ and the set of cuts in that tree, $\vec{a}_{m}$. The object is to construct an overall decision tree which consists of the weighted average of each \DT,
-
+where $N_{s}$ and $N_{b}$ are the sum of weights of the signal and background remaining in each sub-sample. A threshold criterion, known as the Gini index~\cite{TMVA} $p(1-p)$, is applied to decide whether to split the sample further. The process continues and the splitting is curtailed when either the threshold or the user defined maximum tree depth (number of subsamples allowed) is reached. The value of each cut is varied such that the signal purity, $p$, in each sub-sample is maximised. An event is assigned a value of $-1$ or $+1$ depending on whether it falls into a sub-sample with $p>$0.5 or not. Clearly some fraction of events will be misclassifed where the actual number which get misclassified will depend on the discriminatory power available from the chosen input variables. In order to reduce this effect a series of \DTs are trained and each assigned a weight derived by the ``boosting" process. 
+We assign each \DT as a member of a family of $M$ functions, $f(\vec{x};\vec{a}_{m})$, which depend on the input variables, $\vec{x}$ and the set of cuts in that tree, $\vec{a}_{m}$. The object is to construct an overall decision tree which consists of the weighted average of each \DT,
 \begin{equation}
-  F(\vec{x};\vec{\beta},\vec{a}) = \sum_{m=0}^{M} \beta_{m}f(\vec{x},\vec{a}_{m}) \;\;\;\;\; \textrm{where} \;\; \vec{\beta} = (\beta_{0},\beta_{1}...\beta_{m})
+  F(\vec{x};\vec{\beta},\vec{a}) = \sum_{m=0}^{M} \beta_{m}f(\vec{x},\vec{a}_{m}) \;\;\;\;\; \textrm{where} \;\; \vec{\beta} = (\beta_{0},\beta_{1}...\beta_{M})
 \end{equation}
-
-The boosting procedue is implemented by adjusting the weights $\vec{\beta}$ in order to minimise the deviation in the loss function (Eq.~\ref{eq:bdt_loss_fcn}) between the weighted tree response $F(\vec{x};\vec{\beta},\vec{a})$ and the true output $y$ obtained from the training sample. 
-
+The boosting procedure is implemented by adjusting the weights $\vec{\beta}$ in order to minimise the deviation in the loss function (Eq.~\ref{eq:bdt_loss_fcn}) between the weighted tree response $F(\vec{x};\vec{\beta},\vec{a})$ and the true output $y$ obtained from the training sample. 
 \begin{equation}
-  L(F,y) = \ln(1+e^{-2F(x)y})
+  L(F,y) = \ln(1+e^{-2F(\vec{x})y})
   \label{eq:bdt_loss_fcn}
 \end{equation}
-
 A common procedure when constructing a \BDT to check for overtraining is to split both the background and signal into two independent samples. One is used to \emph{train} the \BDT and one is used to \emph{test} the response of the output. Clearly one requires that both the training and independent test sample look the same in the output variable. This is usually quantified by use of a Kolmogorov-Smirnov test, which broadly speaking ascertains the probability that the training and test samples originate from the same underlying distribution~\cite{kol_smir}. 
 
-In this way the output of $F(\vec{x};\vec{\beta},\vec{a})$ for a classification \BDT will be a ``semi-continuous" output from -1 to 1 with signal events in general given a higher score than background events.
+In this way the output of $F(\vec{x};\vec{\beta},\vec{a})$ for a classification \BDT will be a ``semi-continuous" output from $-1$ to $+1$ with signal events in general given a higher score than background events.
 
-A regression \BDT is used to estimate the true value of some variable given the values and correlations of several other variables. They are commonly used for correcting the energy of a particular object, for example a photon. Given a \MC source of photons the ``true" energy is regressed from the position, shape and raw energy of the supercluster. For regression \BDTs the output $F(\vec{x};\vec{\beta},\vec{a})$ represents the estimated corrected energy and the boosting procedure targets minimising the deviation between this and the true energy in \MC. 
+A regression \BDT is used to estimate the true value of some variable given the values and correlations of several other variables. They are commonly used for correcting the energy of a particular object, for example a photon. Given a \MC source of photons the ``true" energy is regressed from the position, shape and raw energy of the supercluster. For regression \BDTs the output $F(\vec{x};\vec{\beta},\vec{a})$ represents the estimated corrected energy and the boosting procedure targets minimising the deviation between this and the true energy in \MC events. 
 
 \section{Data samples and triggering}
 
-The data consists of two indepedent samples of proton-proton collisions collected by the CMS experiment at the \LHC in 2011 and 2012 with a centre-of-mass energy ($\sqrt{s}$) of 7 and 8 TeV respecivtely. The total integrated luminosity of the two samples is 5.1\fb and 19.7\fb in 2011 and 2012 respectively and collectively referred to as \LHC Run 1. The response of the detector has changed considerably over this period and much of the variation is modelled by the \MC simulation. Figure~\ref{fig:intlumi} shows the integrated luminosity delivered and recorded by \CMS during \LHC Run 1.
+The data consists of two indepedent samples of proton-proton collisions collected by the CMS experiment at the \LHC in 2011 and 2012 with a centre-of-mass energy ($\sqrt{s}$) of 7 and 8 TeV respectively. The total integrated luminosity of the two samples is 5.1~\fb and 19.7~\fb in 2011 and 2012, respectively, and they are collectively referred to as \LHC Run 1. The response of the detector has changed considerably over this period and much of the variation is modelled by the \MC simulation. Figure~\ref{fig:intlumi} shows the integrated luminosity delivered and recorded by \CMS during \LHC Run 1.
 
 \begin{figure}
   \includegraphics[width=0.49\textwidth]{analysis_comps/plots/int_lumi_2011.pdf}
   \includegraphics[width=0.49\textwidth]{analysis_comps/plots/int_lumi_2012.pdf}
-  \caption{The total integrated luminosity delived and recorded by CMS during the 2011 (left) and 2012 (right) run periods.}
+  \caption[The total integrated luminosity delivered and recorded by CMS during the 2011 and 2012 run periods]{The total integrated luminosity delived and recorded by CMS during the 2011 (left) and 2012 (right) run periods. Due to down time of various subsystems in \CMS during run periods, particularly the \ECAL, the recorded luminsoity given here is not exactly equivalent to the integrated luminosity of the datasets used in the analysis.}
   \label{fig:intlumi}
 \end{figure}
 
-Events are selected for the analysis by requiring they pass an asymmetric diphoton trigger with \ET thresholds of 26 (18) and 36 (22) GeV for the leading (trailing) photon in the 2011 and 2012 runs respectively. The candidates are also required to have either a high value of \rnine or to pass a loose calorimetric identifaction and isolation requirement. High trigger efficiency is achieved by selecting photon candidates which pass either requirement. The efficiency of the trigger for the analysis preselection is 99.5\%.
+Events are selected for the analysis by requiring they pass an asymmetric diphoton trigger with \ET thresholds of 26 (18) and 36 (22) GeV for the leading (trailing) photon in the 2011 and 2012 runs respectively. The candidates are also required to have either a high value of \rnine or to pass a loose calorimetric identification and isolation requirement. High trigger efficiency is achieved by selecting photon candidates which pass either requirement. The efficiency of the trigger for the analysis preselection is 99.5\%.
 
-\subsection{Monte Carlo}
+\subsection{Monte Carlo Simulation}
 \label{sec:mc}
 
-Accurate simulation of detector effects and efficiency is highly important. Knowledge of the expected Higgs signal shape is clearly essential and although the size and shape of the \mgg background is entirely data driven when extracting results, simultaing the kinematics, shower shape and resolution properties of the background is essential when training the selection and optimising the binning. 
+Accurate simulation of detector effects and efficiency is highly important. Knowledge of the expected Higgs signal shape is clearly essential and although the size and shape of the \mgg background is entirely data driven when extracting results, simulating the kinematics, shower shape and resolution properties of the background is important when training the selection and optimising the binning. 
 
-As explained in Chapter~\ref{chap:intro} the two main production mechanisms for a \SM Higgs boson at the \LHC are \ggH and \VBF. Typically the latter is produced at much higher Higgs \pT and this feature is exploited in the analysis. Consequently, it is important to model the \pT distribution of these two production modes accurately. The signal samples for these two processes are generated using \POWHEG~\cite{powheg1,powheg2} at NLO interfaced with \PYTHIA~\cite{pythia} including a reweighting factor which matches their \pT spectrum to that when including the NNLO and NNLL terms. For the associated production modes, with a $W^{\pm}$,$Z$ or $t$-quarks, (\VH and \ttH) only \PYTHIA is used. The \SM Higgs boson cross sections and branching fractions are taken from Ref.~\cite{LHCHiggsCrossSectionWorkingGroup3}
+As explained in Chapter~\ref{chap:intro} the two main production mechanisms for a \SM Higgs boson at the \LHC are \ggH and \VBF. Typically the latter is produced at much higher Higgs \pT and this feature is exploited in the analysis (see Fig.~\ref{gen_level}). Consequently, it is important to model the \pT distribution of these two production modes accurately. The signal samples for these two processes are generated using \POWHEG~\cite{powheg1,powheg2} at NLO interfaced with \PYTHIA~\cite{pythia} including a reweighting factor which matches their \pT spectrum to that when including the NNLO and NNLL terms. For the associated production modes, with a $W^{\pm}$, $Z$ or $t$-quarks, (\VH and \ttH) only \PYTHIA is used. The \SM Higgs boson cross sections and branching fractions, and their uncertainties, are taken from Ref.~\cite{LHCHiggsCrossSectionWorkingGroup3}
 
-The spin-2 graviton with minimal couplings, \graviton, has two production mechanisms, one via gluon-fusion ($ggX$) and one via quark-antiquark annihilation ($q\bar{q}X$). The graviton samples are generated using the \JHU generator~\cite{jhu} in which the \pT spectrum of these samples is matched to the SM so that any bias obtained from mismodelling of the $\pT$ is avoided.
+The spin-2 graviton with minimal couplings, \graviton, has two production mechanisms, one via gluon-fusion ($ggX$) and one via quark-antiquark annihilation ($q\bar{q}X$). The graviton samples are generated using the \JHU generator~\cite{jhu} in which the \pT spectrum of these samples is matched to the SM. The kinematic properties of a spin 2 \textit{graviton-like} Higgs are not well defined can depend on the specifics of the model in question. Matching the \pT spectrum of the spin-2 samples with the \SM spin-0 ensures that no discrimination arising from model dependence of the \pT distribution is allowed. 
 
-The simulated background samples are used soley for cut and category optimisations and training of multivariate discriminants. The background which contains the \QCD continuum of prompt photons (refering back to Chapter~\ref{chap:intro} these are produced by Born and Box diagrams) is simulated using \SHERPA~\cite{sherpa} at 8\TeV and \MADGRAPH~\cite{madgraph} at 7\TeV. The prompt-fake and fake-fake backgrounds, in which one or more photons are faked by a neutral meson (usually a \pizero) reconstructed as a jet are generated using \PYTHIA. Samples of \Zee, \Zmumu and \Zmumugamma used for data/MC comparisons are generated with \POWHEG.
+The simulated background samples are used solely for cut and category optimisations and training of multivariate discriminants. The background which contains the \QCD continuum of prompt photons (refering back to Chapter~\ref{chap:intro} these are produced by Born and box diagrams) is simulated using \SHERPA~\cite{sherpa} at 8~\TeV and \MADGRAPH~\cite{madgraph} at 7~\TeV. The prompt-fake and fake-fake backgrounds, in which one or both photons are faked by a neutral meson (usually a \pizero) reconstructed as a photon, are generated using \PYTHIA. Samples of \Zee, \Zmumu and \Zmumugamma used for data/MC comparisons are generated with \POWHEG.
 
-All of these \emph{generator level} samples are then run through the full \CMS detector simulation using \GEANT~\cite{geant}. This includes the effect of overlapping vertices (pileup) and detector effects (such as noise and crystal degredation) in four bins of time (Run2011, Run2012AB, Run2012C, Run2012D).
+All of these \emph{generator level} samples are then run through the full \CMS detector simulation using \GEANT~\cite{geant}. This includes the effect of overlapping vertices (pileup) and detector effects (such as noise and crystal degredation) in four times periods; Run2011 (5.1~\fb), Run2012AB (5.3~\fb), Run2012C (7.1~\fb) and Run 2012D (7.3~\fb).
 
 
 \subsection{Pileup and beamspot reweighting}
 \label{sec:pileup_beamspot}
 
-An important difference between the simulated samples and the data which can have a large impact on the analysis is the distribution of the number of primary vertices. The \emph{pileup} in the event effects many important analysis variables, for example photon shower shape and photon isolation as well as the diphoton invariant mass if the chosen vertex is wrong. Consequently the \MC is reweighted such that the pileup distribution matches that in data. The reweighting technique is validated using \Zmumu events as shown in Figure~\ref{fig:pileup} for the 7 and 8~\TeV samples respectively. 
+An important difference between the simulated samples and the data which can have a large impact on the analysis is the distribution of the number of primary vertices. The \emph{pileup} in the event effects many important analysis variables, for example photon shower shape and photon isolation as well as the diphoton invariant mass if the chosen vertex is wrong. Consequently the \MC is reweighted such that the pileup distribution matches that in data. The reweighting technique is validated using \Zmumu events as shown in Figure~\ref{fig:pileup} for the 7 and 8~\TeV samples. 
 
 \begin{figure}
   \begin{center}
   \includegraphics[width=0.49\textwidth]{analysis_comps/plots/nvtx_zmumu_2011.pdf}
   \includegraphics[width=0.49\textwidth]{analysis_comps/plots/nvtx_zmumu_2012.pdf}
-  \caption{Distribution of the number of reconstructed vertices in the 2011 (left) and 2012 (right) run periods. Calculated using the Deterministic Annealing alogirithm in \refrqd for \Zmumu events in data (black dots) and MC (red histogram) after reweighting.}
+  \caption[Distribution of the number of reconstructed vertices]{Distribution of the number of reconstructed vertices in the 2011 (left) and 2012 (right) run periods. Calculated using the Deterministic Annealing algorithm in \refrqd for \Zmumu events in data (black dots) and MC events (red histogram) after reweighting.}
   \label{fig:pileup}
   \end{center}
 \end{figure}
@@ -93,7 +84,7 @@ When the chosen vertex is incorrect the mass resolution is dominated by the spre
 \begin{figure}
   \begin{center}
   \includegraphics[width=0.55\textwidth]{analysis_comps/plots/beamspot.pdf}
-  \caption{Distribution of $\Delta z$ (the distance between the chosen vertex and the true vertex in the $z$ direction) for data (black), the \MC (red) and the \MC after beam spot reweighting (green) for \Zmumu events.}
+  \caption[Distribution of $\Delta z$ (the distance between the chosen vertex and the true vertex in the $z$ direction]{Distribution of $\Delta z$ (the distance between the chosen vertex and the true vertex in the $z$ direction) for data (black), the \MC (red) and the \MC after beam spot reweighting (green) for \Zmumu events.}
   \label{fig:beamspot}
   \end{center}
 \end{figure}
@@ -101,14 +92,13 @@ When the chosen vertex is incorrect the mass resolution is dominated by the spre
 \section{Energy measurement of photons}
 \label{sec:photon_energy}
 
-The photon energy obtained from the supercluster sum described in Section~\ref{sec:ecal} even when including the intercalibration and transperency corrections shown in Figure~\ref{fig:ecal_laser_corrs} does not give the most optimal resolution for the energy measurement of photons at \CMS. On top of this energy (known as the \emph{raw} supercluster energy, $E_{raw}$) it is also valuable to correct for additional energy losses. These arise from \emph{bremstrauhlung}; where the photon converts in the material upstream of the \ECAL and the two electron legs radiate additional photons and thus the some of the photon shower is missed, and for local containment of the shower; where some energy is lost through small gaps between \ECAL crystals and larger gaps between ``modules" or sections of crystals. These corrections are obtained using a specialised regression \BDT (see Sec.~\ref{sec:bdts}) trained on a \MC source of prompt photons from a sample containing photons and jets. The \BDT targets accurate measurements of individual photons' energy by correcting the raw supercluster energy and provides an estimate for the energy resolution of each photon given the position and shower shape of the supercluster. The training is done separately for barrel and endcap photons (as the cluster shapes look very different for these two distinct regions) and is also performed separately for the 7 and 8 TeV datasets. The following input variables are used:
-
+The photon energy obtained from the supercluster sum described in Section~\ref{sec:ecal}, even when including the intercalibration and transparency corrections shown in Figure~\ref{fig:ecal_laser_corrs}, does not give the most optimal resolution for the energy measurement of photons at \CMS. On top of this energy (known as the \emph{raw} supercluster energy, $E_{raw}$) it is also valuable to correct for additional energy losses. These arise from \emph{bremsstrahlung}; where the photon converts in the material upstream of the \ECAL and the two electrons radiate additional photons and thus some of the photon shower is missed, and from local non-containment of the shower; where some energy is lost due to small gaps between \ECAL crystals and larger gaps between ``modules" or sections of crystals. These corrections are obtained using a specialised regression \BDT (see Sec.~\ref{sec:bdts}) trained on a \MC source of prompt photons from a sample containing photons and jets. The \BDT targets accurate measurements of individual photons' energies by correcting the raw supercluster energy and provides an estimate for the energy resolution of each photon given the position and shower shape of the supercluster. The training is done separately for barrel and endcap photons (as the cluster shapes look very different for these two distinct regions) and is also performed separately for the 7 and 8 TeV datasets. The following input variables are used:
 \begin{itemize}
   \item The global position of the supercluster in \eta and \phi
   \item A collection of shower shape variables which aim at providing information on the likelihood and location of a photon conversion and the degree of showering in the material:
   \begin{itemize}
     \item The \rnine of the supercluster (as previously described in Section~\ref{sec:ecal}).
-    \item The ratio of the 5$\times$5 crystal energy to the raw supercluster energy (equivalent of $R_{25}$).
+    \item The ratio of the 5$\times$5 crystal energy to the raw supercluster energy (equivalent to $R_{25}$).
     \item The energy weighted \eta-width and \phi-width of the supercluster (in other words the spread of the shower).
     \item The number of basic clusters.
     \item The ratio of energy in the \HCAL behind the supercluster to the \ECAL energy of the supercluster, $H/E$.
@@ -119,35 +109,28 @@ The photon energy obtained from the supercluster sum described in Section~\ref{s
     \item The relative energy and position of the seed cluster.
     \item The local energy covariance matrix.
     \item Energy ratios between the seed and the 3$\times$3 and 5$\times$5 areas around the seed.
-    \item The \eta and \phi index of the seed crystal and the relative position of the seed cluster to the crystal centre. 
+    \item The \eta and \phi index of the seed crystal and the position of the seed cluster relative to the crystal centre. 
   \end{itemize}
   \item Additionally the number of primary vertices and the median energy density, \rho, (see Sec.~\ref{sec:pileup}) are included to account for residual energy scale effects from pileup.
 \end{itemize}
-
-The regression is trained using an additional piece to that described in Section~\ref{sec:bdts} whereby the target is to predict the full probability distribution of the ratio of the true energy to the raw energy, $E_{true}/E_{raw}$. The target is a double crystal ball distribution which consists of a Gaussian core and power law tails on either side. This can be fully parametrised by six variables, the Gaussian mean and width ($\mu$, $\sigma$), the power parameters ($n_{L}$, $n_{R}$) and the power law tail cutoff parameters ($\alpha_{L}$, $\alpha_{R}$). Each of these parameters has a non-parametric dependence on the input variables, $\vec{x}$, and this is \emph{learned} by the regression training whilst simultaneously minimising the likelihood,
-
+The regression is trained using an additional feature to that described in Section~\ref{sec:bdts} whereby the target is to predict the full probability distribution of the ratio of the true energy to the raw energy, $E_{true}/E_{raw}$. The target is a double Crystal Ball distribution which consists of a Gaussian core and power law tails on either side. This can be fully parametrised by six variables, the Gaussian mean and width ($\mu$, $\sigma$), the power parameters ($n_{L}$, $n_{R}$) and the power law tail cutoff parameters ($\alpha_{L}$, $\alpha_{R}$). Each of these parameters has a non-parametric dependence on the input variables, $\vec{x}$, and this is \emph{learned} by the regression training whilst simultaneously minimising the likelihood,
 \begin{equation}
-  -\ln \mathcal{L} = - \sum_{MC photons} \ln p(E_{true}/E_{raw} | \mu(\vec{x}),\sigma(\vec{x}),\alpha_{L}(\vec{x}),\alpha_{R}(\vec{x}),n_{L}(\vec{x}),n_{R}(\vec{x})),
+  -\ln \mathcal{L} = - \sum_{MC \; photons} \ln p(E_{true}/E_{raw} | \mu(\vec{x}),\sigma(\vec{x}),\alpha_{L}(\vec{x}),\alpha_{R}(\vec{x}),n_{L}(\vec{x}),n_{R}(\vec{x})),
 \end{equation}
-
-for the double crystal ball distribution, $p$. The most probable value for the true energy estimate of each photon is then given by,
-
+for the double Crystal Ball distribution, $p$. The most probable value for the true energy estimate of each photon is then given by,
 \begin{equation}
   E(\vec{x},E_{raw}) = \mu(\vec{x})E_{raw}
 \end{equation}
-
 and the per-photon energy resolution is given by, 
-
 \begin{equation}
   \frac{\sigma_{E}(\vec{x},E_{raw})}{E(\vec{x},E_{raw})} = \frac{\sigma(\vec{x})}{\mu(\vec{x})}.
 \end{equation}
-
-In this way the regression predicts the full probability density of $E_{true}/E_{raw}$ and provides an estimate of the optimal energy correction and the energy resolution per photon. A comparison of this distribution with a statistically independent \MC sample is shown for the 8~\TeV training in Figure~\ref{fig:regression_training}. The performance of the regression compared to the default photon reconstruction is shown in Figure~\ref{fig:regression_performance}.
+In this way the regression predicts the full probability density of $E_{true}/E_{raw}$ per event given a particular configuration of the input variables, \vec{x}, and provides an estimate of the optimal energy correction and the energy resolution per photon. A comparison of this distribution with a statistically independent \MC sample is shown for the 8~\TeV training in Figure~\ref{fig:regression_training}. The performance of the regression compared to the default photon reconstruction is shown in Figure~\ref{fig:regression_performance}.
 
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/regression_barrel.pdf}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/regression_endcap.pdf}
-  \caption{A comparison of the predicted probability density of $E_{true}/E_{raw}$ from the regression training (blue line) to the distribution in a statiscally independent \MC sample (black points) for barrel photons (left) and endcap photons (right). \red{PLOTS NEED TIDYING}}
+  \caption[A comparison of the predicted probability density of $E_{true}/E_{raw}$ from the regression training to the distribution in a statistically independent sample]{A comparison of the predicted probability density of $E_{true}/E_{raw}$ from the regression training (blue line) to the distribution in a statiscally independent \MC sample (black points) for barrel photons (left) and endcap photons (right). \red{PLOTS NEED TIDYING}}
   \label{fig:regression_training}
 \end{figure}
 
@@ -156,51 +139,47 @@ In this way the regression predicts the full probability density of $E_{true}/E_
   \includegraphics[width=0.24\textwidth]{analysis_comps/plots/regression_masscat1.pdf}
   \includegraphics[width=0.24\textwidth]{analysis_comps/plots/regression_masscat2.pdf}
   \includegraphics[width=0.24\textwidth]{analysis_comps/plots/regression_masscat3.pdf}
-  \caption{A comparison of the regression performance compared to the photon default for the diphoton invariant mass on a \MC source of Higgs decays to two photons. This is shown when both photons are in the barrel (left two plots) when both photons have $\rnine>0.94$ (far left) and when at least one photon has $\rnine<0.94$ (middle left). When at least one photon is in the endcap (right two plots) when both photons have $\rnine>0.94$ (middle right) and when at least one photon has $\rnine<0.94$ (far right). The value shown in the legend of each is the effective width, $\sigma_{eff}$, which is defined as half of the narrowest interval which contains 68.3\% of the distribution. \red{PLOTS NEED TIDYING}.}
+  \caption[A comparison of the performance of different photon energy correction schemes]{A comparison of the regression performance compared to the photon default for the diphoton invariant mass on a \MC source of Higgs decays to two photons. This is shown when both photons are in the barrel (left two plots) when both photons have $\rnine>0.94$ (far left) and when at least one photon has $\rnine<0.94$ (middle left). When at least one photon is in the endcap (right two plots) when both photons have $\rnine>0.94$ (middle right) and when at least one photon has $\rnine<0.94$ (far right). The value shown in the legend of each is the effective width, $\sigma_{eff}$, which is defined as half of the narrowest interval which contains 68.3\% of the distribution. \red{PLOTS NEED TIDYING}.}
   \label{fig:regression_performance}
 \end{figure}
 
-\subsection{Correcting for residual discrepancies between data and Monte Carlo}
+\subsection{Correcting for residual discrepancies between data and Monte Carlo simulation}
 \label{sec:scale_smearing}
 
-After application of the energy regression correction there are some remaining discrepancies between data and \MC. These residual effects are accounted for using \Zee events in data and simulation to correct the energy scale in the data and to apply an additional smearing term to the \MC with systematic uncertainties propagated through the analysis to account for the uncertainties on these corrections.
+After application of the energy regression correction there are some remaining discrepancies between data and \MC simulation. These residual effects are accounted for using \Zee events in data and simulation to correct the energy scale in the data and to apply an additional smearing term to the \MC events with systematic uncertainties propagated through the analysis to account for the uncertainties on these corrections.
 
 \subsubsection{Energy scale corrections to the data}
 
-The supercluster energy is identical for electrons and photons so by correcting the supercluster energy scale to a known source, namely the mass of the $Z$-boson, in dielectron decays the smaller residual energy scale effects are accounted for. This can be done several times to account for various different effects. In the first stage scale corrections are derived in bins of time (run range) and \eta, after applying these corrections further, much smaller, residual effects are accounted for in bins of \rnine (the size of the effect is different for converted and non-converted photons). After applying both of these a further step is taken for the 8 TeV data in the barrel to derive residual corrections in bins of \ET. Consequently the total scale correction is a product of three corrections in 59 bins of time $\times$ 4 bins in \eta $\times$ 2 bins in \rnine $\times$ 6 bins in \ET (for the 8TeV barrel photons alone).
+The supercluster energy is identical for electrons and photons so by correcting the supercluster energy scale to a known source, namely the mass of the $Z$-boson, in dielectron decays the smaller residual energy scale effects are accounted for. When reconstructing the dielectron decays to derive these corrections, electrons are reconstructed as photons and the $Z$ mass calculated in the same way as for the diphoton invariant mass in Eq.~\ref{eq:inv_mass}. This can be done several times to account for various different effects. In the first stage scale corrections are derived in bins of time (run range) and \eta. After applying these corrections further, much smaller, residual effects are accounted for in bins of \rnine (the size of the effect is different for converted and non-converted photons). After applying both of these a further step is taken for the 8 TeV data in the barrel to derive residual corrections in bins of \ET. Consequently the total scale correction is a product of three corrections in 59 bins of time $\times$ 4 bins in \eta $\times$ 2 bins in \rnine $\times$ 6 bins in \ET (where the last is applied for the 8TeV barrel photons only).
 
-The strategy for deriving these corrections is to take \Zee events in data and \MC and extract the invariant dielectron mass in the relevant bin of interest. This mass distribution is fitted with a convolution of a Breit-Wigner (designed to handle the underlying Z line shape~\cite{pdg}) and a Crystal-Ball which models the calorimeter resolution effects and bremstrauhlung losses in the material upstream of the \ECAL. The Breit-Wigner parameters are fixed to the PDG values of $M_{Z}=91.188$~\GeV and $\Gamma_{Z}=2.495$~\GeV~\cite{pdg} whilst the Crystal-Ball parameters which model the detector effects are allowed to float. The scale correction, $\Delta E$, is then defined as the relative difference between the Crystal-Ball peak in data and simulation,
-
+The strategy for deriving these corrections is to take \Zee events in data and \MC simulation and extract the invariant dielectron mass in the relevant bin of interest. This mass distribution is fitted with a convolution of a Breit-Wigner (designed to handle the underlying Z line shape~\cite{pdg}) and a Crystal Ball function which models the calorimeter resolution effects and bremsstrahlung losses in the material upstream of the \ECAL. The Breit-Wigner parameters are fixed to the PDG values of $M_{Z}=91.188$~\GeV and $\Gamma_{Z}=2.495$~\GeV~\cite{pdg} whilst the Crystal Ball parameters which model the detector effects are allowed to float. The scale correction, $\Delta E$, is then defined as the relative difference between the Crystal Ball peak in data and simulation,
 \begin{equation}
   \Delta E = \frac{m_{data}-m_{MC}}{m_{Z}}.
 \end{equation}
-
 \subsubsection{Energy resolution smearing the Monte-Carlo}
 
 A similar method is used to extract a smearing factor that can be applied to the \MC such that the width of the invariant mass distribution in \Zee decays matches between data and \MC. This is done in 4 bins of \eta $\times$ 2 bins of \rnine and is parametrised as the quadratic sum of two resolution components: a constant term, $\Delta C$, and a stochastic term, $\Delta S$, which aims to model the expected resolution effects explained in Eq.~\ref{eq:energy_res} in Sec.~\ref{sec:ecal}. The smearing term, $\Delta\sigma$, is parametrised as,
-
 \begin{equation}
   \Delta\sigma = \frac{\Delta S}{\sqrt{E_{T}}} \oplus \Delta C.
 \end{equation}
-
 The effect of the scale and smearing corrections is shown for the \Zee data and \MC samples in Figure~\ref{fig:scale_smearing_Zee} and for the analysis dataset after preselection with the electron veto inverted in Figures ~\ref{fig:scale_smearing_analysis_7TeV} and~\ref{fig:scale_smearing_analysis_8TeV}. Each of these corrections has an associated uncertainty and these uncertainties are propagated per photon through the analaysis. There are also additional uncertainties included which account for differences between electrons and photons and the difference between the $Z$ mass scale (around 90~\GeV) and the Higgs mass scale (around 125~\GeV). Systematic uncertainties are described in more detail in Section.~\ref{sec:systematics}.
 
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/smearing_EB_highEta_lowR9.pdf}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/smearing_EB_lowEta_highR9.pdf}
-  \caption{The \Zee invariant mass shape comparison before and after the scale and smearing corrections are applied. Shown for 8~TeV for photons with $1.<|\eta|<1.444$ and $\rnine<0.94$ on the left and for photons with $|eta|<1.$ and $\rnine>0.4$ on the right.}
+  \caption[The \Zee invariant mass shape before and after scale and smearing corrections are applied]{The \Zee invariant mass shape comparison before and after the scale and smearing corrections are applied. Shown for 8~TeV for photons with $1.<|\eta|<1.444$ and $\rnine<0.94$ on the left and for photons with $|eta|<1.$ and $\rnine>0.4$ on the right.}
   \label{fig:scale_smearing_Zee}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=0.9\textwidth]{analysis_comps/plots/smearing_mass_Zee_7TeV.pdf}
-  \caption{The \Zee invariant mass distribution at 7TeV in data (black points) and \MC (blue histogram) for events which pass the analysis preselection in which the electron veto is inverted.}
+  \caption[The \Zee invariant mass distribution at 7~TeV when the analysis electron veto is inverted]{The \Zee invariant mass distribution at 7TeV in data (black points) and \MC (blue histogram) for events which pass the analysis preselection in which the electron veto is inverted.}
   \label{fig:scale_smearing_analysis_7TeV}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=0.9\textwidth]{analysis_comps/plots/smearing_mass_Zee_8TeV.pdf}
-  \caption{The \Zee invariant mass distribution at 8TeV in data (black points) and \MC (blue histogram) for events which pass the analysis preselection in which the electron veto is inverted.}
+  \caption[The \Zee invariant mass distribution at 8~TeV when the analysis electron veto is inverted]{The \Zee invariant mass distribution at 8TeV in data (black points) and \MC (blue histogram) for events which pass the analysis preselection in which the electron veto is inverted.}
   \label{fig:scale_smearing_analysis_8TeV}
 \end{figure}
 
@@ -223,19 +202,17 @@ For events which contain at least one photon conversion, the conversion tracks a
 \begin{figure}
   \includegraphics[width=0.49\textwidth]{analysis_comps/plots/ConversionDiagCase1.pdf}
   \includegraphics[width=0.49\textwidth]{analysis_comps/plots/ConversionDiagCase2.pdf}
-  \caption{A representation of the two methods for locating the primary vertex using photon conversion information. The left plot is for cases where the conversion occurs early enough in the tracker that the two electron tracks can be used to construct the converted pair momentum which is combined with the conversion vertex position to point back to the beam line. The right plot is for cases where the conversion occurs late in the tracker and the energy weighted supercluster position and the conversion vertex position are used to point back to the beam line.}
+  \caption[A schematic showing the two methods used for locating the primary vertex]{A representation of the two methods for locating the primary vertex using photon conversion information. The left plot is for cases where the conversion occurs early enough in the tracker that the two electron tracks can be used to construct the converted pair momentum which is combined with the conversion vertex position to point back to the beam line. The right plot is for cases where the conversion occurs late in the tracker and the energy weighted supercluster position and the conversion vertex position are used to point back to the beam line.}
   \label{fig:conv_diags}
 \end{figure}
 
 For Case 1 conversions the primary vertex $z$ position is calculated as,
-
 \begin{equation}
   z_{c} = z_{conv} - r_{conv}\cot(\alpha),
 \end{equation}
 where $z_{conv}$ is the z position of the conversion vertex, $r_{conv}$ is the distance of the conversion vertex from the beam line and $\alpha$ is the angle between the beam line and the conversion momentum.
 
 For Case 2 conversions the primary vertex $z$ position is calculated as,
-
 \begin{equation}
   z_{c} = \frac{z_{conv}-r_{conv}}{(r_{SC}-r_{conv})(z_{SC}-z_{conv})},
 \end{equation}
@@ -251,14 +228,14 @@ The \BDT is trained on a sample of \Hgg \MC events. It is tested with a statisti
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input1.pdf} \\
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input2.pdf}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input3.pdf}
-  \caption{Distributions of the input variables for the vertex \BDT in the \MC \Hgg training (points) and test (filled) samples at 8TeV. Shown for the target primary vertex (blue histograms) and the background pileup vertices (red histograms). \red{Plots need updating, tidying and labelling correctly.}}
+  \caption[Distributions of the input variables used in vertex location \BDT]{Distributions of the input variables for the vertex \BDT in the \MC \Hgg training (points) and test (filled) samples at 8TeV. Shown for the target primary vertex (blue histograms) and the background pileup vertices (red histograms). \red{Plots need updating, tidying and labelling correctly.}}
   \label{fig:vertex_bdt_inputs}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_output_7TeV.pdf}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_output_8TeV.pdf}
-  \caption{The vertex \BDT response for \Zmumu events in data (points) and MC (filled) for the primary vertex (green) and the background pileup vertices (red).}
+  \caption[The vertex \BDT response for \Zmumu events]{The vertex \BDT response for \Zmumu events in data (points) and MC (filled) for the primary vertex (green) and the background pileup vertices (red).}
   \label{fig:vertex_bdt_response}
 \end{figure}
 
@@ -267,7 +244,7 @@ The \BDT is trained on a sample of \Hgg \MC events. It is tested with a statisti
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_nvtx_7TeV.pdf} \\
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_pt_8TeV.pdf}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_nvtx_8TeV.pdf} 
-  \caption{The chosen vertex efficiency as measured in \Zmumu data and \MC as a function of $Z$ \pT (left) and number of reconstructed vertices (right) for the 7~TeV (top row) and 8~TeV (bottom row) data samples.}
+  \caption[The efficiency of locating the correct vertex]{The chosen vertex efficiency as measured in \Zmumu data and \MC as a function of $Z$ \pT (left) and number of reconstructed vertices (right) for the 7~TeV (top row) and 8~TeV (bottom row) data samples.}
   \label{fig:vertex_bdt_efficiency}
 \end{figure}
 
@@ -295,7 +272,7 @@ There is a linear relation between the response of this \BDT and the correct ver
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_prob_efficiency_pt.pdf}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_prob_efficiency_nvtx.pdf}
-  \caption{A comparison of the true vertex efficiency (black points) and the average vertex probability (blue band) a statistically independent \MC Higgs sample simulated with 2012 running conditions.}
+  \caption[A comparison of the true vertex efficiency and the average vertex probability]{A comparison of the true vertex efficiency (black points) and the average vertex probability (blue band) a statistically independent \MC Higgs sample simulated with 2012 running conditions.}
   \label{fig:vertex_bdt_prob_efficiency}
 \end{figure}
 
@@ -346,6 +323,6 @@ As previously shown (in Sec.~\ref{sec:scale_smearing}) data/\MC comparison of th
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/zee_mass.pdf}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/zee_mass_ratio.pdf}
-  \caption{The di-electron mass distribution after applying the preselection (described in Sec.~\ref{sec:photon_presel}) and the scale and smearing corrections (described in Sec.~\ref{sec:scale_smearing}) whilst inverting the electron veto. The left plot shows the data at 8TeV as the black points with the Drell Yan \MC sample as the blue histogram. The Data/\MC ratio is shown in the right hand plot. \red{Plot needs updating}}
+  \caption[The di-electron invariant mass distribution for \Zee events after the preselection with the analysis electron veto inverted]{The di-electron mass distribution after applying the preselection (described in Sec.~\ref{sec:photon_presel}) and the scale and smearing corrections (described in Sec.~\ref{sec:scale_smearing}) whilst inverting the electron veto. The left plot shows the data at 8TeV as the black points with the Drell Yan \MC sample as the blue histogram. The Data/\MC ratio is shown in the right hand plot. \red{Plot needs updating}}
   \label{fig:dielectronmass}
 \end{figure}

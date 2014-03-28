@@ -12,11 +12,9 @@ resonance all production modes have been considered; \ggH, \VBF, \WH, \ZH, \ttH.
 As the \twomp is just one of many spin-2 models it is desirable to make the analysis as model independent as possible. As a means of 
 discriminating the two hypotheses we use the scattering angle in the Collins-Sopper frame, \costhetastar ~\cite{CollinsSoper1977}, which is defined as the angle, in the diphoton rest frame, between the collinear diphotons 
 and the line which bisects one incoming beam with the negative of the other beam, 
-
 \begin{equation}
   \cos(\theta^{\ast}_{\mbox{\tiny{CS}}}) = 2\times\frac{E_{2}p_{z1}-E_{1}p_{z2}}{m_{\gamma\gamma}\sqrt{m^{2}_{\gamma\gamma}+p^{2}_{T\gamma\gamma}}},
 \end{equation}
-
 where $E_{1}$ and $E_{2}$ are the energies of the leading and trailing photon, $p_{z1}$ and $p_{z2}$ are the $z$-component momenta 
 of the leading and trailing photon and $m_{\gamma\gamma}$ and $p_{T\gamma\gamma}$ are the invariant mass and transerve momenta of the diphoton system.
 
@@ -118,12 +116,10 @@ categories $\times$ 5 \abscostheta categories) in each year which gives a total 
 \section{Signal and Background modelling}
 
 The signal models are obtained from \MC simulation as described in Sec.~\ref{sec:mc} for the spin-0 \SM processes and the spin-2 processes. A parametric model identical to the one built for the nominal analysis is constructed as per the method described in Sec.~\ref{sec:signal_mfm}. The signal model is then parametrised as before in terms of $\mu$, \mH and two additional parameters, $x$ and \fqqbar, which dictate the amount of signal from spin-2 and the amount of spin-2 from $q\bar{q}$ production. The signal model parametrisation can be written as,
-
 \begin{equation}
   \textbf{S}(m_{H},fqq,x;\hat{\theta}) = (1-x)\cdot\boldsymbol{S_{SM}}(m_{H};\hat{\theta})  + x\cdot\Bigl[f_{q\bar{q}}\cdot \boldsymbol{S_{q\bar{q}}}(m_{H};\hat{\theta}) + (1-f_{q\bar{q}})\boldsymbol{S_{gg}}(m_{H};\hat{\theta})\Bigr],  
   \label{eq:spin_sig}
 \end{equation}
-
 where $x$ is the amount of signal originating from spin-2, \fqqbar is the amount of spin-2 signal originating from $q\bar{q}$ production, \mH is the signal position and $\theta$ are the nuisance parameters.
 
 The background model for the spin analysis comes in two forms. For the differntial measurement of the signal strength in bins of \abscostheta the envelope background method is used as per the description in Sec.~\ref{sec:envelope}. However, when calculating the statistical separation between various spin hypotheses a single parametrisation of the background is used in each category, namely a polynomial in the Bernstein basis~\cite{bernsteins1,bernsteins2} as per the description in eq.~\ref{eq:bernsteins}. The reason for this is that there is no asymptotic approximation for the test statistic distribution when the null hypothesis is not embedded in the alternative hypothesis. Consequently, in order to obtain the test statistic distributions (like the ones shown in Fig.~\ref{fig:cls}) one has to generate lots of pseudo-data and then refit this data to obtain the likelihood ratio and hence test statistic value. Given the complexity of the spin signal model and the combinatorics involved when using the envelope method with 40 analysis categories this becomes CPU impractical. It has been trialled using the GRID computing network but was found to take the order of hundreds of CPU years.

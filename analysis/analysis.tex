@@ -1,4 +1,4 @@
-\chapter{Analysis and Results}
+\chapter{Analysis}
 \label{chap:analysis}
 \chapterquote{Data, data, data. I cannot make bricks without clay}
 {The Adventures of Sherlock Holmes.}
@@ -6,7 +6,7 @@
 The analysis culminates in the search for a \SM like Higgs boson decaying into two photons in the mass range $110\leq\mH\leq 150$~\GeV. This is done by making use of two variables which have very different shapes in signal and background. The first is the invariant mass of the two photons, \mgg, relative to the expected signal position, \mH, for which the signal is peaking and the background is smoothly falling. The second is the output of the diphoton \BDT discussed in Sec.~\ref{sec:diphoton_bdt} in which the signal peaks towards positive values and the background peaks towards negative values. In the \SMVA analysis these two variables are combined and used to extract a number of analysis bins (see Sec.~\ref{sec:inclusive_cats_sideband}) in which events are counted. In the \MFM events are coarsely categorised according the diphoton \BDT output and then parametrically fitted as a function of the invariant mass \mgg. The methods used for extracting the background and signal expectations for both analyses are described in the following chapter. The important characteristics which define the signal are its yield relative to the \SM expectation, $\mu=\musm$, and its position, \mH.
 
 % ---- SECTION ----
-\section{Signal modelling}
+\subsection{Signal modelling}
 \label{sec:signal_model}
 
 The signal \MC samples (described in Sec.~\ref{sec:mc}) are propagated through the full analysis separately for each production mechanism (\ggH,\VBF,\WH,\ZH,\ttH). Events in the samples are weighted by the relevant \SM cross section, branching ratio, the integrated luminosity and the ``detector" weight which compensates for mismodelling in the \MC such as pileup, the beamspot width and discrepancies between the efficiency in data and \MC as measured in \Zee and \Zmumugamma decays. In this way the efficiency and acceptance of the detector, selection and categorisation is mapped by the \MC samples and the total number of expected \SM signal events is given by the sum of weights of the sample. The \MC is generated separately for hypothesised Higgs masses, \mH, in the search range of $110 \leq m_{H} \leq 150$~\GeV in steps of 5~\GeV. For any intermediate points the signal model is interpolated. The efficiency times acceptance of the analysis selection for a \SM Higgs boson is shown in Fig.~\ref{fig:effacc} as a function of the Higgs boson mass, \mH. For a Higgs at \mH=125~\GeV the $\ea=48.63\%$ (49.30\%) for the 7 (8)~\TeV datasets.
@@ -14,7 +14,7 @@ The signal \MC samples (described in Sec.~\ref{sec:mc}) are propagated through t
 \begin{figure}
   \includegraphics[width=0.49\textwidth]{analysis/plots/effAcc7TeV.pdf}
   \includegraphics[width=0.49\textwidth]{analysis/plots/effAcc8TeV.pdf}
-  \caption{The efficiency$\times$acceptance of the analysis selection for a \SM Higgs signal as a function of Higgs mass for the 7~\TeV (left) and 8~\TeV datasets.}
+  \caption[The efficiency$\times$acceptance of the analysis selection for \SM Higgs \MC]{The efficiency$\times$acceptance of the analysis selection for a \SM Higgs signal as a function of Higgs mass for the 7~\TeV (left) and 8~\TeV datasets.}
   \label{fig:effacc}
 \end{figure}
 
@@ -27,7 +27,7 @@ The diphoton invariant mass signal shape is modelled in a fully parametric way f
   \begin{center}
     \includegraphics[width=0.49\textwidth]{analysis/plots/thesis_signal_7TeV/all.pdf}
     \includegraphics[width=0.49\textwidth]{analysis/plots/thesis_signal_8TeV/all.pdf}
-    \caption{The diphoton invariant mass shape of the \SM signal for the 7~\TeV dataset (left) and 8~\TeV dataset (right). The black square points show the distribution in \MC, where the sum of weights represents the expected number of signal events from a \SM Higgs Boson at 125~\GeV. The blue line shows the shape of the parametric model used to represent the signal.}
+    \caption[The diphoton invariant mass shape for \SM Higgs signal]{The diphoton invariant mass shape of the \SM signal for the 7~\TeV dataset (left) and 8~\TeV dataset (right). The black square points show the distribution in \MC, where the sum of weights represents the expected number of signal events from a \SM Higgs Boson at 125~\GeV. The blue line shows the shape of the parametric model used to represent the signal.}
     \label{fig:sig_shape}
   \end{center}
 \end{figure}
@@ -38,7 +38,7 @@ The diphoton invariant mass signal shape is modelled in a fully parametric way f
   \begin{center}
     \includegraphics[width=0.9\textwidth]{analysis/plots/thesis_signal_7TeV/signalComposition.pdf} \\
     \includegraphics[width=0.9\textwidth]{analysis/plots/thesis_signal_8TeV/signalComposition.pdf}
-    \caption{The expected composition and resolution of the signal for a \SM Higgs at 125~\GeV in the 7~\TeV dataset (top) and 8~\TeV dataset (bottom). The left diagram shows the break down of the signal in each event class by category: \ggH (green), \VBF (red), \WH (turqoise), \ZH (blue), \ttH (orange). The middle shows the expected resolution in each event class in terms of \sigeff and \sigFW. The right diagram shows the expected signal over signal plus background ratio in a window of $\pm\sigeff$ around \mH=125~\GeV.}
+    \caption[The composition and width of the signal in each analysis category]{The expected composition and resolution of the signal for a \SM Higgs at 125~\GeV in the 7~\TeV dataset (top) and 8~\TeV dataset (bottom). The left diagram shows the break down of the signal in each event class by category: \ggH (green), \VBF (red), \WH (turqoise), \ZH (blue), \ttH (orange). The middle shows the expected resolution in each event class in terms of \sigeff and \sigFW. The right diagram shows the expected signal over signal plus background ratio in a window of $\pm\sigeff$ around \mH=125~\GeV.}
     \label{fig:signal_composition}
   \end{center}
 \end{figure}
@@ -64,7 +64,7 @@ This is shown in the figure by the magenta line which becomes smoother as more s
 \begin{figure}
 \begin{center}
   \includegraphics[width=0.8\textwidth]{analysis/plots/envelope_explain.pdf}
-  \caption{A demonstration of the method of ``profiling the likelihood". Here the \NLL is scanned as a function of a physical parameter of interest $x$ with a nuisance parameter $\theta$ in three cases: 1) where $\theta$ is freely floating (black line), 2) where $\theta$ is set to its value at the \NLL minimum (blue line), 3) for several arbitary choices of $\theta$ (red line).}
+  \caption[A demonstration of the method of likelihood profiling]{A demonstration of the method of ``profiling the likelihood". Here the \NLL is scanned as a function of a physical parameter of interest $x$ with a nuisance parameter $\theta$ in three cases: 1) where $\theta$ is freely floating (black line), 2) where $\theta$ is set to its value at the \NLL minimum (blue line), 3) for several arbitary choices of $\theta$ (red line).}
   \label{fig:envelope_explain1}
 \end{center}
 \end{figure}
@@ -76,7 +76,7 @@ Lets now consider a simplified case of the real situation. Imagine we have a lar
   \begin{center}
     \includegraphics[width=0.49\textwidth]{analysis/plots/envelope_explain2.pdf}
     \includegraphics[width=0.49\textwidth]{analysis/plots/envelope_explain3.pdf}
-    \caption{An example of using the envelope in a realistic situation. The plot on the left shows a signal plus background fit to some pseudo-data using two different background function choices; a single term power law (red) and a single term exponential (blue). The plot on the right shows the profile likelihood curve for the signal size, $\mu$, for the two different function choices, where the global minimum is where $\mu=2.83$ and the power law is used as the background choice. The envelope likelihood curve, profiling over the function choices is shows as the yellow dashed line.}
+    \caption[A toy example of using the envelope method for estimating the background]{An example of using the envelope in a realistic situation. The plot on the left shows a signal plus background fit to some pseudo-data using two different background function choices; a single term power law (red) and a single term exponential (blue). The plot on the right shows the profile likelihood curve for the signal size, $\mu$, for the two different function choices, where the global minimum is where $\mu=2.83$ and the power law is used as the background choice. The envelope likelihood curve, profiling over the function choices is shows as the yellow dashed line.}
     \label{fig:envelope_explain2}
   \end{center}
 \end{figure}
@@ -84,36 +84,28 @@ Lets now consider a simplified case of the real situation. Imagine we have a lar
 The concept of the ``envelope" method has now been demonstrated with a simplified example in which two function choices were profiled and both these functions had one free parameter. However we would like to be able to sample as much of the function phase space possible (i.e.~as many functions as we can) which means there will be choices with different numbers of free parameters. Two functions of the same type but of a different order may give a very similar fit result but the function with more degrees freedom will give a lower negative likelihood value. For example consider the functions $E_{1} = e^{-p_{1}x}$ and $E_{2} = f_{1}e^{-p_{1}x}+(1-f_{1})e^{-p_{2}x}$, which are first and second order exponential sums and have one and three free parameters respectively, not including an overall normalisation term. There may be a case where these give an identical fit (as $f_{1}\to 1$ or $p_{1}\to p_{2}$) however the negative log likelihood will always be lower for a higher parameter fit and therefore the higher order function would always be the minimum of the envelope, at least at the best fit point. This means that for any embedded class of functions, the function which gives the global minimum of the likelihood will be of the highest order allowed. Consequently, a correction scheme has been devised to avoid this problem and to penalise functions in the envelope which have more free parameters but don't necessarily fit the data any better.
 
 The negative log likelihood gets redefined as,
-
 \begin{equation}
   \NLL = -2\ln(\mathcal{L}) + cN_{p},
 \end{equation}
-
 where $\mathcal{L}$ is the likelihood for the function, $N_{p}$ is the number of free parameters in that function and $c$ is a constant correction term. Two correction schemes were studid, for values of $c=1$ and $c=2$. The motivation for choosing $c=2$ is an application of the Akaike information criterion, described in Ref.~\cite{akaike}, which states that for large sample sizes the corrected likelihood is,
-
 \begin{equation}
   A = -2\ln(\mathcal{L}) + 2N_{p}.
 \end{equation}
-
 It can be seen that the correction term here is $2N_{p}$, which gives a value of $c=2$, in others words a correction of 2 per free parameter. 
 
 The argument for using a correction of $c=1$ is a little more natural and arises from the assumption that in the high statistics limit for a binned dataset, $\NLL\approx\chi^{2}$. Given a value of the $\chi^{2}$ one can calculate the $\chi^{2}$ $p$-value given the number of degrees of freedom, $N$, which is equal to the number of bins, $b$, minus the number of free parameters in the fit function, $N_{p}$. Thus the $p$-value can be expressed as $p(\chi^{2},b-N_{p})$. One can then determine a new chi squared value, $\chi^{\prime 2}$, defined as the one which would give the equivalent $p$-value but with a different number of degrees of freedom, namely the one in which there are no free parameters in the fit, $p(\chi^{\prime 2},b)$ . It can be seen that there is now an expression for $\chi^{\prime 2}$, which is approximately equivalent to \NLL, which is independet of the number of fit parameters, $N_{p}$, and thus the corrected likelihood is given by,
-
 \begin{equation}
   \NLL = -2\ln(\mathcal{L}) + \chi^{\prime 2} - \chi^{2}.
 \end{equation}
-
 The correction term, $\chi^{\prime 2} -\chi^{2}$, depends on the number of bins, the number of free fit parameters and the quality of the original fit (the $\chi^{2}$ $p$-value). Figure~\ref{fig:envelope_chi2_correction} shows how the size of the correction varies for functions with different numbers of fit parameters. It can be seen that on average the correction is given by,
-
 \begin{equation}
   \chi^{\prime 2} - \chi^{2} \approx N_{p}.
 \end{equation}
-
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.49\textwidth]{analysis/plots/ChisqConv1.png}
     \includegraphics[width=0.49\textwidth]{analysis/plots/ChisqConv2.png}
-    \caption{The value of the correction, $\chi^{\prime 2} - \chi^{2}$, as a function of the fit $p$-value for a fit with 320 bins is shown on the left. The projection of the correction integrated uniformaly over $p$-values is shown on the right. The five different coloured lines represented fit function with different numbers of free parameters, ranging from one free parameter (pink) up to five free parameters (black).}
+    \caption[An estimation of the correction required in the envelope method]{The value of the correction, $\chi^{\prime 2} - \chi^{2}$, as a function of the fit $p$-value for a fit with 320 bins is shown on the left. The projection of the correction integrated uniformaly over $p$-values is shown on the right. The five different coloured lines represented fit function with different numbers of free parameters, ranging from one free parameter (pink) up to five free parameters (black).}
     \label{fig:envelope_chi2_correction}
   \end{center}
 \end{figure}
@@ -160,11 +152,9 @@ In principal it would be beneficial to choose any and every function one can thi
 One then has to determine which order functions of each of these classes is used in the envelope for a given dataset. To pick the lowest order included in the envelope a simple goodness of fit test is used and has the loose requirement that the $\chi^{2}$ $p$-value of the fit is greater than 0.01. To pick the higest order used in the envelope an $f$-test style requirement is imposed~\cite{ftest}. If two functions of the same class have $n$ and $n+m$ free parameters respectively then, in the high statistics limit, the difference in \NLL between the two functions is distributed as $\chi^{2}$ with $m$ degrees of freedom. Consequently the difference in \NLL between the two fits is converted into a $\chi^{2}$ $p$-value and the next higher order function is included if $p<0.1$. In other words if the higher order function does not improve the fit it is not included. This determines which functions are included in the envelope for each category and ranges anywhere between 4 and 9. It should be noted that the requirements to included a function are intentionally loose so that as much of the ``function-space" is sampled.
 
 In order to assess the bias and coverage properties of the envelope method a few functions are chosen as ``truth" models from which to generate pseudo-data and test the statistical validity of the method. A single function of each class is chosen as a ``truth" model and the order determined by the same $f$-test but with a tighter requirement that $p<0.05$. These models are first fit to the data and then the pseduo-data generated from these values. The comparison of the systematic bias to statistical uncertainty is determined by the pull distribution,
-
 \begin{equation}
   pull(\mu) = \frac{\mu_{fit} - \mu_{inj}}{\sigma_{fit}},
 \end{equation}
-
 where $\mu_{inj}$ is the injected signal strength in the toy, $\mu_{fit}$ is the fitted signal strength per toy and $\sigma_{fit}$ is the error on the fitted signal strength per toy. The systematic bias to statistical comparison is then the deviation of the mean of the distribution from zero as compared to the width of this distribution. An unbiased method will give a mean close to 0 and a method which covers accurately will give a width less than or equal to 1. The $X\sigma$ coverage is defined as the fraction of toys for which $\mu_{fit}-X\sigma_{fit}\leq\mu_{inj}\leq\mu_{fit}+X\sigma_{fit}$.
 
 When using a correction factor of $c=1$, the systematic bias on the signal strength is less than 14\% of the statistical error from the fit and the coverage is accurate for 0.5, 1, 2 and 3$\sigma$ (all the points tested). This was found to be true when generating toy experiments for a range of different signal strengths and for signal at different mass values. The bias and coverage have also been tested when removing the ``truth" model from the set of envelope functions, when removing all functions of the same class as the ``truth" model and when using various convulted truth models such as a histogram spline of the data~\cite{regression_spline}, a kernel density estimator (sum of Gaussians)~\cite{kde} and a hybrid of different functions patched together. All of these cases also demonstrated a reasonable level of bias and coverage. 
@@ -237,7 +227,7 @@ In order to avoid Drell-Yan contamination in the region of low invariant mass an
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.85\textwidth]{analysis/plots/sideband/invmass.pdf}
-    \caption{The inclusive invariant mass distribution for the 8TeV dataset in data (black points). An illustration of the signal region (red) and the sidebands (blue) used for the mass hypothesis \mH=125~\GeV is shown. The parametric function used to obtain the normalisation in the signal region is shown as the blue line.}
+    \caption[The invariant mass distribution for the 8~\TeV dataset]{The inclusive invariant mass distribution for the 8TeV dataset in data (black points). An illustration of the signal region (red) and the sidebands (blue) used for the mass hypothesis \mH=125~\GeV is shown. The parametric function used to obtain the normalisation in the signal region is shown as the blue line.}
     \label{fig:sideband_norm}
   \end{center}
 \end{figure}
@@ -245,17 +235,15 @@ In order to avoid Drell-Yan contamination in the region of low invariant mass an
 The parametric form used to obtain the normalisation is a single term power law (one degree of freedom) for the 8~\TeV dataset and a two term Laurent series (one degree of freedom) for the 7~\TeV dataset. The functions are defined identically to those described for the envelope method in Sec.~\ref{sec:envelope}. These functions are chosen because they give the smallest uncertainty when accounting for biases incurred by picking the wrong functional form. A systematic uncertainty is applied to the normalisation term of which there are more details later in Sec.~\ref{sec:systematics}.
 
 The estimated number of background events in the signal region is obtained from the data in the sidebands. It is assumed that the fraction of events in each bin varies linearly with invariant mass (i.e.~across sidebands) and that there is negligble signal contamination in the sidebands. For each bin, $b$, the fraction of events for a given mass is taken to be,
-
 \begin{equation}
   f_{b} = p_{0b} + p_{1b}(m-m_{H}),
 \end{equation}
-
 where $p_{0b}$ and $p_{1b}$ are the Taylor expansion coefficients for bin $b$. Since the fractions must sum to unity for any given mass (the noramlisation is extracted elsewhere) then for $N$ bins there are $2(N-1)$ coefficiets. These coefficients are determined by fitting a straight line across the sidebands in each bin, with the constraint that the fraction in each sideband must sum to 1 across all the bins. An example of ones of these fits is shown in Fig.~\ref{fig:sideband_shape}.
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.85\textwidth]{analysis/plots/sideband/sideband_fit.pdf}
-    \caption{The number of data events is shown for a single analysis bin in each of the sidebands surrounding the signal window at \mH=125~\GeV (black points). The blue line show the straight line fit for this bin. In the 8~\TeV dataset there are 10 inclusive analysis bins and 9 exclusive analysis bins. Consequently there are 19 of these straight line fits at each \mH but only 18 of them are independent as the fractions must sum to unity.}
+    \caption[An example of one of the sideband fits for the \SMVA]{The number of data events is shown for a single analysis bin in each of the sidebands surrounding the signal window at \mH=125~\GeV (black points). The blue line show the straight line fit for this bin. In the 8~\TeV dataset there are 10 inclusive analysis bins and 9 exclusive analysis bins. Consequently there are 19 of these straight line fits at each \mH but only 18 of them are independent as the fractions must sum to unity.}
     \label{fig:sideband_shape}
   \end{center}
 \end{figure}
@@ -267,7 +255,7 @@ The distribution for the data, background (along with the $\pm1\sigma$ and $\pm2
   \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/model_8TeV_m124.7}.pdf}\\
   \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/diff_model_7TeV_m124.7}.pdf}
   \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/diff_model_8TeV_m124.7}.pdf}
-  \caption{The distribution in sideband analysis bins for the data (black points), the background (blue line), the error on the background (green and yellow bands) and the signal (red line) for the mass hypothesis at \mH=124.7~\GeV. The top row shows the expected number of events of each type for the 7~\TeV (left) and 8~\TeV (right) datasets. The bottom row shows the background subtracted plot for data (black points) and signal (red line).}
+  \caption[The distribution of data, background and signal for the \SMVA]{The distribution in sideband analysis bins for the data (black points), the background (blue line), the error on the background (green and yellow bands) and the signal (red line) for the mass hypothesis at \mH=124.7~\GeV. The top row shows the expected number of events of each type for the 7~\TeV (left) and 8~\TeV (right) datasets. The bottom row shows the background subtracted plot for data (black points) and signal (red line).}
   \label{fig:sideband_output}
 \end{figure}
 
@@ -365,7 +353,7 @@ Additional normalisation uncertainties are applied to the exclusive mode categor
 \subsection{Summary}
 
 \begin{table}[htbp]
-\caption{Magnitude of the uncertainty on the signal strength, $\musm$, induced by the systematic uncertainties on the signal. These are not final numbers. Would also be nice to have plot of asimov likelihood curve of expected signal strength when adding different components in.}
+\caption[Magnitude of the uncertainty on the signal strength, $\musm$, induced by the systematic uncertainties on the signal]{Magnitude of the uncertainty on the signal strength, $\musm$, induced by the systematic uncertainties on the signal. These are not final numbers. Would also be nice to have plot of asimov likelihood curve of expected signal strength when adding different components in.}
 \begin{center}
 \begin{tabular}{ l c }
 \hline
@@ -391,7 +379,7 @@ All systematic uncertainties on signal model & 0.15 \\
 \end{table}
 
 \begin{table}[htbp]
-\caption{Magnitude of the uncertainty on the signal position, $\mH$, induced by the systematic uncertainties on the signal. These are not final numbers. Would also be nice to have plot of asimov likelihood curve of expected signal strength when adding different components in.}
+\caption[Magnitude of the uncertainty on the signal position, $\mH$, induced by the systematic uncertainties on the signal]{Magnitude of the uncertainty on the signal position, $\mH$, induced by the systematic uncertainties on the signal. These are not final numbers. Would also be nice to have plot of asimov likelihood curve of expected signal strength when adding different components in.}
 \begin{center}
 \begin{tabular}{ l c }
 \hline
@@ -417,12 +405,10 @@ All systematic uncertainties on signal model & 0.12\% \\
 \section{Statistical interpretation of the data}
 \label{sec:stats}
 To aid with statistical interpretation of the data it is useful to define two hypotheses to which the data can be compared. These are the background only model and the signal plus background model known as the null hypothesis, $H_{0}$, and the alternate hypothesis, $H_{1}$, respectively. The background model is obtained from the data by profiling the different parametrisation choices, as per the ``envelope" method described in Sec.~\ref{sec:envelope}. The benchmark used for the signal model is the \SM Higgs expectation as described in Sec.~\ref{sec:signal_model} which can be expressed in terms of the two physical parameters of interest; the signal strength relative to the \SM expectation, $\mu=\musm$, and the signal position or Higgs mass, \mH. The likelihood function for statiscal interpretation can be written as,
-
 \begin{equation}
   \mathcal{L}(\mu,\mH;\theta,\theta_{d}|\mgg) = \mu\cdot\mathbf{S}(\mgg|\mu,\mH;\theta) + \mathbf{B}(\mgg|\theta_{d}),
   \label{eq:likelihood}
 \end{equation}
-
 where \mgg is the diphoton invariant mass, $\theta$ are continuous nuisance parameters effecting the signal model, $\theta_{d}$ are discrete nuisance parameters effecting the background model and $\mathbf{S}$ and $\mathbf{B}$ are the probability distribution functions for the signal and background repsectively. In the case of the \SMVA there is no dependence on \mgg as events are simply counted in the analysis bins. It can be seen that $\mu$ is continuous parameter which represents the size of the fitted signal. The null hypothesis, or background only model, is a simple case of the full model where $\mu=0$.
 
 When determining the best fit values of parameters in our model and their errors the full likelihood function, as expressed in Eq.~\ref{eq:likelihood}, is fit to the data and the \NLL is scanned as a function of the parameter(s) of interest. This is a standard statistical procedure for measuring the value and error of a model parameter~\cite{FredJames}. An important measurement to make of the Higgs boson is its relative coupling to fermions and bosons respectively. Given that the signal model is expressed as a sum over the different production processes one can redefine the likelihood in this case so that the signal strength is split into two coupling strength parameters, $\mu_{\mathrm{fermions}}$ and $\mu_{\mathrm{bosons}}$.
@@ -436,7 +422,6 @@ When determining the best fit values of parameters in our model and their errors
 where $\mathbf{S_{proc}}$ represents the signal model for the process ``proc" only.
 
 There are two important statistical tests that get performed aside from ascertaining the best fit values of parameters in the model. The first is an exclusion test designed to reject the alternate hypothesis in data. The second is a probability, or $p$-value, test designed to ascertain the likelihood of the null hypothesis fluctuating to give a signal. This requires definition of a test statistic,
-
 \begin{equation}  
   q_{\mu} = 
   \begin{cases}
@@ -445,7 +430,6 @@ There are two important statistical tests that get performed aside from ascertai
   \end{cases}
   \label{eq:teststat}
 \end{equation}
-
 where $\hat{\theta}_{\mu}$ and $\hat{\theta}_{\hat{\mu}}$ represent the nuisance parameters at their best fit values given a particular value of \mu and given \mu is freely floating and at its global best fit value $\hat{\mu}$. The statistical tests which require $q_{\mu}$ are carried out at a specific hypothesised Higgs mass and so \mH is set to a particular value when defining the test statistic. It can be shown that $q_{\mu}$ is the most powerful test of hypothesis $H_{0}$ against hypothesis $H_{1}$ and this is known as the \textit{Neymann-Pearson Lemma}~\cite{FredJames}.
 
 For exclusion limits the $CL_{s}$ method is used, which is desgined to give less stringent limits in situations where there is little discriminatory power between the null and alternate hypotheses~\cite{cls}. The $CL_{s}$ exclusion requires caluclation of two p-values given the test statistic distribution of the two hypotheses is known, as shown in~\cref{eq:cls1,eq:cls2,eq:cls3}. A common way of obtaining this distribution is by generating pseudo-data under each hypothesis however at \CMS asymptotic approximations are used to avoid the computational overhead of generating toys~\cite{asymptotic_form}. A one sided upper limit is determined on $\mu$ by enforcing the constraint that $\hat{\mu}\leq\mu$ and the exclusion power of the limit is given by 1-$CL_{s}$. The defintion of the $CL_{s}$ is, 
@@ -461,110 +445,140 @@ where $q_{\mu}^{obs}$ is the observed value of the test statistic in data and $f
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.8\textwidth]{analysis/plots/testStatDrawing.pdf}
-    \caption{A demonstration of the test statistic distribution for the background only model (red) and the signal plus background model (blue) and the observed value in data (black line). The exclusion power is given by 1-$CL_{S}$, in this case values of $\mu>0.8$ are excluded at 92.48\% confidence.}
+    \caption[A demonstration of the test statistic distribution]{A demonstration of the test statistic distribution for the background only model (red) and the signal plus background model (blue) and the observed value in data (black line). The exclusion power is given by 1-$CL_{S}$, in this case values of $\mu>0.8$ are excluded at 92.48\% confidence.}
     \label{fig:cls}
   \end{center}
 \end{figure}
 
 When quantifying the significance of an observed excess the test statistic $q_{0}$ is used which is obtained by setting $\mu=0$ in Eq.~\ref{eq:teststat}. The requirement that $\hat{\mu}\geq0$ ensures that only positive excesses are considered significant. The probability that the background only hypothesis is rejected in favour of the signal plus background hypothesis is given in terms of the $p$-value, $p_{0}$, defined as,
-
 \begin{equation}
   p_{0} = \int_{q_{0}^{obs}}^{\infty}f(q_{0}|\mu=0)dq_{0}.
   \label{eq:pvalue}
 \end{equation}
-
 Typically a value of $p_{0}\leq1.3\times10^{-3}=3\sigma$ is enough to claim observation of new physics while $p_{0}\leq2.87\times10^{-7}=5\sigma$ is enough to claim a discovery of new physics.
 
+\section{Spin analysis}
 
-\section{Results}
+The Landau-Yang theorem forbids the direct decay of a spin-1 particle into a pair of photons~\cite{Landau1948,Yang1950}. 
+Consequently the spin analysis compares the expectation of the spin-0 SM Higgs, \zerop, and the spin-2 \emph{graviton-like} 
+model with minimal couplings, \twomp,~\cite{Gao2010}. The \twomp graviton resonance is produced in one of two ways, gluon-fusion ($gg$) 
+or quark-antiquark annihilation (\qqbar). This chapter presents hypothesis tests between the \zerop and the \twomp varying the the amount of 
+\twomp production from \qqbar. For the \zerop SM 
+resonance all production modes have been considered; \ggH, \VBF, \WH, \ZH, \ttH. 
 
-Where appropriate the results of the \MFM and \SMVA are shown next to each other. As the \SMVA is a cross check to the background model and categorisation scheme, only results on exclusion power, observation significance and signal strength measurement are provided for the \SMVA. The results of couplings measurements and compatbility across channels and production mechanisms are shown only for the \MFM.
+As the \twomp is just one of many spin-2 models it is desirable to make the analysis as model independent as possible. As a means of 
+discriminating the two hypotheses we use the scattering angle in the Collins-Sopper frame, \costhetastar ~\cite{CollinsSoper1977}, which is defined as the angle, in the diphoton rest frame, between the collinear diphotons 
+and the line which bisects one incoming beam with the negative of the other beam, 
+\begin{equation}
+  \cos(\theta^{\ast}_{\mbox{\tiny{CS}}}) = 2\times\frac{E_{2}p_{z1}-E_{1}p_{z2}}{m_{\gamma\gamma}\sqrt{m^{2}_{\gamma\gamma}+p^{2}_{T\gamma\gamma}}},
+\end{equation}
+where $E_{1}$ and $E_{2}$ are the energies of the leading and trailing photon, $p_{z1}$ and $p_{z2}$ are the $z$-component momenta 
+of the leading and trailing photon and $m_{\gamma\gamma}$ and $p_{T\gamma\gamma}$ are the invariant mass and transerve momenta of the diphoton system.
 
-The results of the statistical hypothesis tests, which show an independent discovery of a Higgs like resonance near 125~\GeV, are shown first, after which measurements on the properties of the signal are discussed.
+In its rest frame the photons from the decay of a spin-0 boson are isotropic. Hence prior to acceptance cuts, the distribution of \costhetastar 
+under the \zerop hypothesis is uniformly flat. In general this is not the case for spin-2 decays. 
 
-\subsection{Exclusion limits and $p$-value}
+In order to reduce any model dependence in the analysis the cut based photon selection, described in Sec.~\ref{sec:cic}, is used to pick events. The \MVA methods used for event selection in the nominal analysis use specific \SM \MC training samples and most importantly one of the training variables used, namely $\cos(\phi_{1}-\phi_{2})$, is highly correlated to the angular variable, \costhetastar, which can be used to distinguish spin hypotheses. Furthermore, given the unusual production modes of a spin-2 boson, no exclusive tagging is used in the spin analysis. The impact of using jet variables was studied but it was found that the sensitivty for distinguishing spin hypotheses was improved by a neglible amount.
 
-The exclusion limit for a \SM Higgs Boson is shown in Figure ~\ref{fig:res_exclusion} for the \MFM analysis (left) and the \SMVA analysis (right) for the combined 7 and 8~\TeV dataset. One can see that a \SM Higgs boson is largely disfavoured everywhere in the search range of $[110,150]$ apart from around 125~\GeV where a large excess is apparent. The $y$-axis is the amount of \SM signal excluded at 95\% confidence as a function of the hypothesised Higgs mass, \mH, on the $x$-axis. The black dashed line with the green and yellow bands respresents the expected exclusion, and the associated $\pm1\sigma$ and $\pm2\sigma$ error, if exactly the mean of the null hypothesis is observed. The solid black line represents the actual observation in data. It can be seen that the both the nominal \MFM analysis and the cross check \SMVA have similar exclusion power and the same observation.
+Two statistical tests are carried out in the spin analysis:
+
+\begin{enumerate}
+  \item The signal strength, $\mu$, is extracted differentially in bins of \abscostheta. This is a relatively model independent test and in principal allows any spin model to be compared to the data.
+  \item The statistical separation between different spin hypotheses is calculated using a test statistic similar to the one described in Sec.~\ref{sec:stats} and the $CL_{s}$ exclusion method is used to quantify the separation power. This is a highly model dependent test but allows for the exclusion of specific spin models.
+\end{enumerate}
+
+\subsection{Event categorisation}
+\label{sec:spin_cats}
+
+%Preceding the cut based selection mentioned in section \ref{sec:photonID} and described in Ref.~\cite{HIG-13-001}, photons
+%are preselected requiring, $p_{T}/m_{\gamma\gamma}>1/3$ ($p_{T}/m_{\gamma\gamma}>1/4$) for the leading (subleading) photon and
+%$|\eta_{\mbox{\tiny{cluster}}}|<2.5$ for all photons, where $p_{T}$ is the transverse momentum of a photon, $m_{\gamma\gamma}$ is the diphoton invariant mass and $|\eta_{\mbox{\tiny{cluster}}}|$ is the pseudorapidity of the photon supercluster. In addition photons are rejected whose supercluster lies within the barrel-endcap transition region, $1.4442<|\eta_{\mbox{\tiny{cluster}}}|<1.566$.
+The effect of the photon selection cuts on the distributions of 
+\abscostheta is illustrated in Fig.~\ref{fig:acc_cuts}. Before any acceptance cuts, Fig.~\ref{fig:acc_cuts} (left), the \abscostheta
+distribution of the \zerop processes is flat. This is not the case for the \twomp processes (gluon-fusion and quark-antiquark annihilation). After the selection cuts are applied these distributions are considerably distorted, Fig.~\ref{fig:acc_cuts} (right). As a Higgs produced from vector-boson-fusion, which is $\sim$8\% of the total (compared to $\sim$88\% from gluon fusion),  is typically produced at higher transverse momentum there is some additional contribution of \zerop signal at high values of \abscostheta compared to the \twomp production modes after the selection cuts.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obslimit.pdf}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obslimit_sideband.pdf}
-  \caption{The expected and observed exclusion limits for a \SM Higgs boson at 95\% confidence level. The dashed line shows the expectated exclusion if exactly the mean of the null hypothesis is observed with its error at $1\sigma$ (green) and $2\sigma$ (yellow). The solid black line shows the observed exclusion. The results are shown for the nominal \MFM analysis (left) and the cross check \SMVA (right) when combining both the 7 and 8~\TeV datasets. A \SM Higgs boson is disfavoured at 95\% everywhere apart from where there is a large excess around 125~\GeV. \plotupdate}
-  \label{fig:res_exclusion}
-\end{figure}
+	\begin{center}
+	\includegraphics[width=0.49\linewidth]{spin/plots/before_7TeV.pdf}
+	\includegraphics[width=0.49\linewidth]{spin/plots/after_7TeV.pdf} \\
+	\includegraphics[width=0.49\linewidth]{spin/plots/before_8TeV.pdf}
+	\includegraphics[width=0.49\linewidth]{spin/plots/after_8TeV.pdf} \\
+	\caption[The distribution of \abscostheta before and after selection cuts for different spin signals]{The distribution of \abscostheta before any selection cuts (left) and after the selection cuts (right) for the 7~\TeV dataset top row and the 8~\TeV dataset bottom row. The three histograms represent the spin $0^+$ distribution with all SM production modes (red circular points), the spin $2^+_m$ distribution with the gluon-fusion production mode (blue square points) and the spin $2^+_m$ distribution with the quark-antiquark annihilation production mode (green triangular points). The \abscostheta category boundaries are shown as the black dashed lines.}
+	\label{fig:acc_cuts}
+	\end{center}
+\end{figure}	
 
-In order to quantify the significance of this excess the observed local $p$-value is shown as a function of the hypothesised Higgs mass, \mH, in Fig.~\ref{fig:res_pvalue} for both the 7~\TeV (blue line) and 8~\TeV (red line) datasets seperately and the combination (black line). It is clear there is a significant excess in both subsets of data at approximately the same mass and the quantity of the excess is apparent in both the \MFM and \SMVA analyses. The local $p$-value for the \MFM using the combined 7 and 8~\TeV datasets at \mH=124.7~\GeV (the mass with the most significant excess) is 5.7$\sigma$ where 5.2$\sigma$ is the expectation for a \SM Higgs boson. This constitutes a standalone discovery of a Higgs like resonance around 125~\GeV.
-
-\begin{figure}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obspvalue.pdf}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obspvalue_sideband.pdf}
-  \caption{The expected (dashed lines) and observed (solid lines) local $p$-value to reject the background only hypothesis as a function of the hypothesised Higgs mass, \mH. The 7~\TeV (blue lines) and 8~\TeV (red lines) results are show separately along with the combination (black lines). The results are shown for the nominal \MFM analysis (left) and the cross check \SMVA (right). The observed $p$-value in the \MFM at the most significant point is 5.7$\sigma$ (\mH=124.7~\GeV) given a \SM expectation of $5.2\sigma$. \plotupdate}
-  \label{fig:res_pvalue}
-\end{figure}
-
-\subsection{Measurement of physicsal parameters}
-
-The best fit value of the signal strength modifier, $\mu=\musm$, is shown as a function of the hypothesis Higgs mass, \mH, in Fig.~\ref{fig:res_mumh} for the combined 7 and 8~\TeV dataset. As expected this follows very similarly the shape of the observed exclusion in Fig.~\ref{fig:res_exclusion} and shows that the observed boson is very compatible with a \SM Higgs, i.e.~the observed value of $\mu$ is within $1\sigma$ of the \SM expectation, $\mu=1$. 
+A robust analysis is possible because although the acceptance $\times$ efficiency varies considerably as a function of \abscostheta, the shape of this variation is largely independent of the spin-parity model. This is also true in restricted ranges of $\eta$ and $R_{9}$ which allows us to extract the signal yield in bins of \abscostheta in a comparatively model independent way. 
+Figure~\ref{fig:eff_acc} shows the efficiency $\times$ acceptance ratio between the \twomp (with gluon-fusion production only) and \zerop (all SM production modes) as a function of \abscostheta in the $|\eta|$ and $R_{9}$ categories defined in Table~\ref{table:cats1}. It is clear that the acceptance $\times$ efficiency between the spin-0 and spin-2 models is independent of \abscostheta apart from at high values of \abscostheta where the vector-boson-fusion production in the SM plays a role. This motivates the choice of \abscostheta category boundaries described below where all the categories have similar efficiency $\times$ acceptance apart from the bin highest in \abscostheta.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmumh.pdf}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmumh_sideband.pdf}
-  \caption{The observed best fit value of the signal strength modifier, $\mu=\musm$, as a function of the hypothesised Higgs mass \mH when using the combined 7 and 8~\TeV datasets. The $\pm1\sigma$ and $\pm2\sigma$ error bands are shown as the dark and light green bands respectively. Results are shown for the nominal \MFM analysis (left) and the cross check \SMVA analysis (right). \plotupdate.}
-  \label{fig:res_mumh}
-\end{figure}
+	\begin{center}
+	\includegraphics[width=0.49\linewidth]{spin/plots/effacccats_7TeV.pdf}
+	\includegraphics[width=0.49\linewidth]{spin/plots/effacccats_8TeV.pdf}
+  \caption[Acceptance $\times$ efficiency ratio between the \twomp (gluon fusion production) and \zerop (all SM production modes) of the spin analysis event selection]{Acceptance $\times$ efficiency ratio between the \twomp (gluon-fusion production) and \zerop (all SM production modes) of the event selection as a function of \abscostheta split into the $|\eta|$ and $R_{9}$ categories defined in Table.~\ref{table:cats1}. The \abscostheta category boundaries are shown as the black dashed lines. The left hand plot is for the 7~\TeV \MC and the right hand plot for the 8~\TeV.}
+	\label{fig:eff_acc}
+	\end{center}
+\end{figure}	
 
-Figure~\ref{fig:res_muscan} shows the one dimensional \NLL scan of $\mu$ when the Higgs mass \mH is profiled. The hypothesis mass, \mH, is left floating in the fit as there is no \textit{a priori} knowledge of its value. The likelihood curves are shown for the 7 and 8~\TeV datasets separately, blue and red lines respectively, as well as for the combination, black line. The \SM expectation is shown as the dashed lines. One can see that the results are very consistent between the \MFM (left) and the \SMVA (right). There is some distance between the measurement made using the 7~\TeV dataset (blue line) and the 8~\TeV dataset (red line) but they are consistent at $<2\sigma$ level and it is quite reasonbale to imagine an upward fluctutation in the data at 7~\TeV and a downward fluctutaion at 8~\TeV. When combining the two datasets the best fit value comes out very close to the \SM expectation of $\mu=1$ so certainly an interesting area for future measurements with more data in the \Hgg channel is where this value goes. The best fit values of $\musm$ with their errors (and the mass at which the best fit is found) are summarised for each of the datasets using the \MFM analysis in Table~\ref{tab:res_mu}.
 
-\begin{figure}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmu.pdf}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmu_sideband.pdf}\\
-  \caption{The one dimensional \NLL scan of the signal strength modifier, $\mu=\musm$, when the hypothesis Higgs mass, \mH, is profiled in the fit. The \SM expectation and the observation in data are shown as the dashed and solid lines respectively. The results are shown for the 7~\TeV (blue), the 8~\TeV (red) and combined (black) datasets using the \MFM analysis (left) and the \SMVA analysis (right). The observed best fit value for the nominal \MFM analysis is $\musm=1.14^{+0.26}_{-0.23}$.}
-  \label{fig:res_muscan}
-\end{figure}
+To benefit from the improved energy resolution of non-showering photons in 
+the barrel, each event is categorised in $\eta$ and $R_{9}$ according to Table~\ref{table:cats1}.
 
 \begin{table}
-    \caption{\label{tab:res_mu} The values of the best fit signal
-      strength, $\musm$, when \mH is profiled, for the 7\TeV, 8\TeV, and combined datasets. 
-      The value of \mH\ at which the best fit occurs is also given.
-      }
   \begin{center}
-    \begin{tabular}{l|c|c}
-      & $\musm$  & $\mH$ (GeV)       \\  \hline
-      7 TeV  & $2.22^{+0.62}_{-0.55}$ & 124.2  \\ 
-      8 TeV  & $0.91^{+0.26}_{-0.23}$ & 124.9  \\ \hline
-      7 + 8 TeV & $1.14^{+0.27}_{-0.23}$ & 124.7  \\ 
+    \begin{tabular}{| l | l l l |}
+      \hline
+      Category 0 & $|\eta|_{\mbox{\tiny{max}}}<1.5$ & and & $R_{9\mbox{\tiny{min}}}>0.94$ \tabularnewline 
+      Category 1 & $|\eta|_{\mbox{\tiny{max}}}<1.5$ & and & $R_{9\mbox{\tiny{min}}}\leq0.94$ \tabularnewline 
+      Category 2 & $|\eta|_{\mbox{\tiny{max}}}>1.5$ & and & $R_{9\mbox{\tiny{min}}}>0.94$ \tabularnewline 
+      Category 3 & $|\eta|_{\mbox{\tiny{max}}}>1.5$ & and & $R_{9\mbox{\tiny{min}}}\leq0.94$ \tabularnewline
+      \hline
     \end{tabular}
-    \end{center}
+    \caption{Definition of photon resolution categories}
+    \label{table:cats1}
+  \end{center}
 \end{table}
 
-The following measurements focus on the properties of the observed signal and are consequently only shown for the \MFM analysis. The two most important physical parameters to measure in the signal are the overall rate, $\mu$, and the mass, \mH. We have seen the 1D \NLL scan of the signal strength, $\mu$, when \mH is profiled. The result of doing a two dimensional \NLL scan in both the parameters simultaneously is shown on the left hand side of Fig.~\ref{fig:res_mumh2} for the combined 7+8~\TeV dataset. The overall best fit (see Table~\ref{tab:res_mu}) is represented by the black cross where the solid and dashed lines correspond to the $1\sigma$ and $2\sigma$ error contours. For a standalone measurement of the mass of the observed particle it is undesirable to constrain the signal resonance to have exactly \SM like couplings and production rates. Consequently, when measuring the mass, the overall signal rate is allowed to scale in terms of the production from fermion couplings, \RF, and from boson couplings, \RV (see Eq.~\ref{eq:rvrf}). The one dimensional \NLL scan of the observed mass is shown on the right hand side of Fig.~\ref{fig:res_mumh2} for the combined 7+8~\TeV dataset when profiling the \RV and \RF signal strengths. This is shown when including all uncertainties (black) and when considering just the statistical uncertainties in the data (blue). It should be noted that in principal the best fit mass when scanning the two dimensions of $\mu$ and \mH (Fig.~\ref{fig:res_mumh2} left) does not necessarily have to be the same as the mass when scanning one dimension \mH but floating two other parameters, \RV and \RF (Fig.~\ref{fig:res_mumh2} right). However, in practise they come out almost identical because, as is shown below, the coupling strength parameters \RV and \RF come out very close to the \SM expectation. The observed best fit mass of the boson is found to be $\mH=124.73\pm0.34$(stat)$\pm0.15$(syst)~\GeV. 
+%\begin{tabular}{l l l l l}
+%  \textbullet & Category 0: & $|\eta|_{\mbox{\tiny{max}}}<1.444$ & and & $R_{9\mbox{\tiny{min}}}>0.94$ \\ 
+%  \textbullet & Category 1: & $|\eta|_{\mbox{\tiny{max}}}<1.444$ & and & $R_{9\mbox{\tiny{min}}}\leq0.94$ \\ 
+%  \textbullet & Category 2: & $|\eta|_{\mbox{\tiny{max}}}>1.444$ & and & $R_{9\mbox{\tiny{min}}}>0.94$ \\ 
+%  \textbullet & Category 3: & $|\eta|_{\mbox{\tiny{max}}}>1.444$ & and & $R_{9\mbox{\tiny{min}}}\leq0.94$ \\
+%\end{tabular}
 
-\begin{figure}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmumh2D.pdf}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsmh.pdf}
-  \caption{The two dimensional \NLL scan of $\mu$ and \mH when fitting to the combined 7+8~\TeV dataset is shown on the left. The best fit value is shown by the black cross and the $1\sigma$ and $2\sigma$ error contours shown by the solid and dashed lines respectively. The one dimensional \NLL scan of the best fit mass \mH is shown on the right, when profiling over the relative signal production from fermionic and bosonic modes, \RF and \RV. The statistical only component is shown as the blue line and the statistical plus systematic as the black line.}
-  \label{fig:res_mumh2}
-\end{figure}
+Within each category events are binned in \abscostheta, to discrimate between the different spin hypotheses, according to Table.~\ref{table:cats2}.
 
-Aside from the mass and signal strength of the observed particle it is relevant to study its couplings and whether the relative fraction produced by the different production modes is also compatible with the \SM prediction. Figure~\ref{fig:res_rvrf} (bottom left) shows the 2D \NLL scan of the relative couplings to fermions ($x$-axis) and bosons ($y$-axis) and their 1D projections (top left and top right). The \SM expectation is at (1,1) and represented by the dimond on the figure. It can be seen that the observation of $\mu_{ggH+tth}=X\pm\sigma$, $\mu_{qqH+VH}=X\pm\sigma$ is very compatible with the \SM expectation. Furthermore the signal strength can be divided by production mode as shown on the bottom right of Fig.~\ref{fig:res_rvrf}. It can be seen that the signal strength for all four production mechanism is consistent with the \SM expectation at 1. The Higgs mass, \mH, is profiled in all of these scans but constrained to be the same across each production mode.
+\begin{table}
+  \begin{center}
+    \begin{tabular}{| l | r l |}
+      \hline
+      Spin Category 0 &             & \abscostheta $<0.2$ \tabularnewline 
+      Spin Category 1 & $0.2\leq$   & \abscostheta$<0.375$ \tabularnewline 
+      Spin Category 2 & $0.375\leq$ & \abscostheta$<0.55$ \tabularnewline 
+      Spin Category 3 & $0.55\leq$  & \abscostheta$<0.75$ \tabularnewline 
+      Spin Category 4 & $0.75\leq$  & \abscostheta$<1.0$ \tabularnewline 
+      \hline
+    \end{tabular}
+    \caption{Definition of photon \abscostheta categories}
+    \label{table:cats2}
+  \end{center}
+\end{table}
 
-\begin{figure}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsrv.pdf}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsrf.pdf} \\
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsrvrf.pdf}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obsprocscan.pdf}
-  \caption{The top row shows the 1D \NLL scan as a function of the \SM relative coupling to bosons, $\mu_{qqH+VH}$ (top left), and to fermions, $\mu_{ggH+tth}$ (top right) for \SM expectation (dashed lines) and the observation in data (solid lines) for the 7~\TeV (red), 8~\TeV (blue) and combined (black) datasets. The bottom left plot is the 2D \NLL scan of $\mu_{qqH+VH}$ ($y$-axis) vs.~$\mu_{ggH+ttH}$ ($x$-axis) for the combined dataset observation. The best fit point is shown by the black cross whilst the $1\sigma$ and $2\sigma$ error intervals are shown by the solid and dashed lines respectively. The \SM expectation is the yellow diamond. It can be seen that the observation is very compatible with the \SM prediction.}
-  \label{fig:res_rvrf}
-\end{figure}
 
-Figure ~\ref{fig:res_chcomp} shows the breakdown of the extracted signal strength when separately fitted for each of the analysis categories (left) and when grouping the categories by their topology (right) into those untagged, those which are dijet (or \VBF) tagged, \VH tagged or \ttH tagged. It is noticeable that the categories with the most sensitivty are the untagged categories especially the "Untagged 1" and "Untagged 2" at 8~\TeV, whilst the dijet categories also have considerable sensitivity given that the signal to background ratio is high. The \VH and \ttH tagged categories have the least sensitivty and whilst they do not contribute much to the error on the total signal yield they are important when measuring the couplings of the observed boson.
+The \abscostheta boundaries are optimised to make particular use of the most disciminating 
+bin (high \abscostheta) and to maintain uniform acceptance $\times$ efficiency in the 
+other bins. In total the analysis is split into 20 event classes (4 $\eta$/\rnine\xspace 
+categories $\times$ 5 \abscostheta categories) in each year which gives a total of 40 event classes.
 
-\begin{figure}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obschcomp.pdf}
-  \includegraphics[width=0.49\textwidth]{analysis/plots/results/obstoposcan.pdf}
-  \caption{The left plot shows the signal strength breakdown when fitting the signal strength, $\mu$, in each analysis category seperately. The right plot shows the signal strength breakdown when fitting categories split by their topology, the 7~\TeV dataset is shown in red, the 8~\TeV in blue and the combined dataset in black.}
-  \label{fig:res_chcomp}
-\end{figure}
+\subsection{Signal and Background modelling}
 
-These results show an independent discovery of the Higgs like state around 125~\GeV which was announced by the \CMS and ATLAS collaborations in 2012~\cite{CMSDiscovery,ATLASDiscovery}. Furthermore, measurements of the properties of the observed resonance in this decay channel indicate a particle very consistent with the \SM prediction.
+The signal models are obtained from \MC simulation as described in Sec.~\ref{sec:mc} for the spin-0 \SM processes and the spin-2 processes. A parametric model identical to the one built for the nominal analysis is constructed as per the method described in Sec.~\ref{sec:signal_mfm}. The signal model is then parametrised as before in terms of $\mu$, \mH and two additional parameters, $x$ and \fqqbar, which dictate the amount of signal from spin-2 and the amount of spin-2 from $q\bar{q}$ production. The signal model parametrisation can be written as,
+\begin{equation}
+  \textbf{S}(m_{H},fqq,x;\hat{\theta}) = (1-x)\cdot\boldsymbol{S_{SM}}(m_{H};\hat{\theta})  + x\cdot\Bigl[f_{q\bar{q}}\cdot \boldsymbol{S_{q\bar{q}}}(m_{H};\hat{\theta}) + (1-f_{q\bar{q}})\boldsymbol{S_{gg}}(m_{H};\hat{\theta})\Bigr],  
+  \label{eq:spin_sig}
+\end{equation}
+where $x$ is the amount of signal originating from spin-2, \fqqbar is the amount of spin-2 signal originating from $q\bar{q}$ production, \mH is the signal position and $\theta$ are the nuisance parameters.
+
+The background model for the spin analysis comes in two forms. For the differntial measurement of the signal strength in bins of \abscostheta the envelope background method is used as per the description in Sec.~\ref{sec:envelope}. However, when calculating the statistical separation between various spin hypotheses a single parametrisation of the background is used in each category, namely a polynomial in the Bernstein basis~\cite{bernsteins1,bernsteins2} as per the description in eq.~\ref{eq:bernsteins}. The reason for this is that there is no asymptotic approximation for the test statistic distribution when the null hypothesis is not embedded in the alternative hypothesis. Consequently, in order to obtain the test statistic distributions (like the ones shown in Fig.~\ref{fig:cls}) one has to generate lots of pseudo-data and then refit this data to obtain the likelihood ratio and hence test statistic value. Given the complexity of the spin signal model and the combinatorics involved when using the envelope method with 40 analysis categories this becomes CPU impractical. It has been trialled using the GRID computing network but was found to take the order of hundreds of CPU years.
+Given this complication, and the fact that small losses in sensitivity to the background normalisation have a small impact on the spin hypothesis separation power, a single parametrisation in each category was chosen for ease and simplicity. The choice is to use 4th order Bernstein polynomials in all categories apart from the highest \abscostheta categories in which a 3rd order was chosen. The motivation behind this choice is that these order of polynomials show a similarly small level of bias as the envelope method when tested against ``truth" models for the spin categories analogous to the description in Sec.~\ref{sec:envelope}.
 
