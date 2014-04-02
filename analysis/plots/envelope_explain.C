@@ -87,7 +87,7 @@ void envelope_explain(){
   f.SetLineWidth(3);
   leg->AddEntry(&f,"Full profile fit","L");
 
-  TF1 f2("f2","(0.7*(x-125))*(0.7*(x-125))",120,130);
+  TF1 f2("f2","(1.5*(x-125))*(1.5*(x-125))",120,130);
   f2.SetLineColor(kBlue);
   f2.SetLineWidth(3);
   leg->AddEntry(&f2,"Fit freezing nuisance parameter to best fit","L");
@@ -128,7 +128,11 @@ void envelope_explain(){
   leg->Draw("same");
   c.Update();
   c.Modified();
-  c.Print("envelope_explain.pdf");
+  c.Print("envelope_explain_plot.pdf");
+  c.Print("envelope_explain_plot.C");
+
+  exit(0);
+
 
   // PLOT 2
   RooRandom::randomGenerator()->SetSeed(242);

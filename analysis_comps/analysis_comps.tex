@@ -125,7 +125,7 @@ and the per-photon energy resolution is given by,
 \begin{equation}
   \frac{\sigma_{E}(\vec{x},E_{raw})}{E(\vec{x},E_{raw})} = \frac{\sigma(\vec{x})}{\mu(\vec{x})}.
 \end{equation}
-In this way the regression predicts the full probability density of $E_{true}/E_{raw}$ per event given a particular configuration of the input variables, \vec{x}, and provides an estimate of the optimal energy correction and the energy resolution per photon. A comparison of this distribution with a statistically independent \MC sample is shown for the 8~\TeV training in Figure~\ref{fig:regression_training}. The performance of the regression compared to the default photon reconstruction is shown in Figure~\ref{fig:regression_performance}.
+In this way the regression predicts the full probability density of $E_{true}/E_{raw}$ per event given a particular configuration of the input variables, $\vec{x}$, and provides an estimate of the optimal energy correction and the energy resolution per photon. A comparison of this distribution with a statistically independent \MC sample is shown for the 8~\TeV training in Figure~\ref{fig:regression_training}. The performance of the regression compared to the default photon reconstruction is shown in Figure~\ref{fig:regression_performance}.
 
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/regression_barrel.pdf}
@@ -150,7 +150,7 @@ After application of the energy regression correction there are some remaining d
 
 \subsubsection{Energy scale corrections to the data}
 
-The supercluster energy is identical for electrons and photons so by correcting the supercluster energy scale to a known source, namely the mass of the $Z$-boson, in dielectron decays the smaller residual energy scale effects are accounted for. When reconstructing the dielectron decays to derive these corrections, electrons are reconstructed as photons and the $Z$ mass calculated in the same way as for the diphoton invariant mass in Eq.~\ref{eq:inv_mass}. This can be done several times to account for various different effects. In the first stage scale corrections are derived in bins of time (run range) and \eta. After applying these corrections further, much smaller, residual effects are accounted for in bins of \rnine (the size of the effect is different for converted and non-converted photons). After applying both of these a further step is taken for the 8 TeV data in the barrel to derive residual corrections in bins of \ET. Consequently the total scale correction is a product of three corrections in 59 bins of time $\times$ 4 bins in \eta $\times$ 2 bins in \rnine $\times$ 6 bins in \ET (where the last is applied for the 8TeV barrel photons only).
+The supercluster energy is identical for electrons and photons so by correcting the supercluster energy scale to a known source, namely the mass of the $Z$-boson, in dielectron decays the smaller residual energy scale effects are accounted for. When reconstructing the dielectron decays to derive these corrections, electrons are reconstructed as photons and the $Z$ mass calculated in the same way as for the diphoton invariant mass in Eq.~\ref{eq:inv_mass}. This can be done several times to account for various different effects. In the first stage scale corrections are derived in bins of time (run range) and \eta. After applying these corrections, further, much smaller, residual effects are accounted for in bins of \rnine (the size of the effect is different for converted and non-converted photons). After applying both of these a further step is taken for the 8 TeV data in the barrel to derive residual corrections in bins of \ET. Consequently the total scale correction is a product of three corrections in 59 bins of time $\times$ 4 bins in \eta $\times$ 2 bins in \rnine $\times$ 6 bins in \ET (where the last is applied for the 8~TeV barrel photons only).
 
 The strategy for deriving these corrections is to take \Zee events in data and \MC simulation and extract the invariant dielectron mass in the relevant bin of interest. This mass distribution is fitted with a convolution of a Breit-Wigner (designed to handle the underlying Z line shape~\cite{pdg}) and a Crystal Ball function which models the calorimeter resolution effects and bremsstrahlung losses in the material upstream of the \ECAL. The Breit-Wigner parameters are fixed to the PDG values of $M_{Z}=91.188$~\GeV and $\Gamma_{Z}=2.495$~\GeV~\cite{pdg} whilst the Crystal Ball parameters which model the detector effects are allowed to float. The scale correction, $\Delta E$, is then defined as the relative difference between the Crystal Ball peak in data and simulation,
 \begin{equation}
@@ -158,50 +158,44 @@ The strategy for deriving these corrections is to take \Zee events in data and \
 \end{equation}
 \subsubsection{Energy resolution smearing the Monte-Carlo}
 
-A similar method is used to extract a smearing factor that can be applied to the \MC such that the width of the invariant mass distribution in \Zee decays matches between data and \MC. This is done in 4 bins of \eta $\times$ 2 bins of \rnine and is parametrised as the quadratic sum of two resolution components: a constant term, $\Delta C$, and a stochastic term, $\Delta S$, which aims to model the expected resolution effects explained in Eq.~\ref{eq:energy_res} in Sec.~\ref{sec:ecal}. The smearing term, $\Delta\sigma$, is parametrised as,
+A similar method is used to extract a smearing factor that can be applied to the \MC events such that the width of the invariant mass distribution in \Zee decays matches between data and \MC events. This is done in 4 bins of \eta $\times$ 2 bins of \rnine and is parametrised as the quadratic sum of two resolution components: a constant term, $\Delta C$, and a stochastic term, $\Delta S$, which aims to model the expected resolution effects explained in Eq.~\ref{eq:energy_res} in Sec.~\ref{sec:ecal}. The smearing term, $\Delta\sigma$, is parametrised as,
 \begin{equation}
   \Delta\sigma = \frac{\Delta S}{\sqrt{E_{T}}} \oplus \Delta C.
 \end{equation}
-The effect of the scale and smearing corrections is shown for the \Zee data and \MC samples in Figure~\ref{fig:scale_smearing_Zee} and for the analysis dataset after preselection with the electron veto inverted in Figures ~\ref{fig:scale_smearing_analysis_7TeV} and~\ref{fig:scale_smearing_analysis_8TeV}. Each of these corrections has an associated uncertainty and these uncertainties are propagated per photon through the analaysis. There are also additional uncertainties included which account for differences between electrons and photons and the difference between the $Z$ mass scale (around 90~\GeV) and the Higgs mass scale (around 125~\GeV). Systematic uncertainties are described in more detail in Section.~\ref{sec:systematics}.
+The effect of the scale and smearing corrections is shown for the \Zee data and \MC samples in Fig.~\ref{fig:scale_smearing_Zee}. Figure~\ref{fig:scale_smearing_analysis} shows the \Zee invariant mass distribution for data and \MC events at 8~TeV for events passing the analysis preselection. Each of the scale and resolution corrections has an associated uncertainty and these uncertainties are propagated per photon through the analysis. There are also additional uncertainties included which account for differences between electrons and photons and the difference between the $Z$ mass scale (around 90~\GeV) and the Higgs mass scale (around 125~\GeV). Systematic uncertainties are described in more detail in Sec.~\ref{sec:systematics}.
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/smearing_EB_highEta_lowR9.pdf}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/smearing_EB_lowEta_highR9.pdf}
-  \caption[The \Zee invariant mass shape before and after scale and smearing corrections are applied]{The \Zee invariant mass shape comparison before and after the scale and smearing corrections are applied. Shown for 8~TeV for photons with $1.<|\eta|<1.444$ and $\rnine<0.94$ on the left and for photons with $|eta|<1.$ and $\rnine>0.4$ on the right.}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/zee_beforecorr.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/zee_aftercorr.pdf}
+  \caption[The \Zee invariant mass shape before and after scale and smearing corrections are applied]{The \Zee invariant mass shape comparison of data and MC events before (left) and after (right) the scale and smearing corrections are applied. Shown for 8~TeV electrons (reconstructed as photons) in the barrel.}
   \label{fig:scale_smearing_Zee}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.9\textwidth]{analysis_comps/plots/smearing_mass_Zee_7TeV.pdf}
-  \caption[The \Zee invariant mass distribution at 7~TeV when the analysis electron veto is inverted]{The \Zee invariant mass distribution at 7TeV in data (black points) and \MC (blue histogram) for events which pass the analysis preselection in which the electron veto is inverted.}
-  \label{fig:scale_smearing_analysis_7TeV}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=0.9\textwidth]{analysis_comps/plots/smearing_mass_Zee_8TeV.pdf}
-  \caption[The \Zee invariant mass distribution at 8~TeV when the analysis electron veto is inverted]{The \Zee invariant mass distribution at 8TeV in data (black points) and \MC (blue histogram) for events which pass the analysis preselection in which the electron veto is inverted.}
-  \label{fig:scale_smearing_analysis_8TeV}
+  \includegraphics[width=0.99\textwidth]{analysis_comps/plots/massEBEE.pdf}
+  \caption[The \Zee invariant mass distribution at 8~TeV when the electrons are reconstructed as photons]{The \Zee invariant mass distribution at 8~TeV for electrons reconstructed as photons when both electrons are in the barrel (left) and when at least one is not in the barrel (right). Shown for data (black points) and \MC events (blue histogram) which pass the analysis preselection when the electron veto is inverted.}
+  \label{fig:scale_smearing_analysis}
 \end{figure}
 
 \section{Vertex reconstruction}
 \label{sec:vtx_reco}
 
-The resolution on the opening angle has a neglible effect if the correct vertex can be found within 10mm of the true interaction point. As seen in Sec.~\ref{sec:pileup_beamspot} the beamspot has an RMS spread of about 5~cm in the $z$ direction and there is an average of $\sim20$ vertices per bunch crossing. Because the beam direction is along the $z$-axis the spread of the vertex in the $x$ and $y$ directions is tiny (\red{number?}) and consequently mismeasurement of the primary vertex in the $x$-$y$ plane is small and has no impact on the mass resolution. By assigning the correct vertex to the diphoton pair, using other information in the tracking system, most of the mass resolution can be preserved. The method used to extract the primary vertex is a \BDT which exploits the correlation between the diphoton pair and the recoiling tracks from the underlying interaction as well as additional information in the tracking system from a photon conversion pair. The output of this per vertex \BDT is evaluated for each vertex in the event and the primary vertex is assigned as the one with the highest value of \BDT output (i.e.\ the value nearest 1.). In addition, it is possible to construct another \BDT whose output is proportional to the probability that the chosen vertex is the correct one (described in Sec.~\ref{sec:bdt_prob}). This probability becomes a useful discrimnanting variable for the analyses later on.
+The resolution on the opening angle has a neglible effect if the correct vertex can be found within 10~mm of the true interaction point. As seen in Sec.~\ref{sec:pileup_beamspot} the beamspot has an RMS spread of about 5~cm in the $z$ direction and there is an average of $\sim20$ vertices per bunch crossing. Because the beam direction is along the $z$-axis the spread of the vertex in the $x$ and $y$ directions is tiny ($<0.5$~mm) and consequently mismeasurement of the primary vertex in the $x$-$y$ plane is small and has no impact on the mass resolution. By assigning the correct vertex to the diphoton pair, using other information in the tracking system, most of the mass resolution can be preserved. The method used to extract the primary vertex is a \BDT which exploits the correlation between the diphoton pair and the recoiling tracks from the underlying interaction as well as additional information in the tracking system if there is a photon conversion pair. The output of this per-vertex \BDT is evaluated for each vertex in the event and the primary vertex is assigned as the one with the highest value of the \BDT output (i.e.\ the value nearest 1.). In addition, it is possible to construct another \BDT whose output is proportional to the probability that the chosen vertex is the correct one (described in Sec.~\ref{sec:bdt_prob}). This probability becomes a useful discriminating variable for the analyses later on.
 
 The vertex \BDT uses the following input variables:
 
 \begin{itemize}
   \item $\sum\limits_{i} |\vec{p}{}^{\;i}_{T}|^{2}$ - the sum of the transverse momentum squared of all of the tracks which originate from this vertex, representing how hard the interaction is at this vertex.
-  \item $\sum\limits_{i} \bigl(\vec{p}^{\;i}_{T} \cdot \frac{\vec{p}^{\gamma\gamma}_{T}}{|\vec{p}^{\gamma\gamma}_{T}|}\bigr)$ - the sum of the magnitude of the transverse momentum of each track orginating from this vertex relative to the transverse momentum of the diphoton system, representing the recoil of the tracks to the diphoton system.
-  \item $\bigr(|\sum\limits_{i} \vec{p}^{\;i}_{T}| - \vec{p}^{\gamma\gamma}_{T}\bigl) / \bigr(|\sum\limits_{i} \vec{p}{}^{\;i}_{T}| + \vec{p}^{\gamma\gamma}_{T}\bigl)$ - the asymmetry between the diphoton system and the other tracks originating from this vertex.
+  \item $\frac{\vec{p}^{\gamma\gamma}_{T}}{|\vec{p}^{\gamma\gamma}_{T}|} \cdot \sum\limits_{i} \vec{p}_{T}^{i}$ - the dot product between the transverse momentum of the diphoton system and the sum of all other tracks originating from this vertex, representing the recoil of the tracks relative to the diphoton system.
+  \item $\bigr(|\sum\limits_{i} \vec{p}^{\;i}_{T}| - |\vec{p}^{\gamma\gamma}_{T}|\bigl) / \bigr(|\sum\limits_{i} \vec{p}{}^{\;i}_{T}| + |\vec{p}^{\gamma\gamma}_{T}|\bigl)$ - the asymmetry between the diphoton system and the other tracks originating from this vertex.
   \item $|z_{v}-z_{c}|/\sigma_{c}$ - this is added for events which contain at least one photon conversion where $z_{v}$ is the $z$ position of the vertex in question and $z_{c}$ and $\sigma_{c}$ are the estimated $z$ position of the vertex from conversion information and its approximate error as defined below.
 \end{itemize}
 
-For events which contain at least one photon conversion, the conversion tracks and/or the conversion momentum can be used to point back to the beam line and estimate the vertex position. This can be acheived in one of two ways. In cases where the conversion occurs early, i.e.\ in one of the first layers of the tracking system, then the two electron legs of the conversion will leave two clean and distinct tracks. This means that the momentum of the conversion pair can be accurately reconstructed and used to point from the conversion vertex position back to the beam line and thus the nearest primary vertex. In cases where the conversion occurs late in the tracking system there are not enough track hits to accurately reconstruct the momentum of the conversion pair, however the incident position of the photon at the \ECAL face is well known in this case, so the line which connects the \ECAL position with the conversion vertex can be used to point back to the beam line. This is diagramtically represented in Figure~\ref{fig:conv_diags} for both cases.
+For events which contain at least one photon conversion, the conversion tracks and/or the conversion momentum can be used to point back to the beam line and estimate the vertex position. This can be achieved in one of two ways. In cases where the conversion occurs early, i.e.\ in one of the first layers of the tracking system, then the electron pair from the conversion will leave two clean and distinct tracks. This means that the momentum of the conversion pair can be accurately reconstructed and used to point from the conversion vertex position back to the beam line and thus the nearest primary vertex. In cases where the conversion occurs late in the tracking system, there are not enough track hits to accurately reconstruct the momentum of the conversion pair. However the incident position of the photon at the \ECAL face is well known in this case, so the line which connects the \ECAL position with the conversion vertex can be used to point back to the beam line. This is diagramatically represented in Fig.~\ref{fig:conv_diags} for both cases.
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/ConversionDiagCase1.pdf}
-  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/ConversionDiagCase2.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/ConvDiagNewCase1.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis_comps/plots/ConvDiagNewCase2.pdf}
   \caption[A schematic showing the two methods used for locating the primary vertex]{A representation of the two methods for locating the primary vertex using photon conversion information. The left plot is for cases where the conversion occurs early enough in the tracker that the two electron tracks can be used to construct the converted pair momentum which is combined with the conversion vertex position to point back to the beam line. The right plot is for cases where the conversion occurs late in the tracker and the energy weighted supercluster position and the conversion vertex position are used to point back to the beam line.}
   \label{fig:conv_diags}
 \end{figure}
@@ -214,28 +208,19 @@ where $z_{conv}$ is the z position of the conversion vertex, $r_{conv}$ is the d
 
 For Case 2 conversions the primary vertex $z$ position is calculated as,
 \begin{equation}
-  z_{c} = \frac{z_{conv}-r_{conv}}{(r_{SC}-r_{conv})(z_{SC}-z_{conv})},
+  z_{c} = \frac{r_{conv}z_{SC} - r_{SC}z_{conv}}{r_{conv} - r_{SC}},
 \end{equation}
 where $z_{conv}$ and $z_{SC}$ are the $z$ positions of the conversion vertex and supercluster respectively, and $r_{conv}$ and $r_{SC}$ are the distance of the conversion vertex and the supercluster from the beamline.
 
-There are 6 regions of the tracking system (refer back to Figure~\ref{fig:cms_tracker}). When the conversion vertex is located in one of the inner regions; Pixel Barrel, Pixel Forward, TID, the Case 1 
-conversion information is included in the \BDT, otherwise the Case 2 conversion information is used. The resolution on the primary vertex position in conversions is estimated per tracking region by calulating the effective width \footnote{Half the narrowest interval which contains 68.3\% of the distribution} of the distribution of the difference between the $z$ position of the primary vertex without conversion information and the $z$ position of the primary vertex using conversion information alone, $\Delta z=z_{v}-z_{c}$. Consequently the fourth input variable to the \BDT, shown in the list above as $|z_{v}-z_{c}|/\sigma_{c}$, is effectively a pull distribution for the conversion vertex. The \BDT will favour vertices whose value of this variable is near zero.
+There are six regions of the tracking system (refer back to Figure~\ref{fig:cms_tracker}). When the conversion vertex is located in one of the inner regions; Pixel Barrel, Pixel Forward or TID, the Case 1 
+conversion information is included in the \BDT, otherwise the Case 2 conversion information is used. The resolution on the primary vertex position in conversions is estimated per tracking region using \gjet events in data for which the primary vertex efficiency is high and the photon converts. Using these events, the conversion resolution, $\sigma_{c}$, is calculated as the effective width\footnote{Half the narrowest interval which contains 68.3\% of the distribution} of the distribution of the difference, $\Delta z=z_{v}-z_{c}$, between the estimated $z$ position of the primary vertex without any conversion information, $z_{v}$, and the estimated $z$ position of the primary vertex when using conversion information alone, $z_{c}$. Consequently the fourth input variable to the \BDT, shown in the list above as $|z_{v}-z_{c}|/\sigma_{c}$, is effectively a pull distribution for the conversion vertex. The \BDT will favour vertices whose value of this variable is near zero.
 
-The \BDT is trained on a sample of \Hgg \MC events. It is tested with a statistically independent sample and further validated using \Zmumu decays in data and \MC. The efficiency is measured in data using the \Zmumu channel where the muon tracks are removed from the \BDT variables to simulate a diphoton like situation in data. The distributions of the input variables are shown for the \Hgg training sample in Figure~\ref{fig:vertex_bdt_inputs} (\red{probably unnecessary}). The \BDT response is shown for \Zmumu data and \MC for both the signal (right vertex) and background (wrong vertex) in Figure~\ref{fig:vertex_bdt_response}. The chosen primary vertex is the one which gives the highest score \BDT output. The efficiency of the vertex selection as a function of the $Z$ \pT and the number of reconstructed vertices as measured in \Zmumu data and \MC samples is shown in Figure~\ref{fig:vertex_bdt_efficiency}. 
-
-\begin{figure}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input0.pdf}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input1.pdf} \\
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input2.pdf}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_input3.pdf}
-  \caption[Distributions of the input variables used in vertex location \BDT]{Distributions of the input variables for the vertex \BDT in the \MC \Hgg training (points) and test (filled) samples at 8TeV. Shown for the target primary vertex (blue histograms) and the background pileup vertices (red histograms). \red{Plots need updating, tidying and labelling correctly.}}
-  \label{fig:vertex_bdt_inputs}
-\end{figure}
+The \BDT is trained on a sample of \Hgg \MC events. It is tested with a statistically independent sample and further validated using \Zmumu decays in data and \MC. The efficiency is measured in data using the \Zmumu channel where the muon tracks are removed from the \BDT variables to simulate a diphoton-like situation in data. The \BDT response is shown for \Zmumu data and \MC events for both the signal (right vertex) and background (wrong vertex) in Figure~\ref{fig:vertex_bdt_response}. The chosen primary vertex is the one which gives the highest score \BDT output. The efficiency of the vertex selection as a function of the $Z$ \pT and the number of reconstructed vertices as measured in \Zmumu data and \MC samples is shown in Figure~\ref{fig:vertex_bdt_efficiency}. 
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_output_7TeV.pdf}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_output_8TeV.pdf}
-  \caption[The vertex \BDT response for \Zmumu events]{The vertex \BDT response for \Zmumu events in data (points) and MC (filled) for the primary vertex (green) and the background pileup vertices (red).}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_output_7TeV_log.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_output_8TeV_log.pdf}
+  \caption[The vertex \BDT response for \Zmumu events]{The vertex \BDT response for \Zmumu events in data (points) and MC events (filled) for the primary vertex (green) and the background pileup vertices (red).}
   \label{fig:vertex_bdt_response}
 \end{figure}
 
@@ -244,62 +229,63 @@ The \BDT is trained on a sample of \Hgg \MC events. It is tested with a statisti
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_nvtx_7TeV.pdf} \\
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_pt_8TeV.pdf}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_nvtx_8TeV.pdf} 
-  \caption[The efficiency of locating the correct vertex]{The chosen vertex efficiency as measured in \Zmumu data and \MC as a function of $Z$ \pT (left) and number of reconstructed vertices (right) for the 7~TeV (top row) and 8~TeV (bottom row) data samples.}
+  \caption[The efficiency of locating the correct vertex]{The chosen vertex efficiency as measured in \Zmumu data and \MC simulation as a function of $Z$ \pT (left) and number of reconstructed vertices (right) for the 7~TeV (top row) and 8~TeV (bottom row) data samples.}
   \label{fig:vertex_bdt_efficiency}
 \end{figure}
 
 \subsection{Estimating the per-event probability that the correct vertex is chosen}
 \label{sec:bdt_prob}
 
-The total efficiency of assigning the correct vertex using the method described in the preceeding section is at the level of 75\% during 2012 running conditions, where the correct vertex is defined as being within 10~mm of the true vertex. This means that for around 25\% of preselected events the mass resolution is dominated by the vertex resolution. Consequently, it is important to ascertain the probability that the chosen vertex is the correct one. An additional specific \BDT is constructed to address exactly this topic. The input variables used for this \BDT are:
+The total efficiency for assigning the correct vertex using the method described in the preceeding section is at the level of 75\% during 2012 running conditions, where the correct vertex is defined as being within 10~mm of the true vertex. This means that for around 25\% of preselected events the mass resolution is dominated by the vertex resolution. Consequently, it is important to ascertain the probability that the chosen vertex is the correct one. An additional specific \BDT is constructed to address exactly this topic. The input variables used for this \BDT are:
 
 \begin{itemize}
   \item The \pT of the diphoton system
   \item The number of vertices in each event
   \item The value of the per-vertex \BDT described above
   \item The $z$ distance, $\Delta z$, between the chosen vertex and the second and third choice vertices.
-  \item The number of photon conversions used, either 0, 1 or 2.
+  \item The number of photon conversions used; either 0, 1 or 2.
 \end{itemize}
 
-There is a linear relation between the response of this \BDT and the correct vertex efficiency (or probability). This relationship is demonstrated in Figure~\ref{fig:vertex_bdt_prob} and is fitted with a single parameter straight line in order to analytically obtain the per-event correct vertex probability for a given event. Figure~\ref{fig:vertex_bdt_prob_efficiency} shows that this estimation reproduces the required vertex efficiency as a function of Higgs \pT and number of reconstructed vertices.
+There is a linear relation between the response of this \BDT and the correct vertex efficiency (or probability). This relationship is demonstrated in Fig.~\ref{fig:vertex_bdt_prob} and is fitted with a single parameter straight line in order to analytically obtain the per-event correct vertex probability for a given event. Figure~\ref{fig:vertex_bdt_prob_efficiency} shows that this estimation reproduces the required vertex efficiency as a function of Higgs \pT and number of reconstructed vertices.
 
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_prob.pdf}
-  \caption{A demonstration of the linearity relation between the per-event vertex probability \BDT output distribution and the correct vertex probability}
+  \caption{The linearity relation between the per-event vertex probability \BDT output distribution and the correct vertex probability}
   \label{fig:vertex_bdt_prob}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_prob_efficiency_pt.pdf}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_prob_efficiency_nvtx.pdf}
-  \caption[A comparison of the true vertex efficiency and the average vertex probability]{A comparison of the true vertex efficiency (black points) and the average vertex probability (blue band) a statistically independent \MC Higgs sample simulated with 2012 running conditions.}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vtxProbPt.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vtxProbNvtx.pdf}
+  \caption[A comparison of the true vertex efficiency and the average vertex probability]{A comparison of the true vertex efficiency (black points) and the average vertex probability (blue band) for a statistically independent \MC Higgs sample simulated with 2012 running conditions.}
   \label{fig:vertex_bdt_prob_efficiency}
 \end{figure}
 
 \section{Event preselection}
 \label{sec:photon_presel}
 
-A simple and loose preselection is applied to all photons before entering the analysis. The preselection requirements are identical for all analysis approaches and are designed to remove some \emph{fake} photons whilst mainting near 100\% trigger efficiency. The variables used for preselection are defined below and the preselection cuts are described in Table~\ref{table:preselection}.
+A simple and loose preselection is applied to all photons before they enter the analysis. The preselection requirements are identical for all analysis approaches and are designed to remove some \emph{fake} photons whilst mainting near 100\% trigger efficiency. The variables used for preselection are defined below and the preselection cuts are described in Table~\ref{table:preselection}.
 
 \begin{itemize}
   \item $H/E$ - \textbf{The ratio of hadronic energy in the \HCAL tower behind the supercluster to the electromagnetic energy in the supercluster}. Neutral jets which fake photons typically leave a fraction of their energy in the \HCAL so there is a requirement that the value of this variable is small.
-  \item $\sigma^{2}_{i\eta i\eta}$ - \textbf{The RMS spread of the shower in the eta direction}. Multiple showers of a \pizero, or more than one \pizero, result in a wider shower in \eta (as the \pizero decay product photons are separated in space). This cannot be exploited in the \phi direction because conversion electrons get separated by the magentic field, however in \eta single photons, even when converted, occupy a narrow region. The separation of the two photons from a \pizero is minimal when they share the energy eqaully and given that typically $p_{T}>>m_{\pi}$ the separation is close to minimal for most. Taking the transverse plane in the barrel, the separation $d=2Rm_{\pi}/p_{T}$ (where $R$ is the radius of the barrel), which for $p_{T}=40$GeV gives a value of $d=$8mm$\sim0.006\eta$. By refering to Table~\ref{tab:preselection} it is clear that the preselection requirement is quite loose.
-  \item $ISO_{ECAL}$ - \textbf{The total \rho corrected electromagnetic energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
-  \item $ISO_{HCAL}$ - \textbf{The total \rho corrected hadronic energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
-  \item $ISO_{Tracks}$ - \textbf{The total \rho corrected track energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
-  \item $ISO_{PFCh}$ - \textbf{The total \rho corrected particle flow charged hadron energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
+  \item $\sigma^{2}_{i\eta i\eta}$ - \textbf{The RMS spread of the shower in the eta direction}. Multiple showers of a \pizero, or more than one \pizero, result in a wider shower in \eta (as the \pizero decay product photons are separated in space). This cannot be exploited in the \phi direction because conversion electrons get separated by the magnetic field, however single photons, even when converted, occupy a narrow region in \eta. The separation of the two photons from a \pizero is minimal when they share the energy equally and given that typically $p_{T}\gg m_{\pi}$ the separation is close to minimal for most \pizero decays. Taking the transverse plane in the barrel, the separation $d=2Rm_{\pi}/p_{T}$ (where $R$ is the radius of the barrel), which for $p_{T}=40$~GeV gives a value of $d=$8~mm$\sim0.006\eta$. By refering to Table~\ref{tab:preselection} it is clear that the preselection requirement is quite loose.
+  \item $ISO_{ECAL}$ - \textbf{The total \rho-corrected electromagnetic energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
+  \item $ISO_{HCAL}$ - \textbf{The total \rho-corrected hadronic energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
+  \item $ISO_{Tracks}$ - \textbf{The total \rho-corrected track energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
+  \item $ISO_{PFCh}$ - \textbf{The total \rho-corrected particle flow charged hadron energy in a cone of radius 0.4 in (\eta,\phi) around the photon candidate} - see Sec.~\ref{sec:iso}
 \end{itemize}
 
-In addition to the above an electron veto is applied to prevent contamination of the photon sample with electrons which originate from Drell Yan decays. This is acheived by removing photon candidates whose supercluster is matched to an electron track which has no missing hits in the innermost tracking region.
+In addition to the above an electron veto is applied to prevent contamination of the photon sample with electrons which originate from Drell Yan interactions. This is achieved by removing photon candidates whose supercluster is matched to an electron track which has no missing hits in the innermost tracking region.
 
 \begin{table}
 \noindent
   \begin{center}
   \caption{Preselection cut values.}
-    \begin{tabular}{c c c c c c c c c c c }
+    \begin{tabular}{c | c c c c c c c c c c }
+      \hline
                 & \multicolumn{2}{c}{Barrel} & \multicolumn{2}{c}{Endcap} \\ 
       \hline
-      R9        & $H/E$ & $\sigma^{2}_{i\eta i\eta}$ & $HoE$ & $\sigma^{2}_{i\eta i\eta}$  \\ 
+      R9        & $H/E$ & $\sigma^{2}_{i\eta i\eta}$ & $H/E$ & $\sigma^{2}_{i\eta i\eta}$  \\ 
       $\le$ 0.9 & $<$ 0.075 & $<$ 0.014 & $<$ 0.075 & $<$ 0.034 \\
       $>$ 0.9   & $<$ 0.082 & $<$ 0.014 & $<$ 0.075 & $<$ 0.034  \\ 
       \hline    
@@ -308,21 +294,15 @@ In addition to the above an electron veto is applied to prevent contamination of
       R9        & $ISO_{ECAL}$ & $ISO_{HCAL}$ &  $ISO_{Tracks}$ & $ISO_{PFCh}$ \\ 
       $\le$ 0.9 &$<$ 4 GeV & $<$ 4 GeV & $<$ 4 GeV & $<$ 4 GeV\\ 
       $>$ 0.9   &$<$ 50 GeV & $<$ 50 GeV & $<$ 50 GeV & $<$ 4 GeV\\ 
+      \hline
     \end{tabular}
-  \label{table:preselection}
+  \label{tab:preselection}
   \end{center}
 \end{table}
 
 \section{Using $Z$ decays for validation and efficiency measurements}
 \label{sec:zee}
 
-Whilst no known ``standard candles" with high statistics exist for high \pT photons in the \LHC environment a powerful control source for the \Hgg decay in both data and \MC is the \Zee decay. From a detector view point electrons are very similar to photons and the $Z$ is relatively near the relevant Higgs search range in mass. The differences between the $Z$ and the Higgs, in both their mass and \pT distribution, and also the differences between electrons originating from a $Z$ and photons originating from a Higgs are important systematic uncertainties on the Higgs mass scale and resolution. By inverting the electron veto usually applied in the preselection the Higgs to two photon analysis can be identically replicated but the very pure diphoton sample replaced with a pure dielectron sample. One additional process which can be used as a direct control for photons is the \Zmumugamma decay although the statistics, even with the LHC luminosity, are very low. Many of the input variables used in training the \BDTs and cuts are validated with both \Zee and \Zmumugamma data/\MC comparison plots. An example is shown in Figure~\ref{fig:dielectronmass} for the reconstructed di-electron mass for events passing the preselection described in Table~\ref{table:preselection}.
+Whilst no known ``standard candles" with high statistics exist for high \pT photons in the \LHC environment a powerful control source for the \Hgg decay in both data and \MC simulation is the \Zee decay. From an \ECAL interaction view point electrons are very similar to photons and the $Z$ is relatively near the relevant Higgs search range in mass. The differences between the $Z$ and the Higgs, in both their mass and \pT distribution, and also the differences between electrons originating from a $Z$ and photons originating from a Higgs are important systematic uncertainties on the Higgs mass scale and resolution. By inverting the electron veto usually applied in the preselection, the Higgs to two photon analysis can be identically replicated but with the very pure diphoton sample replaced with a pure dielectron sample. One additional process which can be used as a direct control for photons is the \Zmumugamma decay although the statistics, even with the LHC luminosity, are very low. Many of the input variables used in training the \BDTs and cuts are validated with both \Zee and \Zmumugamma data/\MC comparison plots. An example has been shown in a previous figure (see Fig.~\ref{fig:scale_smearing_analysis}) for the reconstructed dielectron mass for events passing the preselection described in Table~\ref{tab:preselection}.
 
-As previously shown (in Sec.~\ref{sec:scale_smearing}) data/\MC comparison of the \Zee decay are used to derive scale corrections for the data and smearing of the \MC. Discrepancies between data and \MC in \Zee decays of important analysis variables are accounted for by introducing systematic uncertainties to cover them. In addition the ``tag and probe" method ~\cite{tag_and_probe} is used on \Zee decays to evaluate the signal efficiency for the preselection and analysis cuts. Several stages of the analysis are validated in this way and where appropriate systematic uncertainties are included to account for any data/\MC differences. Although the numbers and uncertainties themselves are derived from \Zee samples (because of the much higher statistics), they are always cross checked with the \Zmumugamma sample.
-
-\begin{figure}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/zee_mass.pdf}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/zee_mass_ratio.pdf}
-  \caption[The di-electron invariant mass distribution for \Zee events after the preselection with the analysis electron veto inverted]{The di-electron mass distribution after applying the preselection (described in Sec.~\ref{sec:photon_presel}) and the scale and smearing corrections (described in Sec.~\ref{sec:scale_smearing}) whilst inverting the electron veto. The left plot shows the data at 8TeV as the black points with the Drell Yan \MC sample as the blue histogram. The Data/\MC ratio is shown in the right hand plot. \red{Plot needs updating}}
-  \label{fig:dielectronmass}
-\end{figure}
+As previously shown (in Sec.~\ref{sec:scale_smearing}) data/\MC comparisons of the \Zee decay are used to derive scale corrections for the data and smearing of the \MC simulation. Discrepancies between data and \MC in \Zee decays of important analysis variables are accounted for by introducing systematic uncertainties to cover them. In addition the ``tag and probe" method ~\cite{tag_and_probe} is used on \Zee decays to evaluate the signal efficiency for the preselection and analysis cuts. Several stages of the analysis are validated in this way and where appropriate systematic uncertainties are included to account for any data/\MC differences. Although the numbers and uncertainties themselves are derived from \Zee samples (because of the much higher statistics), they are always cross checked with the \Zmumugamma sample.

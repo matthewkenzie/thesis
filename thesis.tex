@@ -6,15 +6,21 @@
 \usepackage[printonlyused]{acronym}
 \usepackage{hyperref}
 \usepackage{slashed}
-\usepackage{draftwatermark}
-\SetWatermarkScale{8.}
-\SetWatermarkLightness{0.9}
-\SetWatermarkFontSize{60cm}
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{8.}
+%\SetWatermarkLightness{0.9}
+%\SetWatermarkFontSize{60cm}
 \usepackage{multirow}
 \usepackage{tabulary}
 \usepackage{rotating}
 \usepackage{cleveref}
 \usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tabularx}
+%\usepackage{subcaption}
+
+\captionsetup[figure]{labelformat=simple, labelsep=colon}
+\captionsetup[table]{labelformat=simple, labelsep=colon}
 
 % my commands
 \newcommand{\rnine}{\ensuremath{R_{9}}\xspace}
@@ -22,15 +28,16 @@
 \newcommand{\comm}[1]{\textcolor{red}{#1}\xspace}
 \newcommand{\Hgg}{\ensuremath{H\rightarrow\gamma\gamma}\xspace}
 \newcommand{\mH}{\ensuremath{m_{H}}\xspace}
-\newcommand{\fb}{\ensuremath{fb^{-1}}\xspace}
+\newcommand{\fb}{\ensuremath{\mathrm{fb^{-1}}}\xspace}
 \newcommand{\mgg}{\ensuremath{m_{\gamma\gamma}}\xspace}
-\newcommand{\HZZ}{\ensuremath{H\rightarrow ZZ* \rightarrow l^{+}l^{-}l^{+}l^{-}}\xspace}
+\newcommand{\HZZ}{\ensuremath{H\rightarrow ZZ^{*} \rightarrow l^{+}l^{-}l^{+}l^{-}}\xspace}
 \newcommand{\Zee}{\ensuremath{Z\rightarrow e^{+}e^{-}}\xspace}
 \newcommand{\Zmumu}{\ensuremath{Z\rightarrow \mu^{+}\mu^{-}}\xspace}
 \newcommand{\Zmumugamma}{\ensuremath{Z\rightarrow \mu^{+}\mu^{-}\gamma}\xspace}
 \newcommand{\ET}{\ensuremath{E_{T}}\xspace}
 \newcommand{\gjet}{\ensuremath{\gamma+}jet\xspace}
 \newcommand{\ptga}{\ensuremath{p_{T}^{\gamma}(1)}\xspace}
+\newcommand{\ptgom}{\ensuremath{p_{T}^{\gamma_{1}}/m_{\gamma\gamma}}\xspace}
 \newcommand{\mjj}{\ensuremath{m_{\j\j}}\xspace}
 \newcommand{\dmom}{\ensuremath{\Delta m/m_{H}}\xspace}
 %\renewcommand{\pT}{\ensuremath{p_{T}}\xpsace}
@@ -52,7 +59,7 @@
 \newcommand{\ea}{\ensuremath{\epsilon\times\alpha}\xspace}
 \newcommand{\sigeff}{\ensuremath{\sigma_{\mathrm{eff}}}\xspace}
 \newcommand{\sigFW}{\ensuremath{\sigma_{\mathrm{FW}}}\xspace}
-\newcommand{\fbinv}{fb\ensuremath{^{-1}}\xpsace}
+\newcommand{\fbinv}{fb\ensuremath{^{-1}}\xspace}
 \newcommand{\NLL}{\ensuremath{-2\Delta\mathrm{LL}}\xspace}
 \newcommand{\musm}{\ensuremath{\sigma/\sigma_{\mathrm{SM}}}\xspace}
 \newcommand{\RV}{\ensuremath{\mu_{\mathrm{bosons}}}\xspace}
@@ -64,6 +71,7 @@
 \newcommand{\fqqbar}{\ensuremath{f_{q\bar{q}}}\xspace}
 \newcommand{\zerop}{\ensuremath{0^{+}}\xspace}
 \newcommand{\twomp}{\ensuremath{2^{+}_{m}}\xspace}
+\newcommand{\sqrts}{\ensuremath{\sqrt{s}}}
 
 \newcommand{\plotupdate}{\red{PLOT NEEDS UPDATING}}
 \newcommand{\refrqd}{\red{[REF!]}}
@@ -97,6 +105,9 @@
 \newcommand{\ttH}{\ac{ttH}\xspace}
 \newcommand{\FWHM}{\ac{FWHM}\xspace}
 \newcommand{\POI}{\ac{POI}\xspace}
+\newcommand{\QFT}{\ac{QFT}\xspace}
+\renewcommand{\VEV}{\ac{VEV}\xspace}
+\renewcommand{\SM}{\ac{SM}\xspace}
 
 %% You can set the line spacing this way
 %\setallspacing{double}
@@ -127,7 +138,7 @@ citecolor = blue
 \begin{document}
 
 % Line numbers
-\runninglinenumbers
+%\runninglinenumbers
 
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
 \begin{frontmatter}
@@ -149,7 +160,7 @@ citecolor = blue
   \input{analysis_comps/analysis_comps.tex}
   \input{selec_and_cats/selec_and_cats.tex}
   \input{analysis/analysis.tex}
-  %\input{results/results.tex}
+  \input{results/results.tex}
   \input{spin/spin.tex}
   \input{conclusions/conclusions.tex}
 \end{mainmatter}
