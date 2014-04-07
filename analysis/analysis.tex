@@ -257,11 +257,11 @@ where $p_{0b}$ and $p_{1b}$ are the Taylor expansion coefficients for bin $b$. S
 The distribution for the data, background (along with the $\pm1\sigma$ and $\pm2\sigma$ errors) and signal for each of the sideband analysis bins are shown in Fig.~\ref{fig:sideband_output} for the mass hypothesis, \mH=124.7~\GeV.
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/model_7TeV_m124.7}.pdf}
-  \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/model_8TeV_m124.7}.pdf}\\
-  \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/diff_model_7TeV_m124.7}.pdf}
-  \includegraphics[width=0.48\textwidth]{{analysis/plots/sideband/diff_model_8TeV_m124.7}.pdf}
-  \caption[The distribution of data, background and signal for the \SMVA]{The distribution in sideband analysis bins for the data (black points), the background (blue line), the error on the background (green and yellow bands) and the signal (red line) for the mass hypothesis at \mH=124.7~\GeV. The top row shows the expected number of events of each type for the 7~\TeV (left) and 8~\TeV (right) datasets. The bottom row shows the background subtracted plot for data (black points) and signal (red line).}
+  \includegraphics[width=0.48\textwidth]{analysis/plots/sideband/sideband_model_bfmass_7TeV.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis/plots/sideband/sideband_model_bfmass_8TeV.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis/plots/sideband/sideband_model_bfmass_7TeV_diff.pdf}
+  \includegraphics[width=0.48\textwidth]{analysis/plots/sideband/sideband_model_bfmass_8TeV_diff.pdf}
+  \caption[The distribution of data, background and signal for the \SMVA]{The distribution in sideband analysis bins for the data (black points), the background (blue line), the error on the background (green and yellow bands) and the signal (red line) for the mass hypothesis at \mH= 124.7~\GeV. The top row shows the expected number of events of each type for the 7~\TeV (left) and 8~\TeV (right) datasets. The bottom row shows the background subtracted plot for data (black points) and signal (red line).}
   \label{fig:sideband_output}
 \end{figure}
 
@@ -270,48 +270,47 @@ The distribution for the data, background (along with the $\pm1\sigma$ and $\pm2
 \section{Systematic Uncertainties}
 \label{sec:systematics}
 
-There are several sources of systematic uncertainty in the analysis and these are described in the following section. Nearly all of these affect the signal model, although there is an uncertainty associated to the ``envelope" background method, discussed in Sec.~\ref{sec:envelope}, for the \MFM and there are two uncertainties to the background for the \SMVA discussed separately below. The signal systematics come in three broad categories; those associated to individual photons, those associated to individual events and those associated to specific tagged event classes. The systematics get applied to the model in different ways depending on the level of correlation required between them. The \MFM analysis has a more precise correlation model between photon energy uncertainties and the mass shape, predominately because this is used for the main result and is required to provide a measurement of the observed bosons' mass. For the \SMVA this is somewhat simplified as the analysis only serves as a cross check of the categorisation and background estimation for which the important systematics are on the overall signal yield and not so much its shape or position. The way the systematics are implemented in the two analyses is explained below afterwhich there is a description of the individual uncertainties used. Their is a summary of the main groups of systematic uncertainty and their contribution to the uncertainty on the signal strength, $\sigma/\sigma_{\mathrm{SM}}$, in Table~\ref{tab:systematics_mu} and their contribution to the uncertainty on the mass measurement, \mH, in Table~\ref{tab:systematics_mh}, at the end of the section.
+There are several sources of systematic uncertainty in the analysis and these are described in the following section. Nearly all of these affect the signal model, although there is an uncertainty associated to the ``envelope" background method, discussed in Sec.~\ref{sec:envelope}, for the \MFM and there are two uncertainties to the background for the \SMVA discussed separately below. The signal systematics come in three broad categories; those associated to individual photons, those associated to individual events and those associated to specific tagged event classes. The systematics get applied to the model in different ways depending on the level of correlation required between them. The \MFM analysis has a more precise correlation model between photon energy uncertainties and the mass shape, predominately because this is used for the main result and is required to provide a measurement of the observed boson's mass. For the \SMVA this is somewhat simplified as the analysis only serves as a cross check of the categorisation and background estimation for which the important systematics are on the overall signal yield and not so much its shape or position. The way the systematics are implemented in the two analyses is explained below, after which there is a description of the individual uncertainties used. There is a summary of the main groups of systematic uncertainty and their contribution to the uncertainty on the signal strength, $\sigma/\sigma_{\mathrm{SM}}$, in Table~\ref{tab:systematics_mu} and their contribution to the uncertainty on the mass measurement, \mH, in Table~\ref{tab:systematics_mh} at the end of the section.
 
 \subsection{Implementation of the systematic uncertainties}
 
 \subsubsection{Mass Factorised Analysis}
 
-In the \MFM uncertainties are implemented in two different ways. The first type are generally associated to the photon energy scale and resolution and the diffrences between photons and electrons. These are implemented as Gaussian nuisance parameters which affect the position, shape and normalisation of the signal probability distribution function. The second type are uncertainties which result in events being misclassified or cut out of the analysis. These are implemented as log normal nuisance parameters which affect the normalisation of the signal and the relative signal yield in each event class. Log normal constraints are chosen for the latter so that the nuisance term cannot go negative. These unceratinties are somewhat easier to understand as they simply dictate that events can migrate between categories and that the overall normalisation of the signal can vary due to the theoretical cross section, luminosity measurement etc. The former type is perhaps slightly harder to understand as these uncertainties are applied to individual photons and their effect is propagated through to the invariant mass shape and normalization of the signal for each production process and event class. The methodology for this is as follows,
+In the \MFM uncertainties are implemented in two different ways. The first type are generally associated to the photon energy scale and resolution and the differences between photons and electrons. These are implemented as Gaussian nuisance parameters which affect the position, shape and normalisation of the signal probability distribution function. The second type are uncertainties which result in events being misclassified or cut out of the analysis. These are implemented as log normal nuisance parameters which affect the normalisation of the signal and the relative signal yield in each event class. Log normal constraints are chosen for the latter so that the nuisance term cannot go negative. These uncertainties are somewhat easier to understand as they simply dictate that events can migrate between categories and that the overall normalisation of the signal can vary due to the theoretical cross section, luminosity measurement, etc. The former type is perhaps slightly harder to understand as these uncertainties are applied to individual photons and their effect is propagated through to the invariant mass shape and normalization of the signal for each production process and event class. The methodology for this is as follows,
 
 \begin{itemize}
   \item Each uncertainty is designed to address a specific class of photons with similar properties. For example one uncertainty might be the energy scale uncertainty for unconverted photons in the barrel. We can label this class $c$ and the uncertainty for this class $\theta_{c}$ which is the nuisance parameter that enters the signal model.
-  \item Within the class $c$ there may be several sub groups of photons which have different uncertainties. For example photons in the central barrel and outer barrel. We will label this uncertainty as $\sigma_{s}$.
-  \item The full analysis is run through where each photon in class $c$ has its scale altered acorrding to a random Gaussian number centered on its nominal value with a width of its individual uncertainty $\sigma_{s}$ and all other photons left alone. 
+  \item Within the class $c$ there may be several subgroups of photons which have different uncertainties. For example photons in the central barrel and outer barrel. We will label this uncertainty as $\sigma_{s}$.
+  \item The full analysis is run through where each photon in class $c$ has its scale altered according to a random Gaussian number centered on its nominal value with a width of its individual uncertainty $\sigma_{s}$ and all photons in the other classes are unchanged. 
   \item The distribution of the diphoton invariant mass shape for the signal is compared when the random shift above is applied and when it is not. The relative difference between the mean, effective width and overall rate of these two shapes is calculated, labelled $k_{\mu}$, $k_{\sigma}$ and $k_{r}$ respectively, for each signal process and analysis event class separately. This then provides a measure of the $1\sigma$ systematic effect on the signal mass shape of the uncertainty $\theta_{c}$.
   \item Given there are several nuisance parameters $\theta$ for which this is done, the signal model Gaussian parameters then get reparametrised as follows;
     \begin{flalign}
       & \mbox{Gaussian mean:} \;\;\;\;\; \mu(\mH) = \hat{\mu}(\mH)\Biggl(1+\displaystyle\sum_{c}k_{\mu c}\theta_{c}\Biggr) & \\
       & \mbox{Gaussian sigma:} \;\;\;\; \sigma(\mH) = \hat{\sigma}(\mH)\Biggl(1+\sqrt{\displaystyle\sum_{c}k_{\sigma c}^{2}\theta_{c}^{2}}\Biggr) & \\
-      & \mbox{Signal rate:} \;\;\;\;\;\;\;\;\;\;\; r(\mH) = \sigma_{\mathrm{xs}}\cdot BR \cdot \epsilon\cdot\alpha \cdot L\Biggl(1+\displaystyle\sum_{c}k_{r}\theta_{c}\Biggr) &
+      & \mbox{Signal rate:} \;\;\;\;\;\;\;\;\;\;\; r(\mH) = \sigma_{\mathrm{xs}}\cdot BR \cdot \epsilon\cdot\alpha \cdot L\Biggl(1+\displaystyle\sum_{c}k_{rc}\theta_{c}\Biggr) &
     \end{flalign}
+where $\hat{\mu}$ and $\hat{\sigma}$ represent the nominal fitted values of the Gaussians means and widths in the \MC.
 \end{itemize}
-
-where $\hat{\mu}$ and $\hat{\sigma}$ represented the nominal fitted values of the Gaussians means and widths in the \MC.
-The final event classes contain mixtures of photons from several different regions (in \eta and \rnine) which all have different associated uncertainties. Using this method the full correlation between the individual photon uncertainties is completey mapped onto the final invariant mass signal shape of each analysis category. 
+The final event classes contain mixtures of photons from several different regions (in \eta and \rnine) which all have different associated uncertainties. Using this method the full correlation between the individual photon uncertainties is completey mapped onto the final invariant mass signal shape of each analysis category. In summary, each shape parameter of the signal model is given a dependence on each of the nuisance parameters. The signal shape can then be altered according to the size of the effect the nuisance parameter has in that region of signal phase space.
 
 \subsubsection{Sideband Analysis}
 
-As the sideband analysis is simply a cut and count experiment across 15 (19) bins in the 7 (8)~\TeV datasets the uncertainties are just implemented as normalisation errors effecting the yield in each bin. These can arise from the energy scale, resolution, reconstruction efficiency etc.~and result in event migrations between bins or arise from the theoretical cross section, luminosity measurement etc.~and effect the overall signal normalisation. There are two systematics in the \SMVA associated to the background estimation from the sidebands. The first arises from the assumption that the background varies linearly across sidebands, although this has a neglible impact on the overall signal yield error. The second arises from the assumed shape used to extract the background normalisation. This is the dominant systematic in the analysis and is extracted using a bias study similar to the one described for the envelope method in Sec.~\ref{sec:envelope}. The size of this uncertainty is X\% (X\%) on the background rate in the 7 (8)~\TeV dataset.
+As the sideband analysis is simply a cut and count experiment across 15 (19) bins in the 7 (8)~\TeV datasets the uncertainties are just implemented as normalisation errors affecting the yield in each bin. These can arise from the energy scale, resolution, reconstruction efficiency, etc., and result in event migrations between bins or arise from the theoretical cross section, luminosity measurement, etc., and affect the overall signal normalisation. There are two systematics in the \SMVA associated to the background estimation from the sidebands. The first arises from the assumption that the background varies linearly across sidebands, although this has a neglible impact on the overall signal yield error. The second arises from the assumed shape used to extract the background normalisation. This is the dominant systematic in the analysis and is extracted using a bias study similar to the one described for the envelope method in Sec.~\ref{sec:envelope}. The size of this uncertainty is 0.7\% (0.4\%) on the background rate in the 7 (8)~\TeV dataset.
 
 \subsection{Systematic uncertainties related to individual photons}
 
 \subsubsection{Photon energy scale}
-In Section~\ref{sec:photon_energy} a method for correcting the photon energy using \Zee decays was described. Although the statistical uncertainties on these corrections is small, there are some data/\MC discrepancies that gives rise to a systematic uncertainty. This uncertainty is individually calculated for the 8 categories (4 in \eta and 2 in \rnine) for which the energy scale correction is applied. There are four nuisance parameters for each of the 7 and 8~\TeV datasets propagated to the signal model representing the energy scale uncertainty for barrel/endcap, converted/unconverted photons.
+In Section~\ref{sec:photon_energy} a method for correcting the photon energy using \Zee decays was described. Although the statistical uncertainties on these corrections is small, there are some data/\MC discrepancies that gives rise to a systematic uncertainty. This uncertainty is individually calculated for the 8 categories (4 in \eta and 2 in \rnine) for which the energy scale correction is applied. There are four nuisance parameters for each of the 7 and 8~\TeV datasets propagated to the signal model representing the energy scale uncertainty for barrel/endcap and converted/unconverted photons.
 
 \subsubsection{Photon energy resolution}
-Section~\ref{sec:photon_energy} also describes the method used to smear the \MC such that the energy resolution matches that observed in data using the \Zee control sample. As above there are four nuisance parameters representing the stocastic smearing uncertainty for each of the 7 and 8~\TeV datasets for barrel/endcap, converted/uncoverted photons. Additionally for converted/unconverted photons in the barrel there is an additional pair of uncertainties for the constant smearing term.
+Section~\ref{sec:photon_energy} also describes the method used to smear the \MC such that the energy resolution matches that observed in data using the \Zee control sample. As above there are four nuisance parameters representing the constant smearing uncertainty for each of the 7 and 8~\TeV datasets for barrel/endcap and converted/uncoverted photons. For converted/unconverted photons in the barrel there is an additional pair of uncertainties for the stochastic smearing term. Given the low sensitivity of the endcap region and the low statistics in the 7 TeV sample this additional stochastic parameterisation is only used in the barrel at 8~TeV.
 
 \subsubsection{Energy scale uncertainty due to differences between electron and photon reconstruction}
-As the uncertainties, and the corresponding corrections, to the energy scale and resolution described above are derived from the \Zee decay an important source of systematic uncertainty arises from differences between electrons and photons which are not well modelled by the \MC. The effect which is most significant is due to an imperfect description of the tracker and servicing material between the beampipe and the \ECAL in the simulation. Studies of photon conversions, electron bremstraulung and pion scattering suggest a material defecit in the simulation of up to 10\% in some areas of the \ECAL. The uncertainty on the energy scale is assessed by using specialised \MC samples in which the tracking material budget is increased by 10\% and 20\% in 8 categories (4 in \eta and 2 in \rnine). Two nuisance parameters, which get correlated across the 7 and 8~\TeV datasets, are implemented representing the energy scale uncertainty due to the material mismodelling in the central barrel, $|\eta|<1$, and the rest of the barrel.
+As the uncertainties, and the corresponding corrections, to the energy scale and resolution described above are derived from the \Zee decay an important source of systematic uncertainty arises from differences between electrons and photons which are not well modelled by the \MC. The effect which is most significant is due to an imperfect description of the tracker and servicing material between the beampipe and the \ECAL in the simulation. Studies of photon conversions, electron bremstrahlung and pion scattering suggest a material deficit in the simulation of up to 10\% in some areas of the \ECAL. The uncertainty on the energy scale is assessed by using specialised \MC samples in which the tracking material budget is increased by 10\% and 20\% in 8 categories (4 in \eta and 2 in \rnine). Two nuisance parameters, which get correlated across the 7 and 8~\TeV datasets, are implemented representing the energy scale uncertainty due to the material mismodelling in the central barrel, $|\eta|<1$, and the rest of the barrel.
 
 A futher difference between electron and photons which is not modelled in the simulation is the variation in the amount of scintillation light which reaches the photodetector given the longitudinal position in the crystal at which the light is emitted. Typically the peak position of the amount of scintillation light for electron showers is earlier in the crystal than photon showers and this is assumed as uniform in the simulation. A single correlated nuisance parameter is applied to account for this effect.
 
-Finally one further systematic is applied to account for improvements made in more recent versions of the simulation which model electron bremstraulung at low \pT and photon conversion at high \pT much better. An additional correlated nuisance parameter is applied to account for this effect.
+Finally one further systematic is applied to account for improvements made in more recent versions of the simulation which model electron bremstrahlung at low \pT and photon conversion at high \pT much better. An additional correlated nuisance parameter is applied to account for this effect.
 
 \subsubsection{Photon preselection efficiency}
 
@@ -319,17 +318,17 @@ The efficiency of the preselection described in Sec.~\ref{sec:photon_presel} is 
 
 \subsubsection{Photon identification BDT}
 
-The photon identification BDT output (described in Sec.~\ref{sec:pho_id_mva}) is an important input to the diphoton BDT which is used to classify events. A shift in the photon ID BDT output, due to inaccurate simulation in the training samples, can have a direct effect on the ouput of the diphoton event BDT which in turn will lead to an event being misclassified; either it will fail the lower edge cut or it will go into a different analysis category. By examining the variation in the photon ID output for \Zee electrons, \Zmumugamma photons and diphoton events in data with \mgg>160~\GeV it is found that applying a systematic shift of 0.01 to the output covers any discrepancies between data and \MC. This shift is applied and then propagated through to the diphoton \BDT which in turn results in an uncertainty implemented as relative yield change across event class (in other words a category migration).
+The photon identification BDT output (described in Sec.~\ref{sec:pho_id_mva}) is an important input to the diphoton BDT which is used to classify events. A shift in the photon ID BDT output, due to inaccurate simulation in the training samples, can have a direct effect on the ouput of the diphoton event BDT which in turn will lead to an event being misclassified; either it will fail the lower edge cut or it will go into a different analysis category. By examining the variation in the photon ID output for \Zee electrons, \Zmumugamma photons and diphoton events in data with \mgg$>160$~\GeV it is found that applying a systematic shift of 0.01 to the output covers any discrepancies between data and \MC. This shift is applied and then propagated through to the diphoton \BDT which in turn results in an uncertainty implemented as relative yield change across event class (in other words a category migration).
 
 \subsubsection{Photon resolution estimate}
 
-The most imporant input to the diphoton BDT, the variable with the most discriminating power, is the photon energy resolution estimate. As for the photon ID systematic above the differences between data and \MC are studied for \Zee decays, \Zmumugamma decays and high \pT photons and a systematic variation of $\pm10$\% of the nominal value adequately covers any discrepancy. This variation is applied to photons and then propagated through to the diphoton \BDT and as above is implemented as an event migration uncertainty.
+The most imporant input to the diphoton BDT, i.e.\ the variable with the most discriminating power, is the photon energy resolution estimate. As for the photon ID systematic above the differences between data and \MC are studied for \Zee decays, \Zmumugamma decays and high \pT photons and a systematic variation of $\pm10$\% of the nominal value adequately covers any discrepancy. This variation is applied to photons and then propagated through to the diphoton \BDT and as above is implemented as an event migration uncertainty.
 
 \subsection{Systematic uncertainties related to diphoton events}
 
 \subsubsection{Vertex efficiency}
 
-The vertex efficiency in \MC is corrected by a scale factor obtained from the vertex efficiency ratio between data and \MC as measured in \Zmumu events where the muon tracks are ignored (to replicate the situation with photons). The uncertainty associated to this is implemented by changing the relative fraction of the right/wrong vertex signal shape. 
+The vertex efficiency in \MC is corrected by a scale factor obtained from the vertex efficiency ratio between data and \MC as measured in \Zmumu events where the muon tracks are ignored (to replicate the situation with photons). The uncertainty associated with this is implemented by changing the relative fraction of the right/wrong vertex signal shape. 
 
 \subsubsection{Trigger efficiency}
 
@@ -337,7 +336,11 @@ The trigger efficiency in \MC is corrected to match the data using \Zee events w
 
 \subsubsection{Mass scale non-linearity}
 
-Another important consideration when using the \Zee decay as a calibration and control tool in the analysis is not only the differences between electrons and photons but also the difference in the mass scale between the $Z$ ($m_{Z}=91.2$~\GeV~\cite{pdf}) and a Higgs boson at \mH=125~\GeV. Although the absolute difference is not imporant, the respective differences between data and \MC are. This effect is measured by comparing the energy measured from the eleromagnetic shower alone and the \pT from the tracker of electrons as a function of the scalar \ET sum of the two electrons in \Zee decays. This uncertainty is applied as global mass shift, independently in the 7 and 8~\TeV datasets, which has a correlated effect on the signal position in each category.
+Another important consideration when using the \Zee decay as a calibration and control tool in the analysis is not only the differences between electrons and photons but also the difference in the mass scale between the $Z$ ($m_{Z}=91.2$~\GeV~\cite{pdg}) and a Higgs boson at $\mH=125$~\GeV. Although the absolute difference is not imporant, the relative differences between data and \MC are. This effect is measured by comparing the energy measured from the electromagnetic shower alone and the \pT from the tracker of electrons as a function of the scalar \ET sum of the two electrons in \Zee decays. This uncertainty is applied as global mass shift, independently in the 7 and 8~\TeV datasets, which has a correlated effect on the signal position in each category.
+
+\subsubsection{Uncertainty on $Z$ mass}
+
+Given that most of the systematics on the energy scale are obtained from studies on the $Z$ decay to electrons, the uncertainty on which the $Z$ mass can be measured in this decay is also included as a systematic.
 
 \subsubsection{Luminosity measurement}
 
@@ -351,33 +354,34 @@ The uncertainties on the theoretically predicted \SM Higgs cross section and its
 
 \subsubsection{Jet tagging efficiency}
 
-One of the largest uncertainties for measurement of the respective couplings to fermions and bosons of the Higgs boson originates from the complexity in isolating events produced by gluon fusion and those produced by vector boson fusion. As described in Sec.~\ref{sec:exclusive_tags} this is done by tagging jets characteristc of \VBF Higgs decays however there is a large uncertainty involved when additional jets are produced by gluon fusion induced Higgs decays. Using the Stewart-Tackmann procedure~\cite{vbf_syst} the uncertainty on the yield of gluon fusion events in the \VBF tagged event classes is calculated and implemented as a category migration systematic. There are futher effects from the jet energy scale, jet id efficiency and the efficiency of rejecting pile up jets from geniune particles which are taken from Refs.~\cite{jet_energy_corrections,jet_energy_corrs2}. These effect the relative yields of the signal expectation between the \VBF categories and also from the \VBF categories as a whole to the inclusive categories.  
+One of the largest uncertainties for measurement of the respective couplings to fermions and bosons of the Higgs boson originates from the complexity in isolating events produced by gluon fusion and those produced by vector boson fusion. As described in Sec.~\ref{sec:exclusive_tags} this is done by tagging jets characteristc of \VBF Higgs decays. However there is a large uncertainty involved when additional jets are produced by gluon fusion-induced Higgs decays. Using the Stewart-Tackmann procedure~\cite{vbf_syst} the uncertainty on the yield of gluon fusion events in the \VBF tagged event classes is calculated and implemented as a category migration systematic. There are futher effects from the jet energy scale, jet id efficiency and the efficiency of rejecting pile up jets from genuine particles which are taken from Refs.~\cite{jet_energy_corrections,jet_energy_corrs2}. These effect the relative yields of the signal expectation between the \VBF categories and also from the \VBF categories as a whole to the inclusive categories.  
 
 \subsubsection{Lepton, \MET and $b$-tagging efficiency}
 Additional normalisation uncertainties are applied to the exclusive mode categories which account for the efficiency of reconstructing and tagging leptons, \MET and $b$-jets.
 
 \subsection{Summary}
 
+A summary of all the systematic uncertainties is shown in Table~\ref{tab:systematics}. A summary of the systematic uncertainties which effect the signal strength measurement, and the size of their effect, is shown in Table~\ref{tab:systematics_mu}. A summary of the systematic uncertainties which effec the mass meaurement, and the size of their effect, is shown in Table~\ref{tab:systematics_mh}.
+
+\input{analysis/plots/my_systematics_table}
+
 \begin{table}[htbp]
-\caption[Magnitude of the uncertainty on the signal strength, $\musm$, induced by the systematic uncertainties on the signal]{Magnitude of the uncertainty on the signal strength, $\musm$, induced by the systematic uncertainties on the signal. These are not final numbers. Would also be nice to have plot of asimov likelihood curve of expected signal strength when adding different components in.}
+\caption[Magnitude of the uncertainty on the signal strength, $\musm$, induced by the systematic uncertainties on the signal]{Magnitude of the uncertainty on the signal strength, $\musm$, induced by the systematic uncertainties on the signal.}
 \begin{center}
 \begin{tabular}{ l c }
 \hline
-\multirow{2}{*}{\textbf{Systematic uncertainty}} & \textbf{Uncertainty} \\
+\multirow{2}{*}{\textbf{Systematic uncertainty}} & \textbf{Uncertainty (\%)} \\
  &  \textbf{on $\musm$} \\
 \hline
 \hline
 %%%%%% per photon ----------------
-Energy resolution, scale and resolution estimation & 0.04\\
-\hline
-Trigger, photon preselection, and vertex finding efficiencies& 0.02\\
-\hline
-Uncertainties specific to tagged classes & 0.02\\
-\hline
-Production cross sections, branching fractions, and integrated luminosity & 0.12\\
+Energy resolution, scale and resolution estimation & 0.02\\
+Uncertainty from resolution estimate and photon identification \BDT & 0.06\\
+Other experimental uncertainties & 0.04\\
+Theoretical uncertainties & 0.11\\
 \hline
 \hline
-All systematic uncertainties on signal model & 0.15 \\
+All systematic uncertainties on signal model & 0.13 \\
 \hline
 \end{tabular}
 \end{center}
@@ -385,23 +389,21 @@ All systematic uncertainties on signal model & 0.15 \\
 \end{table}
 
 \begin{table}[htbp]
-\caption[Magnitude of the uncertainty on the signal position, $\mH$, induced by the systematic uncertainties on the signal]{Magnitude of the uncertainty on the signal position, $\mH$, induced by the systematic uncertainties on the signal. These are not final numbers. Would also be nice to have plot of asimov likelihood curve of expected signal strength when adding different components in.}
+\caption[Magnitude of the uncertainty on the signal position, $\mH$, induced by the systematic uncertainties on the signal]{Magnitude of the uncertainty on the signal position, $\mH$, induced by the systematic uncertainties on the signal.}
 \begin{center}
 \begin{tabular}{ l c }
 \hline
-\multirow{2}{*}{\textbf{Systematic uncertainty}} & \textbf{Uncertainty} \\
+\multirow{2}{*}{\textbf{Systematic uncertainty}} & \textbf{Uncertainty (GeV)} \\
  &  \textbf{on $\mH$} \\
 \hline
 \hline
 %%%%%% per photon ----------------
-Energy resolution, scale and resolution estimation & 0.02\% \\
-\hline
-Non linearity extrapolation from $Z$-boson scale to Higgs scale & 0.07\% \\
-\hline
-Differences between electrons and photons & 0.08\% \\
+Energy resolution, scale and resolution estimation & 0.05 \\
+Non linearity extrapolation from $Z$-boson scale to Higgs scale & 0.10 \\
+Differences between electrons and photons & 0.11 \\
 \hline
 \hline
-All systematic uncertainties on signal model & 0.12\% \\
+All systematic uncertainties on signal model & 0.16 \\
 \hline
 \end{tabular}
 \end{center}
@@ -410,24 +412,22 @@ All systematic uncertainties on signal model & 0.12\% \\
 
 \section{Statistical interpretation of the data}
 \label{sec:stats}
-To aid with statistical interpretation of the data it is useful to define two hypotheses to which the data can be compared. These are the background only model and the signal plus background model known as the null hypothesis, $H_{0}$, and the alternate hypothesis, $H_{1}$, respectively. The background model is obtained from the data by profiling the different parametrisation choices, as per the ``envelope" method described in Sec.~\ref{sec:envelope}. The benchmark used for the signal model is the \SM Higgs expectation as described in Sec.~\ref{sec:signal_model} which can be expressed in terms of the two physical parameters of interest; the signal strength relative to the \SM expectation, $\mu=\musm$, and the signal position or Higgs mass, \mH. The likelihood function for statiscal interpretation can be written as,
+To aid with statistical interpretation of the data it is useful to define two hypotheses with which the data can be compared. These are the background only model and the signal plus background model, known as the null hypothesis, $H_{0}$, and the alternate hypothesis, $H_{1}$, respectively. The background model is obtained from the data by profiling the different parametrisation choices, as per the ``envelope" method described in Sec.~\ref{sec:envelope}. The benchmark used for the signal model is the \SM Higgs expectation as described in Sec.~\ref{sec:signal_model} which can be expressed in terms of the two physical parameters of interest; the signal strength relative to the \SM expectation, $\mu=\musm$, and the signal position or Higgs mass, \mH. The likelihood function for statistical interpretation can be written as,
 \begin{equation}
   \mathcal{L}(\mu,\mH;\theta,\theta_{d}|\mgg) = \mu\cdot\mathbf{S}(\mgg|\mu,\mH;\theta) + \mathbf{B}(\mgg|\theta_{d}),
   \label{eq:likelihood}
 \end{equation}
-where \mgg is the diphoton invariant mass, $\theta$ are continuous nuisance parameters effecting the signal model, $\theta_{d}$ are discrete nuisance parameters effecting the background model and $\mathbf{S}$ and $\mathbf{B}$ are the probability distribution functions for the signal and background repsectively. In the case of the \SMVA there is no dependence on \mgg as events are simply counted in the analysis bins. It can be seen that $\mu$ is continuous parameter which represents the size of the fitted signal. The null hypothesis, or background only model, is a simple case of the full model where $\mu=0$.
+where \mgg is the diphoton invariant mass, $\theta$ are continuous nuisance parameters effecting the signal model, $\theta_{d}$ are discrete nuisance parameters effecting the background model and $\mathbf{S}$ and $\mathbf{B}$ are the probability distribution functions for the signal and background respectively. In the case of the \SMVA there is no dependence on \mgg as events are simply counted in the analysis bins. It can be seen that $\mu$ is a continuous parameter which represents the size of the fitted signal. The null hypothesis, or background only model, is a simple case of the full model where $\mu=0$.
 
-When determining the best fit values of parameters in our model and their errors the full likelihood function, as expressed in Eq.~\ref{eq:likelihood}, is fit to the data and the \NLL is scanned as a function of the parameter(s) of interest. This is a standard statistical procedure for measuring the value and error of a model parameter~\cite{FredJames}. An important measurement to make of the Higgs boson is its relative coupling to fermions and bosons respectively. Given that the signal model is expressed as a sum over the different production processes one can redefine the likelihood in this case so that the signal strength is split into two coupling strength parameters, $\mu_{\mathrm{fermions}}$ and $\mu_{\mathrm{bosons}}$.
-
+When determining the best fit values of parameters in our model and their errors, the full likelihood function, as expressed in Eq.~\ref{eq:likelihood}, is fit to the data and the \NLL is scanned as a function of the parameter(s) of interest. This is a standard statistical procedure for measuring the value and error of a model parameter~\cite{FredJames}. An important measurement to make of the Higgs boson is its relative coupling to fermions and bosons respectively. Given that the signal model is expressed as a sum over the different production processes one can redefine the likelihood in this case so that the signal strength is split into two coupling strength parameters, $\mu_{\mathrm{fermions}}$ and $\mu_{\mathrm{bosons}}$.
 \begin{align}
   \mu\cdot\mathbf{S}(\mgg|\mu,\mH;\theta) & = &  \mu_{\mathrm{fermions}}\cdot\biggl(\mathbf{S_{ggH}}(\mgg|\mu,\mH;\theta)+\mathbf{S_{ttH}}(\mgg|\mu,\mH;\theta) \biggr) \nonumber \\
  & & + \mu_{\mathrm{bosons}}\cdot\biggl(\mathbf{S_{qqH}}(\mgg|\mu,\mH;\theta)+\mathbf{S_{VH}}(\mgg|\mu,\mH;\theta)\biggr)
  \label{eq:rvrf}
 \end{align}
-
 where $\mathbf{S_{proc}}$ represents the signal model for the process ``proc" only.
 
-There are two important statistical tests that get performed aside from ascertaining the best fit values of parameters in the model. The first is an exclusion test designed to reject the alternate hypothesis in data. The second is a probability, or $p$-value, test designed to ascertain the likelihood of the null hypothesis fluctuating to give a signal. This requires definition of a test statistic,
+There are two important statistical tests that get performed aside from ascertaining the best fit values of parameters in the model. The first is an exclusion test designed to reject the alternate hypothesis in data. The second is a probability, or $p$-value, test designed to ascertain the likelihood of the null hypothesis fluctuating to give a signal. This requires the definition of a test statistic,
 \begin{equation}  
   q_{\mu} = 
   \begin{cases}
@@ -438,25 +438,23 @@ There are two important statistical tests that get performed aside from ascertai
 \end{equation}
 where $\hat{\theta}_{\mu}$ and $\hat{\theta}_{\hat{\mu}}$ represent the nuisance parameters at their best fit values given a particular value of \mu and given \mu is freely floating and at its global best fit value $\hat{\mu}$. The statistical tests which require $q_{\mu}$ are carried out at a specific hypothesised Higgs mass and so \mH is set to a particular value when defining the test statistic. It can be shown that $q_{\mu}$ is the most powerful test of hypothesis $H_{0}$ against hypothesis $H_{1}$ and this is known as the \textit{Neymann-Pearson Lemma}~\cite{FredJames}.
 
-For exclusion limits the $CL_{s}$ method is used, which is desgined to give less stringent limits in situations where there is little discriminatory power between the null and alternate hypotheses~\cite{cls}. The $CL_{s}$ exclusion requires caluclation of two p-values given the test statistic distribution of the two hypotheses is known, as shown in~\cref{eq:cls1,eq:cls2,eq:cls3}. A common way of obtaining this distribution is by generating pseudo-data under each hypothesis however at \CMS asymptotic approximations are used to avoid the computational overhead of generating toys~\cite{asymptotic_form}. A one sided upper limit is determined on $\mu$ by enforcing the constraint that $\hat{\mu}\leq\mu$ and the exclusion power of the limit is given by 1-$CL_{s}$. The defintion of the $CL_{s}$ is, 
-
+For exclusion limits the $CL_{s}$ method is used, which is designed to give less stringent limits in situations where there is little discriminatory power between the null and alternate hypotheses~\cite{cls}. The $CL_{s}$ exclusion requires caluclation of two $p$-values given the test statistic distribution of the two hypotheses is known, as shown in~\cref{eq:cls1,eq:cls2,eq:cls3}. A common way of obtaining this distribution is by generating pseudo-data under each hypothesis. However at \CMS asymptotic approximations are used to avoid the computational overhead of generating toys~\cite{asymptotic_form}. A one-sided upper limit is determined on $\mu$ by enforcing the constraint that $\hat{\mu}\leq\mu$ and the exclusion power of the limit is given by $1-CL_{s}$. The defintion of the $CL_{s}$ is, 
 \begin{align}
   & CL_{s} = \frac{CL_{s+b}}{CL_{b}} \label{eq:cls1}, \\
   & CL_{s+b} = \int_{q_{\mu}^{obs}}^{\infty}f(q_{\mu}|\mu=\hat{\mu})dq_{\mu} \label{eq:cls2}, \\
   & CL_{b} = \int_{q_{\mu}^{obs}}^{\infty}f(q_{\mu}|\mu=0)dq_{\mu} \label{eq:cls3}, 
 \end{align}
-
 where $q_{\mu}^{obs}$ is the observed value of the test statistic in data and $f(q_{\mu}|\mu)$ is the distribution of the test statistic for the hypothesis with value $\mu$. The $CL_{s}$ exclusion method is demonstrated by an example in Fig.~\ref{fig:cls}. In this case a \SM Higgs boson with values of signal strength $\mu>0.8$ is excluded at 92.48\%. In reality the desired exclusion level is 95\% and consequently the value of $\mu$ is adjusted until the $CL_{s}$ reaches 0.05 and then all values of $\mu$ greater than or equal to this value are considered as excluded. When referring to the ``expected" exclusion (as opposed to the ``observed" exclusion just explained) the observation value is considered as being at the mean of the null hypothesis test statistic distribution.
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.8\textwidth]{analysis/plots/testStatDrawing.pdf}
-    \caption[A demonstration of the test statistic distribution]{A demonstration of the test statistic distribution for the background only model (red) and the signal plus background model (blue) and the observed value in data (black line). The exclusion power is given by 1-$CL_{S}$, in this case values of $\mu>0.8$ are excluded at 92.48\% confidence.}
+    \caption[A demonstration of the test statistic distribution]{A demonstration of the test statistic distribution for the background only model (red) and the signal plus background model (blue) and the observed value in data (black line). The exclusion power is given by $1-CL_{S}$, in this case values of $\mu>0.8$ are excluded at 92.48\% confidence.}
     \label{fig:cls}
   \end{center}
 \end{figure}
 
-When quantifying the significance of an observed excess the test statistic $q_{0}$ is used which is obtained by setting $\mu=0$ in Eq.~\ref{eq:teststat}. The requirement that $\hat{\mu}\geq0$ ensures that only positive excesses are considered significant. The probability that the background only hypothesis is rejected in favour of the signal plus background hypothesis is given in terms of the $p$-value, $p_{0}$, defined as,
+When quantifying the significance of an observed excess the test statistic $q_{0}$ is used which is obtained by setting $\mu=0$ in Eq.~\ref{eq:teststat}. The requirement that $\hat{\mu}\geq0$ ensures that only positive excesses are considered significant. The probability that the background-only hypothesis is rejected in favour of the signal plus background hypothesis is given in terms of the $p$-value, $p_{0}$, defined as,
 \begin{equation}
   p_{0} = \int_{q_{0}^{obs}}^{\infty}f(q_{0}|\mu=0)dq_{0}.
   \label{eq:pvalue}
@@ -467,17 +465,18 @@ Typically a value of $p_{0}\leq1.3\times10^{-3}=3\sigma$ is enough to claim obse
 \label{sec:spin}
 
 The Landau-Yang theorem forbids the direct decay of a spin-1 particle into a pair of photons~\cite{Landau1948,Yang1950}. 
-Consequently the spin analysis compares the expectation of the spin-0 SM Higgs, \zerop, and the spin-2 \emph{graviton-like} 
+Consequently the spin analysis compares the expectation of the spin-0 SM Higgs, $J^{P}=\zerop$, and the spin-2 \emph{graviton-like} 
 model with minimal couplings, \twomp,~\cite{Gao2010}. The \twomp graviton resonance is produced in one of two ways, gluon-fusion ($gg$) 
-or quark-antiquark annihilation (\qqbar). This chapter presents hypothesis tests between the \zerop and the \twomp varying the the amount of 
+or quark-antiquark annihilation (\qqbar). This chapter presents hypothesis tests between the \zerop and the \twomp, varying the amount of 
 \twomp production from \qqbar. For the \zerop SM 
-resonance all production modes have been considered; \ggH, \VBF, \WH, \ZH, \ttH. 
+resonance all production modes have been considered; \ggH, \VBF, \WH, \ZH and \ttH. 
 
 As the \twomp is just one of many spin-2 models it is desirable to make the analysis as model independent as possible. As a means of 
 discriminating the two hypotheses we use the scattering angle in the Collins-Sopper frame, \costhetastar ~\cite{CollinsSoper1977}, which is defined as the angle, in the diphoton rest frame, between the collinear diphotons 
 and the line which bisects one incoming beam with the negative of the other beam, 
 \begin{equation}
   \cos(\theta^{\ast}_{\mbox{\tiny{CS}}}) = 2\times\frac{E_{2}p_{z1}-E_{1}p_{z2}}{m_{\gamma\gamma}\sqrt{m^{2}_{\gamma\gamma}+p^{2}_{T\gamma\gamma}}},
+  \label{eq:costheta}
 \end{equation}
 where $E_{1}$ and $E_{2}$ are the energies of the leading and trailing photon, $p_{z1}$ and $p_{z2}$ are the $z$-component momenta 
 of the leading and trailing photon and $m_{\gamma\gamma}$ and $p_{T\gamma\gamma}$ are the invariant mass and transerve momenta of the diphoton system.
@@ -485,7 +484,7 @@ of the leading and trailing photon and $m_{\gamma\gamma}$ and $p_{T\gamma\gamma}
 In its rest frame the photons from the decay of a spin-0 boson are isotropic. Hence prior to acceptance cuts, the distribution of \costhetastar 
 under the \zerop hypothesis is uniformly flat. In general this is not the case for spin-2 decays. 
 
-In order to reduce any model dependence in the analysis the cut based photon selection, described in Sec.~\ref{sec:cic}, is used to pick events. The \MVA methods used for event selection in the nominal analysis use specific \SM \MC training samples and most importantly one of the training variables used, namely $\cos(\phi_{1}-\phi_{2})$, is highly correlated to the angular variable, \costhetastar, which can be used to distinguish spin hypotheses. Furthermore, given the unusual production modes of a spin-2 boson, no exclusive tagging is used in the spin analysis. The impact of using jet variables was studied but it was found that the sensitivty for distinguishing spin hypotheses was improved by a neglible amount.
+In order to reduce any model dependence in the analysis the cut-based photon selection, described in Sec.~\ref{sec:cic}, is used to pick events. The \MVA methods used for event selection in the nominal analysis use specific \SM \MC training samples and most importantly one of the training variables used, namely $\cos(\phi_{1}-\phi_{2})$, is highly correlated to the angular variable, \costhetastar, which can be used to distinguish spin hypotheses. Furthermore, given the unusual production modes of a spin-2 boson, no exclusive tagging is used in the spin analysis. The impact of using jet variables was studied but it was found that the sensitivity for distinguishing spin hypotheses was improved by a neglible amount.
 
 Two statistical tests are carried out in the spin analysis:
 
@@ -502,27 +501,27 @@ Two statistical tests are carried out in the spin analysis:
 %$|\eta_{\mbox{\tiny{cluster}}}|<2.5$ for all photons, where $p_{T}$ is the transverse momentum of a photon, $m_{\gamma\gamma}$ is the diphoton invariant mass and $|\eta_{\mbox{\tiny{cluster}}}|$ is the pseudorapidity of the photon supercluster. In addition photons are rejected whose supercluster lies within the barrel-endcap transition region, $1.4442<|\eta_{\mbox{\tiny{cluster}}}|<1.566$.
 The effect of the photon selection cuts on the distributions of 
 \abscostheta is illustrated in Fig.~\ref{fig:acc_cuts}. Before any acceptance cuts, Fig.~\ref{fig:acc_cuts} (left), the \abscostheta
-distribution of the \zerop processes is flat. This is not the case for the \twomp processes (gluon-fusion and quark-antiquark annihilation). After the selection cuts are applied these distributions are considerably distorted, Fig.~\ref{fig:acc_cuts} (right). As a Higgs produced from vector-boson-fusion, which is $\sim$8\% of the total (compared to $\sim$88\% from gluon fusion),  is typically produced at higher transverse momentum there is some additional contribution of \zerop signal at high values of \abscostheta compared to the \twomp production modes after the selection cuts.
+distribution of the \zerop processes is flat. This is not the case for the \twomp processes (gluon-fusion and quark-antiquark annihilation). After the selection cuts are applied these distributions are considerably distorted, Fig.~\ref{fig:acc_cuts} (right). As a Higgs produced from vector boson-fusion, which is $\sim$8\% of the total (compared to $\sim$88\% from gluon fusion),  is typically produced at higher transverse momentum there is some additional contribution of \zerop signal at high values of \abscostheta compared to the \twomp production modes after the selection cuts.
 
 \begin{figure}
 	\begin{center}
-	\includegraphics[width=0.49\linewidth]{spin/plots/before_7TeV.pdf}
-	\includegraphics[width=0.49\linewidth]{spin/plots/after_7TeV.pdf} \\
-	\includegraphics[width=0.49\linewidth]{spin/plots/before_8TeV.pdf}
-	\includegraphics[width=0.49\linewidth]{spin/plots/after_8TeV.pdf} \\
-	\caption[The distribution of \abscostheta before and after selection cuts for different spin signals]{The distribution of \abscostheta before any selection cuts (left) and after the selection cuts (right) for the 7~\TeV dataset top row and the 8~\TeV dataset bottom row. The three histograms represent the spin $0^+$ distribution with all SM production modes (red circular points), the spin $2^+_m$ distribution with the gluon-fusion production mode (blue square points) and the spin $2^+_m$ distribution with the quark-antiquark annihilation production mode (green triangular points). The \abscostheta category boundaries are shown as the black dashed lines.}
+	\includegraphics[width=0.49\linewidth]{analysis/plots/spin/before_7TeV.pdf}
+	\includegraphics[width=0.49\linewidth]{analysis/plots/spin/after_7TeV.pdf} \\
+	\includegraphics[width=0.49\linewidth]{analysis/plots/spin/before_8TeV.pdf}
+	\includegraphics[width=0.49\linewidth]{analysis/plots/spin/after_8TeV.pdf} \\
+	\caption[The distribution of \abscostheta before and after selection cuts for different spin signals]{The distribution of \abscostheta before any selection cuts (left) and after the selection cuts (right) for the 7~\TeV dataset (top row) and the 8~\TeV dataset (bottom row). The three histograms represent the spin $0^+$ distribution with all SM production modes (red circular points), the spin $2^+_m$ distribution with the gluon-fusion production mode (blue square points) and the spin $2^+_m$ distribution with the quark-antiquark annihilation production mode (green triangular points). The \abscostheta category boundaries are shown as the black dashed lines.}
 	\label{fig:acc_cuts}
 	\end{center}
 \end{figure}	
 
 A robust analysis is possible because although the acceptance $\times$ efficiency varies considerably as a function of \abscostheta, the shape of this variation is largely independent of the spin-parity model. This is also true in restricted ranges of $\eta$ and $R_{9}$ which allows us to extract the signal yield in bins of \abscostheta in a comparatively model independent way. 
-Figure~\ref{fig:eff_acc} shows the efficiency $\times$ acceptance ratio between the \twomp (with gluon-fusion production only) and \zerop (all SM production modes) as a function of \abscostheta in the $|\eta|$ and $R_{9}$ categories defined in Table~\ref{table:cats1}. It is clear that the acceptance $\times$ efficiency between the spin-0 and spin-2 models is independent of \abscostheta apart from at high values of \abscostheta where the vector-boson-fusion production in the SM plays a role. This motivates the choice of \abscostheta category boundaries described below where all the categories have similar efficiency $\times$ acceptance apart from the bin highest in \abscostheta.
+Figure~\ref{fig:eff_acc} shows the efficiency $\times$ acceptance ratio between the \twomp (with gluon-fusion production only) and \zerop (all SM production modes) as a function of \abscostheta in the $|\eta|$ and $R_{9}$ categories defined in Table~\ref{table:cats1}. It is clear that the acceptance $\times$ efficiency between the spin-0 and spin-2 models is independent of \abscostheta apart from at high values of \abscostheta where the vector boson-fusion production in the SM plays a role. This motivates the choice of \abscostheta category boundaries described below where all the categories have similar efficiency $\times$ acceptance apart from the bin highest in \abscostheta.
 
 \begin{figure}
 	\begin{center}
-	\includegraphics[width=0.49\linewidth]{spin/plots/effacccats_7TeV.pdf}
-	\includegraphics[width=0.49\linewidth]{spin/plots/effacccats_8TeV.pdf}
-  \caption[Acceptance $\times$ efficiency ratio between the \twomp (gluon fusion production) and \zerop (all SM production modes) of the spin analysis event selection]{Acceptance $\times$ efficiency ratio between the \twomp (gluon-fusion production) and \zerop (all SM production modes) of the event selection as a function of \abscostheta split into the $|\eta|$ and $R_{9}$ categories defined in Table.~\ref{table:cats1}. The \abscostheta category boundaries are shown as the black dashed lines. The left hand plot is for the 7~\TeV \MC and the right hand plot for the 8~\TeV.}
+	\includegraphics[width=0.49\linewidth]{analysis/plots/spin/effacccats_7TeV.pdf}
+	\includegraphics[width=0.49\linewidth]{analysis/plots/spin/effacccats_8TeV.pdf}
+  \caption[Acceptance $\times$ efficiency ratio between the \twomp (gluon fusion production) and \zerop (all SM production modes) of the spin analysis event selection]{Acceptance $\times$ efficiency ratio between the \twomp (gluon-fusion production) and \zerop (all SM production modes) of the event selection as a function of \abscostheta split into the $|\eta|$ and $R_{9}$ categories defined in Table~\ref{table:cats1}. The \abscostheta category boundaries are shown as the black dashed lines. The left hand plot is for the 7~\TeV and the right hand plot for the 8~\TeV.}
 	\label{fig:eff_acc}
 	\end{center}
 \end{figure}	
@@ -533,6 +532,7 @@ the barrel, each event is categorised in $\eta$ and $R_{9}$ according to Table~\
 
 \begin{table}
   \begin{center}
+    \caption{Definition of photon resolution categories}
     \begin{tabular}{| l | l l l |}
       \hline
       Category 0 & $|\eta|_{\mbox{\tiny{max}}}<1.5$ & and & $R_{9\mbox{\tiny{min}}}>0.94$ \tabularnewline 
@@ -541,7 +541,6 @@ the barrel, each event is categorised in $\eta$ and $R_{9}$ according to Table~\
       Category 3 & $|\eta|_{\mbox{\tiny{max}}}>1.5$ & and & $R_{9\mbox{\tiny{min}}}\leq0.94$ \tabularnewline
       \hline
     \end{tabular}
-    \caption{Definition of photon resolution categories}
     \label{table:cats1}
   \end{center}
 \end{table}
@@ -557,6 +556,7 @@ Within each category events are binned in \abscostheta, to discrimate between th
 
 \begin{table}
   \begin{center}
+    \caption{Definition of photon \abscostheta categories}
     \begin{tabular}{| l | r l |}
       \hline
       Spin Category 0 &             & \abscostheta $<0.2$ \tabularnewline 
@@ -566,7 +566,6 @@ Within each category events are binned in \abscostheta, to discrimate between th
       Spin Category 4 & $0.75\leq$  & \abscostheta$<1.0$ \tabularnewline 
       \hline
     \end{tabular}
-    \caption{Definition of photon \abscostheta categories}
     \label{table:cats2}
   \end{center}
 \end{table}
@@ -579,13 +578,18 @@ categories $\times$ 5 \abscostheta categories) in each year which gives a total 
 
 \subsection{Signal and Background modelling}
 
-The signal models are obtained from \MC simulation as described in Sec.~\ref{sec:mc} for the spin-0 \SM processes and the spin-2 processes. A parametric model identical to the one built for the nominal analysis is constructed as per the method described in Sec.~\ref{sec:signal_mfm}. The signal model is then parametrised as before in terms of $\mu$, \mH and two additional parameters, $x$ and \fqqbar, which dictate the amount of signal from spin-2 and the amount of spin-2 from $q\bar{q}$ production. The signal model parametrisation can be written as,
+The signal models are obtained from \MC simulation as described in Sec.~\ref{sec:mc} for the spin-0 \SM processes and the spin-2 processes. A parametric model identical to the one built for the nominal analysis is constructed as per the method described in Sec.~\ref{sec:signal_mfm}. The signal model is then parametrised as before in terms of $\mu$, \mH and two additional parameters, $x$ and \fqqbar, which dictate the amount of signal from spin-2 and the fraction of spin-2 from $q\bar{q}$ production. The signal model parametrisation can be written as,
 \begin{equation}
-  \textbf{S}(m_{H},fqq,x;\hat{\theta}) = (1-x)\cdot\boldsymbol{S_{SM}}(m_{H};\hat{\theta})  + x\cdot\Bigl[f_{q\bar{q}}\cdot \boldsymbol{S_{q\bar{q}}}(m_{H};\hat{\theta}) + (1-f_{q\bar{q}})\boldsymbol{S_{gg}}(m_{H};\hat{\theta})\Bigr],  
+  \textbf{S}(m_{H},fqq,x;\hat{\theta}) = (1-x)\cdot\boldsymbol{S_{SM}}(m_{H};\hat{\theta})  + x\cdot\Bigl[f_{q\bar{q}}\cdot \boldsymbol{S_{q\bar{q}}}(m_{H};\hat{\theta}) + (1-f_{q\bar{q}})\boldsymbol{S_{gg}}(m_{H};\hat{\theta})\Bigr].  
   \label{eq:spin_sig}
 \end{equation}
-where $x$ is the amount of signal originating from spin-2, \fqqbar is the amount of spin-2 signal originating from $q\bar{q}$ production, \mH is the signal position and $\theta$ are the nuisance parameters.
 
-The background model for the spin analysis comes in two forms. For the differntial measurement of the signal strength in bins of \abscostheta the envelope background method is used as per the description in Sec.~\ref{sec:envelope}. However, when calculating the statistical separation between various spin hypotheses a single parametrisation of the background is used in each category, namely a polynomial in the Bernstein basis~\cite{bernsteins1,bernsteins2} as per the description in eq.~\ref{eq:bernsteins}. The reason for this is that there is no asymptotic approximation for the test statistic distribution when the null hypothesis is not embedded in the alternative hypothesis. Consequently, in order to obtain the test statistic distributions (like the ones shown in Fig.~\ref{fig:cls}) one has to generate lots of pseudo-data and then refit this data to obtain the likelihood ratio and hence test statistic value. Given the complexity of the spin signal model and the combinatorics involved when using the envelope method with 40 analysis categories this becomes CPU impractical. It has been trialled using the GRID computing network but was found to take the order of hundreds of CPU years.
+The background model for the spin analysis comes in two forms. For the differential measurement of the signal strength in bins of \abscostheta the envelope background method is used as per the description in Sec.~\ref{sec:envelope}. However, when calculating the statistical separation between various spin hypotheses a single parametrisation of the background is used in each category, namely a polynomial in the Bernstein basis~\cite{bernsteins1,bernsteins2} as per the description in eq.~\ref{eq:bernsteins}. The reason for this is that there is no asymptotic approximation for the test statistic distribution when the null hypothesis is not embedded in the alternative hypothesis. Consequently, in order to obtain the test statistic distributions (like the ones shown in Fig.~\ref{fig:cls}) one has to generate lots of pseudo-data and then refit this data to obtain the likelihood ratio and hence test statistic value. Given the complexity of the spin signal model and the combinatorics involved when using the envelope method with 40 analysis categories this becomes impractical in terms of computational power. It has been trialled using the GRID computing network but was found to take the order of hundreds of CPU years.
 Given this complication, and the fact that small losses in sensitivity to the background normalisation have a small impact on the spin hypothesis separation power, a single parametrisation in each category was chosen for ease and simplicity. The choice is to use 4th order Bernstein polynomials in all categories apart from the highest \abscostheta categories in which a 3rd order was chosen. The motivation behind this choice is that these order of polynomials show a similarly small level of bias as the envelope method when tested against ``truth" models for the spin categories analogous to the description in Sec.~\ref{sec:envelope}.
+
+The acceptance $\times$ efficiency of the two spin models in each category as well as the differential cross section as a function of \abscostheta, which depends only on the spin of the initial state, are obtained from the \MC simulation. The only remaining assumption is on the total number of expected signal events for a given spin-parity state and production mode. This is well defined for the spin-0 SM case and is obtained from the $\sigma\times BR$ given by the LHC Higgs cross section working group in~\cite{LHCHiggsCrossSectionWorkingGroup3}. For the graviton-like \twomp this quantity is unknown. 
+%Consequently, when generating pseduo-experiments for a particular model, the model is first fitted to the data to extract the relative shapes and normalisations of the signal and background. 
+Consequently we scale the signal models for both spin hypotheses with a modifier, $\mu$, such that when $\mu=1$ and all \costhetastar information is ignored, the total number of expected signal events for the model in question is equivalent to the SM expectation. 
+When generating pseudo-experiments for a particular model, the value of all the free parameters in the fit (including the signal nuisance parameters, the background shape parameters and the signal srength $\mu$) are set to their best fit values after fitting the model in question to the data.
+In this way the expected separation is a fair representation of what we observe in data.
 

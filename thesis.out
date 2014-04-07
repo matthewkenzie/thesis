@@ -1,79 +1,74 @@
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Theory}{}% 2
-\BOOKMARK [1][-]{section.2.1}{The Standard Model}{chapter.2}% 3
-\BOOKMARK [2][-]{subsection.2.1.1}{Fundamental particles and forces}{section.2.1}% 4
-\BOOKMARK [2][-]{subsection.2.1.2}{Gauge Theories}{section.2.1}% 5
-\BOOKMARK [2][-]{subsection.2.1.3}{Quark and Lepton states}{section.2.1}% 6
-\BOOKMARK [2][-]{subsection.2.1.4}{Electroweak symmetry breaking}{section.2.1}% 7
-\BOOKMARK [1][-]{section.2.2}{Higgs production at the LHC}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.3}{Higgs decay into two photons}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.3.1}{Backgrounds to the Hgammagamma decay at the LHC}{section.2.3}% 10
-\BOOKMARK [0][-]{chapter.3}{The CMS experiment}{}% 11
-\BOOKMARK [1][-]{section.3.1}{The LHC}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.2}{The CMS detector}{chapter.3}% 13
-\BOOKMARK [2][-]{subsection.3.2.1}{Tracking system}{section.3.2}% 14
-\BOOKMARK [2][-]{subsection.3.2.2}{Electromagnetic calorimeter}{section.3.2}% 15
-\BOOKMARK [2][-]{subsection.3.2.3}{Hadronic calorimeter}{section.3.2}% 16
-\BOOKMARK [2][-]{subsection.3.2.4}{Muon Chambers}{section.3.2}% 17
-\BOOKMARK [1][-]{section.3.3}{Photon reconstruction}{chapter.3}% 18
-\BOOKMARK [2][-]{subsection.3.3.1}{Electron and photon differences}{section.3.3}% 19
-\BOOKMARK [1][-]{section.3.4}{Particle flow and jets}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.5}{Isolation}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.6}{Pileup}{chapter.3}% 22
-\BOOKMARK [0][-]{chapter.4}{Common analysis components}{}% 23
-\BOOKMARK [1][-]{section.4.1}{Boosted Decision Trees}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.2}{Data samples and triggering}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.2.1}{Monte Carlo Simulation}{section.4.2}% 26
-\BOOKMARK [2][-]{subsection.4.2.2}{Pileup and beamspot reweighting}{section.4.2}% 27
-\BOOKMARK [1][-]{section.4.3}{Energy measurement of photons}{chapter.4}% 28
-\BOOKMARK [2][-]{subsection.4.3.1}{Correcting for residual discrepancies between data and Monte Carlo simulation}{section.4.3}% 29
-\BOOKMARK [1][-]{section.4.4}{Vertex reconstruction}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.4.1}{Estimating the per-event probability that the correct vertex is chosen}{section.4.4}% 31
-\BOOKMARK [1][-]{section.4.5}{Event preselection}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.6}{Using Z decays for validation and efficiency measurements}{chapter.4}% 33
-\BOOKMARK [0][-]{chapter.5}{Selection and Categorisation}{}% 34
-\BOOKMARK [1][-]{section.5.1}{Event selection}{chapter.5}% 35
-\BOOKMARK [2][-]{subsection.5.1.1}{Selection using cuts in categories}{section.5.1}% 36
-\BOOKMARK [2][-]{subsection.5.1.2}{Photon ID MVA}{section.5.1}% 37
-\BOOKMARK [2][-]{subsection.5.1.3}{Diphoton event level MVA}{section.5.1}% 38
-\BOOKMARK [1][-]{section.5.2}{Event categorisation}{chapter.5}% 39
-\BOOKMARK [2][-]{subsection.5.2.1}{Exclusive mode tagging}{section.5.2}% 40
-\BOOKMARK [2][-]{subsection.5.2.2}{Inclusive mode categorisation and VBF dijet categorisation in the mass factorised MVA analysis}{section.5.2}% 41
-\BOOKMARK [2][-]{subsection.5.2.3}{Inclusive mode categorisation in the sideband MVA analysis}{section.5.2}% 42
-\BOOKMARK [2][-]{subsection.5.2.4}{Event categorisation summary}{section.5.2}% 43
-\BOOKMARK [0][-]{chapter.6}{Analysis}{}% 44
-\BOOKMARK [1][-]{section.6.1}{Signal modelling}{chapter.6}% 45
-\BOOKMARK [2][-]{subsection.6.1.1}{Mass factorised analysis}{section.6.1}% 46
-\BOOKMARK [2][-]{subsection.6.1.2}{Sideband analysis}{section.6.1}% 47
-\BOOKMARK [1][-]{section.6.2}{Background modelling}{chapter.6}% 48
-\BOOKMARK [2][-]{subsection.6.2.1}{Mass factorised analysis}{section.6.2}% 49
-\BOOKMARK [2][-]{subsection.6.2.2}{Sideband analysis}{section.6.2}% 50
-\BOOKMARK [1][-]{section.6.3}{Systematic Uncertainties}{chapter.6}% 51
-\BOOKMARK [2][-]{subsection.6.3.1}{Implementation of the systematic uncertainties}{section.6.3}% 52
-\BOOKMARK [2][-]{subsection.6.3.2}{Systematic uncertainties related to individual photons}{section.6.3}% 53
-\BOOKMARK [2][-]{subsection.6.3.3}{Systematic uncertainties related to diphoton events}{section.6.3}% 54
-\BOOKMARK [2][-]{subsection.6.3.4}{Systematic uncertainties related to production mode tagged classes}{section.6.3}% 55
-\BOOKMARK [2][-]{subsection.6.3.5}{Summary}{section.6.3}% 56
-\BOOKMARK [1][-]{section.6.4}{Statistical interpretation of the data}{chapter.6}% 57
-\BOOKMARK [1][-]{section.6.5}{Spin analysis}{chapter.6}% 58
-\BOOKMARK [2][-]{subsection.6.5.1}{Event categorisation}{section.6.5}% 59
-\BOOKMARK [2][-]{subsection.6.5.2}{Signal and Background modelling}{section.6.5}% 60
-\BOOKMARK [0][-]{chapter.7}{Results}{}% 61
-\BOOKMARK [1][-]{section.7.1}{Exclusion limits and p-value}{chapter.7}% 62
-\BOOKMARK [1][-]{section.7.2}{Measurement of physicsal parameters}{chapter.7}% 63
-\BOOKMARK [1][-]{section.7.3}{Spin}{chapter.7}% 64
-\BOOKMARK [2][-]{subsection.7.3.1}{SM compabibility check}{section.7.3}% 65
-\BOOKMARK [2][-]{subsection.7.3.2}{Hypothesis tests of the SM Higgs, 0+, vs. graviton-like, 2+m}{section.7.3}% 66
-\BOOKMARK [0][-]{chapter.8}{Spin Analysis}{}% 67
-\BOOKMARK [1][-]{section.8.1}{Event categorisation}{chapter.8}% 68
-\BOOKMARK [1][-]{section.8.2}{Signal and Background modelling}{chapter.8}% 69
-\BOOKMARK [1][-]{section.8.3}{Results}{chapter.8}% 70
-\BOOKMARK [2][-]{subsection.8.3.1}{SM compabibility check}{section.8.3}% 71
-\BOOKMARK [2][-]{subsection.8.3.2}{Hypothesis tests of the SM Higgs, 0+, vs. graviton-like, 2+m}{section.8.3}% 72
-\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 73
-\BOOKMARK [0][-]{appendix.A}{Photon ID BDT input variables validation in Ze+e-}{}% 74
-\BOOKMARK [0][-]{appendix.B}{Diphoton BDT input variables validation in Ze+e-}{}% 75
-\BOOKMARK [0][-]{appendix*.136}{Bibliography}{}% 76
-\BOOKMARK [0][-]{appendix*.137}{List of Figures}{}% 77
-\BOOKMARK [0][-]{appendix*.138}{List of Tables}{}% 78
-\BOOKMARK [0][-]{section*.139}{List of Acronyms}{}% 79
+\BOOKMARK [0][-]{chapter*.6}{List of Figures}{}% 1
+\BOOKMARK [0][-]{chapter*.12}{List of Tables}{}% 2
+\BOOKMARK [0][-]{section*.13}{List of Acronyms}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [0][-]{chapter.2}{Theory}{}% 5
+\BOOKMARK [1][-]{section.2.1}{The Standard Model}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.1.1}{Fundamental particles and forces}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.2}{Gauge Theories}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.3}{Quark and Lepton states}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.4}{Electroweak symmetry breaking}{section.2.1}% 10
+\BOOKMARK [1][-]{section.2.2}{Higgs production at the LHC}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Higgs decay into two photons}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.3.1}{Backgrounds to the Hgammagamma decay at the LHC}{section.2.3}% 13
+\BOOKMARK [0][-]{chapter.3}{The CMS experiment}{}% 14
+\BOOKMARK [1][-]{section.3.1}{The LHC}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{The CMS detector}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.2.1}{Tracking system}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.2}{Electromagnetic calorimeter}{section.3.2}% 18
+\BOOKMARK [2][-]{subsection.3.2.3}{Hadronic calorimeter}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.4}{Muon Chambers}{section.3.2}% 20
+\BOOKMARK [1][-]{section.3.3}{Photon reconstruction}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.1}{Electron and photon differences}{section.3.3}% 22
+\BOOKMARK [1][-]{section.3.4}{Particle flow and jets}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.5}{Isolation}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.6}{Pileup}{chapter.3}% 25
+\BOOKMARK [0][-]{chapter.4}{Common analysis components}{}% 26
+\BOOKMARK [1][-]{section.4.1}{Boosted Decision Trees}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.2}{Data samples and triggering}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.2.1}{Monte Carlo Simulation}{section.4.2}% 29
+\BOOKMARK [2][-]{subsection.4.2.2}{Pileup and beamspot reweighting}{section.4.2}% 30
+\BOOKMARK [1][-]{section.4.3}{Energy measurement of photons}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.3.1}{Correcting for residual discrepancies between data and Monte Carlo simulation}{section.4.3}% 32
+\BOOKMARK [1][-]{section.4.4}{Vertex reconstruction}{chapter.4}% 33
+\BOOKMARK [2][-]{subsection.4.4.1}{Estimating the per-event probability that the correct vertex is chosen}{section.4.4}% 34
+\BOOKMARK [1][-]{section.4.5}{Event preselection}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.6}{Using Z decays for validation and efficiency measurements}{chapter.4}% 36
+\BOOKMARK [0][-]{chapter.5}{Selection and Categorisation}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Event selection}{chapter.5}% 38
+\BOOKMARK [2][-]{subsection.5.1.1}{Selection using cuts in categories}{section.5.1}% 39
+\BOOKMARK [2][-]{subsection.5.1.2}{Photon ID MVA}{section.5.1}% 40
+\BOOKMARK [2][-]{subsection.5.1.3}{Diphoton event level MVA}{section.5.1}% 41
+\BOOKMARK [1][-]{section.5.2}{Event categorisation}{chapter.5}% 42
+\BOOKMARK [2][-]{subsection.5.2.1}{Exclusive mode tagging}{section.5.2}% 43
+\BOOKMARK [2][-]{subsection.5.2.2}{Inclusive mode categorisation and VBF dijet categorisation in the mass factorised MVA analysis}{section.5.2}% 44
+\BOOKMARK [2][-]{subsection.5.2.3}{Inclusive mode categorisation in the sideband MVA analysis}{section.5.2}% 45
+\BOOKMARK [2][-]{subsection.5.2.4}{Event categorisation summary}{section.5.2}% 46
+\BOOKMARK [0][-]{chapter.6}{Analysis}{}% 47
+\BOOKMARK [1][-]{section.6.1}{Signal modelling}{chapter.6}% 48
+\BOOKMARK [2][-]{subsection.6.1.1}{Mass factorised analysis}{section.6.1}% 49
+\BOOKMARK [2][-]{subsection.6.1.2}{Sideband analysis}{section.6.1}% 50
+\BOOKMARK [1][-]{section.6.2}{Background modelling}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.2.1}{Mass factorised analysis}{section.6.2}% 52
+\BOOKMARK [2][-]{subsection.6.2.2}{Sideband analysis}{section.6.2}% 53
+\BOOKMARK [1][-]{section.6.3}{Systematic Uncertainties}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.3.1}{Implementation of the systematic uncertainties}{section.6.3}% 55
+\BOOKMARK [2][-]{subsection.6.3.2}{Systematic uncertainties related to individual photons}{section.6.3}% 56
+\BOOKMARK [2][-]{subsection.6.3.3}{Systematic uncertainties related to diphoton events}{section.6.3}% 57
+\BOOKMARK [2][-]{subsection.6.3.4}{Systematic uncertainties related to production mode tagged classes}{section.6.3}% 58
+\BOOKMARK [2][-]{subsection.6.3.5}{Summary}{section.6.3}% 59
+\BOOKMARK [1][-]{section.6.4}{Statistical interpretation of the data}{chapter.6}% 60
+\BOOKMARK [1][-]{section.6.5}{Spin analysis}{chapter.6}% 61
+\BOOKMARK [2][-]{subsection.6.5.1}{Event categorisation}{section.6.5}% 62
+\BOOKMARK [2][-]{subsection.6.5.2}{Signal and Background modelling}{section.6.5}% 63
+\BOOKMARK [0][-]{chapter.7}{Results}{}% 64
+\BOOKMARK [1][-]{section.7.1}{Best fit model to data}{chapter.7}% 65
+\BOOKMARK [1][-]{section.7.2}{Exclusion limits and p-value}{chapter.7}% 66
+\BOOKMARK [1][-]{section.7.3}{Measurement of physical parameters}{chapter.7}% 67
+\BOOKMARK [1][-]{section.7.4}{Spin}{chapter.7}% 68
+\BOOKMARK [2][-]{subsection.7.4.1}{SM compabibility check}{section.7.4}% 69
+\BOOKMARK [2][-]{subsection.7.4.2}{Hypothesis tests of the SM Higgs, 0+, vs. graviton-like, 2+m}{section.7.4}% 70
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 71
+\BOOKMARK [0][-]{appendix.A}{Photon ID BDT input variables validation in Ze+e-}{}% 72
+\BOOKMARK [0][-]{appendix.B}{Diphoton BDT input variables validation in Ze+e-}{}% 73
+\BOOKMARK [0][-]{appendix*.141}{Bibliography}{}% 74

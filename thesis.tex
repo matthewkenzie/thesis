@@ -17,6 +17,7 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{tabularx}
+%\usepackage{geometry}
 %\usepackage{subcaption}
 
 \captionsetup[figure]{labelformat=simple, labelsep=colon}
@@ -62,8 +63,8 @@
 \newcommand{\fbinv}{fb\ensuremath{^{-1}}\xspace}
 \newcommand{\NLL}{\ensuremath{-2\Delta\mathrm{LL}}\xspace}
 \newcommand{\musm}{\ensuremath{\sigma/\sigma_{\mathrm{SM}}}\xspace}
-\newcommand{\RV}{\ensuremath{\mu_{\mathrm{bosons}}}\xspace}
-\newcommand{\RF}{\ensuremath{\mu_{\mathrm{fermions}}}\xspace}
+\newcommand{\RV}{\ensuremath{\mu_{ggH,ttH}}\xspace}
+\newcommand{\RF}{\ensuremath{\mu_{VBF,VH}}\xspace}
 \newcommand{\costhetastar}{\ensuremath{\cos(\theta^{\ast}_{\mbox{\tiny{CS}}})}\xspace}
 \newcommand{\abscostheta}{\ensuremath{|\cos(\theta^{\ast}_{\mbox{\tiny{CS}}})|}\xspace}
 \newcommand{\absetamax}{\ensuremath{|\eta|_{\mbox{\tiny{max}}}}\xspace}
@@ -118,7 +119,7 @@
 \makeatletter
 \@ifpackageloaded{hyperref}{%
 \hypersetup{%
-pdftitle = {Properties of the Higgs-like state around 125 GeV in its decay to two photons at the CMS experiment at the LHC},
+pdftitle = {Properties of the Higgs-like state around 125 GeV in its decay to two photons at the CMS experiment},
 pdfsubject = {Matthew Kenzie's PhD thesis},
 pdfkeywords = {Higgs,CMS,photons,gamma gamma,decay,spin,properties},
 pdfauthor = {\textcopyright\ Matthew Kenzie},
@@ -131,7 +132,7 @@ citecolor = blue
 \makeatother
 
 %% Define the thesis title and author
-\title{Properties of the Higgs-like state around 125 GeV in its decay to two photons at the CMS experiment at the LHC}
+\title{Properties of the Higgs-like state around 125 GeV in its decay to two photons at the CMS experiment}
 \author{Matthew Kenzie}
 
 %% Start the document
@@ -161,7 +162,6 @@ citecolor = blue
   \input{selec_and_cats/selec_and_cats.tex}
   \input{analysis/analysis.tex}
   \input{results/results.tex}
-  \input{spin/spin.tex}
   \input{conclusions/conclusions.tex}
 \end{mainmatter}
 

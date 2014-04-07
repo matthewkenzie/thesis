@@ -1,0 +1,70 @@
+\begin{table}[h!]
+\caption{A summary of all the systematic uncertainties considered in the analysis.}
+\footnotesize
+\begin{tabular} { l | r r | c c c c }
+
+\hline
+\multicolumn{3}{l}{\textbf{Uncertainty Name}} & \multicolumn{4}{c}{\textbf{Uncertainty Value (\%)}} \\   
+\hline
+\hline
+\multicolumn{7}{l}{\textbf{Per photon uncertainties}} \\ 
+\hline
+\multicolumn{3}{l}{}   & \multicolumn{2}{c}{Barrel} & \multicolumn{2}{c}{Endcap} \\
+\multicolumn{3}{l}{}   & low $\eta$ & high $\eta$ & low $\eta$ & high $\eta$ \\ 
+\hline
+\multirow{4}{*}{Energy scale}         & \multirow{2}{*}{7~TeV}    & $\rnine > 0.94$ & 0.05 & 0.10 & 0.10 & 0.05 \\
+                                      &     & $\rnine < 0.94$ & 0.05 & 0.05 & 0.10 & 0.10 \\
+                                      & \multirow{2}{*}{8~TeV}    & $\rnine > 0.94$ & 0.05 & 0.10 & 0.10 & 0.05 \\
+                                      &          & $\rnine < 0.94$ & 0.05 & 0.05 & 0.10 & 0.10 \\
+\hline
+\multirow{4}{*}{Energy resolution (constant)}    & \multirow{2}{*}{7~TeV}  & $\rnine > 0.94$ & 0.08 & 0.21 & 0.23 & 0.09 \\
+                                                      &                         & $\rnine < 0.94$ & 0.07 & 0.11 & 0.31 & 0.13 \\
+                                                      & \multirow{2}{*}{8~TeV}  & $\rnine > 0.94$ & 0.06 & 0.09 & 0.10 & 0.08 \\
+                                                      &                         & $\rnine < 0.94$ & 0.05 & 0.10 & 0.12 & 0.06 \\
+\hline
+\multirow{2}{*}{Energy resolution (stochastic)}  & \multirow{2}{*}{8~TeV}  & $\rnine > 0.94$ & 0.16 & 0.22 & - & - \\
+                                                      &                         & $\rnine < 0.94$ & 0.16 & 0.07 & - & - \\
+\hline
+\multicolumn{3}{l|}{Mismodelling of tracking material}                     & \multicolumn{2}{c}{0.04-0.34} & \multicolumn{2}{c}{0.22-0.34} \\
+\multicolumn{3}{l|}{Non uniformity in light emission peak}                 & \multicolumn{4}{c}{0.05} \\
+\multicolumn{3}{l|}{Mismodelling of shower shape (\GEANT)}                 & \multicolumn{4}{c}{0.05} \\
+\hline
+\multicolumn{3}{l|}{Photon preselection efficiency}                        & \multicolumn{2}{c}{1.0} & \multicolumn{2}{c}{2.6} \\
+\multicolumn{3}{l|}{Photon identification \BDT}                            & \multicolumn{4}{c}{0.5} \\
+\multicolumn{3}{l|}{Photon resolution estimate}                            & \multicolumn{4}{c}{10.0} \\
+\hline
+\hline
+\multicolumn{7}{l}{\textbf{Per event uncertainties}} \\
+\hline
+\multicolumn{3}{l|}{Vertex efficiency}               & \multicolumn{4}{c}{1.5} \\
+\multicolumn{3}{l|}{Trigger efficiency}              & \multicolumn{4}{c}{1.0} \\
+\multicolumn{3}{l|}{Non-linearity in mass scale}     & \multicolumn{4}{c}{0.1-0.2} \\
+\multicolumn{3}{l|}{Uncertainty on $Z$ mass}         & \multicolumn{4}{c}{0.01} \\
+\hline
+\multirow{2}{*}{Luminosity measurement}              & \multicolumn{2}{c}{7~TeV} & \multicolumn{4}{c}{2.2} \\
+                                                     & \multicolumn{2}{c}{8~TeV} & \multicolumn{4}{c}{2.6} \\
+\hline
+\multirow{2}{*}{Theory (cross section)}              & \multicolumn{2}{c}{7~TeV} & \multicolumn{4}{c}{2.1-12.3} \\
+                                                     & \multicolumn{2}{c}{8~TeV} & \multicolumn{4}{c}{2.6-12.3} \\
+\hline
+\multicolumn{3}{l|}{Theory (branching ratio)}        & \multicolumn{4}{c}{5.0} \\
+\hline
+\hline
+\multicolumn{7}{l}{\textbf{Uncertainties related to tagged classes}} \\
+\hline
+\multicolumn{7}{l}{Jet energy scale} \\
+\multicolumn{7}{r}{\textit{up to 10\% event migration between dijet classes and untagged classes}} \\
+\hline
+\multicolumn{7}{l}{Theory uncertainties on dijet production from gluon fusion}\\
+\multicolumn{7}{r}{\textit{up to 30\% event migration between dijet classes and untagged classes}} \\
+\hline
+\multicolumn{3}{l|}{Muon efficiency}        & \multicolumn{4}{c}{0.2-0.6} \\
+\multicolumn{3}{l|}{Electron efficiency}    & \multicolumn{4}{c}{0.2-0.4} \\
+\multicolumn{3}{l|}{\MET efficiency}        & \multicolumn{4}{c}{1-4} \\
+\multicolumn{3}{l|}{$b$-tagging efficiency} & \multicolumn{4}{c}{1-2} \\
+\multicolumn{3}{l|}{Multijet rate}          & \multicolumn{4}{c}{13-30} \\
+\hline
+\end{tabular}
+\label{tab:systematics}
+\end{table}
+
