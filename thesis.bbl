@@ -264,6 +264,10 @@ J.~Alwall\hrefCMSnoop {} { {et~al.}, ``{MadGraph 5 : Going Beyond}'',} \textit{
   \textit{ Nucl. Instrum. Meth. A} \textbf{ 506} (2003) 250,
   \href{http://dx.doi.org/10.1016/S0168-9002(03)01368-8}{\doi{10.1016/S0168-9002(03)01368-8}}.
 
+\bibitem{deterministic_annealing}
+\hrefCMSnoop {} {E.~Chabanat and N.~Estre, ``{Deterministic Annealing for
+  Vertex Finding at CMS}'',}.
+
 \bibitem{tag_and_probe}
 \hrefCMSnoop {} {{ The CMS Collaboration} Collaboration, ``Measurement of the
   inclusive W and Z production cross sections in pp collisions at
@@ -312,6 +316,25 @@ J.~Alwall\hrefCMSnoop {} { {et~al.}, ``{MadGraph 5 : Going Beyond}'',} \textit{
 \hrefCMSnoop {} {W.~S. Cleveland, ``Robust locally weighted regression and
   smoothing scatterplots'',} \textit{ Journal of the American statistical
   association} \textbf{ 74} (1979), no.~368, 829--836.
+
+\bibitem{Landau1948}
+\hrefCMSnoop {} {L.~D. Landau, ``{On the angular momentum of a two-photon
+  system}'',} \textit{ {Dokl. Akad. Nauk. Ser. Fiz.}} \textbf{ 60} (1948) 207.
+
+\bibitem{Yang1950}
+\hrefCMSnoop {} {C.~N. Yang, ``{Selection Rules for the Dematerialization of a
+  Particle Into Two Photons}'',} \textit{ {Phys. Rev.}} \textbf{ 77} (1950)
+  242.
+
+\bibitem{Gao2010}
+Y.~Gao\hrefCMSnoop {} { {et~al.}, ``Spin determination of single-produced
+  resonances at hadron colliders'',} \textit{ Phys. Rev. D} \textbf{ 81} (2010)
+  242--245.
+
+\bibitem{CollinsSoper1977}
+\hrefCMSnoop {} {J.~C. Collins and D.~E. Soper, ``Angular distribution of
+  dileptons in high-energy hadron collisions'',} \textit{ Phys. Rev. D.}
+  \textbf{ 16} (1977) 2219--2225.
 
 \bibitem{FredJames}
 F.~James, ``Statistical Methods in Experimental Physics''.
@@ -379,24 +402,5 @@ R.~G. Lomax, ``Statistical Concepts: A Second Course''.
 \hrefCMSnoop {} {G.~Cowan, K.~Cranmer, E.~Gross, and O.~Vitells, ``Asymptotic
   formulae for likelihood-based tests of new physics'',} \textit{ The European
   Physicsal Journal C} \textbf{ 71} (2011) 1--19.
-
-\bibitem{Landau1948}
-\hrefCMSnoop {} {L.~D. Landau, ``{On the angular momentum of a two-photon
-  system}'',} \textit{ {Dokl. Akad. Nauk. Ser. Fiz.}} \textbf{ 60} (1948) 207.
-
-\bibitem{Yang1950}
-\hrefCMSnoop {} {C.~N. Yang, ``{Selection Rules for the Dematerialization of a
-  Particle Into Two Photons}'',} \textit{ {Phys. Rev.}} \textbf{ 77} (1950)
-  242.
-
-\bibitem{Gao2010}
-Y.~Gao\hrefCMSnoop {} { {et~al.}, ``Spin determination of single-produced
-  resonances at hadron colliders'',} \textit{ Phys. Rev. D} \textbf{ 81} (2010)
-  242--245.
-
-\bibitem{CollinsSoper1977}
-\hrefCMSnoop {} {J.~C. Collins and D.~E. Soper, ``Angular distribution of
-  dileptons in high-energy hadron collisions'',} \textit{ Phys. Rev. D.}
-  \textbf{ 16} (1977) 2219--2225.
 
 \end{thebibliography}\endgroup

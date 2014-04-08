@@ -17,6 +17,7 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{tabularx}
+\usepackage{fancyhdr}
 %\usepackage{geometry}
 %\usepackage{subcaption}
 
@@ -82,9 +83,9 @@
 \newcommand{\ECAL}{\ac{ECAL}\xspace}
 \newcommand{\HCAL}{\ac{HCAL}\xspace}
 \newcommand{\PbWO}{\ac{PbWO}\xspace}
-\newcommand{\APDs}{\ac{APDs}\xspace}
+\newcommand{\APDs}{\ac{APD}s\xspace}
 \renewcommand{\APD}{\ac{APD}\xspace}
-\newcommand{\VPTs}{\ac{VPTs}\xspace}
+\newcommand{\VPTs}{\ac{VPT}s\xspace}
 \newcommand{\PF}{\ac{PF}\xspace}
 \newcommand{\MC}{\ac{MC}\xspace}
 \newcommand{\GED}{\ac{GED}\xspace}
@@ -148,13 +149,6 @@ citecolor = blue
 
 %% Start the content body of the thesis
 \begin{mainmatter}
-  %\input{ch1_intro_theory/ch1_intro_theory}
-  %\input{ch2_cms_exp/ch2_cms_exp}
-  %\input{ch3_comm_anal_comps/ch3_comm_anal_comps}
-  %\input{ch4_selec_and_cats/ch4_selec_and_cats}
-  %\input{ch5_anal_and_results/ch5_anal_and_results}
-  %\input{ch6_spin_anal/ch6_spin_anal}
-  %\input{ch7_concs/ch7_concs}
   \input{intro/intro.tex}
   \input{theory/theory.tex}
   \input{cms_experiment/cms_experiment.tex}
@@ -166,9 +160,9 @@ citecolor = blue
 \end{mainmatter}
 
 %% Produce the appendices
-\begin{appendices}
-  \input{appendices}
-\end{appendices}
+%\begin{appendices}
+%  \input{appendices}
+%\end{appendices}
 
 %% Produce the un-numbered back matter (e.g. colophon,
 %% bibliography, tables of figures etc., index...)
