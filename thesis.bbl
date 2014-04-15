@@ -7,7 +7,7 @@
 \bibitem{ATLASDiscovery}
 \hrefCMSnoop {} {{ ATLAS} Collaboration, ``{Observation of a New Particle in
   the Search for the Standard Model Higgs Boson with the ATLAS Detector at the
-  LHC}'',} \textit{ Phys.Lett.} \textbf{ B716} (2012) 1--29.
+  LHC}'',} \textit{ Phys.Lett. B} \textbf{ 716} (2012) 1--29.
 
 \bibitem{CMSDiscovery}
 \hrefCMSnoop {} {{ CMS} Collaboration, ``{Observation of a new boson at a mass
@@ -53,14 +53,14 @@ M.~W. Guidry, ``Gauge Field Theories: An Introduction with Applications''.
 
 \bibitem{englert-brout}
 \hrefCMSnoop {} {F.~Englert and R.~Brout, ``Broken Symmetry and the Mass of
-  Gauge Vector Mesons'',} \textit{ Phys. Rev. Lett.} \textbf{ 13} (Aug, 1964)
+  Gauge Vector Mesons'',} \textit{ Phys. Rev. Lett.} \textbf{ 13} (1964)
   321--323,
   \href{http://dx.doi.org/10.1103/PhysRevLett.13.321}{\doi{10.1103/PhysRevLett.13.321}}.
 
 \bibitem{HagenKibble}
 \hrefCMSnoop {} {G.~S. Guralnik, C.~R. Hagen, and T.~W.~B. Kibble, ``Global
   Conservation Laws and Massless Particles'',} \textit{ Phys. Rev. Lett.}
-  \textbf{ 13} (Nov, 1964) 585--587,
+  \textbf{ 13} (1964) 585--587,
   \href{http://dx.doi.org/10.1103/PhysRevLett.13.585}{\doi{10.1103/PhysRevLett.13.585}}.
 
 \bibitem{Higgs:1964ia}
@@ -71,13 +71,12 @@ M.~W. Guidry, ``Gauge Field Theories: An Introduction with Applications''.
 
 \bibitem{Higgs}
 \hrefCMSnoop {} {P.~W. Higgs, ``Broken Symmetries and the Masses of Gauge
-  Bosons'',} \textit{ Phys. Rev. Lett.} \textbf{ 13} (Oct, 1964) 508--509,
+  Bosons'',} \textit{ Phys. Rev. Lett.} \textbf{ 13} (1964) 508--509,
   \href{http://dx.doi.org/10.1103/PhysRevLett.13.508}{\doi{10.1103/PhysRevLett.13.508}}.
 
 \bibitem{Nambu}
 \hrefCMSnoop {} {Y.~Nambu, ``Quasi-Particles and Gauge Invariance in the Theory
-  of Superconductivity'',} \textit{ Phys. Rev.} \textbf{ 117} (Feb, 1960)
-  648--663,
+  of Superconductivity'',} \textit{ Phys. Rev.} \textbf{ 117} (1960) 648--663,
   \href{http://dx.doi.org/10.1103/PhysRev.117.648}{\doi{10.1103/PhysRev.117.648}}.
 
 \bibitem{Goldstone}
@@ -93,44 +92,41 @@ M.~W. Guidry, ``Gauge Field Theories: An Introduction with Applications''.
 
 \bibitem{tHooft:1972fi}
 \hrefCMSnoop {} {G.~'t~Hooft and M.~Veltman, ``{Regularization and
-  Renormalization of Gauge Fields}'',} \textit{ Nucl.Phys.} \textbf{ B44}
+  Renormalization of Gauge Fields}'',} \textit{ Nucl. Phys. B} \textbf{ 44}
   (1972) 189--213,
 \href{http://dx.doi.org/10.1016/0550-3213(72)90279-9}{\doi{10.1016/0550-3213(72)90279-9}}.
 %%CITATION = NUPHA,B44,189;%%.
 
 \bibitem{Hooft1971167}
 \hrefCMSnoop {} {G.~Hooft, ``Renormalizable Lagrangians for massive Yang-Mills
-  fields'',} \textit{ Nuclear Physics B} \textbf{ 35} (1971), no.~1, 167 --
-  188,
+  fields'',} \textit{ Nucl. Phys. B} \textbf{ 35} (1971), no.~1, 167 -- 188,
   \href{http://dx.doi.org/http://dx.doi.org/10.1016/0550-3213(71)90139-8}{\doi{http://dx.doi.org/10.1016/0550-3213(71)90139-8}}.
 
 \bibitem{ua1}
-\hrefCMSnoop {} {{
-  Aachen-Annecy-Birmingham-CERN-Helsinki-London(QMC)-Paris(CdF)-Riverside-Rome-Rutherford-Saclay(CEN)-Vienna
-  Collaboration} Collaboration, ``{Experimental observation of isolated large
-  transverse energy electrons with associated missing energy at $\sqrt{s} = 540
-  GeV$}'',} \textit{ Phys. Lett. B} \textbf{ 122} (Jan, 1983) 103--116. 31 p.
+\hrefCMSnoop {} {{The UA1 Collaboration}, ``{Experimental observation of
+  isolated large transverse energy electrons with associated missing energy at
+  $\sqrt{s} = 540 GeV$}'',} \textit{ Phys. Lett. B} \textbf{ 122} (1983),
+  no.~CERN-EP-83-13, 103--116. 31 p.
 
 \bibitem{ua2}
-\hrefCMSnoop {} {{
-  Aachen-Annecy-Birmingham-CERN-Helsinki-London(QMC)-Paris(CdF)-Riverside-Rome-Rutherford-Saclay(CEN)-Vienna
-  Collaboration} Collaboration, ``{Experimental observation of lepton pairs of
-  invariant mass around $95 GeV/c^{2}$ at the CERN SPS collider}'',} \textit{
-  Phys. Lett. B} \textbf{ 126} (Jun, 1985) 398--410. 17 p.
+\hrefCMSnoop {} {{The UA1 Collaboration}, ``{Experimental observation of lepton
+  pairs of invariant mass around $95 GeV/c^{2}$ at the CERN SPS collider}'',}
+  \textit{ Phys. Lett. B} \textbf{ 126} (1985), no.~CERN-EP-83-073, 398--410.
+  17 p.
 
 \bibitem{upper-higgs-bound}
 \hrefCMSnoop {} {U.~M. Heller, M.~Klomfass, H.~Neuberger, and P.~M. Vranas,
-  ``{Numerical analysis of the Higgs mass triviality bound}'',} \textit{
-  Nucl.Phys.} \textbf{ B405} (1993) 555--573,
+  ``{Numerical analysis of the Higgs mass triviality bound}'',} \textit{ Nucl.
+  Phys. B} \textbf{ 405} (1993) 555--573,
   \href{http://dx.doi.org/10.1016/0550-3213(93)90559-8}{\doi{10.1016/0550-3213(93)90559-8}},
 \href{http://www.arXiv.org/abs/hep-ph/9303215}{\texttt{ arXiv:hep-ph/9303215}}.
 %%CITATION = HEP-PH/9303215;%%.
 
 \bibitem{lep-higgs}
-\hrefCMSnoop {} {{ LEP Working Group for Higgs boson searches, ALEPH
-  Collaboration, DELPHI Collaboration, L3 Collaboration, OPAL Collaboration}
-  Collaboration, ``{Search for the standard model Higgs boson at LEP}'',}
-  \textit{ Phys.Lett.} \textbf{ B565} (2003) 61--75,
+\hrefCMSnoop {} {{LEP Working Group for Higgs boson searches, ALEPH
+  Collaboration, DELPHI Collaboration, L3 Collaboration, OPAL Collaboration},
+  ``{Search for the standard model Higgs boson at LEP}'',} \textit{ Phys. Lett.
+  B} \textbf{ 565} (2003) 61--75,
   \href{http://dx.doi.org/10.1016/S0370-2693(03)00614-2}{\doi{10.1016/S0370-2693(03)00614-2}},
 \href{http://www.arXiv.org/abs/hep-ex/0306033}{\texttt{ arXiv:hep-ex/0306033}}.
 %%CITATION = HEP-EX/0306033;%%.
@@ -148,31 +144,46 @@ M.~W. Guidry, ``Gauge Field Theories: An Introduction with Applications''.
   arXiv:1307.1347}}.
 
 \bibitem{CMS_JINST}
-\hrefCMSnoop {} {{ The CMS Collaboration} Collaboration, ``The CMS experiment
-  at the CERN LHC'',} \textit{ JINST} \textbf{ 3} (2008) S08004,
+\hrefCMSnoop {} {{ CMS} Collaboration, ``The CMS experiment at the CERN LHC'',}
+  \textit{ JINST} \textbf{ 3} (2008) S08004,
   \href{http://dx.doi.org/10.1088/1748-0221/3/08/S08004}{\doi{10.1088/1748-0221/3/08/S08004}}.
 
+\bibitem{cms_schematic}
+J.~Anderson\hrefCMSnoop {} { {et~al.}, ``{Snowmass Energy Frontier
+  Simulations}'',}
+\href{http://www.arXiv.org/abs/1309.1057}{\texttt{ arXiv:1309.1057}}.
+%%CITATION = ARXIV:1309.1057;%%.
+
 \bibitem{tracker_project}
-{ CMS Collaboration} CollaborationV.~Karimäki,  {et~al.}, ``{The CMS tracker
-  system project: Technical Design Report}''.
-\newblock TechnicalDesignReportCMS. CERN, Geneva, 1997.
+{ CMS} Collaboration, ``{The CMS tracker system project: Technical Design
+  Report}''.
+\newblock Technical Design Report CMS. CERN, Geneva, 1997.
 
 \bibitem{cms-tracker-performance-2010}
-\hrefCMSnoop {} {{ The CMS Collaboration} Collaboration, ``CMS tracking
-  performance result from early LHC operation'',} \textit{ Eur. Phys. J. C}
-  \textbf{ 70} (2010) 1165--1192,
+\hrefCMSnoop {} {{ CMS} Collaboration, ``CMS tracking performance result from
+  early LHC operation'',} \textit{ Eur. Phys. J. C} \textbf{ 70} (2010)
+  1165--1192,
   \href{http://dx.doi.org/10.1140/epjc/s10052-010-1491-3}{\doi{10.1140/epjc/s10052-010-1491-3}},
   \href{http://www.arXiv.org/abs/hep-ex/1007.1988}{\texttt{
   arXiv:hep-ex/1007.1988}}.
 
+\bibitem{tracker_material}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``{CMS Tracker alignment and material
+  budget measurement}'',} Technical Report CMS-CR-2011-164, CERN, Geneva, (Sep,
+  2011).
+
 \bibitem{ecal_project}
-{ CMS Collaboration} Collaboration, T.~C. Collaboration, ``{The CMS
-  electromagnetic calorimeter project:Technical Design Report}''.
+{ CMS} Collaboration, ``{The CMS electromagnetic calorimeter project: Technical
+  Design Report}''.
 \newblock Technical Design Report CMS. CERN, Geneva, 1997.
 
 \bibitem{cms-ecal-performance-2012}
-\hrefCMSnoop {} {{ The CMS Collaboration} Collaboration, ``2012 ECAL detector
-  performance plots'',}. CMS-DP-2013-007.
+\hrefCMSnoop {} {{ CMS} Collaboration, ``2012 ECAL detector performance
+  plots'',}. CMS-DP-2013-007.
+
+\bibitem{cms_pf_performance}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``Particle-Flow Event Reconstruction in
+  CMS and Performance for Jets, Taus and $E_{T}^{miss}$'',}. CMS-PFT-09-001.
 
 \bibitem{ecal_electron_reco}
 \hrefCMSnoop {} {E.~Meschi, T.~Monteiro, C.~Seez, and P.~Vikas, ``Electron
@@ -202,14 +213,27 @@ M.~W. Guidry, ``Gauge Field Theories: An Introduction with Applications''.
   arXiv:hep-ex/1201.5292}}.
 
 \bibitem{jet_e_corrs}
-\hrefCMSnoop {} {{ The CMS Collaboration} Collaboration, ``Jet energy
-  corrections and uncertainties in CMS: reducing their impact on physical
-  measurements'',} \textit{ J. Phys. Conf. Ser.} \textbf{ 404} (2012) 012014.
+\hrefCMSnoop {} {{ CMS} Collaboration, ``Jet energy corrections and
+  uncertainties in CMS: reducing their impact on physical measurements'',}
+  \textit{ J. Phys. Conf. Ser.} \textbf{ 404} (2012) 012014.
 
-\bibitem{cms_pf_performance}
-\hrefCMSnoop {} {{ The CMS Collaboration} Collaboration, ``Particle-Flow Event
-  Reconstruction in CMS and Performance for Jets, Taus and $E_{T}^{miss}$'',}.
-  CMS-PFT-09-001.
+\bibitem{bdt}
+{Hastie, T. and Tibshirani, R. and Friedman, J.}, ``{The Elements of
+  Statistical Learning}''.
+\newblock {Springer-Verlag}, {2nd} edition, 2009.
+
+\bibitem{bdt2}
+\hrefCMSnoop {} {J.~H. Friedman, ``Greedy function approximation: A gradient
+  boosting machine.'',} \textit{ The Annals of Statistics} \textbf{ 29} (10,
+  2001) 1189--1232,
+  \href{http://dx.doi.org/10.1214/aos/1013203451}{\doi{10.1214/aos/1013203451}}.
+
+\bibitem{bdt3}
+\hrefCMSnoop {} {J.~H. Friedman, ``Stochastic gradient boosting'',} \textit{
+  {Computational Statistics and Data Analysis}} \textbf{ 38} (2002), no.~4, 367
+  -- 378,
+  \href{http://dx.doi.org/http://dx.doi.org/10.1016/S0167-9473(01)00065-2}{\doi{http://dx.doi.org/10.1016/S0167-9473(01)00065-2}}.
+  Nonlinear Methods and Data Mining.
 
 \bibitem{TMVA}
 \hrefCMSnoop {} {A.~Hoecker {et~al.}, ``TMVA - Toolkit for Multivariate Data
@@ -219,6 +243,16 @@ M.~W. Guidry, ``Gauge Field Theories: An Introduction with Applications''.
 \bibitem{kol_smir}
 \hrefCMSnoop {} {F.~J. Massey, ``The Kolmogorov-Smirnov Test for Goodness of
   Fit'',} \textit{ JSTOR} \textbf{ 46} (1951) 68--78.
+
+\bibitem{lumi1}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``Absolute Calibration of the Luminosity
+  Measurement at CMS: Winter 2012 Update'',} \textit{ CMS PAS} \textbf{
+  CMS-PAS-SMP-12-008} (2012).
+
+\bibitem{lumi2}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``CMS Luminosity Based on Pixel Cluster
+  Counting: Summer 2013 Update'',} \textit{ CMS PAS} \textbf{
+  CMS-PAS-LUM-13-001} (2013).
 
 \bibitem{powheg1}
 \hrefCMSnoop {} {S.~Alioli, P.~Nason, C.~Oleari, and E.~Re, ``{NLO Higgs boson
@@ -268,11 +302,14 @@ J.~Alwall\hrefCMSnoop {} { {et~al.}, ``{MadGraph 5 : Going Beyond}'',} \textit{
 \hrefCMSnoop {} {E.~Chabanat and N.~Estre, ``{Deterministic Annealing for
   Vertex Finding at CMS}'',}.
 
+\bibitem{CrystalBallShape}
+\hrefCMSnoop {} {T.~Skwarnicki, ``{A Study of the Radiative Cascade Transitions
+  between the upsilon-prime and upsilon resonances}'',}. DESY-F31-86-02.
+
 \bibitem{tag_and_probe}
-\hrefCMSnoop {} {{ The CMS Collaboration} Collaboration, ``Measurement of the
-  inclusive W and Z production cross sections in pp collisions at
-  $\sqrt{s}$=7~TeV with the CMS experiment'',} \textit{ JHEP} \textbf{ 2011}
-  (2011) 1,
+\hrefCMSnoop {} {{ CMS} Collaboration, ``Measurement of the inclusive W and Z
+  production cross sections in pp collisions at $\sqrt{s}$=7~TeV with the CMS
+  experiment'',} \textit{ JHEP} \textbf{ 2011} (2011) 1,
   \href{http://dx.doi.org/10.1007/JHEP10(2011)132}{\doi{10.1007/JHEP10(2011)132}}.
 
 \bibitem{Zeppenfeld}
@@ -309,7 +346,7 @@ J.~Alwall\hrefCMSnoop {} { {et~al.}, ``{MadGraph 5 : Going Beyond}'',} \textit{
 %%CITATION = ARXIV:1111.6097;%%.
 
 \bibitem{met_corrs}
-\hrefCMSnoop {} {T.~C. Collaboration, ``MET performance in 8 TeV data'',}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``MET performance in 8 TeV data'',}
   \textit{ CMS PAS} \textbf{ CMS-PAS-JME-12-002} (2012).
 
 \bibitem{regression_smoothing}
@@ -370,16 +407,6 @@ R.~G. Lomax, ``Statistical Concepts: A Second Course''.
 \hrefCMSnoop {} {G.~R. Terrell and D.~W. Scott, ``Variable Kernel Density
   Estimation'',} \textit{ The Annals of Statistics} \textbf{ 20} (1992), no.~3,
   1236--1265.
-
-\bibitem{lumi1}
-\hrefCMSnoop {} {{ CMS} Collaboration, ``Absolute Calibration of the Luminosity
-  Measurement at CMS: Winter 2012 Update'',} \textit{ CMS PAS} \textbf{
-  CMS-PAS-SMP-12-008} (2012).
-
-\bibitem{lumi2}
-\hrefCMSnoop {} {{ CMS} Collaboration, ``CMS Luminosity Based on Pixel Cluster
-  Counting: Summer 2013 Update'',} \textit{ CMS PAS} \textbf{
-  CMS-PAS-LUM-13-001} (2013).
 
 \bibitem{vbf_syst}
 \hrefCMSnoop {} {I.~W. Stewart and F.~J. Tackmann, ``Theory Uncertainties for

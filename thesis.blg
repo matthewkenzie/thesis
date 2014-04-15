@@ -4,45 +4,47 @@ The top-level auxiliary file: thesis.aux
 The style file: lucas_unsrt.bst
 Database file #1: mythesis.bib
 Warning--empty year in Salam
-You've used 72 entries,
+Warning--empty author and editor in tracker_project
+Warning--empty author and editor in ecal_project
+You've used 78 entries,
             2529 wiz_defined-function locations,
-            1102 strings with 20365 characters,
-and the built_in function-call counts, 21602 in all, are:
-= -- 2301
-> -- 439
-< -- 0
-+ -- 160
-- -- 88
-* -- 1707
-:= -- 2705
-add.period$ -- 98
-call.type$ -- 72
-change.case$ -- 4
+            1125 strings with 16148 characters,
+and the built_in function-call counts, 23084 in all, are:
+= -- 2460
+> -- 465
+< -- 1
++ -- 171
+- -- 93
+* -- 1816
+:= -- 2891
+add.period$ -- 108
+call.type$ -- 78
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 73
-duplicate$ -- 1355
-empty$ -- 2335
-format.name$ -- 93
-if$ -- 5702
+cite$ -- 81
+duplicate$ -- 1451
+empty$ -- 2506
+format.name$ -- 98
+if$ -- 6086
 int.to.chr$ -- 0
-int.to.str$ -- 72
-missing$ -- 210
-newline$ -- 259
-num.names$ -- 56
-pop$ -- 481
+int.to.str$ -- 78
+missing$ -- 222
+newline$ -- 280
+num.names$ -- 61
+pop$ -- 519
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 721
+skip$ -- 756
 stack$ -- 0
-substring$ -- 1113
-swap$ -- 520
-text.length$ -- 0
+substring$ -- 1189
+swap$ -- 548
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 148
-width$ -- 74
-write$ -- 814
-(There was 1 warning)
+warning$ -- 3
+while$ -- 158
+width$ -- 80
+write$ -- 878
+(There were 3 warnings)

@@ -1,7 +1,7 @@
 {
 //=========Macro generated from canvas: c/c
-//=========  (Tue Mar 18 17:58:15 2014) by ROOT version5.34/03
-   TCanvas *c = new TCanvas("c", "c",0,0,700,700);
+//=========  (Tue Apr 15 12:32:26 2014) by ROOT version5.34/18
+   TCanvas *c = new TCanvas("c", "c",0,44,700,700);
    gStyle->SetOptStat(0);
    c->SetHighLightColor(2);
    c->Range(-0.625,-0.7500001,5.625,6.75);
@@ -18,14 +18,16 @@
    dH->SetMaximum(6);
    dH->SetStats(0);
    dH->SetLineColor(0);
-   dH->GetXaxis()->SetTitle("#mu_{qqH+VH}");
+   dH->GetXaxis()->SetTitle("#mu_{VBF,VH}");
    dH->GetXaxis()->SetLabelFont(42);
    dH->GetXaxis()->SetLabelSize(0.035);
+   dH->GetXaxis()->SetTitleSize(0.035);
    dH->GetXaxis()->SetTitleOffset(0.95);
    dH->GetXaxis()->SetTitleFont(42);
    dH->GetYaxis()->SetTitle("-2 #Delta LL");
    dH->GetYaxis()->SetLabelFont(42);
    dH->GetYaxis()->SetLabelSize(0.035);
+   dH->GetYaxis()->SetTitleSize(0.035);
    dH->GetYaxis()->SetTitleOffset(0.85);
    dH->GetYaxis()->SetTitleFont(42);
    dH->GetZaxis()->SetLabelFont(42);
@@ -141,29 +143,29 @@
    graph->SetPoint(99,3.44749999,10.4034214);
    graph->SetPoint(100,3.482500076,10.67251396);
    
-   TH1F *Graph_gr_0_RV1 = new TH1F("Graph_gr_0_RV1","",101,0,3.829);
-   Graph_gr_0_RV1->SetMinimum(0);
-   Graph_gr_0_RV1->SetMaximum(6);
-   Graph_gr_0_RV1->SetDirectory(0);
-   Graph_gr_0_RV1->SetStats(0);
+   TH1F *Graph_Graph_gr_0_RV11 = new TH1F("Graph_Graph_gr_0_RV11","",101,0,3.829);
+   Graph_Graph_gr_0_RV11->SetMinimum(0);
+   Graph_Graph_gr_0_RV11->SetMaximum(6);
+   Graph_Graph_gr_0_RV11->SetDirectory(0);
+   Graph_Graph_gr_0_RV11->SetStats(0);
 
    Int_t ci;   // for color index setting
    ci = TColor::GetColor("#000099");
-   Graph_gr_0_RV1->SetLineColor(ci);
-   Graph_gr_0_RV1->GetXaxis()->SetNdivisions(505);
-   Graph_gr_0_RV1->GetXaxis()->SetLabelFont(42);
-   Graph_gr_0_RV1->GetXaxis()->SetLabelSize(0.035);
-   Graph_gr_0_RV1->GetXaxis()->SetTitleSize(0.035);
-   Graph_gr_0_RV1->GetXaxis()->SetTitleFont(42);
-   Graph_gr_0_RV1->GetYaxis()->SetLabelFont(42);
-   Graph_gr_0_RV1->GetYaxis()->SetLabelSize(0.035);
-   Graph_gr_0_RV1->GetYaxis()->SetTitleSize(0.035);
-   Graph_gr_0_RV1->GetYaxis()->SetTitleFont(42);
-   Graph_gr_0_RV1->GetZaxis()->SetLabelFont(42);
-   Graph_gr_0_RV1->GetZaxis()->SetLabelSize(0.035);
-   Graph_gr_0_RV1->GetZaxis()->SetTitleSize(0.035);
-   Graph_gr_0_RV1->GetZaxis()->SetTitleFont(42);
-   graph->SetHistogram(Graph_gr_0_RV1);
+   Graph_Graph_gr_0_RV11->SetLineColor(ci);
+   Graph_Graph_gr_0_RV11->GetXaxis()->SetNdivisions(505);
+   Graph_Graph_gr_0_RV11->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_gr_0_RV11->GetXaxis()->SetLabelSize(0.035);
+   Graph_Graph_gr_0_RV11->GetXaxis()->SetTitleSize(0.035);
+   Graph_Graph_gr_0_RV11->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_gr_0_RV11->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_gr_0_RV11->GetYaxis()->SetLabelSize(0.035);
+   Graph_Graph_gr_0_RV11->GetYaxis()->SetTitleSize(0.035);
+   Graph_Graph_gr_0_RV11->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_gr_0_RV11->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_gr_0_RV11->GetZaxis()->SetLabelSize(0.035);
+   Graph_Graph_gr_0_RV11->GetZaxis()->SetTitleSize(0.035);
+   Graph_Graph_gr_0_RV11->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph_gr_0_RV11);
    
    graph->Draw("l");
    
@@ -275,29 +277,29 @@
    graph->SetPoint(99,5.417500019,0.4979549944);
    graph->SetPoint(100,5.472499847,0.5406100154);
    
-   TH1F *Graph_gr_1_RV2 = new TH1F("Graph_gr_1_RV2","",101,0,6.017);
-   Graph_gr_1_RV2->SetMinimum(0);
-   Graph_gr_1_RV2->SetMaximum(6);
-   Graph_gr_1_RV2->SetDirectory(0);
-   Graph_gr_1_RV2->SetStats(0);
+   TH1F *Graph_Graph_gr_1_RV22 = new TH1F("Graph_Graph_gr_1_RV22","",101,0,6.017);
+   Graph_Graph_gr_1_RV22->SetMinimum(0);
+   Graph_Graph_gr_1_RV22->SetMaximum(6);
+   Graph_Graph_gr_1_RV22->SetDirectory(0);
+   Graph_Graph_gr_1_RV22->SetStats(0);
 
    ci = TColor::GetColor("#000099");
-   Graph_gr_1_RV2->SetLineColor(ci);
-   Graph_gr_1_RV2->GetXaxis()->SetRange(1,84);
-   Graph_gr_1_RV2->GetXaxis()->SetNdivisions(505);
-   Graph_gr_1_RV2->GetXaxis()->SetLabelFont(42);
-   Graph_gr_1_RV2->GetXaxis()->SetLabelSize(0.035);
-   Graph_gr_1_RV2->GetXaxis()->SetTitleSize(0.035);
-   Graph_gr_1_RV2->GetXaxis()->SetTitleFont(42);
-   Graph_gr_1_RV2->GetYaxis()->SetLabelFont(42);
-   Graph_gr_1_RV2->GetYaxis()->SetLabelSize(0.035);
-   Graph_gr_1_RV2->GetYaxis()->SetTitleSize(0.035);
-   Graph_gr_1_RV2->GetYaxis()->SetTitleFont(42);
-   Graph_gr_1_RV2->GetZaxis()->SetLabelFont(42);
-   Graph_gr_1_RV2->GetZaxis()->SetLabelSize(0.035);
-   Graph_gr_1_RV2->GetZaxis()->SetTitleSize(0.035);
-   Graph_gr_1_RV2->GetZaxis()->SetTitleFont(42);
-   graph->SetHistogram(Graph_gr_1_RV2);
+   Graph_Graph_gr_1_RV22->SetLineColor(ci);
+   Graph_Graph_gr_1_RV22->GetXaxis()->SetRange(1,84);
+   Graph_Graph_gr_1_RV22->GetXaxis()->SetNdivisions(505);
+   Graph_Graph_gr_1_RV22->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_gr_1_RV22->GetXaxis()->SetLabelSize(0.035);
+   Graph_Graph_gr_1_RV22->GetXaxis()->SetTitleSize(0.035);
+   Graph_Graph_gr_1_RV22->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_gr_1_RV22->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_gr_1_RV22->GetYaxis()->SetLabelSize(0.035);
+   Graph_Graph_gr_1_RV22->GetYaxis()->SetTitleSize(0.035);
+   Graph_Graph_gr_1_RV22->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_gr_1_RV22->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_gr_1_RV22->GetZaxis()->SetLabelSize(0.035);
+   Graph_Graph_gr_1_RV22->GetZaxis()->SetTitleSize(0.035);
+   Graph_Graph_gr_1_RV22->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph_gr_1_RV22);
    
    graph->Draw("l");
    
@@ -396,33 +398,33 @@
    graph->SetPoint(86,3.424999952,15.38860607);
    graph->SetPoint(87,3.474999905,15.78808975);
    
-   TH1F *Graph_gr_2_RV3 = new TH1F("Graph_gr_2_RV3","",100,-1.255,3.905);
-   Graph_gr_2_RV3->SetMinimum(0);
-   Graph_gr_2_RV3->SetMaximum(6);
-   Graph_gr_2_RV3->SetDirectory(0);
-   Graph_gr_2_RV3->SetStats(0);
+   TH1F *Graph_Graph_gr_2_RV33 = new TH1F("Graph_Graph_gr_2_RV33","",100,-1.255,3.905);
+   Graph_Graph_gr_2_RV33->SetMinimum(0);
+   Graph_Graph_gr_2_RV33->SetMaximum(6);
+   Graph_Graph_gr_2_RV33->SetDirectory(0);
+   Graph_Graph_gr_2_RV33->SetStats(0);
 
    ci = TColor::GetColor("#000099");
-   Graph_gr_2_RV3->SetLineColor(ci);
-   Graph_gr_2_RV3->GetXaxis()->SetRange(25,100);
-   Graph_gr_2_RV3->GetXaxis()->SetNdivisions(505);
-   Graph_gr_2_RV3->GetXaxis()->SetLabelFont(42);
-   Graph_gr_2_RV3->GetXaxis()->SetLabelSize(0.035);
-   Graph_gr_2_RV3->GetXaxis()->SetTitleSize(0.035);
-   Graph_gr_2_RV3->GetXaxis()->SetTitleFont(42);
-   Graph_gr_2_RV3->GetYaxis()->SetLabelFont(42);
-   Graph_gr_2_RV3->GetYaxis()->SetLabelSize(0.035);
-   Graph_gr_2_RV3->GetYaxis()->SetTitleSize(0.035);
-   Graph_gr_2_RV3->GetYaxis()->SetTitleFont(42);
-   Graph_gr_2_RV3->GetZaxis()->SetLabelFont(42);
-   Graph_gr_2_RV3->GetZaxis()->SetLabelSize(0.035);
-   Graph_gr_2_RV3->GetZaxis()->SetTitleSize(0.035);
-   Graph_gr_2_RV3->GetZaxis()->SetTitleFont(42);
-   graph->SetHistogram(Graph_gr_2_RV3);
+   Graph_Graph_gr_2_RV33->SetLineColor(ci);
+   Graph_Graph_gr_2_RV33->GetXaxis()->SetRange(25,100);
+   Graph_Graph_gr_2_RV33->GetXaxis()->SetNdivisions(505);
+   Graph_Graph_gr_2_RV33->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_gr_2_RV33->GetXaxis()->SetLabelSize(0.035);
+   Graph_Graph_gr_2_RV33->GetXaxis()->SetTitleSize(0.035);
+   Graph_Graph_gr_2_RV33->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_gr_2_RV33->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_gr_2_RV33->GetYaxis()->SetLabelSize(0.035);
+   Graph_Graph_gr_2_RV33->GetYaxis()->SetTitleSize(0.035);
+   Graph_Graph_gr_2_RV33->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_gr_2_RV33->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_gr_2_RV33->GetZaxis()->SetLabelSize(0.035);
+   Graph_Graph_gr_2_RV33->GetZaxis()->SetTitleSize(0.035);
+   Graph_Graph_gr_2_RV33->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph_gr_2_RV33);
    
    graph->Draw("l");
    
-   TLegend *leg = new TLegend(0.35,0.65,0.65,0.79,NULL,"brNDC");
+   TLegend *leg = new TLegend(0.5732759,0.653789,0.8735632,0.7934621,NULL,"brNDC");
    leg->SetBorderSize(1);
    leg->SetLineColor(0);
    leg->SetLineStyle(1);
@@ -436,6 +438,7 @@
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
+   entry->SetTextFont(42);
    entry=leg->AddEntry("gr_1_RV","Obs 7TeV","L");
    entry->SetLineColor(4);
    entry->SetLineStyle(1);
@@ -443,6 +446,7 @@
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
+   entry->SetTextFont(42);
    entry=leg->AddEntry("gr_2_RV","Obs 8TeV","L");
    entry->SetLineColor(2);
    entry->SetLineStyle(1);
@@ -450,62 +454,43 @@
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
+   entry->SetTextFont(42);
    leg->Draw();
    TLine *line = new TLine(0,0,5,0);
-
-   ci = TColor::GetColor("#ff0000");
-   line->SetLineColor(ci);
+   line->SetLineColor(2);
    line->SetLineWidth(2);
    line->Draw();
    line = new TLine(0,1,5,1);
-
-   ci = TColor::GetColor("#ff0000");
-   line->SetLineColor(ci);
+   line->SetLineColor(2);
    line->SetLineWidth(2);
    line->Draw();
    line = new TLine(0.5838028,0,0.5838028,1);
-
-   ci = TColor::GetColor("#ff0000");
-   line->SetLineColor(ci);
+   line->SetLineColor(2);
    line->SetLineWidth(2);
    line->Draw();
    line = new TLine(1.787128,0,1.787128,1);
-
-   ci = TColor::GetColor("#ff0000");
-   line->SetLineColor(ci);
+   line->SetLineColor(2);
    line->SetLineWidth(2);
    line->Draw();
    line = new TLine(0,4,5,4);
-
-   ci = TColor::GetColor("#ff0000");
-   line->SetLineColor(ci);
+   line->SetLineColor(2);
    line->SetLineWidth(2);
    line->Draw();
    line = new TLine(0.04680177,0,0.04680177,4);
-
-   ci = TColor::GetColor("#ff0000");
-   line->SetLineColor(ci);
+   line->SetLineColor(2);
    line->SetLineWidth(2);
    line->Draw();
    line = new TLine(2.483639,0,2.483639,4);
-
-   ci = TColor::GetColor("#ff0000");
-   line->SetLineColor(ci);
+   line->SetLineColor(2);
    line->SetLineWidth(2);
    line->Draw();
-   TLatex *   tex = new TLatex(0.12,0.92,"CMS Preliminary");
+   TLatex *   tex = new TLatex(0.42,0.92,"#sqrt{s}=7TeV L=5.1fb^{-1},#sqrt{s}=8TeV L=19.7fb^{-1}");
 tex->SetNDC();
    tex->SetTextFont(42);
    tex->SetTextSize(0.03);
    tex->SetLineWidth(2);
    tex->Draw();
-      tex = new TLatex(0.67,0.94,"#splitline{#sqrt{s}=7TeV L=5.1fb^{-1}}{#sqrt{s}=8TeV L=19.7fb^{-1}}");
-tex->SetNDC();
-   tex->SetTextFont(42);
-   tex->SetTextSize(0.03);
-   tex->SetLineWidth(2);
-   tex->Draw();
-      tex = new TLatex(0.5,0.85,"#mu_{qqH+VH} = 1.16 ^{#font[122]{+}0.63}_{#font[122]{-}0.57}");
+      tex = new TLatex(0.731322,0.84844,"#mu_{VBF,VH} = 1.16 ^{#font[122]{+}0.63}_{#font[122]{-}0.57}");
 tex->SetNDC();
    tex->SetTextAlign(22);
    tex->SetTextSize(0.04);

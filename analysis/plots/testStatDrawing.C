@@ -38,7 +38,7 @@
 
   f0.SetTitle("");
   f0.GetXaxis().SetTitle("q_{#mu}(#mu=0.8,m_{H}=120 GeV)");
-  f0.GetYaxis().SetTitle("a.u.");
+  f0.GetYaxis().SetTitle("Arbitrary Units");
   f0.GetXaxis().SetTitleSize(0.04);
   f0.GetXaxis().SetLabelSize(0.04);
   f0.GetYaxis().SetTitleSize(0.04);

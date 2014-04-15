@@ -1,7 +1,11 @@
 \chapter{Selection and Categorisation}
 \label{chap:selection_and_categorisation}
 
-This thesis presents results of three different analyses used in the Higgs to two photon search at CMS. The nominal results and properties are obtained from the so called \MFM analysis, which uses multivariate methods optimised specifically to search for a \SM Higgs boson to select and categorise events. This has a fully parametric definition of the diphoton invariant mass spectrum where the signal shape is derived from \MC simulation and the background shape from data. Events are selected by requiring that they pass a cut on the output of a \BDT trained to distinguish photons from jets (the \textit{photon ID BDT}) and furthmore that they pass a cut on an event level classifier (the \textit{diphoton BDT}) desgined to collapse photon kinematics, mass resolution and photon quality into a single discriminating variable. Using the output of this event level classifier a number of analysis categories are defined to provide the optimal search sensitivty for a \SM Higgs boson. The second analysis is the \acf{SMVA} analysis which is a cut and count method and serves to cross check the background estimation in the \MFM analysis, the most significant unknown in a search like this, by extracting the background under the signal region from sidebands in the diphoton invariant mass spectrum. The \SMVA uses the same event selection as the \MFM although the categorisation is done differently. The third analysis is the \CiC analysis which is designed for simplicity and robustness as a cut based approach and, owing to its low level of model dependence, is used for statistical tests which attempt to ascertain the spin of the observed boson.
+This thesis presents results of three different analyses used in the Higgs to two photon search at CMS. The nominal results and properties are obtained from the so-called \MFM analysis, which uses multivariate methods optimised specifically to search for a \SM Higgs boson to select and categorise events. This has a fully parametric definition of the diphoton invariant mass spectrum where the signal shape is derived from \MC simulation and the background shape from data. Events are selected by requiring that they pass a cut on the output of a \BDT trained to distinguish photons from jets (the \textit{photon ID BDT}) and furthmore that they pass a cut on an event level classifier (the \textit{diphoton BDT}) designed to collapse photon kinematics, mass resolution and photon quality into a single discriminating variable. Using the output of this event level classifier a number of analysis categories are defined to provide the optimal search sensitivty for a \SM Higgs boson. 
+
+The second analysis is the \acf{SMVA} analysis which is a cut and count method and serves to cross check the background estimation in the \MFM analysis, the most significant unknown in a search like this, by extracting the background under the signal region from sidebands in the diphoton invariant mass spectrum. The \SMVA uses the same event selection as the \MFM although the categorisation is done differently. 
+
+The third analysis is the \CiC analysis which is designed for simplicity and robustness as a cut based approach and, owing to its low level of model dependence, is used for statistical tests which attempt to ascertain the spin of the observed boson.
 
 % ---- SECTION ----
 \section{Event selection}
@@ -24,7 +28,7 @@ The selection cuts are optimised for photons in four non-overlapping categories 
   \item Do the same for all the other variables.
 \end{itemize}
 
-Consequently a stable set of cut values is obtained by iterating this procedure a few times. Each cut will then select events with the same purity ($S/B$) and thus the efficiency for selected photons is maximised for the chosen purity level. As a result the cuts in the endcap are much tighter than in the barrel, similarly the cuts for low \rnine photons are much tighter than the cuts for high \rnine photons. The cut variables are described below and the cut values shown in Table~\ref{tab:cic_cuts}. The cut setting procedure is optimised on a signal sample of \Hgg MC (with \mH=120~\GeV) and a background sample of \gjet events. The photon efficiency of the cuts for the four different classes of photon is shown in Figure~\ref{fig:cic_efficiency} as a function of the supercluster position, \eta, and the photon \pT.
+Consequently a stable set of cut values is obtained by iterating this procedure a few times. Each cut will then select events with the same purity ($S/B$) and thus the efficiency for selected photons is maximised for the chosen purity level. As a result the cuts in the endcap are much tighter than in the barrel, similarly the cuts for low \rnine photons are much tighter than the cuts for high \rnine photons. The cut variables are described below and the cut values shown in Table~\ref{tab:cic_cuts}. The cut setting procedure is optimised on a signal sample of \Hgg \MC events (with \mH=120~\GeV) and a background sample of \gjet events. The photon efficiency of the cuts for the four different classes of photon is shown in Figure~\ref{fig:cic_efficiency} as a function of the supercluster position, \eta, and the photon \pT. The cut variables are:
 
 \begin{itemize}
   \item PF isolation sum, chosen vertex - Sum of particle flow photon, charged and neutral hadron isolation sums defined in Sec.~\ref{sec:iso} where all \PF candidates originate from the primary vertex selected in Sec.~\ref{sec:vtx_reco}
@@ -39,7 +43,7 @@ Consequently a stable set of cut values is obtained by iterating this procedure 
   \begin{center}
     \begin{tabular}{l l l l l}
       & \multicolumn{2}{c}{Barrel} & \multicolumn{2}{c}{Endcap} \\ 
-      & \multicolumn{1}{l}{\rnine $>$ 0.94} & \multicolumn{1}{l}{\rnine $<$ 0.94 } & \multicolumn{1}{l}{\rnine $>$ 0.94 } & \multicolumn{1}{l}{\rnine $<$ 0.94 } \\ 
+      & \multicolumn{1}{l}{\rnine $\geq$ 0.94} & \multicolumn{1}{l}{\rnine $<$ 0.94 } & \multicolumn{1}{l}{\rnine $\geq$ 0.94 } & \multicolumn{1}{l}{\rnine $<$ 0.94 } \\ 
       \hline
       PF isolation sum, chosen vertex (GeV) & $<$6 & $<$4.7 & $<$5.6 & $<$3.6 \\ 
       PF isolation sum, worst vertex (GeV) & $<$10 & $<$6.5 & $<$5.6 & $<$4.4 \\ 
@@ -54,10 +58,10 @@ Consequently a stable set of cut values is obtained by iterating this procedure 
 \end{table}
 
 \begin{figure}
-  \includegraphics[width=0.49\textwidth]{selec_and_cats/plots/eff_7TeV_eta.pdf}
-  \includegraphics[width=0.49\textwidth]{selec_and_cats/plots/eff_7TeV_pt.pdf}
-  \includegraphics[width=0.49\textwidth]{selec_and_cats/plots/eff_8TeV_eta.pdf}
-  \includegraphics[width=0.49\textwidth]{selec_and_cats/plots/eff_8TeV_pt.pdf}
+  \includegraphics[width=0.49\textwidth]{selec_and_cats/plots/eff_7TeV_eta_fix.pdf}
+  \includegraphics[width=0.49\textwidth]{selec_and_cats/plots/eff_7TeV_pt_fix.pdf}
+  \includegraphics[width=0.49\textwidth]{selec_and_cats/plots/eff_8TeV_eta_fix.pdf}
+  \includegraphics[width=0.49\textwidth]{selec_and_cats/plots/eff_8TeV_pt_fix.pdf}
   \caption[Cut based photon ID efficiency as measured in \Zee \acs{MC} simulation]{Cut based photon ID efficiency as measured in \Zee \MC simulation using the tag and probe method~\cite{tag_and_probe}. Shown for the 7~TeV dataset (top row) and 8~TeV dataset (bottom row) as a function of the photon supercluster position in \eta (left) and as a function of the photon \pT (right). Photons in the barrel which are unconverted (converted) are plotted as the blue (red) points and photons in the endcap which are unconverted (converted) are plotted as the green (yellow) points.}
   \label{fig:cic_efficiency}
 \end{figure}
@@ -65,7 +69,7 @@ Consequently a stable set of cut values is obtained by iterating this procedure 
 \subsection{Photon ID MVA}
 \label{sec:pho_id_mva}
 
-For the multivariate approaches a \BDT is trained to discriminate between prompt photons and jets. The desire is to factorise the photon selection, which is required to distinguish prompt photons from neutral mesons faking photons, and the event selection, which is required to consider kinematics, resolution, etc.~to distinguish \Hgg from the $pp\rightarrow\gamma\gamma$, \gjet, $\mathrm{jet}+\mathrm{jet}$ background. The input variables used are designed specifically to distinguish between photons and fakes. They should not have any properties which make the identification Higgs specific. Consequently, the training samples used are \gjet samples where the identification \BDT signal is the prompt $\gamma$ and the background is the fake jet. The \pT and supercluster \eta distributions are reweighted such that they match between signal and background. This negates the \BDT exploiting any photon kinematics which could correlate to the Higgs mass. The photon ID \BDT is trained separately for the barrel and endcap as these regions of phase space are so different. Seperate \BDTs were also trained for 7 and 8~TeV. The result is four separate trainings in total.
+For the \MFM and \SMVA analyses a \BDT is trained to discriminate between prompt photons and jets. The desire is to factorise the photon selection, which is required to distinguish prompt photons from neutral mesons faking photons, and the event selection, which is required to consider kinematics, resolution, etc.~to distinguish \Hgg from the $pp\rightarrow\gamma\gamma$, \gjet, $\mathrm{jet}+\mathrm{jet}$ background. The input variables used are designed specifically to distinguish between photons and fakes. They should not have any properties which make the identification Higgs specific. Consequently, the training samples used are \gjet samples where the identification \BDT signal is the prompt $\gamma$ and the background is the fake jet. The \pT and supercluster \eta distributions are reweighted such that they match between signal and background. This negates the \BDT exploiting any photon kinematics which could correlate to the Higgs mass. The photon ID \BDT is trained separately for the barrel and endcap as these regions of phase space are so different. Seperate \BDTs were also trained for 7 and 8~TeV. The result is four separate trainings in total.
 
 The input variables aim to exploit differences in the shower shape and isolation between prompt and non-prompt photons and the correlation between these variables and the supercluster position and energy. They are:
 
@@ -94,20 +98,20 @@ The input variables aim to exploit differences in the shower shape and isolation
   \item $E_{raw}$ - The raw energy of the photon supercluster.
 \end{itemize}
 
-The testing sample used to verify the output of the photon identification \BDT is a \MC \Hgg sample (\mH=124~\GeV). The photon identification \BDT output provides a measure of an individual photon's ``quality" and is used as an input to the event level \BDT (described in the next section). Even so, a considerable amount of background is cut out by defining a loose cut (the \BDT output must be $>-0.2$) on the photon ID \BDT output value which is more than 99\% signal efficient. This is demonstrated in Fig.~\ref{fig:photon_id_bdt} which shows the photon ID \BDT output for a \Hgg signal \MC sample and for all the data events which pass the preselection defined in Sec.~\ref{sec:photon_presel}. It is clear that placing a cut at $>-0.2$ removes a considerable amount of the background whilst mainting very high signal efficiency. 
+The testing sample used to verify the output of the photon identification \BDT is a \MC \Hgg sample (\mH=124~\GeV). The photon identification \BDT output provides a measure of an individual photon's ``quality" and is used as an input to the event level \BDT (described in the next section). Even so, a considerable amount of background is cut out by defining a loose cut (the \BDT output must be $>-0.2$) on the photon ID \BDT output value which is more than 99\% signal efficient. This is demonstrated in Fig.~\ref{fig:photon_id_bdt} which shows the photon ID \BDT output for a \Hgg signal \MC sample and for all the data events which pass the preselection defined in Sec.~\ref{sec:photon_presel}. It is clear that placing a cut at $>-0.2$ removes a considerable amount of the background whilst maintaining very high signal efficiency. 
 
 The photon ID \BDT response for each photon is used as a direct input to the event level \MVA. Given that imperfect modeling of the detector response can result in a small change in the photon ID response which has a direct impact on the event level \MVA response, which is used to classify events, a systematic error on the photon quality is applied and propagated through to the event level \MVA. Validation of the photon ID \BDT response in the \Zee decay is shown in Fig.~\ref{fig:photon_id_zee} with the size of the systematic error applied to account for any data/\MC discrepancies. The uniform response of the identification as a function of the number of primary vertices is demonstrated by the similarity of the two plots in this figure (Fig.~\ref{fig:photon_id_zee}) which are for events in which the number of primary vertices is $\leq 15$ (on the left) and for those in which the number of primary vertices is $>15$ (right).
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/lowScoreID_7TeV.pdf}
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/lowScoreID_8TeV.pdf}
+  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/lowScoreID_7TeV_fix.pdf}
+  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/lowScoreID_8TeV_fix.pdf}
   \caption[The output distribution of the photon identification \acs{BDT}]{The output distribution of the photon identification \BDT for 7~\TeV (left) and 8~\TeV (right) datasets. The black points show the output for data events which pass the preselection and the red histogram shows the output for a simulated \MC sample of \Hgg decays. A cut of $>-0.2$ is made on all photons.}
   \label{fig:photon_id_bdt}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.98\textwidth]{selec_and_cats/plots/idmva_nvtx.pdf}
-  \caption[The output distribution of the photon identification \acs{BDT} in \Zee decays]{The output distribution of the photon identification \BDT for the 8~\TeV training as validated by the \Zee decay for events which have $\leq15$ reconstructed primary vertices (left) and those which have $>15$ primary vertices (right). The data is shown as the black points with the \MC simulation as the blue histogram. The systematic uncertainty on the output as applied to the \MC is shown as the red band.}
+  \includegraphics[width=0.98\textwidth]{selec_and_cats/plots/idmva_nvtx_fix.pdf}
+  \caption[The output distribution of the photon identification \acs{BDT} in \Zee decays]{The output distribution of the photon identification \BDT for the 8~\TeV training as validated by the \Zee decay for events which have $\leq15$ reconstructed primary vertices (left) and those which have $>15$ primary vertices (right). The data is shown as the black points with the \MC simulation as the blue histogram. The systematic uncertainty on the output as applied to the \MC sample is shown as the red band.}
   \label{fig:photon_id_zee}
 \end{figure}
 
@@ -158,19 +162,19 @@ The training is performed separately for 7 and 8~\TeV and the samples used for t
 A cut is placed on the \BDT response in order to remove almost all of the events which contain two fake photons and a large fraction of those which contain one fake. The remaining events which pass this cut are those used in the results and get categorised in coarse bins based on the \BDT response. The strategy for optimising this cut value and the category boundaries is explained in Sec.~\ref{sec:categorisation}. The \BDT response in data, background and signal is shown in Fig.~\ref{fig:dipho_bdt}. The \BDT output in this figure has been transformed so that its response is flat for the total signal. This helps to see the differences between the signal (flat) and background (not flat) and also the differences between the gluon fusion signal and the other production modes. By examining the \BDT response in signal (top row of Fig.~\ref{fig:dipho_bdt}) one can see that the associated production modes (\VBF in yellow, \VH in green and \ttH in blue) peak closer to 1 relative to the gluon fusion signal (red). This is predominantly driven by the fact that Higgs bosons produced by associated modes are typically at higher \pT than for gluon fusion and this kinematic feature helps the \BDT to discriminate these events from the background. It can be seen in the bottom row of Fig.~\ref{fig:dipho_bdt} that the cut on the event level \BDT removes a considerable amount of the fake-fake and prompt-fake contribution to the background with the remainder consisting of about 70\% prompt-prompt and 30\% prompt-fake.
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/mixedbdt_transformed_7TeV_fix.pdf} 
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/mixedbdt_transformed_8TeV_fix.pdf} \\ 
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/diphobdt_transformed_bg_7TeV_fix.pdf}
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/diphobdt_transformed_bg_8TeV_fix.pdf}
+  \includegraphics[width=0.475\textwidth]{selec_and_cats/plots/mixedbdt_transformed_7TeV_fix_fix.pdf} \hspace{0.05cm}
+  \includegraphics[width=0.475\textwidth]{selec_and_cats/plots/mixedbdt_transformed_8TeV_fix_fix.pdf} \\ 
+  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/diphobdt_transformed_bg_7TeV_fix_fix.pdf} \hspace{0.05cm}
+  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/diphobdt_transformed_bg_8TeV_fix_fix.pdf}
   \caption[The diphoton \acs{BDT} response]{The diphoton \BDT response for the 7~\TeV training (left column) and 8~\TeV training (right column) transformed so that the output is flat in the signal. The top row shows the output in data (black points), which contains mostly background events, and signal \MC events (filled histograms) split by production mode; \ggH (red), \VBF (yellow), \VH (green), \ttH (blue). The bottom row shows the output in data (black points) and background \MC events (filled histograms) split by type; prompt-prompt (green), prompt-fake (yellow) and fake-fake (red). The data/background residual is shown as the blue points underneath these histograms. The vertical dashed lines show the analysis category definitions where those on the right (nearer a classifier score of 1) have the highest S/B ratio. All events which fall below the left most boundary, shown by the shaded area, are cut out of the analysis.}
   \label{fig:dipho_bdt}
 \end{figure}
 
-Any uncertainties which effect the shape of the output distribution of this \BDT result in event migrations between the final analysis categories; if the \BDT response is mismodelled then events can move across the boundaries represented as the vertical dashed lines in Fig.~\ref{fig:dipho_bdt}. The signal model in this analysis is obtained from \MC simulation and so these uncertainties can have an effect on the signal model shape in each of the categories. Whilst these migrations may also be true of the background the effect is not important because the background is extracted from data. The input variables whose uncertainties have the largest effect on the \BDT response in signal are the photon ID quality and the photon energy resolution estimate. This is because these variables have both i) relatively large uncertainties because of imperfect detector response modelling in the simulation and ii) are highly discriminative and hence can have a relatively large impact on the \BDT response. As the \BDT response varies monotonically with these variables, the sytematic uncertainty on them is propagated through the analysis as an event migration. Systematic uncertainties are described in more detail in Sec.~\ref{sec:systematics}. The size of this effect is shown in the \BDT response validation plot using the \Zee decay in Fig.~\ref{fig:diphotonBDT_zee}.
+Any uncertainties which affect the shape of the output distribution of this \BDT result in event migrations between the final analysis categories; if the \BDT response is mismodelled then events can move across the boundaries represented as the vertical dashed lines in Fig.~\ref{fig:dipho_bdt}. The signal model in this analysis is obtained from \MC simulation and so these uncertainties can have an effect on the signal model shape in each of the categories. Whilst these migrations may also be true of the background the effect is not important because the background is extracted from data. The input variables whose uncertainties have the largest effect on the \BDT response in signal are the photon ID quality and the photon energy resolution estimate. This is because these variables have both i) relatively large uncertainties because of imperfect detector response modelling in the simulation and ii) are highly discriminative and hence can have a relatively large impact on the \BDT response. As the \BDT response varies monotonically with these variables, the sytematic uncertainty on them is propagated through the analysis as an event migration. Systematic uncertainties are described in more detail in Sec.~\ref{sec:systematics}. The size of this effect is shown in the \BDT response validation plot using the \Zee decay in Fig.~\ref{fig:diphotonBDT_zee}.
 
 \begin{figure}
-  \includegraphics[width=0.95\textwidth]{selec_and_cats/plots/transformedBDT_single_syst_fix.pdf}
-  \caption[The diphoton \acs{BDT} response in \Zee decays]{The diphoton BDT response for the 8~\TeV training in the \Zee decay. The data is shown as the black points and the \MC as the blue histogram. The systematic applied to account for variation in the BDT response from mismodelling in the photon quality response and the photon energy resolution estimate are shown as the red band. The vertical dashed lines show the boundaries of the analysis categories.}
+  \includegraphics[width=0.95\textwidth]{selec_and_cats/plots/transformedBDT_single_syst_fix_fix.pdf}
+  \caption[The diphoton \acs{BDT} response in \Zee decays]{The diphoton BDT response for the 8~\TeV training in the \Zee decay. The data is shown as the black points and the \MC events as the blue histogram. The systematic applied to account for variation in the BDT response from mismodelling in the photon quality response and the photon energy resolution estimate are shown as the red band. The vertical dashed lines show the boundaries of the analysis categories.}
   \label{fig:diphotonBDT_zee}
 \end{figure}
 
@@ -198,7 +202,7 @@ The following variables are used to exploit the specific topolgy of the jet pair
   \item $\Delta\phi_{\mathrm{j}_{1}\mathrm{j}_{2}}$ - The angular difference between the two jets in the transverse plane.
 \end{itemize}
 
-Additionally the leading photon \pT requirement is raised to $p_{T}^{\gamma_{1}}/m_{\gamma\gamma}>1/2$. The energy measurement of jets in the event are calibrated to correct for detector effects~\cite{jet_energy_corrections} and additional energy in the jets from pileup is removed using the \textsc{FastJet} jet areas technique described in~\cite{pu_jets1,pu_jets2,pu_jets3}. Jets are required to be within the pseudorapidity range, $\eta<4.7$.
+Additionally the leading photon \pT requirement is raised to $p_{T}^{\gamma_{1}}/m_{\gamma\gamma}>1/2$. The energy measurement of jets in the event are calibrated to correct for detector effects~\cite{jet_energy_corrections} and additional energy in the jets from pileup is removed using the \textsc{FastJet} jet areas technique described in~\cite{pu_jets1,pu_jets2,pu_jets3}. Jets are required to be within the pseudorapidity range $|\eta|<4.7$.
 
 The dijet tagging is done with use of two additional \MVAs. The first is designed to exploit the \VBF kinematic properties and the second is used to combine this information with the diphoton \BDT. Candidates are required to pass a \VBF preselection of two jets with $p_{T}^{\j_{1}}>30$~\GeV and $p_{T}^{\j_{2}}>20$~\GeV and invariant mass, \mjj$>75$~\GeV. The signal sample used for training is the \SM \MC simulation with just \VBF production, whilst the \SM gluon fusion \MC simulation is included as background along with the usual prompt-prompt, prompt-fake and fake-fake contributions. This helps produce an output in which a high score gives a very pure \VBF sample.
 
@@ -207,15 +211,15 @@ The combined dijet-diphoton \BDT has inputs of the kinematic dijet \BDT output, 
 One finds that the background rejection for \VBF is significantly improved by the use of the combined dijet-diphoton \BDT whilst the \VBF purity (i.e.~separation from \ggH) is not as good when collapsing the kinematic dijet \BDT and the combined \BDT into one step. Consequently the trainings are performed separately and the \VBF categories are defined by picking out regions which have a high score in the combined dijet-diphoton \BDT response. Each successive \BDT training uses statisically independent \MC samples to avoid selection bias from fluctuations in the simulation. The optimisation procedure for deciding the category boundaries is analogous to the one used for the inclusive categories in the \MFM analysis where the target is to minimise the expected uncertainty of the signal strength from the \VBF process alone when moving the boundaries around. The optimisation procedure includes the statistical disadvantage of having too many categories for a given dataset size. It is explained further in Section~\ref{sec:inclusive_cats_massfac}. At 8~\TeV there are three \VBF categories and at 7~\TeV there are two, because of the considerably lower statistics in the 7~TeV dataset. The output distributions at 7 and 8~TeV for the signal and the data are shown for the kinematic dijet \BDT in Fig.~\ref{fig:vbf_dijet_kin} and for the combined diphoton-dijet \BDT, along with the \VBF category boundaries, in Fig.~\ref{fig:vbf_dijet_comb}. The \BDT response shown in these plots is transformed so that it is flat in the \VBF signal (yellow histogram). One can see that the other signal types peak lower in the transformed score and the data, which contains mostly background, even more so. 
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/dijetbdt_transformed_signal_7TeV_fix.pdf}
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/dijetbdt_transformed_signal_8TeV_fix.pdf} 
+  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/dijetbdt_transformed_signal_7TeV_fix_fix.pdf}
+  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/dijetbdt_transformed_signal_8TeV_fix_fix.pdf} 
   \caption[The kinematic dijet \acs{BDT} response]{The distributions of the kinematic dijet \BDT response at 7~TeV (left) and 8~TeV (right) for the signal split by production mode; \ggH (red), \VBF (yellow), \VH (green) and \ttH (blue). The output is transformed so that it is flat in the \VBF signal.}
   \label{fig:vbf_dijet_kin}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/mixedcombbdt_transformed_7TeV_fix.pdf}
-  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/mixedcombbdt_transformed_8TeV_fix.pdf}
+  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/mixedcombbdt_transformed_7TeV_fix_fix.pdf}
+  \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/mixedcombbdt_transformed_8TeV_fix_fix.pdf}
   \caption[The distribution of the combined dijet-diphoton \acs{BDT} response]{The distributions of the combined dijet-diphoton \BDT response at 7~TeV (left) and 8~TeV (right) for the data (black points), which contains mostly background, and signal (filled histograms) split by production mode; \ggH (red), \VBF (yellow), \VH (green) and \ttH (blue). The output is transformed so that it is flat in the \VBF signal. The vertical dashed lines show the \VBF category definitions where those on the right (nearer a classifier score of 1) are purest \VBF signal. All events which fall below the left most boundary are not included in \VBF categories but fall back to being categorised amongst the inclusive categories.}
   \label{fig:vbf_dijet_comb}
 \end{figure}
@@ -315,7 +319,7 @@ The Landau-Yang theorem forbids the direct decay of a spin-1 particle into a pai
 Consequently the spin analysis compares the expectation of the spin-0 SM Higgs, $J^{P}=\zerop$, and the spin-2 \emph{graviton-like} 
 model with minimal couplings, \twomp,~\cite{Gao2010}. The \twomp graviton resonance is produced in one of two ways, gluon-fusion ($gg$) 
 or quark-antiquark annihilation (\qqbar). As the \twomp is just one of many spin-2 models it is desirable to make the analysis as model independent as possible. As a means of 
-discriminating the two hypotheses use is made of the scattering angle in the Collins-Sopper frame, \costhetastar ~\cite{CollinsSoper1977}, which is defined as the angle, in the diphoton rest frame, between the collinear diphotons 
+discriminating the two hypotheses, use is made of the scattering angle in the Collins-Sopper frame, \costhetastar ~\cite{CollinsSoper1977}, which is defined as the angle, in the diphoton rest frame, between the collinear diphotons 
 and the line which bisects one incoming beam with the negative of the other beam, 
 \begin{equation}
   \cos(\theta^{\ast}_{\mbox{\tiny{CS}}}) = 2\times\frac{E_{2}p_{z1}-E_{1}p_{z2}}{m_{\gamma\gamma}\sqrt{m^{2}_{\gamma\gamma}+p^{2}_{T\gamma\gamma}}},
@@ -361,12 +365,12 @@ the barrel, each event is categorised in $\eta$ and $R_{9}$ according to Table~\
 
 \begin{table}
   \begin{center}
-    \caption{Definition of photon resolution categories}
+    \caption[Definition of the photon resolution categories in the spin analysis]{Definition of the photon resolution categories in the spin analysis. Here $|\eta|_{\mbox{\tiny{max}}}$ and $R_{9\mbox{\tiny{min}}}$ refer to the maximum $\eta$ and minimum $R_{9}$ of the two photons.}
     \begin{tabular}{ l | l l l }
-      Category 0 & $|\eta|_{\mbox{\tiny{max}}}<1.5$ & and & $R_{9\mbox{\tiny{min}}}>0.94$ \tabularnewline 
-      Category 1 & $|\eta|_{\mbox{\tiny{max}}}<1.5$ & and & $R_{9\mbox{\tiny{min}}}\leq0.94$ \tabularnewline 
-      Category 2 & $|\eta|_{\mbox{\tiny{max}}}>1.5$ & and & $R_{9\mbox{\tiny{min}}}>0.94$ \tabularnewline 
-      Category 3 & $|\eta|_{\mbox{\tiny{max}}}>1.5$ & and & $R_{9\mbox{\tiny{min}}}\leq0.94$ \tabularnewline
+      Category 0 & $|\eta|_{\mbox{\tiny{max}}}<1.444$ & and & $R_{9\mbox{\tiny{min}}}\geq0.94$ \tabularnewline 
+      Category 1 & $|\eta|_{\mbox{\tiny{max}}}<1.444$ & and & $R_{9\mbox{\tiny{min}}}<0.94$ \tabularnewline 
+      Category 2 & $|\eta|_{\mbox{\tiny{max}}}>1.556$ & and & $R_{9\mbox{\tiny{min}}}\geq0.94$ \tabularnewline 
+      Category 3 & $|\eta|_{\mbox{\tiny{max}}}>1.556$ & and & $R_{9\mbox{\tiny{min}}}<0.94$ \tabularnewline
     \end{tabular}
     \label{table:cats1}
   \end{center}
@@ -379,11 +383,11 @@ the barrel, each event is categorised in $\eta$ and $R_{9}$ according to Table~\
 %  \textbullet & Category 3: & $|\eta|_{\mbox{\tiny{max}}}>1.444$ & and & $R_{9\mbox{\tiny{min}}}\leq0.94$ \\
 %\end{tabular}
 
-Within each category events are binned in \abscostheta, to discrimate between the different spin hypotheses, according to Table.~\ref{table:cats2}.
+Within each category events are binned in \abscostheta, to discriminate between the different spin hypotheses, according to Table.~\ref{table:cats2}.
 
 \begin{table}
   \begin{center}
-    \caption{Definition of photon \abscostheta categories}
+    \caption{Definition of diphoton \abscostheta categories in the spin analysis.}
     \begin{tabular}{ l | r l }
       Spin Category 0 &             & \abscostheta $<0.2$ \tabularnewline 
       Spin Category 1 & $0.2\leq$   & \abscostheta$<0.375$ \tabularnewline 
@@ -443,12 +447,12 @@ of the classes in the order they are listed here.}
                                                                                          & & & diphoton BDT $>0.6(0.2)$ at 7(8)~\TeV \\ 
 
 \hline
-\multirow{3}{*}{Untagged} & \multirow{3}{*}{4/8$^{\dagger}$} & \multirow{3}{*}{5/10$^{\dagger}$} & The remaining events,\\
+\multirow{3}{*}{Untagged} & \multirow{3}{*}{4/8/20$^{\dagger}$} & \multirow{3}{*}{5/10/20$^{\dagger}$} & The remaining events,\\
                                                                           & &  & classified using diphoton BDT \\
 \hline
 \multicolumn{4}{ p{16cm} }{$\star$ For the 7~\TeV dataset, events in the \ttH lepton tag and multijet tag classes are combined,
 after selection, to form a single event class.} \\
-\multicolumn{4}{ p{16cm} }{$\dagger$ For the \MFM there are 4 (5) categories at 7 (8)~\TeV and for the \SMVA there are 8 (10).} \\
+\multicolumn{4}{ p{16cm} }{$\dagger$ For the \MFM there are 4 (5) categories at 7 (8)~\TeV, for the \SMVA there are 8 (10) and for the spin analysis there are 20 (20) with no exclusive categories.} \\
 \end{tabular}
 \end{center} 
 \label{tab:cat_summary}
