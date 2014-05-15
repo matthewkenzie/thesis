@@ -1,7 +1,7 @@
 \chapter{Selection and Categorisation}
 \label{chap:selection_and_categorisation}
 
-This thesis presents results of three different analyses used in the Higgs to two photon search at CMS. The nominal results and properties are obtained from the so-called \MFM analysis, which uses multivariate methods optimised specifically to search for a \SM Higgs boson to select and categorise events. This has a fully parametric definition of the diphoton invariant mass spectrum where the signal shape is derived from \MC simulation and the background shape from data. Events are selected by requiring that they pass a cut on the output of a \BDT trained to distinguish photons from jets (the \textit{photon ID BDT}) and furthmore that they pass a cut on an event level classifier (the \textit{diphoton BDT}) designed to collapse photon kinematics, mass resolution and photon quality into a single discriminating variable. Using the output of this event level classifier a number of analysis categories are defined to provide the optimal search sensitivty for a \SM Higgs boson. 
+This thesis presents results of three different analyses used in the Higgs to two photon search at CMS. The nominal results and properties are obtained from the so-called \MFM analysis, which uses multivariate methods optimised specifically to search for a \SM Higgs boson to select and categorise events. This has a fully parametric definition of the diphoton invariant mass spectrum where the signal shape is derived from \MC simulation and the background shape from data. Events are selected by requiring that they pass a cut on the output of a \BDT trained to distinguish photons from jets (the \textit{photon ID BDT}) and furthermore that they pass a cut on an event level classifier (the \textit{diphoton BDT}) designed to collapse photon kinematics, mass resolution and photon quality into a single discriminating variable. Using the output of this event level classifier a number of analysis categories are defined to provide the optimal search sensitivity for a \SM Higgs boson. 
 
 The second analysis is the \acf{SMVA} analysis which is a cut and count method and serves to cross check the background estimation in the \MFM analysis, the most significant unknown in a search like this, by extracting the background under the signal region from sidebands in the diphoton invariant mass spectrum. The \SMVA uses the same event selection as the \MFM although the categorisation is done differently. 
 
@@ -13,7 +13,7 @@ The third analysis is the \CiC analysis which is designed for simplicity and rob
 
 There are two complimentary event selections used in the three analyses. The \CiC analysis uses a cut-based photon selection whilst the \MFM and \SMVA analyses use a series of \BDTs to first select photons and then select events. The ultimate aim is a selection which accepts two prompt photons (i.e.\ does not contain any fakes) and exploits regions of phase space which have a narrow mass resolution and high signal to background ratio.
 
-All events must contain at least two photons which pass $p_{T}^{\gamma_{1}}/m_{\gamma\gamma}>1/3$ (for the leading photon) and $p_{T}^{\gamma_{2}}/m_{\gamma\gamma}>1/4$ (for the subleading photon) and the invariant mass of the diphoton pair must be in the range $100<m_{\gamma\gamma}<180$~GeV. The reason for choosing \pT cuts which slide with \mgg is to avoid any Higgs mass, \mH, dependece in the selection. In the case where there are more than two photon candidates in an event, the two photons with the highest \pT are chosen. 
+All events must contain at least two photons which pass $p_{T}^{\gamma_{1}}/m_{\gamma\gamma}>1/3$ (for the leading photon) and $p_{T}^{\gamma_{2}}/m_{\gamma\gamma}>1/4$ (for the subleading photon) and the invariant mass of the diphoton pair must be in the range $100<m_{\gamma\gamma}<180$~GeV. The reason for choosing \pT cuts which slide with \mgg is to avoid any Higgs mass, \mH, dependence in the selection. In the case where there are more than two photon candidates in an event, the two photons with the highest \pT are chosen. 
 
 \subsection{Selection using cuts in categories}
 \label{sec:cic}
@@ -28,7 +28,7 @@ The selection cuts are optimised for photons in four non-overlapping categories 
   \item Do the same for all the other variables.
 \end{itemize}
 
-Consequently a stable set of cut values is obtained by iterating this procedure a few times. Each cut will then select events with the same purity ($S/B$) and thus the efficiency for selected photons is maximised for the chosen purity level. As a result the cuts in the endcap are much tighter than in the barrel, similarly the cuts for low \rnine photons are much tighter than the cuts for high \rnine photons. The cut variables are described below and the cut values shown in Table~\ref{tab:cic_cuts}. The cut setting procedure is optimised on a signal sample of \Hgg \MC events (with \mH=120~\GeV) and a background sample of \gjet events. The photon efficiency of the cuts for the four different classes of photon is shown in Figure~\ref{fig:cic_efficiency} as a function of the supercluster position, \eta, and the photon \pT. The cut variables are:
+Consequently a stable set of cut values is obtained by iterating this procedure a few times. Each cut will then select events with the same purity ($S/B$) and thus the efficiency for selected photons is maximised for the chosen purity level. As a result the cuts in the endcap are much tighter than in the barrel, similarly the cuts for low \rnine photons are much tighter than the cuts for high \rnine photons. The cut variables are described below and the cut values shown in Table~\ref{tab:cic_cuts}. The cut setting procedure is optimised on a signal sample of \Hgg \MC events (with \mH=120~\GeV) and a background sample of \gjet events. The photon efficiency of the cuts for the four different classes of photon is shown in Fig.~\ref{fig:cic_efficiency} as a function of the supercluster position, \eta, and the photon \pT. The cut variables are:
 
 \begin{itemize}
   \item PF isolation sum, chosen vertex - Sum of particle flow photon, charged and neutral hadron isolation sums defined in Sec.~\ref{sec:iso} where all \PF candidates originate from the primary vertex selected in Sec.~\ref{sec:vtx_reco}
@@ -50,7 +50,7 @@ Consequently a stable set of cut values is obtained by iterating this procedure 
       Charged PF isolation sum (GeV) & $<$3.8 & $<$2.5 & $<$3.1 & $<$2.2 \\ 
       $\sigma_{i\eta i\eta}$ & $<$0.0108 & $<$0.0102 & $<$0.028 & $<$0.028 \\ 
       H/E & $<$0.124 & $<$0.092 & $<$0.142 & $<$0.063 \\ 
-      \rnine & $>$0.94 & $>$0.298 & $>$0.94 & $>$0.24 \\ 
+      \rnine & $\geq$0.94 & $>$0.298 & $\geq$0.94 & $>$0.24 \\ 
     \end{tabular}
   \end{center}
   \caption{Photon ID selection cut values. The cuts are applied to both the leading and subleading photons.}
@@ -66,10 +66,10 @@ Consequently a stable set of cut values is obtained by iterating this procedure 
   \label{fig:cic_efficiency}
 \end{figure}
 
-\subsection{Photon ID MVA}
+\subsection{Photon ID \acs{MVA}}
 \label{sec:pho_id_mva}
 
-For the \MFM and \SMVA analyses a \BDT is trained to discriminate between prompt photons and jets. The desire is to factorise the photon selection, which is required to distinguish prompt photons from neutral mesons faking photons, and the event selection, which is required to consider kinematics, resolution, etc.~to distinguish \Hgg from the $pp\rightarrow\gamma\gamma$, \gjet, $\mathrm{jet}+\mathrm{jet}$ background. The input variables used are designed specifically to distinguish between photons and fakes. They should not have any properties which make the identification Higgs specific. Consequently, the training samples used are \gjet samples where the identification \BDT signal is the prompt $\gamma$ and the background is the fake jet. The \pT and supercluster \eta distributions are reweighted such that they match between signal and background. This negates the \BDT exploiting any photon kinematics which could correlate to the Higgs mass. The photon ID \BDT is trained separately for the barrel and endcap as these regions of phase space are so different. Seperate \BDTs were also trained for 7 and 8~TeV. The result is four separate trainings in total.
+For the \MFM and \SMVA analyses a \BDT is trained to discriminate between prompt photons and jets. The desire is to factorise the photon selection, which is required to distinguish prompt photons from neutral mesons faking photons, and the event selection, which is required to consider kinematics, resolution, etc.~to distinguish \Hgg from the $pp\rightarrow\gamma\gamma$, \gjet, $\mathrm{jet}+\mathrm{jet}$ background. The input variables used are designed specifically to distinguish between photons and fakes. They should not have any properties which make the identification Higgs specific. Consequently, the training samples used are \gjet samples where the identification \BDT signal is the prompt $\gamma$ and the background is the fake jet. The \pT and supercluster \eta distributions are reweighted such that they match between signal and background. This negates the \BDT exploiting any photon kinematics which could correlate to the Higgs mass. The photon ID \BDT is trained separately for the barrel and endcap as these regions of phase space are so different. Separate \BDTs were also trained for 7 and 8~TeV. The result is four separate trainings in total.
 
 The input variables aim to exploit differences in the shower shape and isolation between prompt and non-prompt photons and the correlation between these variables and the supercluster position and energy. They are:
 
@@ -115,7 +115,7 @@ The photon ID \BDT response for each photon is used as a direct input to the eve
   \label{fig:photon_id_zee}
 \end{figure}
 
-\subsection{Diphoton event level MVA}
+\subsection{Diphoton event level \acs{MVA}}
 \label{sec:diphoton_bdt}
 
 Whilst the CiC analysis selects events based on photon identification, the \MVA analysis approach is to first select photons using the photon identification \BDT described in the section above and then pass all the relevant event information through an event level \BDT. The event level classifier, referred to as the diphoton \BDT, is constructed to give a high score to events which fulfill the following criteria:
@@ -137,7 +137,7 @@ It is highly important that the \BDT is completely independent of Higgs mass and
 
 \noindent\textbf{Mass resolution}
 \begin{itemize}
-  \item $\sigma_{m}^{right}/m_{\gamma\gamma}$ - The mass resolution of the event assuming the correct primary vertex has been selected. In this case the angular resolution is neglible so the variable is caluclated using just the two photon energy resolution values as,
+  \item $\sigma_{m}^{right}/m_{\gamma\gamma}$ - The mass resolution of the event assuming the correct primary vertex has been selected. In this case the angular resolution is negligible so the variable is calculated using just the two photon energy resolution values as,
     \begin{equation}
       \frac{\sigma_{m}^{right}}{m_{\gamma\gamma}} = \frac{1}{2}\Bigl(\frac{\sigma_{E_{1}}}{E_{1}} \oplus \frac{\sigma_{E_{2}}}{E_{2}}\Bigr).
     \end{equation}
@@ -170,7 +170,7 @@ A cut is placed on the \BDT response in order to remove almost all of the events
   \label{fig:dipho_bdt}
 \end{figure}
 
-Any uncertainties which affect the shape of the output distribution of this \BDT result in event migrations between the final analysis categories; if the \BDT response is mismodelled then events can move across the boundaries represented as the vertical dashed lines in Fig.~\ref{fig:dipho_bdt}. The signal model in this analysis is obtained from \MC simulation and so these uncertainties can have an effect on the signal model shape in each of the categories. Whilst these migrations may also be true of the background the effect is not important because the background is extracted from data. The input variables whose uncertainties have the largest effect on the \BDT response in signal are the photon ID quality and the photon energy resolution estimate. This is because these variables have both i) relatively large uncertainties because of imperfect detector response modelling in the simulation and ii) are highly discriminative and hence can have a relatively large impact on the \BDT response. As the \BDT response varies monotonically with these variables, the sytematic uncertainty on them is propagated through the analysis as an event migration. Systematic uncertainties are described in more detail in Sec.~\ref{sec:systematics}. The size of this effect is shown in the \BDT response validation plot using the \Zee decay in Fig.~\ref{fig:diphotonBDT_zee}.
+Any uncertainties which affect the shape of the output distribution of this \BDT result in event migrations between the final analysis categories; if the \BDT response is mismodelled then events can move across the boundaries represented as the vertical dashed lines in Fig.~\ref{fig:dipho_bdt}. The signal model in this analysis is obtained from \MC simulation and so these uncertainties can have an effect on the signal model shape in each of the categories. Whilst these migrations may also be true of the background the effect is not important because the background is extracted from data. The input variables whose uncertainties have the largest effect on the \BDT response in signal are the photon ID quality and the photon energy resolution estimate. This is because these variables have both i) relatively large uncertainties because of imperfect detector response modelling in the simulation and ii) are highly discriminative and hence can have a relatively large impact on the \BDT response. As the \BDT response varies monotonically with these variables, the systematic uncertainty on them is propagated through the analysis as an event migration. Systematic uncertainties are described in more detail in Sec.~\ref{sec:systematics}. The size of this effect is shown in the \BDT response validation plot using the \Zee decay in Fig.~\ref{fig:diphotonBDT_zee}.
 
 \begin{figure}
   \includegraphics[width=0.95\textwidth]{selec_and_cats/plots/transformedBDT_single_syst_fix_fix.pdf}
@@ -191,7 +191,7 @@ All events which make it to this stage will have passed the photon preselection 
 \subsubsection{Dijet tagged categories for VBF}
 \label{sec:vbf_tag}
 
-The following variables are used to exploit the specific topolgy of the jet pairs associated to \VBF Higgs production:
+The following variables are used to exploit the specific topology of the jet pairs associated to \VBF Higgs production:
 
 \begin{itemize}
   \item $p_{T}^{\gamma}/m_{\gamma\gamma}$ - The transverse momenta of the leading and subleading photons as a ratio of the diphoton invariant mass.
@@ -208,7 +208,7 @@ The dijet tagging is done with use of two additional \MVAs. The first is designe
 
 The combined dijet-diphoton \BDT has inputs of the kinematic dijet \BDT output, the diphoton \BDT output and $p_{T}^{\gamma\gamma}/m_{\gamma\gamma}$ in order to discriminate \VBF from both the other signal types and the background, utilising all the information available in the event. The transverse momenta of the diphoton system as a ratio of the diphoton invariant mass, $p_{T}^{\gamma\gamma}/m_{\gamma\gamma}$, is included both because of its discriminatory power and its considerable correlation with both the dijet \BDT output and the diphoton \BDT output.
 
-One finds that the background rejection for \VBF is significantly improved by the use of the combined dijet-diphoton \BDT whilst the \VBF purity (i.e.~separation from \ggH) is not as good when collapsing the kinematic dijet \BDT and the combined \BDT into one step. Consequently the trainings are performed separately and the \VBF categories are defined by picking out regions which have a high score in the combined dijet-diphoton \BDT response. Each successive \BDT training uses statisically independent \MC samples to avoid selection bias from fluctuations in the simulation. The optimisation procedure for deciding the category boundaries is analogous to the one used for the inclusive categories in the \MFM analysis where the target is to minimise the expected uncertainty of the signal strength from the \VBF process alone when moving the boundaries around. The optimisation procedure includes the statistical disadvantage of having too many categories for a given dataset size. It is explained further in Section~\ref{sec:inclusive_cats_massfac}. At 8~\TeV there are three \VBF categories and at 7~\TeV there are two, because of the considerably lower statistics in the 7~TeV dataset. The output distributions at 7 and 8~TeV for the signal and the data are shown for the kinematic dijet \BDT in Fig.~\ref{fig:vbf_dijet_kin} and for the combined diphoton-dijet \BDT, along with the \VBF category boundaries, in Fig.~\ref{fig:vbf_dijet_comb}. The \BDT response shown in these plots is transformed so that it is flat in the \VBF signal (yellow histogram). One can see that the other signal types peak lower in the transformed score and the data, which contains mostly background, even more so. 
+One finds that the background rejection for \VBF is significantly improved by the use of the combined dijet-diphoton \BDT whilst the \VBF purity (i.e.~separation from \ggH) is not as good when collapsing the kinematic dijet \BDT and the combined \BDT into one step. Consequently the trainings are performed separately and the \VBF categories are defined by picking out regions which have a high score in the combined dijet-diphoton \BDT response. Each successive \BDT training uses statistically independent \MC samples to avoid selection bias from fluctuations in the simulation. The optimisation procedure for deciding the category boundaries is analogous to the one used for the inclusive categories in the \MFM analysis where the target is to minimise the expected uncertainty of the signal strength from the \VBF process alone when moving the boundaries around. The optimisation procedure includes the statistical disadvantage of having too many categories for a given dataset size. It is explained further in Section~\ref{sec:inclusive_cats_massfac}. At 8~\TeV there are three \VBF categories and at 7~\TeV there are two, because of the considerably lower statistics in the 7~TeV dataset. The output distributions at 7 and 8~TeV for the signal are shown for the kinematic dijet \BDT in Fig.~\ref{fig:vbf_dijet_kin} and for the combined diphoton-dijet \BDT, along with the \VBF category boundaries, in Fig.~\ref{fig:vbf_dijet_comb}. The \BDT response shown in these plots is transformed so that it is flat in the \VBF signal (yellow histogram). One can see that the other signal types peak lower in the transformed score and the data, which contains mostly background, even more so. 
 
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/dijetbdt_transformed_signal_7TeV_fix_fix.pdf}
@@ -230,9 +230,9 @@ One finds that the background rejection for \VBF is significantly improved by th
 The selection for the four categories designed to tag \VH production are optimised by minimising the expected uncertainty on the signal strength of this process alone. Two of the classes require at least one charged muon or electron and are split into a tight selection category and a looser selection category, the third is for events consistent with large \MET and the fourth for events consistent with two or more jets. The leading photon cut is raised to $p_{T}^{\gamma_{1}}/m_{\gamma\gamma}>3/8$ for all \VH-tagged categories. The category requirements are as follows,
 
 \begin{itemize}
-  \item \textbf{\VH Tight $l$}: The tighly selected lepton category is characterised by the signature of a leptonically decaying $W$ or $Z$ boson and as such requires the presence of \MET$>35$~\GeV or another lepton of the same flavour and opposite charge as the first. In the first case (of a lepton + \MET) the lepton is required to have $p_{T}>20$~\GeV, in the latter case (of two leptons) the requirement is $p_{T}>10$~\GeV for both leptons whilst the invariant mass of the dilepton pair must be $70 < m_{ll} < 110$~\GeV. The diphoton \BDT output is required to be $>0.1$ ($>-0.6$) for the 7 (8)~\TeV datasets.
+  \item \textbf{\VH Tight $l$}: The tightly selected lepton category is characterised by the signature of a leptonically decaying $W$ or $Z$ boson and as such requires the presence of \MET$>35$~\GeV or another lepton of the same flavour and opposite charge as the first. In the first case (of a lepton + \MET) the lepton is required to have $p_{T}>20$~\GeV, in the latter case (of two leptons) the requirement is $p_{T}>10$~\GeV for both leptons whilst the invariant mass of the dilepton pair must be $70 < m_{ll} < 110$~\GeV. The diphoton \BDT output is required to be $>0.1$ ($>-0.6$) for the 7 (8)~\TeV datasets.
   \item \textbf{\VH Loose $l$}: For the loosely selected lepton category the lepton \pT must satisfy $p_{T}>20$~\GeV. The selection requirements are designed to reduce the background from leptonic $Z$ bosons (not associated with a Higgs) that contain initial or final state radiation faking the diphoton signal. Consequently, leptons are required to be separated by at least $\Delta R>1.0$ from the closest photon and the invariant mass of any lepton-photon pairs must be more than 10~\GeV away from the $Z$ boson mass. In addition a conversion veto is applied to the electrons to reduce the rate of misidentified photons. The diphoton \BDT output is required to be $>0.1$ ($>-0.6$) for the 7 (8)~\TeV datasets.
-  \item \textbf{\VH \MET tag}: Accurate measurement and simulation of the \MET vector has been studied in detail at \CMS and a set of standard corrections (for both data and simulation) are applied~\cite{met_corrs}. The corrected \MET is required to pass \MET$>70$~\GeV whilst the angular separation in the transverse plane betwen the momentum of the diphoton system and the \MET direction must pass $\Delta\phi(\gamma\gamma,\MET)>2.1$, and similarly the angle between the momentum of the diphoton system and the leading jet must pass $\Delta\phi(\gamma\gamma,\mbox{jet})<2.7$. The diphoton \BDT output is required to be $>0.8$ ($>0.0$) for the 7 (8)~\TeV datasets.   
+  \item \textbf{\VH \MET tag}: Accurate measurement and simulation of the \MET vector has been studied in detail at \CMS and a set of standard corrections (for both data and simulation) are applied~\cite{met_corrs}. The corrected \MET is required to pass \MET$>70$~\GeV whilst the angular separation in the transverse plane between the momentum of the diphoton system and the \MET direction must pass $\Delta\phi(\gamma\gamma,\MET)>2.1$, and similarly the angle between the momentum of the diphoton system and the leading jet must pass $\Delta\phi(\gamma\gamma,\mbox{jet})<2.7$. The diphoton \BDT output is required to be $>0.8$ ($>0.0$) for the 7 (8)~\TeV datasets.   
   \item \textbf{\VH dijet tag}: The event must contain at least one jet pair in which both jets have $p_{T}>40$~\GeV and $|\eta|<2.4$ and have an invariant mass within the range $60<m_{jj}<120$~\GeV. The diphoton transverse momentum must satisfy $p_{T}^{\gamma\gamma}/m_{\gamma\gamma}>13/12$. Additionally the angular correlation between the diphoton system and the dijet system from \VH-associated Higgs decays can be exploited. The angle, $\theta^{\star}$, between the diphoton direction in the diphoton-dijet rest frame and the lab frame is flat for events from \VH decays whereas for the background and gluon fusion-produced Higgs decays the distribution peaks at $|\cos(\theta^{\star})|=1$. Consequently, there is a requirement that $|\cos(\theta^{\star})|<0.5$. The diphoton \BDT output is required to be $>0.6$ ($>0.2$) for the 7 (8)~\TeV datasets. 
 \end{itemize}
 
@@ -273,14 +273,14 @@ For both classes the leading photon \pT cut is raised to $p_{T}^{\gamma_{1}}/m_{
 %  \end{center}
 %\end{table}
 
-\subsection{Inclusive mode categorisation and VBF dijet categorisation in the mass factorised \MVA analysis}
+\subsection{Inclusive mode categorisation and VBF dijet categorisation in the mass factorised \acs{MVA} analysis}
 \label{sec:inclusive_cats_massfac}
 
 The combined dijet-diphoton \BDT output value is used to define a set of \VBF categories. The goal is to find the configuration of category boundaries which minimise the expected uncertainty on the signal strength for \VBF production alone, allowing the number of categories and where the category boundaries lie to be completely free floating, with the additional requirement that the efficiency $\times$ acceptance of the categories matches between 7 and 8~\TeV. This results in a tight \VBF category for events with a very high combined dijet-diphoton \BDT score, a somewhat looser category and then one or more very loose categories. It is found that dropping the loosest category has a negligible impact ($<$1\%) on the expected uncertainty and as such the upper boundary for the loosest category is turned into a lower cut. All events which pass the \VBF preselection (described in Sec.~\ref{sec:vbf_tag}) and fail the lower cut are then classified somewhere in the inclusive categories defined below. 
 
-Once the \VBF category boundaries have been found the same procedure is deployed using the diphoton \BDT output value. This time the target is to minimise the expected uncertainty on the total signal strength, allowing the number of categories and the category boundary values to be completely free floating. One finds a rather similar structure and that dropping events in the very loosest category has a neglible impact on the performance and consequently this dictates the lower cut value for the diphoton \BDT. The expected uncertainty minima, when floating both the number of category boundaries and the boundary locations, are fairly shallow so the exact position of the boundaries has a very small impact on the performance of the analysis. For the 7 (8)~\TeV datasets there are 4 (5) inclusive categories with a lower diphoton \BDT cut of 0.19 ($-0.78$) and 2 (3) \VBF categories\footnote{There are fewer categories in the 7~TeV dataset because there are less statistics}.
+Once the \VBF category boundaries have been found the same procedure is deployed using the diphoton \BDT output value. This time the target is to minimise the expected uncertainty on the total signal strength, allowing the number of categories and the category boundary values to be completely free floating. One finds a rather similar structure and that dropping events in the very loosest category has a negligible impact on the performance and consequently this dictates the lower cut value for the diphoton \BDT. The expected uncertainty minima, when floating both the number of category boundaries and the boundary locations, are fairly shallow so the exact position of the boundaries has a very small impact on the performance of the analysis. For the 7 (8)~\TeV datasets there are 4 (5) inclusive categories with a lower diphoton \BDT cut of 0.19 ($-0.78$) and 2 (3) \VBF categories\footnote{There are fewer categories in the 7~TeV dataset because there are less statistics}.
 
-\subsection{Inclusive mode categorisation in the sideband \MVA analysis}
+\subsection{Inclusive mode categorisation in the sideband \acs{MVA} analysis}
 \label{sec:inclusive_cats_sideband}
 
 In the \SMVA analysis all the exclusive categories are identical to the \MFM analysis (including the \VBF categories). However the inclusive categorisation is done slightly differently. In the sideband analysis the signal region is defined in a $\pm2$\% window around the hypothesis Higgs mass. The analysis is performed as a cut and count in the signal window over several bins. There is one bin for each exclusive category and then several more for the inclusive. The binning scheme for the inclusive events is defined as follows,
@@ -290,7 +290,7 @@ In the \SMVA analysis all the exclusive categories are identical to the \MFM ana
     \begin{equation}
       \frac{\Delta m}{m_{H}} = \frac{m_{\gamma\gamma} - m_{H}}{m_{H}}.
     \end{equation}
-  \item Use a local regression smoothing technique~\cite{regression_smoothing} to smooth statistical fluctutations within the sample (demonstrated in Fig.~\ref{fig:sideband_inputs}).
+  \item Use a local regression smoothing technique~\cite{regression_smoothing} to smooth statistical fluctuations within the sample (demonstrated in Fig.~\ref{fig:sideband_inputs}).
   \item Select bins by isolating regions of this 2D phase space which have similar $S/B$ ratios and optimise the boundaries to give the maximum expected signal significance.   
 \end{itemize}
 
@@ -301,7 +301,7 @@ Clearly the most sensitive bins will be the ones which have a high diphoton \BDT
   \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/sideband_sig_7TeV_fix.pdf} \\
   \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/sideband_diphobdt_7TeV_fix.pdf}
   \includegraphics[width=0.48\textwidth]{selec_and_cats/plots/sideband_dmom_7TeV_fix.pdf} \\
-  \caption[Two dimensional distributions of the diphoton \acs{BDT} ouput and \dmom for the sideband analysis]{Two dimensional distributions of the diphoton \BDT output and \dmom are shown on the top row for the background (left) and signal (right) for the 7~\TeV sample. The bottom rows show the projection for signal (red) and background (blue) in the two variables.}
+  \caption[Two dimensional distributions of the diphoton \acs{BDT} output and \dmom for the sideband analysis]{Two dimensional distributions of the diphoton \BDT output and \dmom are shown on the top row for the background (left) and signal (right) for the 7~\TeV sample. The bottom rows show the projection for signal (red) and background (blue) in the two variables.}
   \label{fig:sideband_inputs}
 \end{figure}
 
@@ -326,12 +326,12 @@ and the line which bisects one incoming beam with the negative of the other beam
   \label{eq:costheta}
 \end{equation}
 where $E_{1}$ and $E_{2}$ are the energies of the leading and trailing photon, $p_{z1}$ and $p_{z2}$ are the $z$-component momenta 
-of the leading and trailing photon and $m_{\gamma\gamma}$ and $p_{T\gamma\gamma}$ are the invariant mass and transerve momenta of the diphoton system.
+of the leading and trailing photon and $m_{\gamma\gamma}$ and $p_{T\gamma\gamma}$ are the invariant mass and transverse momenta of the diphoton system.
 
 In its rest frame the photons from the decay of a spin-0 boson are isotropic. Hence prior to acceptance cuts, the distribution of \costhetastar 
 under the \zerop hypothesis is uniformly flat. In general this is not the case for spin-2 decays. 
 
-In order to reduce any model dependence in the analysis the cut-based photon selection, described in Sec.~\ref{sec:cic}, is used to pick events. The \MVA methods used for event selection in the nominal analysis use specific \SM \MC training samples and most importantly one of the training variables used, namely $\cos(\phi_{1}-\phi_{2})$, is highly correlated to the angular variable, \costhetastar, which can be used to distinguish spin hypotheses. Furthermore, given the unusual production modes of a spin-2 boson, no exclusive tagging is used in the spin analysis. The impact of using jet variables was studied but it was found that the sensitivity for distinguishing spin hypotheses was improved by a neglible amount.
+In order to reduce any model dependence in the analysis the cut-based photon selection, described in Sec.~\ref{sec:cic}, is used to pick events. The \MVA methods used for event selection in the nominal analysis use specific \SM \MC training samples and most importantly one of the training variables used, namely $\cos(\phi_{1}-\phi_{2})$, is highly correlated to the angular variable, \costhetastar, which can be used to distinguish spin hypotheses. Furthermore, given the unusual production modes of a spin-2 boson, no exclusive tagging is used in the spin analysis. The impact of using jet variables was studied but it was found that the sensitivity for distinguishing spin hypotheses was improved by a negligible amount.
 
 The effect of the photon selection cuts on the distributions of 
 \abscostheta is illustrated in Fig.~\ref{fig:acc_cuts}. Before any acceptance cuts, Fig.~\ref{fig:acc_cuts} (left), the \abscostheta
@@ -387,7 +387,7 @@ Within each category events are binned in \abscostheta, to discriminate between 
 
 \begin{table}
   \begin{center}
-    \caption{Definition of diphoton \abscostheta categories in the spin analysis.}
+    \caption[Definition of diphoton \abscostheta categories in the spin analysis]{Definition of diphoton \abscostheta categories in the spin analysis.}
     \begin{tabular}{ l | r l }
       Spin Category 0 &             & \abscostheta $<0.2$ \tabularnewline 
       Spin Category 1 & $0.2\leq$   & \abscostheta$<0.375$ \tabularnewline 
@@ -399,7 +399,7 @@ Within each category events are binned in \abscostheta, to discriminate between 
   \end{center}
 \end{table}
 
-The \abscostheta boundaries are optimised to make particular use of the most disciminating 
+The \abscostheta boundaries are optimised to make particular use of the most discriminating 
 bin (high \abscostheta) and to maintain uniform acceptance $\times$ efficiency in the 
 other bins. In total the analysis is split into 20 event classes (4 $\eta$/\rnine\xspace 
 categories $\times$ 5 \abscostheta categories) in each year which gives a total of 40 event classes.
@@ -409,7 +409,7 @@ categories $\times$ 5 \abscostheta categories) in each year which gives a total 
 All the categories and the tagging order are summarised in Table~\ref{tab:cat_summary}.
 
 \begin{table}[h!]
-\caption{The event classes at 7 and 8~\TeV and some of their main selection requirements. Events are tested against the selection requirements
+\caption[The event classes at 7 and 8~TeV and some of their main selection requirements]{The event classes at 7 and 8~\TeV and some of their main selection requirements. Events are tested against the selection requirements
 of the classes in the order they are listed here.}
 \begin{center}
 \begin{tabular}{l c c p{10cm}}
