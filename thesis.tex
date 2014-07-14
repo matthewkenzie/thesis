@@ -1,4 +1,4 @@
-\documentclass{mythesis}
+\documentclass[numbers=noenddot]{mythesis}
 \usepackage{mythesis}
 
 % my packages
@@ -159,16 +159,23 @@ colorlinks = false,
   \input{conclusions/conclusions.tex}
 \end{mainmatter}
 
+\bibliographystyle{lucas_unsrt}
+\bibliography{mythesis}
+
+%\begin{appendix}
+\appendix
+\input{appendices}
+%\end{appendix}
 %% Produce the appendices
-\begin{appendices}
-  \input{appendices}
-\end{appendices}
+%\begin{appendices}
+%	\input{appendices}
+%\end{appendices}
 
 %% Produce the un-numbered back matter (e.g. colophon,
 %% bibliography, tables of figures etc., index...)
-\begin{backmatter}
-  \input{backmatter}
-\end{backmatter}
+%\begin{backmatter}
+%  \input{backmatter}
+%\end{backmatter}
 
 %% Close
 \end{document}

@@ -3,7 +3,7 @@
 
 This thesis describes three complementary analyses in the Higgs to two photons search at CMS. These differ in their photon selection, event selection, event classification (or categorisation) and statistical methods for extracting results. They are described in the following chapter (Chapter~\ref{chap:selection_and_categorisation}). However, there are many components which they share. These are detailed below.
 
-As we have seen in Eq.~\ref{eq:invmass} and~\ref{eq:dipho_inv_mass}, repeated below in Eq.~\ref{eq:invmass2} for convenience, the diphoton invariant mass is constructed from the two photon energies and the angle between them. 
+As we have seen in Eq.~\ref{eq:invmass} and~\ref{eq:dipho_inv_mass}, repeated below in Eq.~\ref{eq:invmass2} for convenience, the diphoton invariant mass is constructed from the two photon energies and the angle between them.
 \begin{equation}
   m_{\gamma\gamma} = \sqrt{2E_{1}E_{2}(1-\cos\alpha)}
   \label{eq:invmass2}
@@ -13,7 +13,7 @@ After a preliminary discussion of multivariate analysis techniques, the datasets
 
 \section{Boosted Decision Trees}
 \label{sec:bdts}
-Multivariate analyses (\acs{MVA}) are commonly used in High Energy Physics analyses to extract the maximum possible signal sensitivity in cases where the background rates are high. The advantage of \MVAs is that given a set of input variables a selection scheme can be built, to classify or correct events, in a multidimensional phase space to exploit differences between the signal and background in these variables and importantly in the correlations between them. A particular type of \MVA which is used widely in this analysis is the \BDT. \BDTs are preferred because they are more robust to the inclusion of variables which have little or no discriminating power. There are two broad types of \BDT used, one is known as a regression \BDT and the other as a classification \BDT~\cite{bdt,bdt2,bdt3}. 
+Multivariate analyses (\acs{MVA}) are commonly used in High Energy Physics analyses to extract the maximum possible signal sensitivity in cases where the background rates are high. The advantage of \MVAs is that given a set of input variables a selection scheme can be built, to classify or correct events, in a multidimensional phase space to exploit differences between the signal and background in these variables and importantly in the correlations between them. A particular type of \MVA which is used widely in this analysis is the \BDT. \BDTs are preferred because they are more robust to the inclusion of variables which have little or no discriminating power. There are two broad types of \BDT used, one is known as a regression \BDT and the other as a classification \BDT~\cite{bdt,bdt2,bdt3}.
 
 \subsection{Classification \acs{BDT}}
 A classification \BDT will, given a set of input variables, assign a value (typically between $-1$ and $1$) to each event based on how signal-like that event is. This serves to collapse all the event information into one discriminating variable which can be used to classify differences between the signal and background. The input is provided as the probability distributions (which can be supplied as binned or unbinned data samples or as a functional form) of the background and signal for a set of ``input variables". The process involves construction of a series of \aclp{DT} (\acs{DT}) complemented by a ``boosting" step which serves to mitigate against ``overtraining" on fluctuations within the training samples. This analysis chooses a particular type of decision tree boosting known as ``gradient" boosting because it is more robust against outliers or mislabelled data points~\cite{TMVA}.
@@ -22,23 +22,23 @@ The \DT is built by applying sequential cuts to the input variables and assessin
 \begin{equation}
   p = \frac{N_{s}}{N_{s}+N_{b}},
 \end{equation}
-where $N_{s}$ and $N_{b}$ are the sum of weights of the signal and background remaining in each sub-sample. A threshold criterion, known as the Gini index~\cite{TMVA} $p(1-p)$, is applied to decide whether to split the sample further. The process continues and the splitting is curtailed when either the threshold or the user defined maximum tree depth (number of subsamples allowed) is reached. The value of each cut is varied such that the signal purity, $p$, in each sub-sample is maximised. An event is assigned a value of $-1$ or $+1$ depending on whether it falls into a sub-sample with $p>$0.5 or not. Clearly some fraction of events will be misclassified where the actual number which get misclassified will depend on the discriminatory power available from the chosen input variables. In order to reduce this effect a series of \DTs are trained and each assigned a weight derived by the ``boosting" process. 
+where $N_{s}$ and $N_{b}$ are the sum of weights of the signal and background remaining in each sub-sample. A threshold criterion, known as the Gini index~\cite{TMVA} $p(1-p)$, is applied to decide whether to split the sample further. The process continues and the splitting is curtailed when either the threshold or the user defined maximum tree depth (number of subsamples allowed) is reached. The value of each cut is varied such that the signal purity, $p$, in each sub-sample is maximised. An event is assigned a value of $-1$ or $+1$ depending on whether it falls into a sub-sample with $p>$0.5 or not. Clearly some fraction of events will be misclassified where the actual number which get misclassified will depend on the discriminatory power available from the chosen input variables. In order to reduce this effect a series of \DTs are trained and each assigned a weight derived by the ``boosting" process.
 
 We assign each \DT as a member of a family of $M$ functions, $f(\vec{x};\vec{a}_{m})$, which depend on the input variables, $\vec{x}$, and the set of cuts in that tree, $\vec{a}_{m}$. The object is to construct an overall decision tree which consists of the weighted average of each \DT,
 \begin{equation}
   F(\vec{x};\vec{\beta},\vec{a}) = \sum_{m=0}^{M} \beta_{m}f(\vec{x},\vec{a}_{m}) \;\;\;\;\; \textrm{where} \;\; \vec{\beta} = (\beta_{0},\beta_{1}...\beta_{M}).
 \end{equation}
-For the ``adaptive" boost algorithm the input events for training the proceeding tree are reweighted by the fraction that get misclassified in the previous tree. I.e.~the background events get reweighted by the total fraction of background events which were classified as signal in the previous tree and the signal events get reweighted by the total fraction of signal events which were classified as background in the previous tree. In the ``gradient" boosting procedure, which constitute the majority of \BDTs used in this thesis, the weight for sucessive trees is obtained by minimising the deviation in the loss function (Eq.~\ref{eq:bdt_loss_fcn}) each time a new tree is added\footnote{ Friedman showed that for certain choices of loss function the ``gradient" boost and ``adaptive" boost procedures are identical, although this is not the case for a general loss function, nor the loss function of the form used in this thesis, shown in Eq.~\ref{eq:bdt_loss_fcn}~\cite{bdt3}.}. The loss function, between the weighted tree response $F(\vec{x};\vec{\beta},\vec{a})$ and the true output $y$ obtained from the training sample, in this case is
+For the ``adaptive" boost algorithm the input events for training the proceeding tree are reweighted by the fraction that get misclassified in the previous tree. That is, the background events get reweighted by the total fraction of background events which were classified as signal in the previous tree and the signal events get reweighted by the total fraction of signal events which were classified as background in the previous tree. In the ``gradient" boosting procedure, which applies to the majority of \BDTs used in this thesis, the weight for successive trees is obtained by minimising the deviation in the loss function (Eq.~\ref{eq:bdt_loss_fcn}) each time a new tree is added\footnote{ Friedman showed that for certain choices of loss function the ``gradient" boost and ``adaptive" boost procedures are identical, although this is not the case for a general loss function, nor the loss function of the form used in this thesis, shown in Eq.~\ref{eq:bdt_loss_fcn}~\cite{bdt3}.}. The loss function, between the weighted tree response $F(\vec{x};\vec{\beta},\vec{a})$ and the true output $y$ obtained from the training sample, in this case is
 \begin{equation}
   L(F,y) = \ln(1+e^{-2F(\vec{x})y}).
   \label{eq:bdt_loss_fcn}
 \end{equation}
-A common procedure when constructing a \BDT to check for overtraining is to split both the background and signal into two independent samples. One is used to \emph{train} the \BDT and one is used to \emph{test} the response of the output. Clearly one requires that both the training and independent test sample look the same in the output variable. This is usually quantified by use of a Kolmogorov-Smirnov test, which broadly speaking ascertains the probability that the training and test samples originate from the same underlying distribution~\cite{kol_smir}. 
+A common procedure when constructing a \BDT to check for overtraining is to split both the background and signal into two independent samples. One is used to \emph{train} the \BDT and one is used to \emph{test} the response of the output. Clearly one requires that both the training and independent test sample look the same in the output variable. This is usually quantified by use of a Kolmogorov-Smirnov test, which broadly speaking ascertains the probability that the training and test samples originate from the same underlying distribution~\cite{kol_smir}.
 
 In this way the output of $F(\vec{x};\vec{\beta},\vec{a})$ for a classification \BDT will be a ``semi-continuous" output\footnote{ In the sense that each decision tree will give a discrete output of either signal-like or background-like such that the boosted output of the numerous trees in the forest contains several hundred (depending on the number of trees) discrete values in the range $[-1,1]$.} from $-1$ to $+1$ with signal events in general given a higher score than background events.
 
 \subsection{Regression \acs{BDT}}
-A regression \BDT is used to estimate the true value of some variable given the values and correlations of several other variables. They are commonly used for correcting the energy of a particular object, for example a photon. Given a \MC source of photons the ``true" energy is regressed from the position, shape and raw energy of the supercluster. For regression \BDTs the output $F(\vec{x};\vec{\beta},\vec{a})$ represents the estimated corrected energy and the boosting procedure targets minimising the deviation between this and the true energy in \MC events. 
+A regression \BDT is used to estimate the true value of some variable given the values and correlations of several other variables. They are commonly used for correcting the energy of a particular object, for example a photon. Given a \MC source of photons the ``true" energy is regressed from the position, shape and raw energy of the supercluster. For regression \BDTs the output $F(\vec{x};\vec{\beta},\vec{a})$ represents the estimated corrected energy and the boosting procedure targets minimising the deviation between this and the true energy in \MC events.
 
 \section{Data samples and triggering}
 
@@ -56,11 +56,11 @@ Events are selected for the analysis by requiring they pass an asymmetric diphot
 \subsection{Monte Carlo Simulation}
 \label{sec:mc}
 
-Accurate simulation of detector effects and efficiency is highly important. Knowledge of the expected Higgs signal shape is clearly essential and although the size and shape of the \mgg background is entirely data driven when extracting results, simulating the kinematics, shower shape and resolution properties of the background is important when training the selection and optimising the categorisation of events. 
+Accurate simulation of detector effects and efficiency is highly important. Knowledge of the expected Higgs signal shape is clearly essential and although the size and shape of the \mgg background is entirely data driven when extracting results, simulating the kinematics, shower shape and resolution properties of the background is important when training the selection and optimising the categorisation of events.
 
 As explained in Chapter~\ref{chap:theory} the two main production mechanisms for a \SM Higgs boson at the \LHC are \ggH and \VBF. Typically the latter is produced at much higher Higgs \pT and this feature is exploited in the analysis (see Fig.~\ref{fig:gen_level}). Consequently, it is important to model the \pT distribution of these two production modes accurately. The signal samples for these two processes are generated using \POWHEG~\cite{powheg1,powheg2} at NLO interfaced with \PYTHIA~\cite{pythia} including a reweighting factor which matches their \pT spectrum to that when including the NNLO and NNLL terms. For the associated production modes, with a $W^{\pm}$, $Z$ or $t$ quarks, (\VH and \ttH) only \PYTHIA is used. The \SM Higgs boson cross sections and branching fractions, and their uncertainties, are taken from Ref.~\cite{LHCHiggsCrossSectionWorkingGroup3}
 
-The spin-2 graviton with minimal couplings, \graviton, has two production mechanisms, one via gluon-fusion ($ggX$) and one via quark-antiquark annihilation ($q\bar{q}X$). The graviton samples are generated using the \JHU generator~\cite{jhu}. In these samples the signal events are reweighted such that the graviton \pT spectrum matches the Higgs \pT spectrum in the \SM signal samples. The kinematic properties of a spin 2 \textit{graviton-like} Higgs are not well defined and can depend on the specifics of the model in question. Matching the \pT spectrum of the spin-2 samples with the \SM spin-0 ensures that no discrimination arising from model dependence of the \pT distribution will arise. 
+The spin-2 graviton with minimal couplings, \graviton, has two production mechanisms, one via gluon-fusion ($ggX$) and one via quark-antiquark annihilation ($q\bar{q}X$). The graviton samples are generated using the \JHU generator~\cite{jhu}. In these samples the signal events are reweighted such that the graviton \pT spectrum matches the Higgs \pT spectrum in the \SM signal samples. The kinematic properties of a spin 2 \textit{graviton-like} Higgs are not well defined and can depend on the specifics of the model in question. Matching the \pT spectrum of the spin-2 samples with the \SM spin-0 ensures that no discrimination arising from model dependence of the \pT distribution will arise.
 
 The simulated background samples are used solely for cut and category optimisations and training of multivariate discriminants. The background which contains the \QCD continuum of prompt photons (referring back to Chapter~\ref{chap:theory} these are produced by Born and box diagrams) is simulated using \SHERPA~\cite{sherpa} at 8~\TeV and \MADGRAPH~\cite{madgraph} at 7~\TeV. The prompt-fake and fake-fake backgrounds, in which one or both photons are faked by a neutral meson (usually a \pizero) reconstructed as a photon, are generated using \PYTHIA. Samples of \Zee, \Zmumu and \Zmumugamma used for data/MC comparisons are generated with \POWHEG.
 
@@ -70,7 +70,7 @@ All of these \emph{generator level} samples are then run through the full \CMS d
 \subsection{Pileup and beamspot reweighting}
 \label{sec:pileup_beamspot}
 
-An important difference between the simulated samples and the data which can have a large impact on the analysis is the distribution of the number of primary vertices. The \emph{pileup} in the event affects many important analysis variables, for example photon shower shape and photon isolation as well as the diphoton invariant mass if the chosen vertex is wrong. Consequently the \MC events are reweighted such that the pileup distribution matches that in data. The reweighting technique is validated using \Zmumu events as shown in Fig.~\ref{fig:pileup} for the 7 and 8~\TeV samples. 
+An important difference between the simulated samples and the data which can have a large impact on the analysis is the distribution of the number of primary vertices. The \emph{pileup} in the event affects many important analysis variables, for example photon shower shape and photon isolation as well as the diphoton invariant mass if the chosen vertex is wrong. Consequently the \MC events are reweighted such that the pileup distribution matches that in data. The reweighting technique is validated using \Zmumu events as shown in Fig.~\ref{fig:pileup} for the 7 and 8~\TeV samples.
 
 \begin{figure}
   \begin{center}
@@ -111,7 +111,7 @@ The photon energy obtained from the supercluster sum described in Section~\ref{s
     \item the relative energy and position of the seed cluster;
     \item the local energy covariance matrix;
     \item energy ratios between the seed and the 3$\times$3 and 5$\times$5 areas around the seed;
-    \item the \eta and \phi index of the seed crystal and the position of the seed cluster relative to the crystal centre. 
+    \item the \eta and \phi index of the seed crystal and the position of the seed cluster relative to the crystal centre.
   \end{itemize}
   \item additionally, the number of primary vertices and the median energy density, \rho, (see Sec.~\ref{sec:pileup}) are included to account for residual energy scale effects from pileup.
 \end{itemize}
@@ -123,11 +123,11 @@ for the double Crystal Ball distribution, $p$. The most probable value for the t
 \begin{equation}
   E(\vec{x},E_{raw}) = \mu(\vec{x})E_{raw}
 \end{equation}
-and the per-photon energy resolution is given by, 
+and the per-photon energy resolution is given by,
 \begin{equation}
   \frac{\sigma_{E}(\vec{x},E_{raw})}{E(\vec{x},E_{raw})} = \frac{\sigma(\vec{x})}{\mu(\vec{x})}.
 \end{equation}
-In this way the regression predicts the full probability distribution of $E_{true}/E_{raw}$ per photon given a particular configuration of the input variables, $\vec{x}$, and provides an estimate of the optimal energy correction and the energy resolution per photon. A comparison of this distribution with a statistically independent \MC sample is shown for the 8~\TeV training in Fig.~\ref{fig:regression_training}. 
+In this way the regression predicts the full probability distribution of $E_{true}/E_{raw}$ per photon given a particular configuration of the input variables, $\vec{x}$, and provides an estimate of the optimal energy correction and the energy resolution per photon. A comparison of this distribution with a statistically independent \MC sample is shown for the 8~\TeV training in Fig.~\ref{fig:regression_training}.
 
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/regression_barrel_fix.pdf}
@@ -155,7 +155,7 @@ A similar method is used to extract a smearing factor that can be applied to the
 \begin{equation}
   \Delta\sigma = \frac{\Delta S}{\sqrt{E_{T}}} \oplus \Delta C.
 \end{equation}
-The effect of the scale and smearing corrections is shown for the \Zee data and \MC samples in Fig.~\ref{fig:scale_smearing_Zee}. Figure~\ref{fig:scale_smearing_analysis} shows the \Zee invariant mass distribution for data and \MC events at 8~TeV for events passing the analysis preselection. The discrepancy between the data and the \MC simulation in the tails of the dielectron invariant mass distribution, shown in the right hand plot of Fig.~\ref{fig:scale_smearing_analysis}, is considerably reduced (from $\sim20\%$ to $\sim10\%$) after the full analysis event selection is made (not just the preselection shown here). Furthermore the analyis sensitivty is decreased by less than 5\% when events with at least one photon in the endcap are removed and consequently the remaining discrepancy is not considered as significant. Each of the scale and resolution corrections has an associated uncertainty and these uncertainties are propagated per photon through the analysis. There are also additional uncertainties included which account for differences between electrons and photons and the difference between the $Z$ mass scale (around 90~\GeV) and the Higgs mass scale (around 125~\GeV). Systematic uncertainties are described in more detail in Sec.~\ref{sec:systematics}.
+The effect of the scale and smearing corrections is shown for the \Zee data and \MC samples in Fig.~\ref{fig:scale_smearing_Zee}. Figure~\ref{fig:scale_smearing_analysis} shows the \Zee invariant mass distribution for data and \MC events at 8~TeV for events passing the analysis preselection. The discrepancy between the data and the \MC simulation in the tails of the dielectron invariant mass distribution, shown in the right hand plot of Fig.~\ref{fig:scale_smearing_analysis}, is considerably reduced (from $\sim20\%$ to $\sim10\%$) after the full analysis event selection is made (not just the preselection shown here). Furthermore, the analysis sensitivity is decreased by less than 5\% when events with at least one photon in the endcap are removed and consequently the remaining discrepancy is not considered as significant. Each of the scale and resolution corrections has an associated uncertainty and these uncertainties are propagated per photon through the analysis. There are also additional uncertainties included which account for differences between electrons and photons and the difference between the $Z$ mass scale (around 90~\GeV) and the Higgs mass scale (around 125~\GeV). Systematic uncertainties are described in more detail in Sec.~\ref{sec:systematics}.
 
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/zee_beforecorr_fix.pdf}
@@ -205,10 +205,10 @@ For Case 2 conversions the primary vertex $z$ position is calculated as,
 \end{equation}
 where $z_{conv}$ and $z_{SC}$ are the $z$ positions of the conversion vertex and supercluster respectively, and $r_{conv}$ and $r_{SC}$ are the distance of the conversion vertex and the supercluster from the beamline.
 
-There are six regions of the tracking system (refer back to Fig.~\ref{fig:cms_tracker}). When the conversion vertex is located in one of the inner regions; Pixel Barrel, Pixel Forward or TID, the Case 1 
+There are six regions of the tracking system (refer back to Fig.~\ref{fig:cms_tracker}). When the conversion vertex is located in one of the inner regions; Pixel Barrel, Pixel Forward or TID, the Case 1
 conversion information is included in the \BDT, otherwise the Case 2 conversion information is used. The resolution on the primary vertex position in conversions is estimated per tracking region using \gjet events in data for which the primary vertex efficiency is high and the photon converts. Using these events, the conversion resolution, $\sigma_{c}$, is calculated as the effective width\footnote{Half the narrowest interval which contains 68.3\% of the distribution} of the distribution of the difference, $\Delta z=z_{v}-z_{c}$, between the estimated $z$ position of the primary vertex without any conversion information, $z_{v}$, and the estimated $z$ position of the primary vertex when using conversion information alone, $z_{c}$. Consequently the fourth input variable to the \BDT, shown in the list above as $|z_{v}-z_{c}|/\sigma_{c}$, is effectively a pull distribution for the conversion vertex. The \BDT will favour vertices whose value of this variable is near zero.
 
-The \BDT is trained on a sample of \Hgg \MC events. It is tested with a statistically independent sample and further validated using \Zmumu decays in data and \MC samples. The efficiency is measured in data using the \Zmumu channel where the muon tracks are removed from the \BDT variables to simulate a diphoton-like situation in data. The \BDT response is shown for \Zmumu data and \MC events for both the signal (right vertex) and background (wrong vertex) in Fig.~\ref{fig:vertex_bdt_response}. The chosen primary vertex is the one which gives the highest score \BDT output. The efficiency of the vertex selection as a function of the $Z$ \pT and the number of reconstructed vertices as measured in \Zmumu data and \MC samples is shown in Fig.~\ref{fig:vertex_bdt_efficiency}. 
+The \BDT is trained on a sample of \Hgg \MC events. It is tested with a statistically independent sample and further validated using \Zmumu decays in data and \MC samples. The efficiency is measured in data using the \Zmumu channel where the muon tracks are removed from the \BDT variables to simulate a diphoton-like situation in data. The \BDT response is shown for \Zmumu data and \MC events for both the signal (right vertex) and background (wrong vertex) in Fig.~\ref{fig:vertex_bdt_response}. The chosen primary vertex is the one which gives the highest score \BDT output. The efficiency of the vertex selection as a function of the $Z$ \pT and the number of reconstructed vertices as measured in \Zmumu data and \MC samples is shown in Fig.~\ref{fig:vertex_bdt_efficiency}.
 
 \begin{figure}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_output_7TeV_log.pdf}
@@ -221,7 +221,7 @@ The \BDT is trained on a sample of \Hgg \MC events. It is tested with a statisti
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_pt_7TeV.pdf}
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_nvtx_7TeV.pdf} \\
   \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_pt_8TeV.pdf}
-  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_nvtx_8TeV.pdf} 
+  \includegraphics[width=0.48\textwidth]{analysis_comps/plots/vertex_bdt_efficiency_nvtx_8TeV.pdf}
   \caption[The efficiency of locating the correct vertex]{The chosen vertex efficiency as measured in \Zmumu data and \MC simulation as a function of $Z$ \pT (left) and number of reconstructed vertices (right) for the 7~TeV (top row) and 8~TeV (bottom row) data samples.}
   \label{fig:vertex_bdt_efficiency}
 \end{figure}
@@ -270,17 +270,17 @@ In addition to the above an electron veto is applied to prevent contamination of
   \caption{Preselection cut values.}
     \begin{tabular}{c | c c c c c c c c c c }
       \hline
-                & \multicolumn{2}{c}{Barrel} & \multicolumn{2}{c}{Endcap} \\ 
+                & \multicolumn{2}{c}{Barrel} & \multicolumn{2}{c}{Endcap} \\
       \hline
-      $R_{9}$        & $H/E$ & $\sigma^{2}_{i\eta i\eta}$ & $H/E$ & $\sigma^{2}_{i\eta i\eta}$  \\ 
+      $R_{9}$        & $H/E$ & $\sigma^{2}_{i\eta i\eta}$ & $H/E$ & $\sigma^{2}_{i\eta i\eta}$  \\
       $\le$ 0.9 & $<$ 0.075 & $<$ 0.014 & $<$ 0.075 & $<$ 0.034 \\
-      $>$ 0.9   & $<$ 0.082 & $<$ 0.014 & $<$ 0.075 & $<$ 0.034  \\ 
-      \hline    
-                & \multicolumn{4}{c}{Both Barrel and Endcap}\\ 
+      $>$ 0.9   & $<$ 0.082 & $<$ 0.014 & $<$ 0.075 & $<$ 0.034  \\
       \hline
-      $R_{9}$        & $ISO_{ECAL}$ & $ISO_{HCAL}$ &  $ISO_{Tracks}$ & $ISO_{PFCh}$ \\ 
-      $\le$ 0.9 &$<$ 4 GeV & $<$ 4 GeV & $<$ 4 GeV & $<$ 4 GeV\\ 
-      $>$ 0.9   &$<$ 50 GeV & $<$ 50 GeV & $<$ 50 GeV & $<$ 4 GeV\\ 
+                & \multicolumn{4}{c}{Both Barrel and Endcap}\\
+      \hline
+      $R_{9}$        & $ISO_{ECAL}$ & $ISO_{HCAL}$ &  $ISO_{Tracks}$ & $ISO_{PFCh}$ \\
+      $\le$ 0.9 &$<$ 4 GeV & $<$ 4 GeV & $<$ 4 GeV & $<$ 4 GeV\\
+      $>$ 0.9   &$<$ 50 GeV & $<$ 50 GeV & $<$ 50 GeV & $<$ 4 GeV\\
       \hline
     \end{tabular}
   \label{tab:preselection}
