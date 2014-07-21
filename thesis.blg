@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2011)
+This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: lucas_unsrt.bst
@@ -6,45 +6,46 @@ Database file #1: mythesis.bib
 Warning--empty year in Salam
 Warning--empty author and editor in tracker_project
 Warning--empty author and editor in ecal_project
+Warning--empty year in CrystalBallShape
 You've used 79 entries,
             2529 wiz_defined-function locations,
-            1136 strings with 16496 characters,
-and the built_in function-call counts, 23677 in all, are:
-= -- 2524
+            1133 strings with 16444 characters,
+and the built_in function-call counts, 23835 in all, are:
+= -- 2514
 > -- 474
 < -- 1
 + -- 174
 - -- 95
-* -- 1871
-:= -- 2965
-add.period$ -- 108
+* -- 1885
+:= -- 2987
+add.period$ -- 104
 call.type$ -- 79
 change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 82
-duplicate$ -- 1485
-empty$ -- 2565
+cite$ -- 83
+duplicate$ -- 1509
+empty$ -- 2613
 format.name$ -- 100
-if$ -- 6243
+if$ -- 6281
 int.to.chr$ -- 0
 int.to.str$ -- 79
 missing$ -- 226
 newline$ -- 282
 num.names$ -- 62
-pop$ -- 522
+pop$ -- 541
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
 skip$ -- 781
 stack$ -- 0
 substring$ -- 1245
-swap$ -- 568
+swap$ -- 572
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 3
+warning$ -- 4
 while$ -- 163
 width$ -- 81
-write$ -- 893
-(There were 3 warnings)
+write$ -- 894
+(There were 4 warnings)

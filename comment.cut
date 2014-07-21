@@ -1,1 +1,8 @@
-  \input{backmatter}
+  \input{intro/intro.tex}
+  \input{theory/theory.tex}
+  \input{cms_experiment/cms_experiment.tex}
+  \input{analysis_comps/analysis_comps.tex}
+  \input{selec_and_cats/selec_and_cats.tex}
+  \input{analysis/analysis.tex}
+  \input{results/results.tex}
+  \input{conclusions/conclusions.tex}

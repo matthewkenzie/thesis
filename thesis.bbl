@@ -7,7 +7,7 @@
 \bibitem{ATLASDiscovery}
 \hrefCMSnoop {} {{ ATLAS} Collaboration, ``{Observation of a New Particle in
   the Search for the Standard Model Higgs Boson with the ATLAS Detector at the
-  LHC}'',} \textit{ Phys.Lett. B} \textbf{ 716} (2012) 1--29.
+  LHC}'',} \textit{ Phys. Lett. B} \textbf{ 716} (2012) 1--29.
 
 \bibitem{CMSDiscovery}
 \hrefCMSnoop {} {{ CMS} Collaboration, ``{Observation of a new boson at a mass
@@ -65,7 +65,7 @@ M.~W. Guidry, ``Gauge Field Theories: An Introduction with Applications''.
 
 \bibitem{Higgs:1964ia}
 \hrefCMSnoop {} {P.~W. Higgs, ``{Broken symmetries, massless particles and
-  gauge fields}'',} \textit{ Phys.Lett.} \textbf{ 12} (1964) 132--133,
+  gauge fields}'',} \textit{ Phys. Lett.} \textbf{ 12} (1964) 132--133,
 \href{http://dx.doi.org/10.1016/0031-9163(64)91136-9}{\doi{10.1016/0031-9163(64)91136-9}}.
 %%CITATION = PHLTA,12,132;%%.
 
@@ -105,12 +105,12 @@ M.~W. Guidry, ``Gauge Field Theories: An Introduction with Applications''.
 \bibitem{ua1}
 \hrefCMSnoop {} {{The UA1 Collaboration}, ``{Experimental observation of
   isolated large transverse energy electrons with associated missing energy at
-  $\sqrt{s} = 540 GeV$}'',} \textit{ Phys. Lett. B} \textbf{ 122} (1983),
+  $\sqrt{s} = 540$~GeV}'',} \textit{ Phys. Lett. B} \textbf{ 122} (1983),
   no.~CERN-EP-83-13, 103--116. 31 p.
 
 \bibitem{ua2}
 \hrefCMSnoop {} {{The UA1 Collaboration}, ``{Experimental observation of lepton
-  pairs of invariant mass around $95 GeV/c^{2}$ at the CERN SPS collider}'',}
+  pairs of invariant mass around $95$~GeV$/c^{2}$ at the CERN SPS collider}'',}
   \textit{ Phys. Lett. B} \textbf{ 126} (1985), no.~CERN-EP-83-073, 398--410.
   17 p.
 
@@ -179,15 +179,17 @@ J.~Anderson\hrefCMSnoop {} { {et~al.}, ``{Snowmass Energy Frontier
 
 \bibitem{cms-ecal-performance-2012}
 \hrefCMSnoop {} {{ CMS} Collaboration, ``2012 ECAL detector performance
-  plots'',}. CMS-DP-2013-007.
+  plots'',} \textit{ CMS-DP-2013-007} (2012).
 
 \bibitem{cms_pf_performance}
 \hrefCMSnoop {} {{ CMS} Collaboration, ``Particle-Flow Event Reconstruction in
-  CMS and Performance for Jets, Taus and $E_{T}^{miss}$'',}. CMS-PFT-09-001.
+  CMS and Performance for Jets, Taus and $E_{T}^{miss}$'',} \textit{
+  CMS-PFT-09-001} (2009).
 
 \bibitem{ecal_electron_reco}
 \hrefCMSnoop {} {E.~Meschi, T.~Monteiro, C.~Seez, and P.~Vikas, ``Electron
-  reconstruction in the CMS Electromagentic Calorimeter'',}. CMS-AN-2001-034.
+  reconstruction in the CMS Electromagentic Calorimeter'',} \textit{
+  CMS-AN-2001-034} (2001).
 
 \bibitem{tracker_electron_reco}
 \hrefCMSnoop {} {W.~Adam, R.~Fr{\"u}wirth, A.~Strandlie, and T.~Todorov,
@@ -251,13 +253,12 @@ J.~Anderson\hrefCMSnoop {} { {et~al.}, ``{Snowmass Energy Frontier
 
 \bibitem{lumi1}
 \hrefCMSnoop {} {{ CMS} Collaboration, ``Absolute Calibration of the Luminosity
-  Measurement at CMS: Winter 2012 Update'',} \textit{ CMS PAS} \textbf{
-  CMS-PAS-SMP-12-008} (2012).
+  Measurement at CMS: Winter 2012 Update'',} \textit{ CMS-PAS-SMP-12-008}
+  (2012).
 
 \bibitem{lumi2}
 \hrefCMSnoop {} {{ CMS} Collaboration, ``CMS Luminosity Based on Pixel Cluster
-  Counting: Summer 2013 Update'',} \textit{ CMS PAS} \textbf{
-  CMS-PAS-LUM-13-001} (2013).
+  Counting: Summer 2013 Update'',} \textit{ CMS-PAS-LUM-13-001} (2013).
 
 \bibitem{powheg1}
 \hrefCMSnoop {} {S.~Alioli, P.~Nason, C.~Oleari, and E.~Re, ``{NLO Higgs boson
@@ -309,7 +310,8 @@ J.~Alwall\hrefCMSnoop {} { {et~al.}, ``{MadGraph 5 : Going Beyond}'',} \textit{
 
 \bibitem{CrystalBallShape}
 \hrefCMSnoop {} {T.~Skwarnicki, ``{A Study of the Radiative Cascade Transitions
-  between the upsilon-prime and upsilon resonances}'',}. DESY-F31-86-02.
+  between the upsilon-prime and upsilon resonances}'',} \textit{
+  DESY-F31-86-02}.
 
 \bibitem{tag_and_probe}
 \hrefCMSnoop {} {{ CMS} Collaboration, ``Measurement of the inclusive W and Z
@@ -356,8 +358,8 @@ J.~Alwall\hrefCMSnoop {} { {et~al.}, ``{MadGraph 5 : Going Beyond}'',} \textit{
 
 \bibitem{regression_smoothing}
 \hrefCMSnoop {} {W.~S. Cleveland, ``Robust locally weighted regression and
-  smoothing scatterplots'',} \textit{ Journal of the American statistical
-  association} \textbf{ 74} (1979), no.~368, 829--836.
+  smoothing scatterplots'',} \textit{ Journal of the American Statistical
+  Association} \textbf{ 74} (1979), no.~368, 829--836.
 
 \bibitem{Landau1948}
 \hrefCMSnoop {} {L.~D. Landau, ``{On the angular momentum of a two-photon
@@ -390,7 +392,7 @@ F.~James, ``Statistical Methods in Experimental Physics''.
 
 \bibitem{bernsteins1}
 \hrefCMSnoop {} {G.~M. Phillips, ``On generalized Bernstein polynomials'',}
-  \textit{ Numerical Analysis: A. R. Mithcell 75th Birthday Volume} (1996)
+  \textit{ Numerical Analysis: A. R. Mitchell 75th Birthday Volume} (1996)
   263--269.
 
 \bibitem{bernsteins2}
@@ -429,8 +431,8 @@ F.~James, ``Statistical Methods in Experimental Physics''.
 
 \bibitem{asymptotic_form}
 \hrefCMSnoop {} {G.~Cowan, K.~Cranmer, E.~Gross, and O.~Vitells, ``Asymptotic
-  formulae for likelihood-based tests of new physics'',} \textit{ The European
-  Physicsal Journal C} \textbf{ 71} (2011) 1--19.
+  formulae for likelihood-based tests of new physics'',} \textit{ Eur. Phys. J.
+  C} \textbf{ 71} (2011) 1--19.
 
 \bibitem{cls}
 \hrefCMSnoop {} {A.~L. Read, ``Presentation of search results: the CLs

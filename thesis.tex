@@ -1,4 +1,4 @@
-\documentclass[numbers=noenddot]{mythesis}
+\documentclass[hyperpdf,bindnopdf,titling]{hepthesis}
 \usepackage{mythesis}
 
 % my packages
@@ -18,11 +18,22 @@
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{fancyhdr}
+\usepackage{titlesec}
 %\usepackage{geometry}
 %\usepackage{subcaption}
 
 \captionsetup[figure]{labelformat=simple, labelsep=colon}
 \captionsetup[table]{labelformat=simple, labelsep=colon}
+%\titlelabel{\thetitle }
+\titleformat{\chapter}
+    [display]
+    {\normalfont\huge\bfseries}
+    {\huge\chaptertitlename\ \thechapter}
+    {0in}
+    {}
+\titlelabel{\thetitle\hspace{0.3cm}}
+
+%\renewcommand{\thechapter}{\arabic{chapter}}
 
 % my commands
 \newcommand{\rnine}{\ensuremath{R_{9}}\xspace}
@@ -162,13 +173,10 @@ colorlinks = false,
 \bibliographystyle{lucas_unsrt}
 \bibliography{mythesis}
 
-%\begin{appendix}
-\appendix
-\input{appendices}
-%\end{appendix}
 %% Produce the appendices
 %\begin{appendices}
-%	\input{appendices}
+	\appendix
+	\input{appendices}
 %\end{appendices}
 
 %% Produce the un-numbered back matter (e.g. colophon,
